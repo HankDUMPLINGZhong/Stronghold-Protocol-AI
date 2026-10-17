@@ -1,0 +1,27 @@
+name: Verify strategy release
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: node tools/verify-benchmarks.mjs
+      - run: npm run build
+      - name: Check out the tested game host
+        uses: actions/checkout@v4
+        with:
+          repository: sganggs/Stronghold-Protocol
+          ref: 6ab2468279e926d107788f63d7fe219b85f67b4a
+          path: .cache/upstream
+      - run: npm ci
+        working-directory: .cache/upstream
+      - name: Integrate without changing the host checkout
+        run: npm run test:integration
+        env:
+          SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream

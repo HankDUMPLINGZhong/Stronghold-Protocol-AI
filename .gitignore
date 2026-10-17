@@ -1,0 +1,11 @@
+node_modules/
+.cache/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+.arturia-addon/
+public/assets/
+*.zip
+*.mp4

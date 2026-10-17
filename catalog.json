@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "strategies": {
+    "arturia": {
+      "name": "AI·阿尔图罗",
+      "core": "lateranoShip",
+      "status": "released",
+      "version": "0.1.0",
+      "addon": "addons/arturia",
+      "sourceRoot": "releases/arturia-v0.1.0/source",
+      "manifest": "releases/arturia-v0.1.0.json"
+    }
+  }
+}

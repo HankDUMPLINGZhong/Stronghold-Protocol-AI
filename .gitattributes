@@ -1,0 +1,5 @@
+* text=auto eol=lf
+releases/** -text
+addons/arturia/policy/** -text
+addons/arturia/runtime.js -text
+*.bat text eol=crlf

@@ -1,0 +1,18 @@
+{
+  "laterano": {
+    "botFormationRoles": true,
+    "botSiracusaEngines": false,
+    "botHumanLessons": false,
+    "botLateranoLessons": [
+      "quintus",
+      "roster"
+    ],
+    "botLateranoExperiment": "repair19-white-five"
+  },
+  "legacy-laterano": {
+    "botFormationRoles": false,
+    "botSiracusaEngines": false,
+    "botHumanLessons": false,
+    "botLateranoLessons": false
+  }
+}

@@ -1,0 +1,14 @@
+Stronghold Protocol AI Strategies
+
+This repository contains AI policies, integration code and tests derived from
+Stronghold-Protocol by sganggs and contributors:
+https://github.com/sganggs/Stronghold-Protocol
+
+The original software and this derivative are distributed under
+GPL-3.0-or-later. Existing copyright and license notices remain applicable.
+The full license is in LICENSE. Migration commit IDs and source hashes are
+recorded in provenance.json and releases/arturia-v0.1.0.json.
+
+Arknights names and game artwork/audio belong to their respective owners.
+No extracted game artwork, music, voices or personal save data is distributed
+in this repository. This is an unofficial, non-commercial fan extension.

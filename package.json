@@ -1,0 +1,16 @@
+{
+  "name": "stronghold-protocol-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "description": "卫戍协议 AI 策略合集与阿尔图罗插件",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/package.test.mjs",
+    "build": "node addons/arturia/build.mjs",
+    "test:integration": "node --test test/integration/arturia.test.mjs"
+  }
+}
