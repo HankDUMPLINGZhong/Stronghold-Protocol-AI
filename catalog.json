@@ -5,10 +5,10 @@
       "name": "AI·阿尔图罗",
       "core": "lateranoShip",
       "status": "released",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "addon": "addons/arturia",
-      "sourceRoot": "releases/arturia-v0.1.0/source",
-      "manifest": "releases/arturia-v0.1.0.json"
+      "sourceRoot": "releases/arturia-v0.1.1/source",
+      "manifest": "releases/arturia-v0.1.1.json"
     }
   }
 }

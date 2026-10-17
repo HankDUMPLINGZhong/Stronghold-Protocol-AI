@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 import { build, UPSTREAM_REF, POLICY_REF } from '../../addons/arturia/build.mjs';
 
 const gameRepository = process.env.SP_GAME_REPO;
-if (!gameRepository) throw new Error('Set SP_GAME_REPO to an upstream game Git checkout (see docs/DEVELOPMENT.md)');
+if (!gameRepository) throw new Error('Set SP_GAME_REPO to an upstream game Git checkout (see CONTRIBUTING.md)');
 let root, bundle, runInstall, load, harness, constants, adapter;
 before(async () => {
   mkdirSync('.cache', { recursive: true });
@@ -88,7 +88,7 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(h.m.opts.botFormationRoles, undefined);
     assert.deepEqual(view.opts.botLateranoLessons, ['quintus', 'roster']);
     assert.equal(view.opts.botFormationRoles, true);
-    assert.equal(view.opts.botLateranoExperiment, 'repair19-white-five');
+    assert.equal(view.opts.botLateranoExperiment, 'vision21-map04-08');
     assert.equal(view.botRehearsal, 3);
     const recipe = bondPlan(view, h.ps('arturia')).strategy;
     assert.equal(recipe.core, adapter.CORE);
@@ -96,10 +96,10 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(recipe.shoppingRepair, true);
     assert.equal(recipe.developmentForecast, undefined);
     const manifest = JSON.parse(readFileSync(resolve(bundle, 'addon.json')));
-    assert.equal(manifest.version, '0.1.0');
+    assert.equal(manifest.version, '0.1.1');
     assert.equal(manifest.policy, POLICY_REF);
     assert.equal(manifest.policyObject, view.opts.botLateranoExperiment);
-    assert.equal(manifest.benchmark.hard, '21/28'); assert.equal(manifest.benchmark.abyss, '4/28');
+    assert.equal(manifest.benchmark.hard, '23/28'); assert.equal(manifest.benchmark.abyss, '7/28');
     assert.deepEqual(readFileSync(resolve(root, 'addons/arturia/addon.json')), readFileSync(resolve(bundle, 'addon.json')));
     assert.ok(existsSync(resolve(root, 'addons/arturia/安装插件.bat')));
     h.invariants();
@@ -117,6 +117,34 @@ test('real upstream battles and later rounds accept the retained policy', () => 
     assert.deepEqual(h.logs.warn, [], 'rehearsals must not silently fall back after an engine API error');
     h.invariants();
   } finally { h.m.dispose(); }
+});
+
+test('packaged v0.1.1 uses the selected map layouts through the adapter', async () => {
+  const {give}=harness;
+  const {planLayout,bondPlan}=await load('server/match/arturia/policy/server/match/botDevelopment.js');
+  const h=harness.makeMatch({mode:'solo',difficulty:'ABYSS',seed:25864,fake:true});
+  try {
+    h.start().toPrep(1);
+    const m=h.m,ps=m.order[0],view=adapter.policyView(m);
+    ps.bandId=adapter.BAND;ps._botFocusId=adapter.CORE;ps._botCoreCommitted=true;
+    m.round=11;ps.funds=0;ps.shop.slots.fill(null);
+    const recipe=bondPlan(view,ps).strategy,{ids}=recipe;
+    assert.equal(typeof recipe.placementVariants,'function');
+    const people=[ids.executorAlter,ids.faith,ids.archetto,ids.mostima,ids.executor,ids.insider].map(id=>give(m,ps,id));
+    h.setStage('act1autochess_m04');
+    const ore=planLayout(view,ps,people);
+    assert.equal(ore.get(people[0].uid),'11,8');
+    assert.equal(ore.dirOf(people[0].uid),'DOWN');
+    assert.equal(ore.get(people[1].uid),'10,8');
+    h.setStage('act2autochess_m04');m._botPath=null;
+    const tide=planLayout(view,ps,people,undefined,{placementVariant:1});
+    assert.equal(tide.get(people[0].uid),'10,5');
+    assert.equal(tide.dirOf(people[0].uid),'RIGHT');
+    assert.equal(tide.get(people[1].uid),'11,5');
+    assert.equal(tide.size,people.length);
+    m.round=14;
+    assert.equal(recipe.placementVariants(view,ps),false,'taught normal-wave variants do not replace boss positioning');
+  } finally {h.m.dispose();}
 });
 
 test('frozen policy executes shopping and boss rehearsals through R14 on the target engine', { timeout: 180_000 }, () => {

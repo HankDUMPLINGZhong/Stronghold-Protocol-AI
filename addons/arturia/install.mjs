@@ -70,7 +70,7 @@ export async function install(mode, directory) {
     changes.set(target, { before: null, bytes });
   }
   // Keep the complete portable installer in addons/, so players can remove the unpacked download.
-  for (const name of [...Object.keys(meta.files), 'install.mjs', 'patches.mjs', 'addon.json', 'README.md', 'LICENSE', '安装插件.bat', 'install-windows.ps1']) {
+  for (const name of [...Object.keys(meta.files), 'install.mjs', 'patches.mjs', 'addon.json', 'README.md', 'CHANGELOG.md', 'LICENSE', '安装插件.bat', 'install-windows.ps1']) {
     const bytes = await readFile(await safePath(bundle, name));
     const target = `addons/arturia/${name}`, path = await safePath(root, target);
     const before = await exists(path) ? await readFile(path) : null;

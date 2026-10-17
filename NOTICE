@@ -7,7 +7,7 @@ https://github.com/sganggs/Stronghold-Protocol
 The original software and this derivative are distributed under
 GPL-3.0-or-later. Existing copyright and license notices remain applicable.
 The full license is in LICENSE. Migration commit IDs and source hashes are
-recorded in provenance.json and releases/arturia-v0.1.0.json.
+recorded in provenance.json and the versioned manifests under releases/.
 
 Arknights names and game artwork/audio belong to their respective owners.
 No extracted game artwork, music, voices or personal save data is distributed

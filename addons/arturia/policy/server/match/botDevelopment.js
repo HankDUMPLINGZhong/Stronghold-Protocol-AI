@@ -976,7 +976,7 @@ export function planLayout(m, ps, pieces, params = LAYOUT_PARAMS, opts = {}) {
 /** planLayout as a step generator: yields after each placed piece (Match slices a bot's prep, see botPrepBeginSteps). */
 export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupied = new Set(), recOf = null,
   formationRoles = m.opts.botFormationRoles === true, rng = m.rngBots, bossFocus = false, facingPlan = null,
-  fireControl = false, seedPlan = null, developmentPhase = null } = {}) {
+  fireControl = false, seedPlan = null, developmentPhase = null, placementVariant = 0 } = {}) {
   const model = fieldModel(m, ps);
   const map = ps.deployMap();
   const pgd = ps.gd || m.gd;
@@ -995,10 +995,12 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
   const plan = developmentPhase ? { ...corePlan, ps, developmentPhase }
     : bossFocus ? { ...corePlan, ps, bossFocus, pieces: new Map(pieces.map((p) => [p.uid, p])) }
     : m.opts.botLateranoLessons && corePlan.focus === 'lateranoShip' ? { ...corePlan, ps } : corePlan;
-  const placement = plan.strategy?.placementPlan?.(pgd, pieces, plan, { model, map, occupied, recOf: rec });
+  const placementContext=placementVariant ? {...plan,placementVariant} : plan;
+  const placement = plan.strategy?.placementPlan?.(pgd, pieces, placementContext, { model, map, occupied, recOf: rec });
   if (placement) occupied = new Set([...occupied, ...placement.reserved]);
   const layout = new Layout(model, params, { gd: pgd, plan, bonds: ps.bonds });
   layout.raidLandings = placement?.landings;
+  layout.fixed = placement?.fixed;
   layout.formationRoles = formationRoles;
   layout.humanLessons = m.opts.botHumanLessons || lateranoHealing(m, ps);
   layout.fireControl = fireControl;
@@ -1011,13 +1013,15 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
   const order = pieces.slice().sort((a, b) => rank(a) - rank(b) || dpsOf(rec(b)) - dpsOf(rec(a)) || a.uid - b.uid);
   const taken = new Set([...occupied, ...[...(placement?.starts?.values() || [])].map((p) => p.key)]);
   const out = new LayoutPlan();
+  if(placementVariant)out.placementVariant=placementVariant;
   out.reserved = placement?.reserved || new Set();
   const lineGates = new Map();
-  const anchors = new Set();
+  const anchors = new Set(placement?.fixed || []);
   if (seedPlan) for (const p of order) {
-    const key = seedPlan.get(p.uid), r0 = rec(p);
+    const start = placement?.fixed?.has(p.uid) ? placement.starts.get(p.uid) : null;
+    const key = start?.key || seedPlan.get(p.uid), r0 = rec(p);
     if (!key || !r0) continue;
-    const [r, c] = parseKey(key), u = unitOf(r0, key, r, c, planDir(seedPlan, p.uid), model);
+    const [r, c] = parseKey(key), u = unitOf(r0, key, r, c, start?.dir || planDir(seedPlan, p.uid), model);
     u.uid = p.uid; layout.units.push(u); out.set(p.uid, key); out.dirs.set(p.uid, u.dir);
     const gate = linePlacementGate(model, r0, [...legalTiles(map, placeClass(ps, pgd.chess(p.id) || r0))], PLAN_DIRS);
     if (gate) lineGates.set(p.uid, gate);
@@ -1236,7 +1240,9 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     yield;
   }
   if (m.wave && m.round < m.gd.bossRound && plan.strategy?.repairContact) {
-    plan.strategy.repairContact(m, ps, layout.units, out, model, { unitOf, map, occupied });
+    plan.strategy.repairContact(m, ps, layout.units, out, model, { unitOf, map, occupied,
+      scoreLayout: () => layout.value(),
+      allows: (uid, r, c, dir) => !lineGates.has(uid) || lineGates.get(uid).allows(r, c, dir) });
   }
   if (plan.strategy?.bossLayoutValue && model.bossBodies.length) {
     if (bossFocus) yield* repairBossBodySteps(layout, out, pgd, ps, map, occupied);
@@ -1253,7 +1259,7 @@ function* refineSquadSteps(layout, out, ps, gd, map, occupied, lineGates, anchor
     let improved = false;
     for (let i = 0; i < units.length; i++) {
       const initial = units[i], piece = byUid.get(initial.uid);
-      if (!piece || layout.raidLandings?.has(initial.uid)) continue;
+      if (!piece || layout.raidLandings?.has(initial.uid) || layout.fixed?.has(initial.uid)) continue;
       let best = initial, otherBest = null, otherIndex = -1, score = layout.value();
       const cells = anchors.has(initial.uid) ? [[initial.r, initial.c]] : legalTiles(map, placeClass(ps, gd.chess(piece.id)));
       for (const [r, c] of cells) {
@@ -2056,7 +2062,8 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
     if (m.wave) {
       // Economy, equipment and the deployed roster are final. Search only positions/facings of these same pieces.
       plans.push(yield* planLayoutSteps(m, ps, chosen, LAYOUT_PARAMS, { fireControl: true,
-        seedPlan: plans[0], rng: proposalRng(1), developmentPhase: ctx.strategy.developmentForecast ? 'combat' : null }));
+        seedPlan: plans[0], rng: proposalRng(1), developmentPhase: ctx.strategy.developmentForecast ? 'combat' : null,
+        placementVariant:ctx.strategy.placementVariants?.(m,ps)?1:0 }));
       if (ctx.strategy.developmentForecast) {
         plans.push(yield* planLayoutSteps(m, ps, chosen, LAYOUT_PARAMS,
           { fireControl: true, seedPlan: plans[0], rng: proposalRng(2), developmentPhase: 'farm' }));
@@ -2065,7 +2072,7 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
           { ...LAYOUT_PARAMS, ...REHEARSAL_VARIANTS[1] }, { rng: proposalRng(2) });
       }
       else plans.push(yield* planLayoutSteps(m, ps, chosen, { ...LAYOUT_PARAMS, ...REHEARSAL_VARIANTS[1] },
-        { rng: proposalRng(2) }));
+        { rng: proposalRng(2),placementVariant:ctx.strategy.placementVariants?.(m,ps)?2:0 }));
     } else {
       // R14 has no farming. Keep the existing roster and mechanics; compare alternative legal complete layouts.
       for (let i=1;i<3;i++) plans.push(yield* planLayoutSteps(m, ps, chosen,

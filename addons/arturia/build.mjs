@@ -8,12 +8,12 @@ import { createHash } from 'node:crypto';
 const here=dirname(fileURLToPath(import.meta.url)),repo=resolve(here,'../..');
 const provenance=JSON.parse(readFileSync(resolve(repo,'provenance.json'),'utf8'));
 const released=JSON.parse(readFileSync(resolve(repo,'catalog.json'),'utf8')).strategies.arturia;
-const frozen=JSON.parse(readFileSync(resolve(repo,'releases/arturia-v0.1.0.json'),'utf8'));
+const frozen=JSON.parse(readFileSync(resolve(repo,released.manifest),'utf8'));
 export const POLICY_REF=provenance.policyCommit;
 export const UPSTREAM_REF=provenance.testedUpstreamCommit;
 const sha=x=>createHash('sha256').update(x).digest('hex');
 
-export function build(output=resolve(repo,'dist/AI-Arturia-v0.1.0')) {
+export function build(output=resolve(repo,`dist/AI-Arturia-v${released.version}`)) {
   const root=resolve(output),files={},sources={},seen=new Set();
   if(root===here || root===repo)throw new Error('Build output must be a separate directory');
   const put=(name,text)=>{
@@ -38,7 +38,7 @@ export function build(output=resolve(repo,'dist/AI-Arturia-v0.1.0')) {
   policy('server/match/botDevelopment.js');
   put('runtime.js',readFileSync(resolve(here,'runtime.js'),'utf8'));
   if(JSON.stringify(files)!==JSON.stringify(frozen.files))throw new Error('Frozen output hashes differ from the release');
-  for(const name of ['install.mjs','patches.mjs','README.md','安装插件.bat','install-windows.ps1'])copyFileSync(resolve(here,name),resolve(root,name));
+  for(const name of ['install.mjs','patches.mjs','README.md','CHANGELOG.md','安装插件.bat','install-windows.ps1'])copyFileSync(resolve(here,name),resolve(root,name));
   copyFileSync(resolve(repo,'LICENSE'),resolve(root,'LICENSE'));
   writeFileSync(resolve(root,'addon.json'),JSON.stringify({...frozen,sources,files},null,2)+'\n');
   return {root,policyFiles:seen.size,policyCommit:POLICY_REF};

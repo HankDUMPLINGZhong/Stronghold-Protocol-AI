@@ -2,6 +2,10 @@
 // [ASSUMED] Purchase caps and transfer priorities below are policy; all actions use the normal equipment API.
 import { lateranoFocused } from './lateranoFocused.js';
 import { pieceBonds } from '../../../../../bondsMeta.js';
+import { withLateranoRetention } from './lateranoRetention.js';
+import { withLateranoOpening } from './lateranoOpening.js';
+import { withLateranoMap02 } from './lateranoMap02.js';
+import { withLateranoMapLines } from './lateranoMapLines.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -171,13 +175,28 @@ export const lateranoRepair17 = repaired(lateranoFocused);
 export const lateranoRepair19 = repaired(lateranoForecast19);
 const repairWhite17 = repaired(Object.freeze({ ...lateranoWhitelist, forecast: false }));
 const repairWhite19 = repaired(lateranoWhitelist);
+const retained21 = gated([5], false, repairWhite19);
+const retention21 = withLateranoRetention(retained21);
+const vision21 = Object.freeze({ ...retained21, keep: retention21.keep, preserve: retention21.preserve });
+const visionOpening = withLateranoOpening(vision21);
+const map02 = withLateranoMap02(visionOpening);
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
   'six-before-five': gated([5], false), 'six-before-six': gated([6], false),
   'six-mostima-before-five': gated([5], true), 'six-mostima-before-five-six': gated([5,6], true),
   repair17: lateranoRepair17, repair19: lateranoRepair19,
   'repair17-white': repairWhite17, 'repair19-white': repairWhite19,
   'repair17-five': gated([5], false, lateranoRepair17), 'repair19-five': gated([5], false, lateranoRepair19),
-  'repair17-white-five': gated([5], false, repairWhite17), 'repair19-white-five': gated([5], false, repairWhite19),
+  'repair17-white-five': gated([5], false, repairWhite17), 'repair19-white-five': retained21,
+  retention21, 'retention21-opening': withLateranoOpening(retention21),
+  opening21: withLateranoOpening(retained21),
+  'vision21-opening': visionOpening,
+  'vision21-opening-map02': map02,
+  'vision21-map05': withLateranoMapLines(map02,['blower']),
+  'vision21-map04': withLateranoMapLines(map02,['infection']),
+  'vision21-map04-05': withLateranoMapLines(map02,['blower','infection']),
+  'vision21-map08': withLateranoMapLines(map02,['tide']),
+  'vision21-map04-08': withLateranoMapLines(map02,['infection','tide']),
+  'vision21-map-lines': withLateranoMapLines(map02),
   'repair19-white-six': gated([6], false, repairWhite19),
   'repair19-white-mostima-five': gated([5], true, repairWhite19),
   'repair19-white-mostima-five-six': gated([5,6], true, repairWhite19) });
