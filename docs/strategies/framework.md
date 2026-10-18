@@ -1,7 +1,7 @@
 # 发行源码结构
 
 - `addons/arturia/`：阿尔图罗适配器、安装／卸载入口和可安装策略文件。
-- `releases/arturia-v0.1.1/source/`：该发行包必需的固定源码依赖闭包；不是独立发布其他策略。
+- `releases/arturia-v0.1.2/source/`：该发行包必需的固定源码依赖闭包；不是独立发布其他策略。
 - `catalog.json`：已发布策略、版本、构建源码位置与清单。
 - `benchmarks/`：固定场景与已发布策略的原版同开局对照。
 

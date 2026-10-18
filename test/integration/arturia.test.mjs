@@ -88,7 +88,7 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(h.m.opts.botFormationRoles, undefined);
     assert.deepEqual(view.opts.botLateranoLessons, ['quintus', 'roster']);
     assert.equal(view.opts.botFormationRoles, true);
-    assert.equal(view.opts.botLateranoExperiment, 'vision21-map04-08');
+    assert.equal(view.opts.botLateranoExperiment, 'team27-promotion-deadline');
     assert.equal(view.botRehearsal, 3);
     const recipe = bondPlan(view, h.ps('arturia')).strategy;
     assert.equal(recipe.core, adapter.CORE);
@@ -96,10 +96,10 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(recipe.shoppingRepair, true);
     assert.equal(recipe.developmentForecast, undefined);
     const manifest = JSON.parse(readFileSync(resolve(bundle, 'addon.json')));
-    assert.equal(manifest.version, '0.1.1');
+    assert.equal(manifest.version, '0.1.2');
     assert.equal(manifest.policy, POLICY_REF);
     assert.equal(manifest.policyObject, view.opts.botLateranoExperiment);
-    assert.equal(manifest.benchmark.hard, '23/28'); assert.equal(manifest.benchmark.abyss, '7/28');
+    assert.equal(manifest.benchmark.hard, '27/28'); assert.equal(manifest.benchmark.abyss, '9/28');
     assert.deepEqual(readFileSync(resolve(root, 'addons/arturia/addon.json')), readFileSync(resolve(bundle, 'addon.json')));
     assert.ok(existsSync(resolve(root, 'addons/arturia/安装插件.bat')));
     h.invariants();
@@ -119,7 +119,7 @@ test('real upstream battles and later rounds accept the retained policy', () => 
   } finally { h.m.dispose(); }
 });
 
-test('packaged v0.1.1 uses the selected map layouts through the adapter', async () => {
+test('packaged v0.1.2 uses the selected map layouts through the adapter', async () => {
   const {give}=harness;
   const {planLayout,bondPlan}=await load('server/match/arturia/policy/server/match/botDevelopment.js');
   const h=harness.makeMatch({mode:'solo',difficulty:'ABYSS',seed:25864,fake:true});

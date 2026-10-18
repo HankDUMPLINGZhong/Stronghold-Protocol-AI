@@ -1,13 +1,13 @@
 {
   "sourceRepository": "https://github.com/HankDUMPLINGZhong/Stronghold-Protocol",
   "upstreamRepository": "https://github.com/sganggs/Stronghold-Protocol",
-  "developmentCommit": "8ac6e6ffcf3b6aaf94b0c20bfd202767765641d0",
-  "policyCommit": "c4cefbea2e6e460207bf35438d51fa5efa0e99cf",
+  "developmentCommit": "913b9d37e63c2a3a49aa241e05f987369f96f6c6",
+  "policyCommit": "fcc24ad0051a884c57f1852097ea5b8b5e1f00c1",
   "baseGameCommit": "3e589285584828a20075893a0575a9e5660dcc10",
   "testedUpstreamCommit": "6ab2468279e926d107788f63d7fe219b85f67b4a",
   "sourceFiles": {
-    "server/match/botDevelopment.js": "98bcc9269b9b8bba51bc23e655176e79d73083d688a2fe7a4b3b1b5d7eb59aa7",
-    "server/match/botStrategy.js": "eb09ea4267852cbd796b190c96a18ba1f905c65ae33f08fde5c7d32f3157b3a4",
+    "server/match/botDevelopment.js": "c868840a3f6680bbc4dd9387b031de279591dd9746e4fc9840bd198d1b0c944c",
+    "server/match/botStrategy.js": "592b95b1876bebbad5b1c0d9db727ec18f6aa6abbed0a2db2223b73eb3c6993f",
     "server/match/botCoreStrategies.js": "d12c07ebba798ff6b1fdcf0bf05cb8bbfc2bcc6013f1323af7e270ecfce7e9eb",
     "server/match/botStrategies/siracusa.js": "fcbe2dcdc9821d1b486f8aea1e74e1a0affa89f51252c2f59561595f88c6d181",
     "server/match/botRaidPositioning.js": "759268e5257141294b6f4334c1afd1db99f6015d311f1edf0f7a46adccef54db",
@@ -22,17 +22,27 @@
     "server/match/botEconomy.js": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53",
     "server/match/botStrategies/lateranoForecast.js": "651b7e17b5919fedf9ef2a686c9375636131a5933e65a246453ea5c0f5fa89dc",
     "server/match/botLateranoDevelopment.js": "c43b3494f55e67d954500eef137f0384a75cc76376c160591219fe9464e0af51",
-    "server/match/botStrategies/lateranoExperiments.js": "a1a084d994634ba8272bf1e66867836caa2df9b1c235bd0c5a309be0523573a5",
+    "server/match/botStrategies/lateranoExperiments.js": "04f62f84304f53cf38cfe26b893e630fa0f74262ca900abffb49952b8f28df97",
     "server/match/botStrategies/lateranoRetention.js": "dc3459d26c74a9297539c8e75a5fb7de0ecc92696cb8b58b8579ac2e22f369dd",
     "server/match/botStrategies/lateranoContactRepair.js": "a27ec6d82462848b65c25feca320b11afcd16f9fd3b259f1d332c6f23e4a1d22",
     "server/match/botStrategies/lateranoOpening.js": "5a1a9d6cf153dc7a8204a5f2ed510a11be80f3d6f334509778ff6906f179c3a8",
     "server/match/botStrategies/lateranoMap02.js": "7da87927fa65b8ba871ff4634e2b8ccfc4af451d87de5ac485e5bbc78005a7d7",
     "server/match/botStrategies/lateranoMapLines.js": "3db1ad71feaaff2fa57328606676e4e3dfa696ff64e38a9f18fa6d513490aab3",
+    "server/match/botStrategies/lateranoGiftGate.js": "e116a3c40aedc3a6db3f83c935acb20022597fd06b35b343e99ef890eff8fded",
+    "server/match/botStrategies/lateranoSkillful.js": "d8f9c489d949cdbc1d765b9f4864ee4ce5423c8742b6b8a703d7772a38088249",
+    "server/match/botStrategies/lateranoFinale.js": "ac86d65763fb79d3b34d143e0e9441d7c8e48bac23acfd2c3186741bcc44e615",
+    "server/match/botStrategies/lateranoTeam.js": "994a045edc9a1b5898ced8b3e8fe0005d2d99b2a38f9aab07ea21adb543f6bb5",
+    "server/match/botStrategies/lateranoPromotion.js": "9756e93bc41a54c1cb1cfa3f109e8d19f021e87fdf352fdc49622232f07fb9f7",
     "server/match/botStrategies/lateranoEngagement.js": "4ff8cd465769a8ea595dfd9639474ee76e1d9161bd0e7fec7e263dd84f4714ab",
     "server/match/botStrategies/lateranoSami.js": "670b468919031528cf3846f5a7f003a40724e5f1a35ac279694fa51d0be5e3ad",
     "server/match/botBossRehearsal.js": "6b2cacf146e19e32dabc3f406e242b14b461bd8e5025cb5576a2d5af0bc60e9a",
     "server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "server/match/botForecast.js": "cb15749c374b06a4de81331ca882035134016e5e74c836d11f1765775393e694"
   },
-  "scope": "Released Arturia v0.1.1 and its required build/runtime dependency closure only; prior release snapshots retained."
+  "scope": "Released Arturia v0.1.2 and its required dependency closure only; previous releases retained.",
+  "installerFeatures": {
+    "automaticUpgrade": true,
+    "rollbackOnFailure": true,
+    "legacyJournalCompatible": true
+  }
 }

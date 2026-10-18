@@ -189,6 +189,7 @@ export function layerInterest(gd, id, plan, bonds = {}) {
 
 /** Keep actual layer engines useful late in a match; stronger elite traits receive their actual larger forecast. */
 export function growthValue(m, ps, rec, plan) {
+  if (plan.strategy?.combatRosterOnly?.(m, ps)) return 0;
   const gd = ps.gd || m.gd;
   let value = 0;
   for (const [id, amount] of layerForecast(gd, rec, plan.focus, ps.shop.level)) value += amount * layerInterest(gd, id, plan, ps.bonds);
@@ -211,6 +212,7 @@ export function developmentBuy(m, ps, rec, ctx) {
 
 /** Promotion can double a layer engine; compare the actual elite blackboards as well as immediate piece power. */
 export function promotionGrowth(m, ps, rec, plan) {
+  if (plan.strategy?.combatRosterOnly?.(m, ps)) return 0;
   const gd = ps.gd || m.gd, elite = gd.chess(gd.goldenIdOf(rec.chessId));
   if (!elite) return 0;
   const normal = layerForecast(gd, rec, plan.focus, ps.shop.level);
@@ -221,6 +223,7 @@ export function promotionGrowth(m, ps, rec, plan) {
 
 /** Extra value of using otherwise lost final funds for a real, still-triggerable layer-producing refresh. */
 export function refreshGrowth(m, ps, plan) {
+  if (plan.strategy?.combatRosterOnly?.(m, ps)) return 0;
   if (m.gd.leftoverKeptBands.includes(ps.bandId)) return 0;
   const gd = ps.gd || m.gd;
   let value = 0;

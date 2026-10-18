@@ -2,16 +2,16 @@
 
 为[卫戍协议：盟约 Web 复刻](https://github.com/sganggs/Stronghold-Protocol)开发的 AI 队友与策略。**本地规则决策＋战斗预演，不接 LLM，不用 API Key，没有 Token 消耗。**
 
-本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可直接安装的插件是 **AI·阿尔图罗 v0.1.1——拉特兰卫戍专家**。
+本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可直接安装的插件是 **AI·阿尔图罗 v0.1.2——拉特兰卫戍专家**。
 
 ## 下载与安装
 
-**[下载阿尔图罗 v0.1.1 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/v0.1.1/AI-Arturia-v0.1.1.zip)** · [版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/latest)
+**[下载阿尔图罗 v0.1.2 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/v0.1.2/AI-Arturia-v0.1.2.zip)** · [版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/latest)
 
-改动与历史成绩见[版本记录](CHANGELOG.md)。升级时先关闭服务，用旧版安装器卸载，再安装新版。
+改动与历史成绩见[版本记录](CHANGELOG.md)。升级时关闭服务，运行新版“安装插件.bat”，会校验并自动升级已完整安装的旧版。
 
 1. 关闭游戏服务，解压安装包。
-2. 将解压后的 `AI-Arturia-v0.1.1` 文件夹放进游戏根目录，或便携版“启动游戏.bat”旁边。
+2. 将解压后的 `AI-Arturia-v0.1.2` 文件夹放进游戏根目录，或便携版“启动游戏.bat”旁边。
 3. 双击 **安装插件.bat**。安装器会识别游戏和 Node，自动创建并写入 `addons/arturia`；找不到目录时可手动选择。
 4. 使用原来的启动脚本重启游戏，刷新浏览器，在等待室点击 **添加精英干员 → 阿尔图罗**。
 
@@ -39,7 +39,7 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 
 ## 已发布策略与成绩
 
-当前仅发布 **AI·阿尔图罗 v0.1.1**，执行拉特兰策略。未发布策略不在本仓库列出。
+当前仅发布 **AI·阿尔图罗 v0.1.2**，执行拉特兰策略。未发布策略不在本仓库列出。
 
 以下为`enemy-diversity-v1`固定**单人**测评集，每难度28局、关闭随机盟约禁用，使用真实战斗。过关指击败R14领袖，不等于隐藏Boss全清，不代表多人房或自然开局胜率。
 
@@ -48,7 +48,7 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 | AI | 绝境胜场 | 绝境平均存活回合 | 绝境R13平均拉特兰层数 | 终极胜场 | 终极平均存活回合 | 终极R13平均拉特兰层数 |
 |---|---:|---:|---:|---:|---:|---:|
 | 原版 bot | 4/28 | 13.00 | 38.15（26局） | 0/28 | 11.43 | 37.56（16局） |
-| 阿尔图罗／拉特兰 | **23/28** | **13.89** | **107.07（28局）** | **7/28** | **12.43** | **109.61（23局）** |
+| 阿尔图罗／拉特兰 | **27/28** | **14.11** | **106.36（28局）** | **9/28** | **12.64** | **113.00（23局）** |
 
 存活回合取全部28局已通过回合的均值；层数只统计到达R13检查点的局，括号为样本数，提前淘汰不混入0层。
 
@@ -76,7 +76,7 @@ npm run build
 python tools/package-release.py
 ```
 
-产物位于 `dist/`。构建校验当前v0.1.1清单中的策略哈希；打包脚本生成 ZIP 与 SHA-256。旧版快照与清单保留在`releases/`。策略不是独立游戏，需要游戏作为宿主；参与方式见[贡献说明](CONTRIBUTING.md)。
+产物位于 `dist/`。构建校验当前v0.1.2清单中的策略哈希；打包脚本生成 ZIP 与 SHA-256。旧版快照与清单保留在`releases/`。策略不是独立游戏，需要游戏作为宿主；参与方式见[贡献说明](CONTRIBUTING.md)。
 
 欢迎提交问题和PR。PR将纳入原项目`dev`分支验证，确认版本后再同步发行源码与成绩。**每次策略开发闭环都运行统一测试集并更新README。** 简要模块说明见[策略框架](docs/strategies/framework.md)。
 

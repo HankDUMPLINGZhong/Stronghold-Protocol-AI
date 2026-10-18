@@ -6,6 +6,11 @@ import { withLateranoRetention } from './lateranoRetention.js';
 import { withLateranoOpening } from './lateranoOpening.js';
 import { withLateranoMap02 } from './lateranoMap02.js';
 import { withLateranoMapLines } from './lateranoMapLines.js';
+import { observePaganiniSpend, paganiniMinimumMembers } from './lateranoGiftGate.js';
+import { withLateranoSkillful } from './lateranoSkillful.js';
+import { withLateranoFinale } from './lateranoFinale.js';
+import { withLateranoTeam } from './lateranoTeam.js';
+import { withLateranoPromotion } from './lateranoPromotion.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -122,20 +127,26 @@ export function lateranoMilestones(m, ps) {
     mostima: own(m, ps, ids.mostima).some(p => gd.isGolden(p.id)) };
 }
 
-function gated(levels, requireMostima, base = lateranoWhitelist) {
+function gated(levels, requireMostima, base = lateranoWhitelist, minimumMembers = () => 6) {
+  const relaxed = (m, ps) => minimumMembers(m, ps) === 5;
   const blocked = (m, ps) => {
     const state = lateranoMilestones(m, ps);
-    return levels.includes(ps.shop.level + 1) && (!state.six || requireMostima && !state.mostima);
+    const members = Math.max(ps.bonds[CORE]?.count || 0, memberCount(m, ps, CORE) + Math.max(0, ps.bondCountBonus?.[CORE] || 0));
+    return levels.includes(ps.shop.level + 1) && (members < minimumMembers(m, ps) || requireMostima && !state.mostima);
   };
   return Object.freeze({ ...base,
     levelTarget(m, ps, options) {
       const target = base.levelTarget(m, ps, options);
-      return blocked(m, ps) ? Math.min(target, ps.shop.level) : target;
+      return blocked(m, ps) ? Math.min(target, ps.shop.level) : relaxed(m, ps) ? Math.max(target, 5) : target;
     },
     beforeUpgrade(m, ps, plan) { return !blocked(m, ps) && base.beforeUpgrade(m, ps, plan); },
-    priorityLevel(m, ps) { return !blocked(m, ps) && base.priorityLevel(m, ps); },
+    priorityLevel(m, ps) { return !blocked(m, ps) && (relaxed(m, ps) || base.priorityLevel(m, ps)); },
     // A blocked upgrade releases its funds to shopping; no LP/deadline/free-upgrade exceptions in this ablation.
-    spendReserve(m, ps) { return blocked(m, ps) ? 0 : base.spendReserve(m, ps); }
+    spendReserve(m, ps) {
+      if (blocked(m, ps)) return 0;
+      if (relaxed(m, ps)) return ps.funds >= ps.shop.upgradePrice + base.upgradeReserve(m, ps) ? Math.max(0, ps.shop.upgradePrice) : 0;
+      return base.spendReserve(m, ps);
+    }
   });
 }
 
@@ -180,6 +191,16 @@ const retention21 = withLateranoRetention(retained21);
 const vision21 = Object.freeze({ ...retained21, keep: retention21.keep, preserve: retention21.preserve });
 const visionOpening = withLateranoOpening(vision21);
 const map02 = withLateranoMap02(visionOpening);
+function giftedFour(fromRound) {
+  const gate = gated([5], false, repairWhite19, paganiniMinimumMembers(fromRound));
+  const retention = withLateranoRetention(gate);
+  const vision = Object.freeze({ ...gate, keep: retention.keep, preserve: retention.preserve, observeSpend: observePaganiniSpend });
+  return withLateranoMapLines(withLateranoMap02(withLateranoOpening(vision)), ['infection','tide']);
+}
+const giftR11 = giftedFour(11);
+const finalR11 = withLateranoFinale(giftR11);
+const buy26 = withLateranoFinale(withLateranoSkillful(giftR11, { roster: false }), { allProtectedWithdrawals: true });
+const team27 = withLateranoTeam(buy26, { roster: true });
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
   'six-before-five': gated([5], false), 'six-before-six': gated([6], false),
   'six-mostima-before-five': gated([5], true), 'six-mostima-before-five-six': gated([5,6], true),
@@ -196,6 +217,17 @@ export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast
   'vision21-map04-05': withLateranoMapLines(map02,['blower','infection']),
   'vision21-map08': withLateranoMapLines(map02,['tide']),
   'vision21-map04-08': withLateranoMapLines(map02,['infection','tide']),
+  'gift4-five-r10': giftedFour(10), 'gift4-five-r11': giftR11,
+  'gift4-five-r12': giftedFour(12),
+  'gift4-five-r11-skillful': withLateranoSkillful(giftR11),
+  'gift4-five-r11-finale': finalR11,
+  'gift4-five-r11-finale-buy': withLateranoFinale(withLateranoSkillful(giftR11, { roster: false })),
+  'gift4-five-r11-finale-skillful': withLateranoFinale(withLateranoSkillful(giftR11)),
+  'gift4-five-r11-buy26': buy26,
+  'gift4-five-r11-team26': withLateranoTeam(buy26),
+  'gift4-five-r11-team26-roster': team27,
+  'team27-promotion': withLateranoPromotion(team27),
+  'team27-promotion-deadline': withLateranoPromotion(team27, { deadlineFallback: true }),
   'vision21-map-lines': withLateranoMapLines(map02),
   'repair19-white-six': gated([6], false, repairWhite19),
   'repair19-white-mostima-five': gated([5], true, repairWhite19),

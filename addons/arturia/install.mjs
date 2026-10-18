@@ -27,9 +27,35 @@ async function put(root, name, bytes) {
   await writeFile(path, bytes);
 }
 
+const UPGRADE = '.arturia-addon/upgrade.json';
+async function restoreUpgrade(root) {
+  const path = await safePath(root, UPGRADE);
+  const recovery = JSON.parse(await readFile(path, 'utf8'));
+  for (const [name, bytes] of Object.entries(recovery.files)) {
+    const target = await safePath(root, name);
+    if (bytes == null) { if (await exists(target)) await unlink(target); }
+    else await put(root, name, Buffer.from(bytes, 'base64'));
+  }
+  await put(root, '.arturia-addon/install.json', Buffer.from(recovery.journal, 'base64'));
+  await unlink(path);
+}
+
+function versionNumber(version) {
+  if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error(`Unsupported installed version: ${version}`);
+  return version.split('.').map(Number);
+}
+function compareVersion(a, b) {
+  const x = versionNumber(a), y = versionNumber(b);
+  return x[0] - y[0] || x[1] - y[1] || x[2] - y[2];
+}
+
 export async function install(mode, directory) {
   const root = resolve(directory), stateName = '.arturia-addon/install.json';
   const statePath = await safePath(root, stateName);
+  if (await exists(await safePath(root, UPGRADE))) {
+    if (mode === 'check') throw new Error('Interrupted upgrade; run install to restore the previous version and retry.');
+    await restoreUpgrade(root);
+  }
   if (mode === 'uninstall') {
     const state = JSON.parse(await readFile(statePath, 'utf8'));
     // Check everything before restoring anything. An upstream update must never be overwritten.
@@ -47,33 +73,57 @@ export async function install(mode, directory) {
     return { restored: Object.keys(state.files).length };
   }
   if (!['check', 'install'].includes(mode)) throw new Error('Usage: node install.mjs check|install|uninstall <game-directory>');
-  if (await exists(statePath)) throw new Error('Already installed (or an interrupted install); use uninstall first.');
   const meta = JSON.parse(await readFile(resolve(bundle, 'addon.json'), 'utf8'));
+  const oldJournal = await exists(statePath) ? await readFile(statePath) : null;
+  const old = oldJournal ? JSON.parse(oldJournal.toString('utf8')) : null;
+  const previous = new Map();
+  if (old) {
+    if (compareVersion(meta.version, old.version) < 0) throw new Error(`Installed ${old.version} is newer; uninstall explicitly before downgrading.`);
+    for (const [name, entry] of Object.entries(old.files)) {
+      const path = await safePath(root, name), bytes = await exists(path) ? await readFile(path) : null;
+      if (!bytes || hash(bytes) !== entry.after) throw new Error(`Changed since install; refusing to upgrade: ${name}. Preserve your changes or recover with the previous installer.`);
+      previous.set(name, bytes);
+    }
+    if (meta.version === old.version) {
+      if (meta.policy !== old.policy) throw new Error('Same version has different policy; refusing to replace a released version.');
+      return mode === 'check' ? { compatible: true, alreadyInstalled: true, version: meta.version }
+        : { installed: meta.version, alreadyInstalled: true, policy: meta.policy };
+    }
+  }
+  // Plan against the original host bytes without uninstalling the running version first.
+  const original = async name => {
+    const path = await safePath(root, name);
+    if (old && Object.hasOwn(old.files, name)) {
+      const before = old.files[name].before;
+      return before == null ? null : Buffer.from(before, 'base64');
+    }
+    return await exists(path) ? await readFile(path) : null;
+  };
   const files = new Map();
-  for (const name of PATCH_PATHS) files.set(name, (await readFile(await safePath(root, name), 'utf8')).replaceAll('\r\n', '\n'));
+  for (const name of PATCH_PATHS) files.set(name, (await original(name)).toString('utf8').replaceAll('\r\n', '\n'));
   for (const name of await readdir(inside(root, 'public/i18n'))) if (name.endsWith('.json')) {
-    files.set(`public/i18n/${name}`, await readFile(await safePath(root, `public/i18n/${name}`), 'utf8'));
+    files.set(`public/i18n/${name}`, (await original(`public/i18n/${name}`)).toString('utf8'));
   }
   const patched = patchFiles(files);
   const changes = new Map();
   for (const [name, value] of patched) {
-    const original = await readFile(await safePath(root, name));
+    const before = await original(name);
     // Keep the installation's line endings, including in the saved original bytes.
-    const text = original.includes(Buffer.from('\r\n')) ? value.replaceAll('\n', '\r\n') : value;
-    changes.set(name, { before: original.toString('base64'), bytes: Buffer.from(text) });
+    const text = before.includes(Buffer.from('\r\n')) ? value.replaceAll('\n', '\r\n') : value;
+    changes.set(name, { before: before.toString('base64'), bytes: Buffer.from(text) });
   }
   for (const [name, expected] of Object.entries(meta.files)) {
     const bytes = await readFile(await safePath(bundle, name));
     if (hash(bytes) !== expected) throw new Error(`Damaged bundle: ${name}`);
     const target = `server/match/arturia/${name === 'runtime.js' ? 'index.js' : name}`;
-    if (await exists(await safePath(root, target))) throw new Error(`Target already exists: ${target}`);
+    if (await original(target)) throw new Error(`Target already exists: ${target}`);
     changes.set(target, { before: null, bytes });
   }
   // Keep the complete portable installer in addons/, so players can remove the unpacked download.
   for (const name of [...Object.keys(meta.files), 'install.mjs', 'patches.mjs', 'addon.json', 'README.md', 'CHANGELOG.md', 'LICENSE', '安装插件.bat', 'install-windows.ps1']) {
     const bytes = await readFile(await safePath(bundle, name));
-    const target = `addons/arturia/${name}`, path = await safePath(root, target);
-    const before = await exists(path) ? await readFile(path) : null;
+    const target = `addons/arturia/${name}`;
+    const before = await original(target);
     if (before && hash(before) !== hash(bytes)) throw new Error(`Addon directory contains another version: ${target}`);
     // If installing from addons/arturia itself, leave its existing distribution intact on uninstall.
     if (!before) changes.set(target, { before: null, bytes });
@@ -81,6 +131,32 @@ export async function install(mode, directory) {
   const state = { version: meta.version, upstream: meta.upstream, policy: meta.policy, files: {} };
   for (const [name, change] of changes) state.files[name] = { before: change.before, after: hash(change.bytes) };
   if (mode === 'check') return { compatible: true, upstreamTested: meta.upstream, patched: patched.size, policyFiles: Object.keys(meta.files).length };
+  if (old) {
+    const writes = new Map();
+    for (const [name, entry] of Object.entries(old.files)) if (!changes.has(name))
+      writes.set(name, entry.before == null ? null : Buffer.from(entry.before, 'base64'));
+    for (const [name, change] of changes) writes.set(name, change.bytes);
+    for (const name of writes.keys()) if (!previous.has(name)) {
+      const path = await safePath(root, name);
+      previous.set(name, await exists(path) ? await readFile(path) : null);
+    }
+    // Persistent rollback also handles power loss: the next install restores this exact old installation first.
+    await put(root, UPGRADE, JSON.stringify({ journal: oldJournal.toString('base64'),
+      files: Object.fromEntries([...previous].map(([name, bytes]) => [name, bytes?.toString('base64') ?? null])) }) + '\n');
+    try {
+      await put(root, stateName, JSON.stringify(state, null, 2) + '\n');
+      for (const [name, bytes] of writes) {
+        if (bytes == null) { const path = await safePath(root, name); if (await exists(path)) await unlink(path); }
+        else await put(root, name, bytes);
+      }
+      await unlink(await safePath(root, UPGRADE));
+    } catch (error) {
+      try { await restoreUpgrade(root); }
+      catch (rollback) { throw new AggregateError([error, rollback], 'Upgrade failed; rollback is incomplete. Keep .arturia-addon/upgrade.json and retry with this installer.'); }
+      throw error;
+    }
+    return { installed: meta.version, upgradedFrom: old.version, patched: patched.size, policy: meta.policy };
+  }
   // Save the recovery journal first; uninstall also recovers an interrupted install.
   await put(root, stateName, JSON.stringify(state, null, 2) + '\n');
   try {

@@ -11,7 +11,7 @@ assert.equal(suite.selection.candidatesPerDifficulty,10000);
 assert.equal(suite.randomBans,false);
 assert.equal(suite.cases.length,56);
 assert.equal(createHash('sha256').update(JSON.stringify(suite)).digest('hex'),results.suiteSha256);
-const expected={'legacy-laterano':[4,0],laterano:[23,7]};
+const expected={'legacy-laterano':[4,0],laterano:[27,9]};
 for(const [i,d]of ['HARD','ABYSS'].entries()){
   const cases=suite.cases.filter(c=>c.config===`solo:${d}`);
   assert.equal(cases.length,28);assert.equal(new Set(cases.map(c=>c.seed)).size,28);
@@ -29,4 +29,4 @@ for(const [i,d]of ['HARD','ABYSS'].entries()){
   }
 }
 assert.equal(results.totalMatches,112);
-console.log('Verified: 56 fixed cases, 2 complete variants / 112 results, outcome-blind selection and 23/7 Laterano headline.');
+console.log('Verified: 56 fixed cases, 2 complete variants / 112 results, outcome-blind selection and 27/9 Laterano headline.');

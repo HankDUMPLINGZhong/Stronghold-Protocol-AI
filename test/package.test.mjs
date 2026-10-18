@@ -34,7 +34,7 @@ test('every previous release keeps its complete immutable source snapshot',()=>{
 });
 test('published headline benchmark has complete same-opening controls',()=>{
   const results=JSON.parse(readFileSync(resolve(root,'benchmarks/results.json')));
-  for(const [name,wins]of [['legacy-laterano',[4,0]],['laterano',[23,7]]]){
+  for(const [name,wins]of [['legacy-laterano',[4,0]],['laterano',[27,9]]]){
     for(const [i,d]of ['HARD','ABYSS'].entries()){
       const rows=results.matches[name].filter(x=>x.config===`solo:${d}`);
       assert.equal(rows.length,28);assert.equal(rows.filter(x=>x.victory).length,wins[i]);

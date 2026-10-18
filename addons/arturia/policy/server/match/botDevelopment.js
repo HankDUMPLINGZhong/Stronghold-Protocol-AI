@@ -991,6 +991,8 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     recCache.set(p.id, r); return r;
   });
   const corePlan = bondPlan(m, ps);
+  // Optional recipe opt-in: apply the existing boss body repair to every final-assault proposal.
+  bossFocus ||= !m.wave && m.round >= m.gd.bossRound && corePlan.strategy?.bossFocus === true;
   // The optional phase-aware recipe needs the current player; do not mutate the cached core-selection plan.
   const plan = developmentPhase ? { ...corePlan, ps, developmentPhase }
     : bossFocus ? { ...corePlan, ps, bossFocus, pieces: new Map(pieces.map((p) => [p.uid, p])) }
@@ -1295,7 +1297,13 @@ function bossMissing(layout) {
   const bodies = layout.model.bossBodies || [];
   if (!bodies.length) return 0;
   return layout.units.filter((u) => u.ground && !u.heal && u.dps > 0
+    && bossCoverageRequired(layout, u)
     && !bodies.some((b) => b.tiles.some((k) => (layout.raidLandings?.get(u.uid)?.cover || u.cover).has(k)))).length;
+}
+
+function bossCoverageRequired(layout, u) {
+  const { gd, plan } = layout.growth;
+  return plan.strategy?.bossCoverageRequired?.(gd, u, plan) !== false;
 }
 
 /** Final fixed-body check after adjacency/facing refinements. Never sacrifice another dealer's valid coverage. */
@@ -1306,7 +1314,7 @@ function* repairBossBodySteps(layout, out, gd, ps, map, occupied) {
     let improved = false;
     for (let i = 0; i < layout.units.length; i++) {
       const initial = layout.units[i];
-      if (!initial.ground || initial.heal || initial.dps <= 0 || layout.raidLandings?.has(initial.uid)
+      if (!initial.ground || initial.heal || initial.dps <= 0 || !bossCoverageRequired(layout, initial) || layout.raidLandings?.has(initial.uid)
         || layout.model.bossBodies.some((b) => b.tiles.some((k) => initial.cover.has(k)))) continue;
       let best = initial, otherBest = null, otherIndex = -1, missing = bossMissing(layout), score = layout.value();
       const cls = placeClass(ps, gd.chess(pieces.get(initial.uid).id));
@@ -1524,6 +1532,14 @@ function context(m, ps) {
   let pairs = 0;
   for (const [b, k] of copies) if (k + 1 >= mergeNeed(m, b)) pairs++;
   return { ps, owned, focus: plan.focus, second: plan.second, route: plan.route, strategy: plan.strategy, enginePolicy: plan.enginePolicy, growth: new Map(), deck: [...ps.board.values(), ...ps.hand].filter((p) => p?.kind === 'chess'), keep: keeperBases(m, ps, plan), copies, pairs, roles: roles(m, ps), fly: model.flyTotal, model };
+}
+
+/** Optional policy bookkeeping around an actual economic action; the action and its RNG are unchanged. */
+function spendAction(m, ps, action) {
+  const settled = coreStrategy(m, ps._botFocusId)?.observeSpend?.(m, ps);
+  const result = action();
+  settled?.();
+  return result;
 }
 
 /** Recipe-protected layer engines survive bench shedding, layout withdrawals and destructive item choices. */
@@ -1763,7 +1779,7 @@ function* finishAssetsSteps(m, ps) {
       if (coreStrategy(m, ps._botFocusId)?.shoppingRepair) {
         yield* buyLoopSteps(m, ps, { spendAll:true, maxRefreshes:64 });
       } else for (let n = 0; n < 64 && m.gd.refreshPrice > 0 && ps.funds >= m.gd.refreshPrice; n++) {
-          if (!tryDo(() => ps.refresh())) break;
+          if (!tryDo(() => spendAction(m, ps, () => ps.refresh()))) break;
           yield;
         }
       if (ps.allChess().map((p) => `${p.uid}:${p.id}`).join() !== before) {
@@ -1878,7 +1894,7 @@ export function levelUp(m, ps, { spare = false } = {}) {
     if (!want && ps.shop.level < nextTarget && price <= 2 && boardReady) want = true;
     if (!want && spare && ps.funds >= price + 1 + fundsReserve(m, ps) && ps.shop.level < nextTarget + 1 && boardReady) want = true;
     if (!want && ps.funds >= price + 14) want = true;
-    if (!want || !tryDo(() => ps.levelUp())) return;
+    if (!want || !tryDo(() => spendAction(m, ps, () => ps.levelUp()))) return;
     if (recipe && ps.shop.level === 4) ps._botFourAt = m.round;
   }
 }
@@ -1925,7 +1941,8 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     // freed: in 20 solo 绝境 昆图斯 matches the shed sold 44 of 222 before the placement step could deploy them). The
     // shed is pre-emptive (one slot is still free), so with only fresh singles it waits for the next prep.
     if (freeSlot(ps.hand)<0 && ctx.strategy?.shoppingRepair && ps.shop.slots.some(s=>s && !s.sold
-      && s.kind==='chess' && ps.priceOf(s)<=ps.funds && ctx.strategy.importantBuy(m,ps,gd.chess(s.id)))
+      && ps.priceOf(s)<=ps.funds && (s.kind==='chess' && ctx.strategy.importantBuy(m,ps,gd.chess(s.id))
+        || s.kind==='item' && ctx.strategy.importantItem?.(m,ps,gd.item(s.id))))
       && freeShoppingSlot(m,ps)) continue; // equipment/consumables may change assets, bonds and funds: rebuild context
     const used = ps.hand.filter(Boolean).length;
     if (used >= gd.benchSize - 1) sellWeakestHand(m, ps, { keepFresh: true });
@@ -1947,8 +1964,10 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
       if (s.kind === 'item' && ctx.strategy?.purchaseItemAllowed?.(m, ps, gd.item(s.id)) === false) return;
       const price = ps.priceOf(s);
       if (price > ps.funds) return;
-      const important = s.kind==='chess' && ctx.strategy?.importantBuy?.(m,ps,gd.chess(s.id)) === true;
-      const economyItem = s.kind === 'item' ? Math.max(economyItemBonus(m, ps, gd.item(s.id)), ctx.strategy?.itemBonus(m, ps, gd.item(s.id)) || 0) : 0;
+      const important = s.kind==='chess' ? ctx.strategy?.importantBuy?.(m,ps,gd.chess(s.id)) === true
+        : ctx.strategy?.importantItem?.(m,ps,gd.item(s.id)) === true;
+      const economyItem = s.kind === 'item' ? Math.max(economyItemBonus(m, ps, gd.item(s.id)), ctx.strategy?.itemBonus(m, ps, gd.item(s.id)) || 0,
+        ctx.strategy?.purchaseItemBonus?.(m, ps, gd.item(s.id)) || 0) : 0;
       const cycle = s.kind === 'chess' && ctx.strategy?.cycleValue(m, ps, gd.chess(s.id), ctx) > 0;
       if (purchaseReserve > 0 && ps.funds - price < purchaseReserve && !economyItem && !cycle
         && !(s.kind === 'chess' && ctx.strategy?.criticalBuy(m, ps, gd.chess(s.id), ctx))) return;
@@ -2009,7 +2028,7 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     if (buy) {
       const slot = ps.shop.slots[best];
       const before = ctx.strategy?.afterPurchase ? new Set(ps.allChess().map((p) => p.uid)) : null;
-      if (!tryDo(() => ps.buy(best))) return;
+      if (!tryDo(() => spendAction(m, ps, () => ps.buy(best)))) return;
       if (before) ctx.strategy.afterPurchase(m, ps, slot, before);
       useEconomyItems(m, ps);
       ctx.strategy?.useEconomy(m, ps);
@@ -2019,7 +2038,7 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     if (canRefresh) {
       if (holdCriticalShop(m, ps)) return;
       if (ctx.strategy?.shoppingRepair && ps.shop.frozen) tryDo(()=>ps.freeze());
-      if (!tryDo(() => ps.refresh())) return;
+      if (!tryDo(() => spendAction(m, ps, () => ps.refresh()))) return;
       refreshes++;
       continue;
     }
@@ -2046,7 +2065,11 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
   // withdraw board chess that are not chosen (to free cap) when the hand has space
   for (const [, p] of [...ps.board]) {
     if (p.kind !== 'chess' || chosenSet.has(p.uid)) continue;
-    if (freeSlot(ps.hand) < 0 && preserveChess(m, ps, p)) sellWeakestHand(m, ps, { handOnly: true, keepPairs: false });
+    if (freeSlot(ps.hand) < 0 && preserveChess(m, ps, p)) {
+      const safe = ctx.strategy?.safeWithdrawals;
+      if (typeof safe === 'function' ? safe(m, ps, p) : safe === true) freeShoppingSlot(m, ps);
+      if (freeSlot(ps.hand) < 0) sellWeakestHand(m, ps, { handOnly: true, keepPairs: false });
+    }
     const idx = freeSlot(ps.hand);
     if (idx >= 0) tryDo(() => ps.move(p.uid, { area: 'hand', idx }));
     else sellChess(m, ps, p);
