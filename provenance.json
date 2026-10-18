@@ -39,10 +39,67 @@
     "server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "server/match/botForecast.js": "cb15749c374b06a4de81331ca882035134016e5e74c836d11f1765775393e694"
   },
-  "scope": "Released Arturia v0.1.2 and its required dependency closure only; previous releases retained.",
+  "scope": "Released Arturia v0.1.2 and Lavinia v0.1.0 dependency closures; immutable earlier releases retained.",
   "installerFeatures": {
     "automaticUpgrade": true,
     "rollbackOnFailure": true,
     "legacyJournalCompatible": true
+  },
+  "strategies": {
+    "lavinia": {
+      "version": "0.1.0",
+      "policy": "sha256:1a3b57559dc309136ac87ceb3fecafe92fb6564b9bbfbeae71f840b762435c95",
+      "policySource": "Immutable verified source snapshot; per-file SHA-256, not a Git commit claim",
+      "developmentHead": "fd1e4d362b33133d01ee8f13acc5429c609db1b3",
+      "manifest": "releases/lavinia-v0.1.0.json",
+      "sourceFiles": {
+        "server/match/botDevelopment.js": "291efcd537aa4d5092c52509cd4e221d736ab2000c70e842d9145c1487936d3a",
+        "server/match/botStrategy.js": "592b95b1876bebbad5b1c0d9db727ec18f6aa6abbed0a2db2223b73eb3c6993f",
+        "server/match/botCoreStrategies.js": "0af960cbdf231b30913704c6d61f7d56aba6f639e70d1ccffd5ac3d7c06e5897",
+        "server/match/botStrategies/siracusa.js": "855c1b175c682e47afb868215292cd30a463e67ed0ac1429e481e81be4314d7d",
+        "server/match/botRaidPositioning.js": "f826fcb801e26c0964813c655cc639be2644f03283d24125d16d41b23371eba4",
+        "server/match/botSavings.js": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0",
+        "server/match/botInvestorEconomy.js": "428cf4a0dd48333b43283372878fb2dacc0235fa127a14db19eaa5b2a51bddbe",
+        "server/match/botStrategies/siracusaBoss.js": "ae326df040317d812134879059e6b95fc3211392507cbab19a7490af492b5d61",
+        "server/match/botStrategies/siracusaFocusedDraft.js": "d6d84710c3a49bec479420d9a0d2bc476e64eeeb9266c23b0fe3557412f28ef8",
+        "server/match/botStrategies/siracusaMobileArcane.js": "fa9f0fd60c7cd34981995e3eb029b279dcdd75547d38ca0199f8c215d7f5e221",
+        "server/match/botStrategies/siracusaAromaFixed.js": "d4da474267304e6ddf682377bc312565b7199a326a1033d8d842183a47489294",
+        "server/match/botStrategies/laterano.js": "3abef4b211d3965589c3c37e614550310cd7b2f5ea94ae3285602ad58790db54",
+        "server/match/botStrategies/lateranoObserved.js": "9f9486f6f3d80bb09c58a176974bfe83d7f1d5916db574aeafdd063c46ecfa35",
+        "server/match/botStrategies/lateranoTactics.js": "c20b315175f868a544777a2da0a3ff25350f77a6dbcd1678dce5b4a7ef301d12",
+        "server/match/botPositioning.js": "4a6c4a709583064c257a442d4a1f39e50791f129a75c426f19ba42b8b4e1aba5",
+        "server/match/botStrategies/lateranoFocused.js": "b6c3a9b6bfc8d7fe464660f9145a67253a194193f560dedd93454bc13aad507c",
+        "server/match/botEconomy.js": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53",
+        "server/match/botStrategies/lateranoForecast.js": "651b7e17b5919fedf9ef2a686c9375636131a5933e65a246453ea5c0f5fa89dc",
+        "server/match/botLateranoDevelopment.js": "c43b3494f55e67d954500eef137f0384a75cc76376c160591219fe9464e0af51",
+        "server/match/botStrategies/lateranoExperiments.js": "04f62f84304f53cf38cfe26b893e630fa0f74262ca900abffb49952b8f28df97",
+        "server/match/botStrategies/lateranoRetention.js": "dc3459d26c74a9297539c8e75a5fb7de0ecc92696cb8b58b8579ac2e22f369dd",
+        "server/match/botStrategies/lateranoContactRepair.js": "a27ec6d82462848b65c25feca320b11afcd16f9fd3b259f1d332c6f23e4a1d22",
+        "server/match/botStrategies/lateranoOpening.js": "5a1a9d6cf153dc7a8204a5f2ed510a11be80f3d6f334509778ff6906f179c3a8",
+        "server/match/botStrategies/lateranoMap02.js": "7da87927fa65b8ba871ff4634e2b8ccfc4af451d87de5ac485e5bbc78005a7d7",
+        "server/match/botStrategies/lateranoMapLines.js": "3db1ad71feaaff2fa57328606676e4e3dfa696ff64e38a9f18fa6d513490aab3",
+        "server/match/botStrategies/lateranoGiftGate.js": "e116a3c40aedc3a6db3f83c935acb20022597fd06b35b343e99ef890eff8fded",
+        "server/match/botStrategies/lateranoSkillful.js": "d8f9c489d949cdbc1d765b9f4864ee4ce5423c8742b6b8a703d7772a38088249",
+        "server/match/botStrategies/lateranoFinale.js": "ac86d65763fb79d3b34d143e0e9441d7c8e48bac23acfd2c3186741bcc44e615",
+        "server/match/botStrategies/lateranoTeam.js": "994a045edc9a1b5898ced8b3e8fe0005d2d99b2a38f9aab07ea21adb543f6bb5",
+        "server/match/botStrategies/lateranoPromotion.js": "9756e93bc41a54c1cb1cfa3f109e8d19f021e87fdf352fdc49622232f07fb9f7",
+        "server/match/botStrategies/lateranoEngagement.js": "4ff8cd465769a8ea595dfd9639474ee76e1d9161bd0e7fec7e263dd84f4714ab",
+        "server/match/botStrategies/lateranoSami.js": "670b468919031528cf3846f5a7f003a40724e5f1a35ac279694fa51d0be5e3ad",
+        "server/match/botBossRehearsal.js": "6b2cacf146e19e32dabc3f406e242b14b461bd8e5025cb5576a2d5af0bc60e9a",
+        "server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
+        "server/match/botForecast.js": "cb15749c374b06a4de81331ca882035134016e5e74c836d11f1765775393e694",
+        "server/match/botStrategies/siracusaDraftSafety.js": "af9da7e3e9f91560478c5c452a8001de2161c5636b85b2fac601763336869bdf"
+      },
+      "validation": {
+        "unifiedMatches": 448,
+        "matchedCandidate": 56,
+        "unchangedOtherMatches": 392,
+        "hard": "27/28",
+        "abyss": "11/28"
+      },
+      "avatarSource": "https://prts.wiki/w/文件:立绘_斥罪_2.png",
+      "avatarHostAsset": "char_4065_judge_2",
+      "artworkIncluded": false
+    }
   }
 }

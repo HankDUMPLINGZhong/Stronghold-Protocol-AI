@@ -1,10 +1,12 @@
 from pathlib import Path
-import subprocess,zipfile,hashlib
+import subprocess,zipfile,hashlib,sys
 root=Path(__file__).resolve().parent.parent
-subprocess.run(['node',str(root/'addons/arturia/build.mjs')],cwd=root,check=True)
+strategy=sys.argv[1] if len(sys.argv)>1 else 'arturia'
+if strategy not in ('arturia','lavinia'):raise SystemExit('Choose arturia or lavinia')
+subprocess.run(['node',str(root/'addons'/strategy/'build.mjs')],cwd=root,check=True)
 import json
-version=json.loads((root/'catalog.json').read_text('utf-8'))['strategies']['arturia']['version']
-name='AI-Arturia-v'+version
+version=json.loads((root/'catalog.json').read_text('utf-8'))['strategies'][strategy]['version']
+name='AI-'+strategy.title()+'-v'+version
 bundle=root/'dist'/name
 archive=root/'dist'/(name+'.zip')
 with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:

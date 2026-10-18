@@ -6,6 +6,7 @@ dist/
 .env.*
 !.env.example
 .arturia-addon/
+.lavinia-addon/
 public/assets/
 *.zip
 *.mp4

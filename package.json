@@ -4,13 +4,13 @@
   "private": true,
   "type": "module",
   "license": "GPL-3.0-or-later",
-  "description": "卫戍协议 AI 策略合集与阿尔图罗插件",
+  "description": "卫戍协议 AI 策略合集：阿尔图罗与拉维妮娅",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test test/package.test.mjs",
-    "build": "node addons/arturia/build.mjs",
-    "test:integration": "node --test test/integration/arturia.test.mjs test/integration/arturia-upgrade.test.mjs"
+    "test": "node --test test/package.test.mjs test/lavinia-package.test.mjs",
+    "build": "node addons/arturia/build.mjs && node addons/lavinia/build.mjs",
+    "test:integration": "node --test test/integration/arturia.test.mjs test/integration/arturia-upgrade.test.mjs test/integration/lavinia.test.mjs"
   }
 }

@@ -14,5 +14,21 @@
     "botSiracusaEngines": false,
     "botHumanLessons": false,
     "botLateranoLessons": false
+  },
+  "siracusa": {
+    "botFormationRoles": true,
+    "botSiracusaEngines": [
+      "promotion",
+      "hybrid",
+      "boss"
+    ],
+    "botHumanLessons": true,
+    "botLateranoLessons": false
+  },
+  "legacy-siracusa": {
+    "botFormationRoles": false,
+    "botSiracusaEngines": false,
+    "botHumanLessons": false,
+    "botLateranoLessons": false
   }
 }
