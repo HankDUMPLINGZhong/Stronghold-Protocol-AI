@@ -2,13 +2,13 @@
 
 为[卫戍协议：盟约 Web 复刻](https://github.com/sganggs/Stronghold-Protocol)开发的 AI 队友与策略。**本地规则决策＋战斗预演，不接 LLM，不用 API Key，没有 Token 消耗。**
 
-本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.1.2（拉特兰）** 和 **AI拉维妮娅 v0.1.0（叙拉古）**。
+本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.1.2（拉特兰）** 和 **AI·拉维妮娅 v0.1.1（叙拉古）**。
 
 ## 下载与安装
 
 按插件查看版本：[阿尔图罗（图图）的全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-arturia%22) · [拉维妮娅的全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-lavinia%22) · [分类下载索引](RELEASES.md)
 
-**[下载拉维妮娅 v0.1.0 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.1.0/AI-Lavinia-v0.1.0.zip)** · [拉维妮娅版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.1.0)
+**[下载拉维妮娅 v0.1.1 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.1.1/AI-Lavinia-v0.1.1.zip)** · [拉维妮娅版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.1.1)
 
 解压后双击“安装插件.bat”；游戏等待室通过 **添加精英干员 → 拉维妮娅** 添加，使用斥罪精二头像，优先且只选贾维／叙拉古。单独在场第一选；与图图同场时图图第一、拉维妮娅第二。共存时先安装阿尔图罗，再安装拉维妮娅；升级／卸载阿尔图罗前先卸载拉维妮娅，详见[拉维妮娅安装说明](addons/lavinia/README.md)。
 
@@ -45,7 +45,7 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 
 ## 已发布策略与成绩
 
-当前发布 **AI·阿尔图罗 v0.1.2（拉特兰）** 与 **AI拉维妮娅 v0.1.0（叙拉古）**。
+当前发布 **AI·阿尔图罗 v0.1.2（拉特兰）** 与 **AI·拉维妮娅 v0.1.1（叙拉古）**。
 
 以下为`enemy-diversity-v1`固定**单人**测评集，每难度28局、关闭随机盟约禁用，使用真实战斗。过关指击败R14领袖，不等于隐藏Boss全清，不代表多人房或自然开局胜率。
 

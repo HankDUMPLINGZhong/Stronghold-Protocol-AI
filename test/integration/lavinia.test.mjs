@@ -35,8 +35,8 @@ for (const ref of refs) for (const dual of [false, true]) {
     const harness = await load('test/match/harness.js'), adapter = await load('server/match/lavinia/index.js');
     const constants = await load('shared/constants.js');
     const seats = () => [
-      {seat:0,playerId:'human',name:'AI拉维妮娅',isBot:false,connected:true},
-      {seat:1,playerId:'lavinia',name:'AI拉维妮娅',isBot:true,connected:true,botPersona:'lavinia'},
+      {seat:0,playerId:'human',name:'AI·拉维妮娅',isBot:false,connected:true},
+      {seat:1,playerId:'lavinia',name:'AI·拉维妮娅',isBot:true,connected:true,botPersona:'lavinia'},
       {seat:2,playerId:'other',name:dual?'AI·阿尔图罗':'AI·华法琳',isBot:true,connected:true,...(dual?{botPersona:'arturia'}:{})},
     ];
     const draft = h => {
@@ -99,11 +99,13 @@ for (const ref of refs) for (const dual of [false, true]) {
       assert.equal(lobby.create(host,{mode:'coop',difficulty:'HARD'}).ok,true);
       const room=lobby.roomOf(host);
       assert.equal(lobby.addBot(host,{persona:'lavinia'}).ok,true);
+      assert.equal(room.seats.find(s=>s?.botPersona==='lavinia').name,'AI·拉维妮娅');
       assert.equal(lobby.addBot(host,{persona:'lavinia'}).error,constants.ERR.ALREADY);
       assert.equal(lobby.addBot(host,dual?{persona:'arturia'}:{}).ok,true);
       assert.equal(lobby.setDifficulty(host,{difficulty:'FUNNY'}).error,constants.ERR.BAD_TARGET);
       assert.equal(lobby.start(host).ok,true);
       assert.equal(room.match.opts.seats.filter(s=>s.botPersona==='lavinia').length,1);
+      assert.equal(room.match.opts.seats.find(s=>s.botPersona==='lavinia').name,'AI·拉维妮娅');
       room.match.dispose();lobby.dispose?.();
     });
     await t.test('uninstall protects edits and restores the exact previous installation', async () => {

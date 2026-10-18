@@ -65,7 +65,7 @@ function patchCleanFiles(files) {
     if (persona === 'lavinia' && room.difficulty === 'FUNNY') return fail(ERR.BAD_TARGET);
     const used = new Set(room.seats.filter((s) => s && s.isBot).map((s) => s.name));`);
   edit(lobby, "const name = BOT_NAMES.find((n) => !used.has(n)) || `AI·${idx + 1}`;",
-    "const name = persona === 'lavinia' ? 'AI拉维妮娅' : BOT_NAMES.find((n) => !used.has(n)) || `AI·${idx + 1}`; // i18n-ignore: player name");
+    "const name = persona === 'lavinia' ? 'AI·拉维妮娅' : BOT_NAMES.find((n) => !used.has(n)) || `AI·${idx + 1}`; // i18n-ignore: player name");
   edit(lobby, 'room.seats[idx] = { seat: idx, playerId, name, isBot: true, ready: true, connected: true, left: false };',
     "room.seats[idx] = { seat: idx, playerId, name, isBot: true, ready: true, connected: true, left: false, ...(persona ? { botPersona: persona } : {}) };");
   edit(lobby, 'seat: s.seat, playerId: s.playerId, name: s.name, isBot: s.isBot, connected: s.connected,',
@@ -136,7 +136,7 @@ export function patchFiles(files) {
   edit(lobby, "    const used = new Set(room.seats.filter((s) => s && s.isBot).map((s) => s.name));", `    if (persona === 'lavinia' && room.seats.some(s => s?.botPersona === 'lavinia')) return fail(ERR.ALREADY);
     if (persona === 'lavinia' && room.difficulty === 'FUNNY') return fail(ERR.BAD_TARGET);
     const used = new Set(room.seats.filter((s) => s && s.isBot).map((s) => s.name));`);
-  edit(lobby, "const name = persona === 'arturia' ? 'AI·阿尔图罗' :", "const name = persona === 'lavinia' ? 'AI拉维妮娅' : persona === 'arturia' ? 'AI·阿尔图罗' :");
+  edit(lobby, "const name = persona === 'arturia' ? 'AI·阿尔图罗' :", "const name = persona === 'lavinia' ? 'AI·拉维妮娅' : persona === 'arturia' ? 'AI·阿尔图罗' :");
   const difficultyAnchor = legacy ? '    if (room.difficulty !== difficulty) {' : '    // a plugin mode chosen (header "Gameplay plugins") carries its own difficulty: picking one leaves it';
   edit(lobby, difficultyAnchor, "    if (difficulty === 'FUNNY' && room.seats.some(s => s?.botPersona === 'lavinia')) return fail(ERR.BAD_TARGET);\n" + difficultyAnchor);
   const startAnchor = legacy ? '    const humans = room.activeHumans();\n    for (const s of humans) {' : '    const humans = room.activeHumans();\n    if (room.content?.trusted';

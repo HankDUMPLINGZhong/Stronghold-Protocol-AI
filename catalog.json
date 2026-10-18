@@ -11,13 +11,13 @@
       "manifest": "releases/arturia-v0.1.2.json"
     },
     "lavinia": {
-      "name": "AI拉维妮娅",
+      "name": "AI·拉维妮娅",
       "core": "siracusaShip",
       "status": "released",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "addon": "addons/lavinia",
       "sourceRoot": "releases/lavinia-v0.1.0/source",
-      "manifest": "releases/lavinia-v0.1.0.json"
+      "manifest": "releases/lavinia-v0.1.1.json"
     }
   }
 }

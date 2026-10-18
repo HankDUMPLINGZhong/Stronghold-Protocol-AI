@@ -39,7 +39,7 @@
     "server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "server/match/botForecast.js": "cb15749c374b06a4de81331ca882035134016e5e74c836d11f1765775393e694"
   },
-  "scope": "Released Arturia v0.1.2 and Lavinia v0.1.0 dependency closures; immutable earlier releases retained.",
+  "scope": "Released Arturia v0.1.2 and Lavinia v0.1.1 dependency closures; immutable earlier releases retained.",
   "installerFeatures": {
     "automaticUpgrade": true,
     "rollbackOnFailure": true,
@@ -47,11 +47,11 @@
   },
   "strategies": {
     "lavinia": {
-      "version": "0.1.0",
+      "version": "0.1.1",
       "policy": "sha256:1a3b57559dc309136ac87ceb3fecafe92fb6564b9bbfbeae71f840b762435c95",
       "policySource": "Immutable verified source snapshot; per-file SHA-256, not a Git commit claim",
       "developmentHead": "fd1e4d362b33133d01ee8f13acc5429c609db1b3",
-      "manifest": "releases/lavinia-v0.1.0.json",
+      "manifest": "releases/lavinia-v0.1.1.json",
       "sourceFiles": {
         "server/match/botDevelopment.js": "291efcd537aa4d5092c52509cd4e221d736ab2000c70e842d9145c1487936d3a",
         "server/match/botStrategy.js": "592b95b1876bebbad5b1c0d9db727ec18f6aa6abbed0a2db2223b73eb3c6993f",
@@ -99,7 +99,8 @@
       },
       "avatarSource": "https://prts.wiki/w/文件:立绘_斥罪_2.png",
       "avatarHostAsset": "char_4065_judge_2",
-      "artworkIncluded": false
+      "artworkIncluded": false,
+      "changes": "Display name only: AI·拉维妮娅; identical policy snapshot and runtime hashes to v0.1.0."
     }
   }
 }

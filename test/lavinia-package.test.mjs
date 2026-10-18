@@ -12,7 +12,12 @@ test('Lavinia standalone build preserves its immutable policy and independent id
   const frozen=JSON.parse(readFileSync(resolve(root,catalog.manifest)));
   assert.deepEqual(JSON.parse(readFileSync(resolve(output,'addon.json'))),frozen);
   assert.deepEqual(JSON.parse(readFileSync(resolve(root,'addons/lavinia/addon.json'))),frozen);
-  assert.equal(frozen.id,'ai-lavinia');assert.equal(frozen.version,'0.1.0');
+  assert.equal(frozen.id,'ai-lavinia');assert.equal(frozen.version,'0.1.1');
+  assert.equal(frozen.name,'AI·拉维妮娅');
+  const previous=JSON.parse(readFileSync(resolve(root,'releases/lavinia-v0.1.0.json')));
+  assert.deepEqual(frozen.sources,previous.sources);
+  assert.deepEqual(frozen.files,previous.files);
+  assert.equal(frozen.policy,previous.policy);
   for(const [name,expected]of Object.entries(frozen.files)){
     assert.equal(hash(readFileSync(resolve(output,name))),expected,name);
     assert.equal(hash(readFileSync(resolve(root,'addons/lavinia',name))),expected,name);

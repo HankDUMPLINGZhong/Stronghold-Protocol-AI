@@ -45,7 +45,7 @@ test('elite dropdown offers both teammates and displays Penance E2 with correct 
         await client.page.screenshot({path:resolve(shots,`${name}-room.png`)});
         await client.click('.room-screen button','开始模拟');await client.waitFor(s=>s.phase==='INFO_CHECK','briefing');
         await client.click('.brief__foot button','准备就绪');await client.waitFor(s=>s.phase==='BAND_DRAFT','draft');
-        await client.page.waitForFunction(()=>globalThis.__SP__.store.get().match.public?.players?.some(s=>s.name==='AI拉维妮娅'&&s.bandId==='band_chiave'));
+        await client.page.waitForFunction(()=>globalThis.__SP__.store.get().match.public?.players?.some(s=>s.name==='AI·拉维妮娅'&&s.bandId==='band_chiave'));
         const order=await client.page.$$eval('.dorder__name',nodes=>nodes.map(n=>n.textContent));
         assert.match(order[dual?1:0],/拉维妮娅/);if(dual)assert.match(order[0],/阿尔图罗/);
         await client.page.screenshot({path:resolve(shots,`${name}-draft.png`)});

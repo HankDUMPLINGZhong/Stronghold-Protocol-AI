@@ -1,7 +1,7 @@
 {
   "id": "ai-lavinia",
-  "name": "AI拉维妮娅",
-  "version": "0.1.0",
+  "name": "AI·拉维妮娅",
+  "version": "0.1.1",
   "unofficial": true,
   "upstream": "6ab2468279e926d107788f63d7fe219b85f67b4a",
   "policy": "sha256:1a3b57559dc309136ac87ceb3fecafe92fb6564b9bbfbeae71f840b762435c95",
