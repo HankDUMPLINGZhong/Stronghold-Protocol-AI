@@ -5,4 +5,5 @@ addons/arturia/runtime.js -text
 addons/lavinia/runtime.js -text
 addons/lavinia/policy/** -text whitespace=-blank-at-eof
 releases/lavinia-v0.1.0/source/** whitespace=-blank-at-eof
+releases/lavinia-v0.1.2/source/** whitespace=-blank-at-eof
 *.bat text eol=crlf

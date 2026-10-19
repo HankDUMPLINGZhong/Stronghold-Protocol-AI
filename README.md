@@ -2,13 +2,13 @@
 
 为[卫戍协议：盟约 Web 复刻](https://github.com/sganggs/Stronghold-Protocol)开发的 AI 队友与策略。**本地规则决策＋战斗预演，不接 LLM，不用 API Key，没有 Token 消耗。**
 
-本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.1.2（拉特兰）** 和 **AI·拉维妮娅 v0.1.1（叙拉古）**。
+本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.1.2（拉特兰）** 和 **AI·拉维妮娅 v0.1.2（叙拉古）**。
 
 ## 下载与安装
 
 按插件查看版本：[阿尔图罗（图图）的全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-arturia%22) · [拉维妮娅的全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-lavinia%22) · [分类下载索引](RELEASES.md)
 
-**[下载拉维妮娅 v0.1.1 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.1.1/AI-Lavinia-v0.1.1.zip)** · [拉维妮娅版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.1.1)
+**[下载拉维妮娅 v0.1.2 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.1.2/AI-Lavinia-v0.1.2.zip)** · [拉维妮娅版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.1.2)
 
 解压后双击“安装插件.bat”；游戏等待室通过 **添加精英干员 → 拉维妮娅** 添加，使用斥罪精二头像，优先且只选贾维／叙拉古。单独在场第一选；与图图同场时图图第一、拉维妮娅第二。共存时先安装阿尔图罗，再安装拉维妮娅；升级／卸载阿尔图罗前先卸载拉维妮娅，详见[拉维妮娅安装说明](addons/lavinia/README.md)。
 
@@ -23,7 +23,7 @@
 
 普通“添加 AI 队友”仍使用原版 AI。只需房主安装，每个房间最多一位阿尔图罗。支持险境、绝境、终极；标准模拟禁用拉特兰，因此不能添加她。
 
-已验证游戏版本：本地保留的 **0.2.4**、上游 **0.3.0**，以及 **0.3.1**（`b3deebda`）与2026-10-19的 **master快照**（`c9d804f4`）。后两者各通过24项隔离集成测试，包含两款共存、真实战斗到R14、升级与无损卸载；现有安装包无需改动。完整记录见[宿主兼容性](compatibility.json)。这是修改少量接入文件的源码扩展包，不能从游戏插件工作台导入；内容插件版本仅支持原版玩法及纯外观插件。升级游戏前先卸载，详见[安装说明](addons/arturia/README.md)。
+支持的游戏版本包括本地保留的 **0.2.4**、上游 **0.3.0**、**0.3.1**（`b3deebda`）与2026-10-19的 **master快照**（`c9d804f4`）。拉维妮娅v0.1.2在0.3.1通过26项集成测试，包含旧版升级、两款共存、真实战斗到R14和无损卸载；其他宿主由发行CI及隔离回归验证。完整记录见[宿主兼容性](compatibility.json)。这是修改少量接入文件的源码扩展包，不能从游戏插件工作台导入；内容插件版本仅支持原版玩法及纯外观插件。升级游戏前先卸载，详见[安装说明](addons/arturia/README.md)。
 
 两款插件独立编号：`arturia-vX.Y.Z`和`lavinia-vX.Y.Z`，按实际改动分别升版；宿主兼容范围单独记录。只更新验证记录或Release标题不升插件版本。标题格式为`【拉特兰-潘格尼尼】阿尔图罗·vX.Y.Z`与`【贾维-叙拉古】拉维妮娅·vX.Y.Z`。
 
@@ -53,7 +53,7 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 
 ## 已发布策略与成绩
 
-当前发布 **AI·阿尔图罗 v0.1.2（拉特兰）** 与 **AI·拉维妮娅 v0.1.1（叙拉古）**。
+当前发布 **AI·阿尔图罗 v0.1.2（拉特兰）** 与 **AI·拉维妮娅 v0.1.2（叙拉古）**。
 
 以下为`enemy-diversity-v1`固定**单人**测评集，每难度28局、关闭随机盟约禁用，使用真实战斗。过关指击败R14领袖，不等于隐藏Boss全清，不代表多人房或自然开局胜率。
 
@@ -69,9 +69,9 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 | AI | 绝境胜场 | 绝境平均存活回合 | 绝境R13平均叙拉古层数 | 终极胜场 | 终极平均存活回合 | 终极R13平均叙拉古层数 |
 |---|---:|---:|---:|---:|---:|---:|
 | 原版 bot | 3/28 | 12.82 | 46.48（25局） | 0/28 | 10.57 | 36.00（10局） |
-| 拉维妮娅／叙拉古 | 27/28 | 14.71 | 270.36（28局） | 11/28 | 12.04 | 265.70（20局） |
+| 拉维妮娅／叙拉古 | 28/28 | 14.82 | 272.00（28局） | 12/28 | 12.21 | 257.14（21局） |
 
-叙拉古完整开发矩阵448局验证通过，主56局复现27/11，其余392局对照不变；补充16局为8/8、2/8。
+叙拉古完整开发矩阵448局验证通过，主56局复现28/12，其余392局对照不变；补充16局为8/8、3/8。
 
 存活回合取全部28局已通过回合的均值；层数只统计到达R13检查点的局，括号为样本数，提前淘汰不混入0层。
 

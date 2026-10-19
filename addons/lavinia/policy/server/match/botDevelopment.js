@@ -1,3 +1,4 @@
+import { lucienRightPlan } from './botStrategies/siracusaLucienRight.js';
 // server/match/botDevelopment.js — opt-in growth AI (DESIGN §6.6, META §1.6).
 // The original bot.js remains the independently selectable legacy implementation.
 // Growth commits to a viable core, selects a seeded damage sub-route, and keeps a shared economy objective.
@@ -561,7 +562,8 @@ function buyScore(m, ps, id, ctx, reward = false) {
   const gd = ps?.gd || m.gd;
   const c = chessRec(m, id, ps);
   if (!c) return 0;
-  if ((reward && ctx.strategy?.rewardAllowed ? ctx.strategy.rewardAllowed(m, ps, c)
+  const rewardGate = ctx.strategy?.rewardAllowed || ctx.strategy?.rewardScoreAllowed;
+  if ((reward && rewardGate ? rewardGate(m, ps, c)
     : ctx.strategy?.purchaseAllowed?.(m, ps, c)) === false) return -1000;
   let s = power(c) * 0.6;
   const tr = traitsOf(m, c);
@@ -1690,13 +1692,15 @@ function takeOffers(m, ps) {
     const ctx = context(m, ps);
     let best = -1;
     let bestS = -Infinity;
+    let bestPriority = -Infinity;
     offer.slots.forEach((s, i) => {
       if (s.sold) return;
       if (s.kind === 'chess' && ctx.strategy?.rewardAllowed?.(m, ps, gd.chess(s.id)) === false) return;
       if (s.kind === 'item' && ctx.strategy?.itemAllowed?.(gd.item(s.id)) === false) return;
       const sc = s.kind === 'item' ? (canUseItem(m, ps, s) ? 10 : 1) + gd.tierOf(s.id) * 3
         + Math.max(economyItemBonus(m, ps, gd.item(s.id)), ctx.strategy?.itemBonus(m, ps, gd.item(s.id)) || 0) : buyScore(m, ps, s.id, ctx, true);
-      if (sc > bestS) { bestS = sc; best = i; }
+      const priority = ctx.strategy?.rewardPriority?.(m, ps, s) ?? 0;
+      if (priority > bestPriority || priority === bestPriority && sc > bestS) { bestS = sc; bestPriority = priority; best = i; }
     });
     if (best < 0) {
       if (!ctx.strategy?.rewardAllowed) break;
@@ -1790,6 +1794,8 @@ export function* botPrepEndSteps(m, ps, job = null) {
   // what the next prep's bench shed may judge by value: what is owned now (later gains wait for a placement step)
   rememberOwned(ps);
   m.autoPickPersonalChoice(ps, 'bot');
+  const rightPlan = lucienRightPlan(m, ps, { rangeRec, rangeTiles });
+  if (rightPlan) yield* applyPlanSteps(m, ps, [...ps.board.values()].filter((p) => p.kind === 'chess'), rightPlan);
   tryDo(() => ps.setReady(true));
 }
 
@@ -1916,9 +1922,13 @@ export function levelUp(m, ps, { spare = false } = {}) {
     if (ps.funds < price) return;
     const r = m.round;
     const recipe = coreStrategy(m, ps._botFocusId);
-    const recipeTarget = recipe?.levelTarget(m, ps, { spare });
+    // [ASSUMED] The optional late-level gate inspects the same proposed roster used by arrangement.
+    // Read-only selection; no extra rehearsal, purchase, arrangement or random draw.
+    const fielded = recipe?.lateUpgradeLineup && r >= gd.bossRound && ps.shop.level === 5
+      ? chooseLineup(m, ps, context(m, ps)).set : null;
+    const recipeTarget = recipe?.levelTarget(m, ps, { spare, fielded });
     if (recipeTarget != null && ps.shop.level >= recipeTarget) return;
-    if (recipeTarget != null && !recipe.beforeUpgrade(m, ps, bondPlan(m, ps))) return;
+    if (recipeTarget != null && !recipe.beforeUpgrade(m, ps, fielded ? { ...bondPlan(m, ps), fielded } : bondPlan(m, ps))) return;
     if (recipeTarget != null && price > 0 && ps.funds < price + recipe.upgradeReserve(m, ps)) return;
     const target = recipeTarget ?? LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r)];
     const nextTarget = LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r + 1)];
@@ -2148,6 +2158,21 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
       // R14 has no farming. Keep the existing roster and mechanics; compare alternative legal complete layouts.
       for (let i=1;i<3;i++) plans.push(yield* planLayoutSteps(m, ps, chosen,
         { ...LAYOUT_PARAMS, ...REHEARSAL_VARIANTS[i] }, { rng: proposalRng(i) }));
+    }
+    if (!m.wave && ctx.strategy.finalProtectionPlans) {
+      plans.push(...yield* ctx.strategy.finalProtectionPlans(m, ps, chosen, plans, {
+        model: fieldModel(m, ps), unitOf, recOf: p => rangeRec(ps, (ps.gd || m.gd).chess(p.id)),
+        makePlan: () => new LayoutPlan(), ids: ctx.strategy.ids,
+      }));
+    }
+    if (m.wave && ctx.strategy.normalContactPlans) {
+      const alternatives = yield* ctx.strategy.normalContactPlans(m, ps, chosen, plans, {
+        model: fieldModel(m, ps), unitOf,
+        recOf: p => p.kind === 'token' ? (ps.gd || m.gd).token(p.id) : rangeRec(ps, (ps.gd || m.gd).chess(p.id)),
+        makePlan: () => new LayoutPlan(), ids: ctx.strategy.ids,
+      });
+      // Keep the valid original control. Two refinements replace trial slots, never expand the forecast budget.
+      for (let i = 0; i < Math.min(2, alternatives.length); i++) plans[i + 1] = alternatives[i];
     }
     const job = yield* createForecastSteps(m, ps, chosen, plans,
       plan => bossInputSteps(m, ps, plan.lineup || chosen, plan, { keepWithdrawn: true }), ctx.strategy);

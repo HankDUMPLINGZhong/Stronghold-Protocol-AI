@@ -3,7 +3,7 @@
   "checkedAt": "2026-10-19",
   "plugins": {
     "arturia": "0.1.2",
-    "lavinia": "0.1.1"
+    "lavinia": "0.1.2"
   },
   "hosts": [
     {
@@ -11,14 +11,32 @@
       "ref": "v0.3.1",
       "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
       "packageVersion": "0.3.1",
-      "integrationTests": { "passed": 24, "failed": 0 }
+      "integrationTests": {
+        "passed": 26,
+        "failed": 0
+      }
+    },
+    {
+      "channel": "retained-base",
+      "ref": "main-base",
+      "commit": "3e589285584828a20075893a0575a9e5660dcc10",
+      "packageVersion": "0.2.4",
+      "scope": "Lavinia installation, coexistence, upgrades and R14 combat",
+      "integrationTests": {
+        "passed": 14,
+        "failed": 0
+      }
     },
     {
       "channel": "master-snapshot",
       "ref": "master",
       "commit": "c9d804f470b8d7422ae04eb66faf671cef21ad52",
       "packageVersion": "0.3.1",
-      "integrationTests": { "passed": 24, "failed": 0 }
+      "scope": "Lavinia installation, coexistence, upgrades and R14 combat",
+      "integrationTests": {
+        "passed": 14,
+        "failed": 0
+      }
     }
   ],
   "coverage": [
@@ -35,5 +53,36 @@
     "passed": 1,
     "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
   },
-  "limitations": "Compatibility checks, not win-rate measurements. Original gameplay and cosmetic plugins only. Standard difficulty and gameplay-content plugins remain unsupported. Frozen release manifests preserve their original upstream provenance; this file records additional tested hosts."
+  "limitations": "Compatibility checks, not win-rate measurements. Plugin code changes are limited to the Lavinia release; Arturia stays frozen. Additional retained hosts are covered by the release CI matrix.",
+  "previousChecks": [
+    {
+      "checkedAt": "2026-10-19",
+      "plugins": {
+        "arturia": "0.1.2",
+        "lavinia": "0.1.1"
+      },
+      "hosts": [
+        {
+          "channel": "release",
+          "ref": "v0.3.1",
+          "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+          "packageVersion": "0.3.1",
+          "integrationTests": {
+            "passed": 24,
+            "failed": 0
+          }
+        },
+        {
+          "channel": "master-snapshot",
+          "ref": "master",
+          "commit": "c9d804f470b8d7422ae04eb66faf671cef21ad52",
+          "packageVersion": "0.3.1",
+          "integrationTests": {
+            "passed": 24,
+            "failed": 0
+          }
+        }
+      ]
+    }
+  ]
 }

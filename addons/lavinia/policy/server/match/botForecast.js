@@ -47,9 +47,10 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
   const wave = boss ? group.wave : m.wave;
   if (!wave) return null;
   const seen=new Set();
+  const planLimit = boss && recipe?.finalProtectionPlans && recipe.forecastPlanLimit === 6 ? 6 : FORECAST_PLANS;
   const candidates=plans.filter(p => {
     const key=signature(p); if (seen.has(key)) return false; seen.add(key); return true;
-  }).slice(0,Math.min(FORECAST_PLANS,m.botRehearsal));
+  }).slice(0,planLimit > FORECAST_PLANS && m.botRehearsal >= FORECAST_PLANS ? planLimit : Math.min(FORECAST_PLANS,m.botRehearsal));
   if (candidates.length<2) return null;
   const inputs=[];
   for (const plan of candidates) {

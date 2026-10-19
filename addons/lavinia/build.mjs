@@ -9,13 +9,14 @@ const frozen = JSON.parse(readFileSync(resolve(repo, released.manifest)));
 export const POLICY_REF = frozen.policy;
 export const UPSTREAM_REF = frozen.upstream;
 const sha = x => createHash('sha256').update(x).digest('hex');
-export function build(output = resolve(repo, `dist/AI-Lavinia-v${released.version}`)) {
+export function build(output = resolve(repo, `dist/AI-Lavinia-v${released.version}`), release = released) {
+  const frozen = JSON.parse(readFileSync(resolve(repo, release.manifest)));
   const root = resolve(output), files = {}, sources = {}, seen = new Set();
   if (root === here || root === repo) throw new Error('Build output must be separate');
   const put = (name, text) => { const p = resolve(root, name); mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, text); files[name] = sha(text); };
   function policy(path) {
     if (seen.has(path)) return; seen.add(path);
-    const original = readFileSync(resolve(repo, released.sourceRoot, path), 'utf8');
+    const original = readFileSync(resolve(repo, release.sourceRoot, path), 'utf8');
     sources[path] = sha(original);
     if (sources[path] !== frozen.sources[path]) throw new Error(`Released source changed: ${path}`);
     const dest = `server/match/lavinia/policy/${path}`;
@@ -35,6 +36,6 @@ export function build(output = resolve(repo, `dist/AI-Lavinia-v${released.versio
   for (const name of ['install.mjs', 'patches.mjs', 'README.md', 'CHANGELOG.md', '安装插件.bat', 'install-windows.ps1']) copyFileSync(resolve(here, name), resolve(root, name));
   copyFileSync(resolve(repo, 'LICENSE'), resolve(root, 'LICENSE'));
   writeFileSync(resolve(root, 'addon.json'), JSON.stringify({ ...frozen, sources, files }, null, 2) + '\n');
-  return { root, policyFiles: seen.size, policy: POLICY_REF };
+  return { root, policyFiles: seen.size, policy: frozen.policy };
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) console.log(build(process.argv[2]));
