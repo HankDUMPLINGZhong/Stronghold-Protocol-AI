@@ -17,8 +17,8 @@ before(async () => {
   mkdirSync('.cache', { recursive: true }); temp = mkdtempSync(resolve('.cache/arturia-upgrade-'));
   root = resolve(temp, 'game'); mkdirSync(root);
   const tar = resolve(temp, 'game.tar');
-  writeFileSync(tar, execFileSync('git', ['archive', process.env.ARTURIA_TEST_REF || UPSTREAM_REF],
-    { cwd: process.env.SP_GAME_REPO, maxBuffer: 64 * 1024 * 1024 }));
+  execFileSync('git', ['archive', '--output', tar, process.env.ARTURIA_TEST_REF || UPSTREAM_REF],
+    { cwd: process.env.SP_GAME_REPO });
   execFileSync('tar', ['-xf', tar, '-C', root]);
   fresh = resolve(temp, 'new'); previous = resolve(temp, 'old'); build(fresh); cpSync(fresh, previous, { recursive: true });
   // Legacy journal schema with different payload bytes and an obsolete policy file; no game is run with this fixture.

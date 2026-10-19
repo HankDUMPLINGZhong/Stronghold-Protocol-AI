@@ -5,6 +5,13 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        host:
+          - 6ab2468279e926d107788f63d7fe219b85f67b4a
+          - b3deebdae4a92642c007d217a1a4573e5d3612c5
+          - c9d804f470b8d7422ae04eb66faf671cef21ad52
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: sganggs/Stronghold-Protocol
-          ref: 6ab2468279e926d107788f63d7fe219b85f67b4a
+          ref: ${{ matrix.host }}
           path: .cache/upstream
       - run: npm ci
         working-directory: .cache/upstream
@@ -25,3 +32,11 @@ jobs:
         run: npm run test:integration
         env:
           SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
+          ARTURIA_TEST_REF: ${{ matrix.host }}
+          LAVINIA_TEST_REFS: ${{ matrix.host }}
+      - name: Verify service restart on the current release
+        if: matrix.host == 'b3deebdae4a92642c007d217a1a4573e5d3612c5'
+        run: npm run test:restart
+        env:
+          SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
+          ARTURIA_TEST_REF: ${{ matrix.host }}

@@ -16,7 +16,7 @@ for (const ref of refs) for (const dual of [false, true]) {
     const temp = mkdtempSync(resolve('.cache/lavinia-test-')), root = resolve(temp, 'game 游戏');
     mkdirSync(root);
     const archive = resolve(temp, 'host.tar');
-    writeFileSync(archive, execFileSync('git', ['archive', ref], { cwd: repository, maxBuffer: 64 * 1024 * 1024 }));
+    execFileSync('git', ['archive', '--output', archive, ref], { cwd: repository });
     execFileSync('tar', ['-xf', archive, '-C', root]);
     if (existsSync(resolve(repository, 'node_modules'))) symlinkSync(resolve(repository, 'node_modules'), resolve(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
     const bundle = resolve(temp, 'bundle'); build(bundle);

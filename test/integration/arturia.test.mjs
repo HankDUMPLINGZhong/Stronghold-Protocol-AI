@@ -14,7 +14,7 @@ before(async () => {
   const temp = mkdtempSync(resolve('.cache/arturia-test-'));
   root = resolve(temp, 'game 游戏'); bundle = resolve(temp, 'bundle'); mkdirSync(root);
   const tar = resolve(temp, 'upstream.tar');
-  writeFileSync(tar, execFileSync('git', ['archive', process.env.ARTURIA_TEST_REF || UPSTREAM_REF], { cwd: gameRepository, maxBuffer: 64 * 1024 * 1024 }));
+  execFileSync('git', ['archive', '--output', tar, process.env.ARTURIA_TEST_REF || UPSTREAM_REF], { cwd: gameRepository });
   execFileSync('tar', ['-xf', tar, '-C', root]);
   const dependencies = resolve(gameRepository, 'node_modules');
   if (existsSync(dependencies)) symlinkSync(dependencies, resolve(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');

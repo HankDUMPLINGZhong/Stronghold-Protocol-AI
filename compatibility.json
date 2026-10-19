@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-19",
+  "plugins": {
+    "arturia": "0.1.2",
+    "lavinia": "0.1.1"
+  },
+  "hosts": [
+    {
+      "channel": "release",
+      "ref": "v0.3.1",
+      "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+      "packageVersion": "0.3.1",
+      "integrationTests": { "passed": 24, "failed": 0 }
+    },
+    {
+      "channel": "master-snapshot",
+      "ref": "master",
+      "commit": "c9d804f470b8d7422ae04eb66faf671cef21ad52",
+      "packageVersion": "0.3.1",
+      "integrationTests": { "passed": 24, "failed": 0 }
+    }
+  ],
+  "coverage": [
+    "separate and combined installation",
+    "reserved opening bands and draft priority",
+    "ordinary AI and policy adapter isolation",
+    "real preparation and combat APIs through R14",
+    "upgrade recovery and byte-exact uninstall"
+  ],
+  "runtimeChangesRequired": false,
+  "restartCheck": {
+    "host": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+    "test": "npm run test:restart",
+    "passed": 1,
+    "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
+  },
+  "limitations": "Compatibility checks, not win-rate measurements. Original gameplay and cosmetic plugins only. Standard difficulty and gameplay-content plugins remain unsupported. Frozen release manifests preserve their original upstream provenance; this file records additional tested hosts."
+}

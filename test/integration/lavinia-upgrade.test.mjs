@@ -7,7 +7,7 @@ const source=resolve(import.meta.dirname,'../..'),hash=b=>createHash('sha256').u
 for(const ref of process.env.LAVINIA_TEST_REFS?.split(',')||[UPSTREAM_REF])for(const dual of [false,true]){
  test(`Lavinia real v0.1.0 to v0.1.1 name upgrade ${ref.slice(0,8)} dual=${dual}`,async()=>{
   mkdirSync('.cache',{recursive:true});const temp=mkdtempSync(resolve('.cache/lavinia-upgrade-')),root=resolve(temp,'game');mkdirSync(root);
-  const tar=resolve(temp,'host.tar');writeFileSync(tar,execFileSync('git',['archive',ref],{cwd:repo,maxBuffer:64*1024*1024}));execFileSync('tar',['-xf',tar,'-C',root]);
+  const tar=resolve(temp,'host.tar');execFileSync('git',['archive','--output',tar,ref],{cwd:repo});execFileSync('tar',['-xf',tar,'-C',root]);
   if(existsSync(resolve(repo,'node_modules')))symlinkSync(resolve(repo,'node_modules'),resolve(root,'node_modules'),process.platform==='win32'?'junction':'dir');
   const fresh=resolve(temp,'fresh'),old=resolve(temp,'old');build(fresh);cpSync(fresh,old,{recursive:true});
   cpSync(resolve(source,'test/fixtures/lavinia-v0.1.0-patches.mjs'),resolve(old,'patches.mjs'));
