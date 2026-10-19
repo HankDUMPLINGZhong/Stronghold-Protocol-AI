@@ -11,6 +11,27 @@ import { withLateranoSkillful } from './lateranoSkillful.js';
 import { withLateranoFinale } from './lateranoFinale.js';
 import { withLateranoTeam } from './lateranoTeam.js';
 import { withLateranoPromotion } from './lateranoPromotion.js';
+import { withLateranoArchettoBlade } from './lateranoArchettoBlade.js';
+import { withLateranoSixReady } from './lateranoSixReady.js';
+import { withLateranoMedicChain } from './lateranoMedicChain.js';
+import { withLateranoSingleSkill } from './lateranoSingleSkill.js';
+import { withLateranoFastFour } from './lateranoFastFour.js';
+import { withLateranoEliteCap } from './lateranoEliteCap.js';
+import { withLateranoFourDevelopment } from './lateranoFourDevelopment.js';
+import { withLateranoProtection } from './lateranoProtection.js';
+import { withLateranoReducedSwift } from './lateranoReducedSwift.js';
+import { withLateranoLocalProtection } from './lateranoLocalProtection.js';
+import { withLateranoFourLimit } from './lateranoFourLimit.js';
+import { withLateranoApproach } from './lateranoApproach.js';
+import { withLateranoContactTeam } from './lateranoContactTeam.js';
+import { withLateranoUpgradeReserve } from './lateranoUpgradeReserve.js';
+import { withLateranoNativePairs } from './lateranoNativePairs.js';
+import { withLateranoR14EliteHold } from './lateranoR14EliteHold.js';
+import { withLateranoR14PairHold } from './lateranoR14PairHold.js';
+import { withLateranoVisionTrade } from './lateranoVisionTrade.js';
+import { withLateranoSupportSingles } from './lateranoSupportSingles.js';
+import { withLateranoLionSpread } from './lateranoLionSpread.js';
+import { withLateranoMobileBoss } from './lateranoMobileBoss.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -44,7 +65,7 @@ export function lateranoMimicTarget(m, ps) {
 }
 
 /** Match an owned sphere/signature to ONE output carrier; never split the two halves or convert a native member again. */
-export function lateranoTransferTarget(m, ps, bond = 'preciShip', prospective = null) {
+export function lateranoTransferTarget(m, ps, bond = 'preciShip', prospective = null, roleFirst = false) {
   const gd = gdOf(m, ps), sphere = items(ps).filter(i => gd.baseIdOf(i.id) === I.sphere);
   if (!sphere.length) return null;
   if (bond === 'preciShip' && ((ps.bonds.preciShip?.count || 0) >= 3 || memberCount(m, ps, 'preciShip') < 2)) return null;
@@ -53,15 +74,46 @@ export function lateranoTransferTarget(m, ps, bond = 'preciShip', prospective = 
   if (!sigs.length) return null;
   const on = (p, group) => p.items?.some(i => group.some(t => t.uid === i.uid));
   const available = group => group.some(i => i.uid === -1 || ['hand','temp'].includes(ps.find(i.uid)?.area));
+  const related = p => roleFirst && bond === CORE && gd.chess(p.id).bonds.some(b => ['skillfulShip','preciShip','steadShip'].includes(b));
   return ps.allChess().filter(p => {
     const rec = gd.chess(p.id);
-    if (rec.tier < 4 || ['TANK','MEDIC'].includes(rec.profession) || ['heal','none'].includes(rec.attackKind)
+    if ((!related(p) && (rec.tier < 4 || ['TANK','MEDIC'].includes(rec.profession) || ['heal','none'].includes(rec.attackKind)))
       || pieceBonds(gd, p).includes(bond)) return false;
     const n = Number(!on(p, sphere)) + Number(!on(p, sigs));
     return (p.items?.length || 0) + n <= gd.equipPerChess && (on(p, sphere) || available(sphere)) && (on(p, sigs) || available(sigs));
   }).sort((a, b) => Number(on(b, sphere) || on(b, sigs)) - Number(on(a, sphere) || on(a, sigs))
+    || Number(related(b)) - Number(related(a))
     || Number(gd.baseIdOf(b.id) === ids.exusiaiAlter) - Number(gd.baseIdOf(a.id) === ids.exusiaiAlter)
     || gd.chess(b.id).tier - gd.chess(a.id).tier || Number(gd.isGolden(b.id)) - Number(gd.isGolden(a.id)) || a.uid - b.uid)[0] || null;
+}
+
+/** Related off-core carriers compress support slots; finish any already committed pair before opening a new one. */
+function withRelatedTransfer(recipe) {
+  const targets = (m, ps) => ({ precision: lateranoTransferTarget(m, ps, 'preciShip'), core: lateranoTransferTarget(m, ps, CORE, null, true) });
+  return Object.freeze({ ...recipe,
+    ownedItemTarget(m, ps, rec, owned) {
+      const gd = gdOf(m, ps), id = base(gd, rec);
+      if ([I.sphere,I.clip].includes(id)) {
+        const {precision,core} = targets(m, ps);
+        if (id === I.sphere) return precision || core;
+        if (!precision && core && !core.items?.some(i => signature(gd.item(i.id)) === CORE)) return core;
+      }
+      return recipe.ownedItemTarget(m, ps, rec, owned);
+    },
+    itemTargetAllowed(m, ps, rec, p) {
+      const gd = gdOf(m, ps), id = base(gd, rec);
+      if (id === I.sphere) { const {precision,core} = targets(m, ps); return (precision || core)?.uid === p.uid; }
+      if (id === I.clip && !p.items?.some(i => gd.baseIdOf(i.id) === I.clip)) {
+        const {precision,core} = targets(m, ps);
+        if (!precision && core?.uid === p.uid) return true;
+      }
+      return recipe.itemTargetAllowed(m, ps, rec, p);
+    },
+    holdItem(m, ps, rec) {
+      if (base(gdOf(m, ps), rec) === I.sphere) { const {precision,core} = targets(m, ps); return !precision && !core; }
+      return recipe.holdItem(m, ps, rec);
+    }
+  });
 }
 
 function purchaseItemAllowed(m, ps, rec) {
@@ -201,6 +253,18 @@ const giftR11 = giftedFour(11);
 const finalR11 = withLateranoFinale(giftR11);
 const buy26 = withLateranoFinale(withLateranoSkillful(giftR11, { roster: false }), { allProtectedWithdrawals: true });
 const team27 = withLateranoTeam(buy26, { roster: true });
+const promotionDeadline = withLateranoPromotion(team27, { deadlineFallback: true });
+const bladeSixReady = withLateranoSixReady(withLateranoArchettoBlade(promotionDeadline));
+const approach25 = withLateranoApproach(bladeSixReady);
+const contactTeamLower = withRelatedTransfer(withLateranoContactTeam(approach25, { lower: true }));
+const contactTeamLateSix = withLateranoUpgradeReserve(contactTeamLower);
+const medicPromotion = withLateranoPromotion(team27, { deadlineFallback: true,
+  eligibleTarget: rec => !(rec.bonds.includes('visiShip') && !rec.bonds.includes(CORE) && !rec.bonds.includes('preciShip')) });
+const medicBase = withLateranoSixReady(withLateranoArchettoBlade(medicPromotion));
+const medicChain = withLateranoMedicChain(medicBase);
+const medicSingle = withLateranoSingleSkill(medicChain);
+const medicFour = withLateranoFastFour(medicSingle);
+const medicFourR11 = withLateranoFourDevelopment(medicFour, { releaseRound: 11 });
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
   'six-before-five': gated([5], false), 'six-before-six': gated([6], false),
   'six-mostima-before-five': gated([5], true), 'six-mostima-before-five-six': gated([5,6], true),
@@ -227,7 +291,35 @@ export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast
   'gift4-five-r11-team26': withLateranoTeam(buy26),
   'gift4-five-r11-team26-roster': team27,
   'team27-promotion': withLateranoPromotion(team27),
-  'team27-promotion-deadline': withLateranoPromotion(team27, { deadlineFallback: true }),
+  'team27-promotion-deadline': promotionDeadline,
+  'team27-archetto-blade': withLateranoArchettoBlade(promotionDeadline),
+  'team27-six-ready': withLateranoSixReady(promotionDeadline),
+  'team27-blade-six-ready': bladeSixReady,
+  'team27-lion-spread': withLateranoLionSpread(bladeSixReady),
+  'team27-gun-contact': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_2']),
+  'team27-lucien-contact': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']),
+  'team27-mobile-boss': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_2', 'boss_5']),
+  'team27-vision-star-trade': withLateranoVisionTrade(bladeSixReady),
+  'team27-r14-native-elite': withLateranoR14EliteHold(bladeSixReady),
+  'team27-r14-all-pairs': withLateranoR14PairHold(bladeSixReady),
+  'team27-native-pairs-r14-elite': withLateranoR14EliteHold(withLateranoNativePairs(contactTeamLateSix)),
+  'team27-support-singles': withLateranoSupportSingles(bladeSixReady),
+  'team27-approach': approach25,
+  'team27-contact-team': withRelatedTransfer(withLateranoContactTeam(approach25)),
+  'team27-contact-team-lower': contactTeamLower,
+  'team27-contact-team-lower-late-six': contactTeamLateSix,
+  'team27-contact-team-lower-native-pairs': withLateranoNativePairs(contactTeamLateSix),
+  'team27-contact-team-lower-no-reserve': withLateranoUpgradeReserve(contactTeamLower, { lateSixOnly: false }),
+  'team27-reduced-swift': withLateranoReducedSwift(bladeSixReady),
+  'team27-elite-cap': withLateranoEliteCap(bladeSixReady),
+  'team27-medic-chain': medicChain,
+  'team27-medic-single': medicSingle,
+  'team27-medic-four': medicFour,
+  'team27-medic-four-stay': withLateranoFourDevelopment(medicFour),
+  'team27-medic-four-stay-r11': medicFourR11,
+  'team27-medic-four-stay-r11-protection': withLateranoProtection(medicFourR11),
+  'team27-medic-four-stay-r11-local-protection': withLateranoLocalProtection(medicFourR11),
+  'team27-medic-four-limit3-local-protection': withLateranoFourLimit(withLateranoLocalProtection(medicFourR11)),
   'vision21-map-lines': withLateranoMapLines(map02),
   'repair19-white-six': gated([6], false, repairWhite19),
   'repair19-white-mostima-five': gated([5], true, repairWhite19),

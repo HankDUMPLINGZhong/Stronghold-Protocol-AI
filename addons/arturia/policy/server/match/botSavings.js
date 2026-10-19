@@ -36,7 +36,7 @@ export function preserveSavings(m, ps, rec) {
   return stateOf(ps).parked.some((p) => p.round === m.round && p.id === rec?.chessId && ps.find(p.uid));
 }
 
-export function bankRemainder(m, ps, { itemAllowed = () => true } = {}) {
+export function bankRemainder(m, ps, { itemAllowed = () => true, chessAllowed = () => true } = {}) {
   const gd = gdOf(m, ps), state = stateOf(ps);
   if (m.round >= gd.bossRound || gd.leftoverKeptBands.includes(ps.bandId)) return false;
   let bought = false;
@@ -57,6 +57,7 @@ export function bankRemainder(m, ps, { itemAllowed = () => true } = {}) {
           && ps.allChess().some((p) => !preserveSavings(m, ps, gd.chess(p.id)) && (p.items?.length || 0) < gd.equipPerChess)) candidates.push({ idx, score: 50 + rec.tier * 2 - price, kind: 'Gear' });
       } else if (slot.kind === 'chess' && !state.parked.length && ps.funds <= 3) {
         const rec = gd.chess(slot.id);
+        if (!chessAllowed(rec)) continue;
         if (!rec || rec.isGolden || rec.bonds.includes(ps._botFocusId) || owned.has(gd.baseIdOf(slot.id))) continue;
         const swire = rec.garrisonIds?.some((id) => {
           const g = gd.garrison(id);

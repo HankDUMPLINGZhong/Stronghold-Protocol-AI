@@ -5,7 +5,7 @@ const gdOf = (m, ps) => ps.gd || m.gd;
 const base = (gd, rec) => gd.baseIdOf(rec.chessId || rec.id);
 const inventory = ps => [...ps.hand, ...ps.temp].filter(p => p?.kind === 'item');
 
-export function withLateranoPromotion(recipe, { deadlineFallback = false } = {}) {
+export function withLateranoPromotion(recipe, { deadlineFallback = false, eligibleTarget = () => true } = {}) {
   const { ids } = recipe, main = new Set([ids.executorAlter, ids.exusiaiAlter, ids.lemuen]);
   const special = (gd, rec) => [DOCTOR, MIMIC].includes(base(gd, rec));
   const pending = (gd, p) => p.items?.some(i => base(gd, i) === DOCTOR);
@@ -23,6 +23,7 @@ export function withLateranoPromotion(recipe, { deadlineFallback = false } = {})
     if (!mimic && ps.funds > 0) return null;
     const preferred = owned.filter(p => {
       const id = base(gd, p);
+      if (!eligibleTarget(gd.chess(p.id))) return false;
       if (gd.isGolden(p.id) || pending(gd, p) || owned.some(v => base(gd, v) === id && gd.isGolden(v.id))) return false;
       if (!main.has(id) && !(id === auxiliary && m.round < (mimic ? 13 : 12))) return false;
       const count = owned.filter(v => base(gd, v) === id && !gd.isGolden(v.id)).length;
@@ -33,6 +34,7 @@ export function withLateranoPromotion(recipe, { deadlineFallback = false } = {})
     // Deadline: only deployed non-elites; Mimic may now grant a random same-bond single.
     const plan = { ps, route: ps._botRoute };
     return [...ps.board.values()].filter(p => p.kind === 'chess' && !gd.isGolden(p.id)
+      && eligibleTarget(gd.chess(p.id))
       && (mimic || !pending(gd, p)))
       .sort((a, b) => gd.chess(b.id).tier - gd.chess(a.id).tier
         || recipe.unitBonus(m, ps, gd.chess(b.id), plan) - recipe.unitBonus(m, ps, gd.chess(a.id), plan)

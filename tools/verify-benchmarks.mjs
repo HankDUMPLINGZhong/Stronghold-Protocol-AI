@@ -11,7 +11,7 @@ assert.equal(suite.selection.candidatesPerDifficulty,10000);
 assert.equal(suite.randomBans,false);
 assert.equal(suite.cases.length,56);
 assert.equal(createHash('sha256').update(JSON.stringify(suite)).digest('hex'),results.suiteSha256);
-const expected={'legacy-laterano':[4,0],laterano:[27,9],'legacy-siracusa':[3,0],siracusa:[28,12]};
+const expected={'legacy-laterano':[4,0],laterano:[27,13],'legacy-siracusa':[3,0],siracusa:[28,12]};
 for(const [i,d]of ['HARD','ABYSS'].entries()){
   const cases=suite.cases.filter(c=>c.config===`solo:${d}`);
   assert.equal(cases.length,28);assert.equal(new Set(cases.map(c=>c.seed)).size,28);
@@ -30,4 +30,4 @@ for(const [i,d]of ['HARD','ABYSS'].entries()){
 }
 assert.equal(results.totalMatches,224);
 assert.deepEqual(Object.keys(results.matches).sort(),Object.keys(expected).sort());
-console.log('Verified: 56 fixed cases, 4 complete variants / 224 results, outcome-blind selection; Laterano27/9 and Siracusa28/12.');
+console.log('Verified: 56 fixed cases, 4 complete variants / 224 results, outcome-blind selection; Laterano27/13 and Siracusa28/12.');

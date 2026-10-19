@@ -115,13 +115,14 @@ const attunementCarry = (gd, ps) => ps.allChess().filter((p) => [ids.surtr, ids.
 })[0];
 
 /** Two real locked equipment slots; replace ordinary gear legally, never move an equipped item to another unit. */
-function useAttunement(m, ps) {
+function useAttunement(m, ps, itemAllowed = () => true) {
   const gd = gdOf(m, ps);
   if (hasAttunement(gd, ps)) return;
   const target = attunementCarry(gd, ps);
   if (!target) return;
   const worn = () => (target.items || []).map((it) => gd.item(it.id));
-  if (![isDress, (rec) => rec?.canGiveBond].every((matches) => worn().some(matches) || storedItems(ps).some((p) => matches(gd.item(p.id))))) return;
+  if (![isDress, (rec) => rec?.canGiveBond].every((matches) => worn().some(rec => matches(rec) && itemAllowed(rec))
+    || storedItems(ps).some((p) => matches(gd.item(p.id)) && itemAllowed(gd.item(p.id))))) return;
   for (const matches of [isDress, (rec) => rec?.canGiveBond]) {
     for (let guard = 0; guard < 3 && !worn().some(matches); guard++) {
       const item = storedItems(ps).find((p) => matches(gd.item(p.id)));
@@ -161,9 +162,38 @@ function pendingEngine(m, ps) {
   });
 }
 
-function levelTarget(m, ps, { spare = false } = {}) {
+
+/** [ASSUMED] Finish the current acquired engine, with explicit round deadlines; never wait for an unowned carry. */
+function stageIncomplete(m, ps) {
+  if (!isChiave(m, ps)) return false;
+  const gd = gdOf(m, ps);
+  if (ps.shop.level === 3 && m.round < 8 && coreCount(gd, ps) < 5
+    && availableThrough(m, ps, 3) >= 5) return true;
+  if (ps.shop.level !== 5 || m.round >= gd.bossRound) return false;
+  const keys = ps._botRoute?.id === swift.id ? [ids.aroma, ids.honeysuckle] : [ids.aroma];
+  return keys.some((id) => {
+    const copies = owned(gd, ps, id);
+    return copies.length > 0 && !copies.some((p) => gd.isGolden(p.id)) && m.pool.left(id) > 0;
+  });
+}
+
+/** [ASSUMED] Owner's R14+ exception, evaluated on the existing policy's proposed fielded set. */
+function lateSixMature(m, ps, fielded = null) {
+  const gd = gdOf(m, ps);
+  const units = fielded || [...ps.board.values()].filter((p) => p?.kind === 'chess');
+  const core = units.filter((p) => pieceBonds(gd, p).includes(CORE));
+  if (new Set(core.map((p) => baseOf(gd, p))).size < 6 || core.some((p) => !gd.isGolden(p.id))) return false;
+  const supports = ps._botRoute?.id === swift.id ? swift.supports : arcaneRaid.supports;
+  return units.filter((p) => gd.chess(p.id)?.tier === 5 && pieceBonds(gd, p).some((b) => supports.includes(b)))
+    .every((p) => gd.isGolden(p.id));
+}
+
+function levelTarget(m, ps, { spare = false, fielded = null } = {}) {
   const gd = gdOf(m, ps);
   if (!isChiave(m, ps)) return null;
+  // [ASSUMED] Owner's R14+ factor: reinforce five instead of purchasing six; earlier six remains legal.
+  if (m.round >= gd.bossRound && ps.shop.level === 5 && !lateSixMature(m, ps, fielded)) return 5;
+  if (stageIncomplete(m, ps)) return ps.shop.level;
   const r = m.round;
   // The R8 income cannot fund 2->3->4 plus a useful shop. Pay 2->3 at the END of R7, retaining the low-tier rolls.
   if (r < 2) return 1;
@@ -192,19 +222,8 @@ function spendReserve(m, ps) {
   return ps.shop.level < Math.min(5, levelTarget(m, ps)) && ps.funds >= budget ? budget : 0;
 }
 
-function upgradeReserve(m, ps) {
-  // Enter four/five with a refresh left; completing queued cheap pairs there discovers the next tier for free.
-  // Six opens no higher merge reward, so retain a useful purchase budget as well.
-  const gd = gdOf(m, ps);
-  const unfinished = [ids.honeysuckle, ids.aroma].some((id) => !owned(gd, ps, id).some((p) => gd.isGolden(p.id)));
-  const readyMerge = ps.shop.slots.filter((s) => s && !s.sold && s.kind === 'chess' && ps.completesChessMerge(s.id))
-    .reduce((n, s) => Math.min(n, ps.priceOf(s)), Infinity);
-  // A visible affordable merge after upgrading is already a concrete six-tier reinforcement.
-  const extra = ps.funds >= ps.shop.upgradePrice + readyMerge + gd.refreshPrice ? 0 : 3;
-  if (enginePolicy(m, 'tempo') && ps.shop.level === 4 && ps.lp > 8 && pendingEngine(m, ps)) return gd.refreshPrice + 3;
-  return ps.shop.level >= 3 && ps.shop.level < 6 ? gd.refreshPrice
-    + (ps.shop.level >= 5 ? 4 : ps.shop.level === 4 && unfinished && siracusaAdjustment(m, 'tempo') ? extra : 0) : 0;
-}
+// [ASSUMED] Budget ablation of the same readiness condition.
+function upgradeReserve() { return 0; }
 
 function criticalBuy(m, ps, rec, plan) {
   const gd = gdOf(m, ps);
@@ -231,6 +250,8 @@ function criticalBuy(m, ps, rec, plan) {
 
 function beforeUpgrade(m, ps, plan) {
   const gd = gdOf(m, ps);
+  if (isChiave(m, ps) && m.round >= gd.bossRound && ps.shop.level === 5 && !lateSixMature(m, ps, plan?.fielded)) return false;
+  if (stageIncomplete(m, ps)) return false;
   return !ps.shop.slots.some((s) => s && !s.sold && s.kind === 'chess' && ps.priceOf(s) <= ps.funds && criticalBuy(m, ps, gd.chess(s.id), plan));
 }
 
@@ -282,10 +303,10 @@ function itemReplacement(m, ps, rec, target) {
 }
 
 /** The 3-cost doll is consumed immediately; every retained 1-cost doll (including merged elites) funds the leap. */
-function useEconomy(m, ps) {
+function useEconomy(m, ps, options = {}) {
   releaseSavings(m, ps);
   useInvestorLiquidity(m, ps, (rec) => criticalBuy(m, ps, rec, { route: ps._botRoute }) || ps.completesChessMerge(rec.chessId));
-  useAttunement(m, ps);
+  useAttunement(m, ps, options.itemAllowed);
   const gd = gdOf(m, ps);
   for (const item of storedItems(ps)) {
     if (!sameBondRecruit(gd.item(item.id)) || !ps.find(item.uid)) continue;
@@ -533,7 +554,7 @@ function layoutValue(gd, units, plan, bonds) {
   return Math.min(3, layers * 0.09);
 }
 
-export const siracusa = Object.freeze({ name: '叙拉古', core: CORE, spendAllFunds: true, routes, ids, selectRoute, routeScores, levelTarget,
+export const siracusa = Object.freeze({ lateUpgradeLineup: true, lateSixMature, name: '叙拉古', core: CORE, spendAllFunds: true, routes, ids, selectRoute, routeScores, levelTarget,
   buyBonus, unitBonus, keep, refreshValue, trade, cycleValue, lineupBonus, layoutValue, spendReserve, upgradeReserve,
   criticalBuy, beforeUpgrade, priorityLevel, readyForUpgrade, itemBonus, holdItem, itemReplacement, useEconomy, preserve, purchaseReserve, replacementCandidates,
   visibleAirOnly: (m) => siracusaAdjustment(m, 'air'),

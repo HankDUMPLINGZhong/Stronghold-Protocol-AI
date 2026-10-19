@@ -4,8 +4,11 @@ import { siracusa } from './siracusa.js';
 import { rotateOffset } from '../../../../../../sim/dir.js';
 import { pieceBonds } from '../../../../../bondsMeta.js';
 
-// Owner policy: this roster has no sustained medic; camouflage does not prevent Solvent's self damage.
-export const siracusaItemAllowed = (rec) => rec?.baseId !== 'chess_item_1_05_e_a';
+// Owner policy: only the two income dolls, Siracusa Dress and same-bond recruitment phone, normal or elite.
+export const siracusaItemAllowed = (rec) => rec?.giveBondId === 'siracusaShip' || !!rec?.buffs?.some((b) => [
+  'gain_coin_when_round_start', 'use_equip_gain_coin_when_next_round_start',
+  'use_equip_reward_char_chess_with_same_bond',
+].includes(b.key));
 
 function damageWeight(gd, u, pieces, bonds) {
   const p = pieces?.get(u.uid), state = bonds?.siracusaShip, bb = gd.bond?.(siracusa.core)?.bb;
@@ -73,8 +76,18 @@ export function bossWindowValue(gd, units, plan, _bonds, model) {
 }
 
 export const siracusaBoss = Object.freeze({ ...siracusa,
+  // Owner requirement: six distinct real members must deploy whenever current assets/cap allow it.
+  // No virtual copies; only a real Dress/Transform pairing grants membership through pieceBonds.
+  requiredCoreMembers(m, ps) {
+    const gd = ps.gd || m.gd;
+    if (ps.deployCap < 6 || gd.modeInactiveBonds.has(siracusa.core)) return 0;
+    const bases = new Set(ps.allChess().filter((p) => pieceBonds(gd, p).includes(siracusa.core))
+      .map((p) => gd.baseIdOf(p.id)));
+    return bases.size >= 6 ? 6 : 0;
+  },
   itemAllowed: siracusaItemAllowed,
   bankRemainder: (m, ps) => siracusa.bankRemainder(m, ps, { itemAllowed: siracusaItemAllowed }),
+  useEconomy: (m, ps) => siracusa.useEconomy(m, ps, { itemAllowed: siracusaItemAllowed }),
   combatLayoutOnly: (plan) => !!plan.bossFocus,
   layoutValue: (gd, units, plan, bonds) => plan.bossFocus ? 0 : siracusa.layoutValue(gd, units, plan, bonds),
   bossLayoutValue: bossWindowValue, bossSupportValue });

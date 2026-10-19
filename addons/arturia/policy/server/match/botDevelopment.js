@@ -12,7 +12,7 @@ import { ASPD_MIN } from '../../../../../sim/constants.js';
 import { freeSlot, countFree, legalTiles, canPlace, positionClass, placeClass, basePositionClass, parseKey, tileKey, FIELD, pieceDir, boardTileOf, BOSS_MIRROR_COL } from '../../../../board.js';
 import { rotateOffset, normDir, mirrorDir, oppositeDir } from '../../../../../sim/dir.js';
 import { itemKey } from '../../../../gamedata.js';
-import { computeBonds } from '../../../../bondsMeta.js';
+import { computeBonds, pieceBonds } from '../../../../bondsMeta.js';
 import { withBounties, isFlyKey } from '../../../../waves.js';
 import { mitigate } from '../../../../../sim/damage.js';
 import { HOVER_KEYS } from '../../../../../sim/content/enemies.js';
@@ -27,6 +27,7 @@ import { lateranoLesson, lateranoHealing } from './botStrategies/lateranoTactics
 import { createBossRehearsalSteps } from './botBossRehearsal.js';
 import { fireControlValue, routeFront } from './botFireControl.js';
 import { createForecastSteps } from './botForecast.js';
+import { draftSafetyKey, evaluateDraftSafety } from './botStrategies/siracusaDraftSafety.js';
 
 /**
  * Drive a step generator (planLayoutSteps, createRehearsalSteps, arrangeSteps, botPrepBeginSteps …) to its end in one
@@ -456,6 +457,9 @@ function lineupScore(m, ps, set, ctx) {
   // A withdrawn board member joins the hypothetical hand; temp members still never count as deck members.
   const hand = ctx.deck.filter((p) => !inSet.has(p.uid));
   const bonds = computeBonds(gd, { board, hand, layers: ps.layers, bondCountBonus: ps.bondCountBonus });
+  // Owner strategy constraints precede soft unit/support scores, including every hill-climb swap.
+  const required = ctx.strategy?.requiredCoreMembers?.(m, ps) || 0;
+  if (required && (bonds[ctx.focus]?.count || 0) < required) return -Infinity;
   let v = 0;
   for (const p of set) v += unitBase(m, p, ctx);
   for (const [id, b] of Object.entries(bonds)) {
@@ -498,7 +502,9 @@ function chooseLineup(m, ps, ctx) {
     const seen = new Set();
     return seed.filter((p) => {
       const base = (ps.gd || m.gd).baseIdOf(p.id);
-      if (!chessRec(m, p.id, ps)?.bonds?.includes(id) || seen.has(base)) return false;
+      const memberships = id === ctx.focus && ctx.strategy?.requiredCoreMembers?.(m, ps)
+        ? pieceBonds(ps.gd || m.gd, p) : chessRec(m, p.id, ps)?.bonds;
+      if (!memberships?.includes(id) || seen.has(base)) return false;
       seen.add(base); return true;
     });
   };
@@ -551,11 +557,13 @@ export function lineupScoreOf(m, ps, pieces) {
 }
 
 /** Shop / reward score of acquiring one copy of chess `id` (0 = not worth it). */
-function buyScore(m, ps, id, ctx) {
+function buyScore(m, ps, id, ctx, reward = false) {
   const gd = ps?.gd || m.gd;
   const c = chessRec(m, id, ps);
   if (!c) return 0;
-  if (ctx.strategy?.purchaseAllowed?.(m, ps, c) === false) return -1000;
+  const rewardGate = ctx.strategy?.rewardAllowed || ctx.strategy?.rewardScoreAllowed;
+  if ((reward && rewardGate ? rewardGate(m, ps, c)
+    : ctx.strategy?.purchaseAllowed?.(m, ps, c)) === false) return -1000;
   let s = power(c) * 0.6;
   const tr = traitsOf(m, c);
   s += growthValue(m, ps, c, ctx) * 0.8 + tr.gain * 2 + tr.econ * (m.round <= 7 ? 2 : 0);
@@ -781,6 +789,7 @@ export function airflowAtkMul(model, key, dir) {
 
 /** Direction candidates of the planner, in preference order (ties keep the earlier one: RIGHT = toward the gates). */
 export const PLAN_DIRS = Object.freeze(['RIGHT', 'UP', 'DOWN', 'LEFT']);
+const layoutDirs = (layout, uid) => layout.forcedFacings?.has(uid) ? [layout.forcedFacings.get(uid)] : PLAN_DIRS;
 
 /** Board tile keys covered by a record's range grid standing on (r, c) facing `dir` (grid rotated, DESIGN §3). */
 export function rangeTiles(rec, r, c, dir = 'RIGHT') {
@@ -1003,6 +1012,11 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
   const layout = new Layout(model, params, { gd: pgd, plan, bonds: ps.bonds });
   layout.raidLandings = placement?.landings;
   layout.fixed = placement?.fixed;
+  // Final-assault positions must be scored with the directions the owner policy will actually emit.
+  if (!m.wave && m.round >= m.gd.bossRound) layout.forcedFacings = new Map(pieces.flatMap((p) => {
+    const dir = plan.strategy?.finalFacing?.(pgd, p, plan);
+    return dir ? [[p.uid, dir]] : [];
+  }));
   layout.formationRoles = formationRoles;
   layout.humanLessons = m.opts.botHumanLessons || lateranoHealing(m, ps);
   layout.fireControl = fireControl;
@@ -1015,6 +1029,14 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
   const order = pieces.slice().sort((a, b) => rank(a) - rank(b) || dpsOf(rec(b)) - dpsOf(rec(a)) || a.uid - b.uid);
   const taken = new Set([...occupied, ...[...(placement?.starts?.values() || [])].map((p) => p.key)]);
   const out = new LayoutPlan();
+  const finish = () => {
+    for (const p of pieces) {
+      const facing = plan.strategy?.finalFacing?.(pgd, p, plan);
+      if (facing && out.has(p.uid)) out.dirs.set(p.uid, facing);
+    }
+    if (layout.forcedFacings?.size && model.bossBodies.length) out.bossMissing = bossMissing(layout);
+    return out;
+  };
   if(placementVariant)out.placementVariant=placementVariant;
   out.reserved = placement?.reserved || new Set();
   const lineGates = new Map();
@@ -1023,9 +1045,9 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     const start = placement?.fixed?.has(p.uid) ? placement.starts.get(p.uid) : null;
     const key = start?.key || seedPlan.get(p.uid), r0 = rec(p);
     if (!key || !r0) continue;
-    const [r, c] = parseKey(key), u = unitOf(r0, key, r, c, start?.dir || planDir(seedPlan, p.uid), model);
+    const [r, c] = parseKey(key), u = unitOf(r0, key, r, c, start?.dir || layout.forcedFacings?.get(p.uid) || planDir(seedPlan, p.uid), model);
     u.uid = p.uid; layout.units.push(u); out.set(p.uid, key); out.dirs.set(p.uid, u.dir);
-    const gate = linePlacementGate(model, r0, [...legalTiles(map, placeClass(ps, pgd.chess(p.id) || r0))], PLAN_DIRS);
+    const gate = linePlacementGate(model, r0, [...legalTiles(map, placeClass(ps, pgd.chess(p.id) || r0))], layoutDirs(layout, p.uid));
     if (gate) lineGates.set(p.uid, gate);
   }
   if (fireControl && seedPlan) {
@@ -1037,19 +1059,20 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
   }
   if (facingPlan) {
     for (const p of order) {
-      const key = facingPlan.get(p.uid), r0 = rec(p);
+      const fixedStart = placement?.fixed?.has(p.uid) ? placement.starts.get(p.uid) : null;
+      const key = fixedStart?.key || facingPlan.get(p.uid), r0 = rec(p);
       if (!key || !r0) continue;
-      const [r, c] = parseKey(key), u = unitOf(r0, key, r, c, planDir(facingPlan, p.uid), model);
+      const [r, c] = parseKey(key), u = unitOf(r0, key, r, c, fixedStart?.dir || layout.forcedFacings?.get(p.uid) || planDir(facingPlan, p.uid), model);
       u.uid = p.uid; layout.units.push(u); out.set(p.uid, key); out.dirs.set(p.uid, u.dir);
     }
     for (let pass = 0; pass < 2; pass++) for (let i = 0; i < layout.units.length; i++) {
       const initial = layout.units[i];
       if (placement?.starts?.has(initial.uid)) continue;
-      const gate = linePlacementGate(model, initial.rec, [[initial.r, initial.c]], PLAN_DIRS);
+      const gate = linePlacementGate(model, initial.rec, [[initial.r, initial.c]], layoutDirs(layout, initial.uid));
       const valueOf = () => !model.bossBodies.length
         ? plan.strategy.bossSupportValue(pgd, layout.units, plan.pieces, ps.bonds) : layout.value();
       let best = initial, score = valueOf();
-      for (const dir of PLAN_DIRS) {
+      for (const dir of layoutDirs(layout, initial.uid)) {
         if (gate && !gate.allows(initial.r, initial.c, dir)) continue;
         const u = unitOf(initial.rec, initial.key, initial.r, initial.c, dir, model); u.uid = initial.uid;
         layout.units[i] = u; const value = valueOf();
@@ -1059,7 +1082,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     }
     out.reserved = facingPlan.reserved;
     yield* repairBossBodySteps(layout, out, pgd, ps, map, occupied);
-    return out;
+    return finish();
   }
   for (const p of seedPlan ? [] : order) {
     const r0 = rec(p);
@@ -1080,7 +1103,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     // (歌蕾蒂娅, 崖心, 见行者, any module): it may stand on a 高台, and when one of those tiles covers the enemy road it is
     // planned there even with the ground free (owner 2026-10-04: the bot uses the 高台; 2026-10-05: every such chess).
     const cls = p.kind === 'token' ? positionClass(r0) : placeClass(ps, pgd.chess(p.id) || r0);
-    const lineGate = linePlacementGate(model, r0, [...legalTiles(map, cls)].filter(([r, c]) => !taken.has(tileKey(r, c))), PLAN_DIRS);
+    const lineGate = linePlacementGate(model, r0, [...legalTiles(map, cls)].filter(([r, c]) => !taken.has(tileKey(r, c))), layoutDirs(layout, p.uid));
     if (lineGate) lineGates.set(p.uid, lineGate);
     const preferHigh = cls === 'all' && basePositionClass(r0) === 'melee';
     let bestHigh = null;
@@ -1098,7 +1121,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
       if (taken.has(k) || (within && !within.has(k)) || (without && without.has(k))) continue;
       const noise = rng() * 1e-6;
       const seen = new Set();
-      for (const dir of PLAN_DIRS) {
+      for (const dir of layoutDirs(layout, p.uid)) {
         if (lineGate && !lineGate.allows(r, c, dir)) continue;
         const u = unitOf(r0, k, r, c, dir, model);
         // (the same covered tiles under a different airflow ATK factor are a different candidate)
@@ -1132,7 +1155,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     const initial = layout.units[i];
     if (placement?.starts?.has(initial.uid)) continue;
     let best = initial, score = layout.value();
-    for (const dir of PLAN_DIRS) {
+    for (const dir of layoutDirs(layout, initial.uid)) {
       if (dir === initial.dir) continue;
       if (lineGates.has(initial.uid) && !lineGates.get(initial.uid).allows(initial.r, initial.c, dir)) continue;
       const trial = unitOf(initial.rec, initial.key, initial.r, initial.c, dir, model);
@@ -1155,7 +1178,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
       let best = initial, score = layout.value();
       const blocked = new Set([...occupied, ...layout.units.filter((u, i) => i !== bell).map((u) => u.key)]);
       const cls = placeClass(ps, pgd.chess(initial.rec.chessId));
-      for (const dir of PLAN_DIRS) for (let step = 1; step <= (initial.rec.isGolden ? 2 : 1); step++) {
+      for (const dir of layoutDirs(layout, initial.uid)) for (let step = 1; step <= (initial.rec.isGolden ? 2 : 1); step++) {
         const [dr, dc] = rotateOffset(0, step, dir), r = target.r - dr, c = target.c - dc, key = tileKey(r, c);
         if (blocked.has(key) || !canPlace(map, cls, r, c)) continue;
         const trial = unitOf(initial.rec, key, r, c, dir, model); trial.uid = initial.uid;
@@ -1186,7 +1209,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
       const trial = unitOf(displaced.rec, initial.key, initial.r, initial.c, displaced.dir, model); trial.uid = displaced.uid;
       layout.units[j] = trial;
     }
-    for (const dir of PLAN_DIRS) {
+    for (const dir of layoutDirs(layout, initial.uid)) {
       if (lineGates.has(initial.uid) && !lineGates.get(initial.uid).allows(r, c, dir)) continue;
       const trial = unitOf(initial.rec, key, r, c, dir, model); trial.uid = initial.uid;
       layout.units[i] = trial;
@@ -1225,7 +1248,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     for (const [r, c] of legalTiles(map, cls)) {
       const key = tileKey(r, c);
       if (blocked.has(key)) continue;
-      for (const dir of PLAN_DIRS) {
+      for (const dir of layoutDirs(layout, initial.uid)) {
         if (lineGates.has(initial.uid) && !lineGates.get(initial.uid).allows(r, c, dir)) continue;
         const trial = unitOf(initial.rec, key, r, c, dir, model); trial.uid = initial.uid;
         const next = frontlineCoverage(fronts, trial.cover, key);
@@ -1250,7 +1273,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     if (bossFocus) yield* repairBossBodySteps(layout, out, pgd, ps, map, occupied);
     out.bossMissing = bossMissing(layout);
   }
-  return out;
+  return finish();
 }
 
 /** Whole-team coordinate search. Every trial, including a displaced neighbour, uses Layout.value(). */
@@ -1276,7 +1299,7 @@ function* refineSquadSteps(layout, out, ps, gd, map, occupied, lineGates, anchor
           const v = unitOf(other.rec, initial.key, initial.r, initial.c, other.dir, layout.model); v.uid = other.uid;
           units[j] = v;
         }
-        for (const dir of PLAN_DIRS) {
+        for (const dir of layoutDirs(layout, initial.uid)) {
           if (lineGates.has(initial.uid) && !lineGates.get(initial.uid).allows(r, c, dir)) continue;
           const u = unitOf(initial.rec, key, r, c, dir, layout.model); u.uid = initial.uid; units[i] = u;
           const value = layout.value();
@@ -1327,7 +1350,7 @@ function* repairBossBodySteps(layout, out, gd, ps, map, occupied) {
           const v = unitOf(displaced.rec, initial.key, initial.r, initial.c, displaced.dir, layout.model);
           v.uid = displaced.uid; layout.units[j] = v;
         }
-        for (const dir of PLAN_DIRS) {
+        for (const dir of layoutDirs(layout, initial.uid)) {
           const u = unitOf(initial.rec, key, r, c, dir, layout.model); u.uid = initial.uid; layout.units[i] = u;
           const next = bossMissing(layout), value = layout.value();
           if (next < missing || next === missing && value > score + 1e-6) {
@@ -1668,14 +1691,23 @@ function takeOffers(m, ps) {
     const ctx = context(m, ps);
     let best = -1;
     let bestS = -Infinity;
+    let bestPriority = -Infinity;
     offer.slots.forEach((s, i) => {
       if (s.sold) return;
+      if (s.kind === 'chess' && ctx.strategy?.rewardAllowed?.(m, ps, gd.chess(s.id)) === false) return;
       if (s.kind === 'item' && ctx.strategy?.itemAllowed?.(gd.item(s.id)) === false) return;
       const sc = s.kind === 'item' ? (canUseItem(m, ps, s) ? 10 : 1) + gd.tierOf(s.id) * 3
-        + Math.max(economyItemBonus(m, ps, gd.item(s.id)), ctx.strategy?.itemBonus(m, ps, gd.item(s.id)) || 0) : buyScore(m, ps, s.id, ctx);
-      if (sc > bestS) { bestS = sc; best = i; }
+        + Math.max(economyItemBonus(m, ps, gd.item(s.id)), ctx.strategy?.itemBonus(m, ps, gd.item(s.id)) || 0) : buyScore(m, ps, s.id, ctx, true);
+      const priority = ctx.strategy?.rewardPriority?.(m, ps, s) ?? 0;
+      if (priority > bestPriority || priority === bestPriority && sc > bestS) { bestS = sc; bestPriority = priority; best = i; }
     });
-    if (best < 0) break;
+    if (best < 0) {
+      if (!ctx.strategy?.rewardAllowed) break;
+      // Decline an all-disallowed offer rather than acquiring an unrelated card for its tier/merge score.
+      ps.offers.shift(); ps.dirty();
+      const stats = ps._botRecipeStats ||= {}; stats.draftOffersDeclined = (stats.draftOffersDeclined || 0) + 1;
+      continue;
+    }
     if (freeSlot(ps.hand) < 0 && !(ctx.strategy?.shoppingRepair && freeShoppingSlot(m, ps))) sellWeakestHand(m, ps, { keepPairs: false });
     if (!tryDo(() => ps.pickReward(best))) {
       // could not take it (sold out / no room): drop the offer
@@ -1761,6 +1793,8 @@ export function* botPrepEndSteps(m, ps, job = null) {
   // what the next prep's bench shed may judge by value: what is owned now (later gains wait for a placement step)
   rememberOwned(ps);
   m.autoPickPersonalChoice(ps, 'bot');
+  const finalBoardSteps = coreStrategy(m, ps._botFocusId)?.finalBoardSteps;
+  if (finalBoardSteps) yield* finalBoardSteps(m, ps, { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps, applyPlanSteps });
   tryDo(() => ps.setReady(true));
 }
 
@@ -1818,7 +1852,12 @@ export function botPrep(m, ps) {
  * slots are kept at the next round start (PlayerState.startRound rollShop keepFrozen), the rest rerolled.
  */
 function maybeFreeze(m, ps) {
+  if (coreStrategy(m, ps._botFocusId)?.freezeAfterSpending && ps.funds > 0) {
+    if (ps.shop.frozen) tryDo(() => ps.freeze());
+    return;
+  }
   if (holdCriticalShop(m, ps)) return;
+  if (coreStrategy(m, ps._botFocusId)?.holdShop && ps.shop.frozen) tryDo(() => ps.freeze());
   if (ps.shop.frozen) return;
   if (ps.shop.slots.some((s) => s && !s.sold && s.kind === 'chess' && ps.priceOf(s) > ps.funds && ps.completesChessMerge(s.id))) tryDo(() => ps.freeze());
 }
@@ -1826,6 +1865,10 @@ function maybeFreeze(m, ps) {
 /** A lock persists only while an unaffordable planned key remains; freeze() itself is a toggle. */
 function holdCriticalShop(m, ps) {
   const recipe = coreStrategy(m, ps._botFocusId), gd = ps.gd || m.gd;
+  if (recipe?.holdShop?.(m,ps)) {
+    if (!ps.shop.frozen) tryDo(() => ps.freeze());
+    return true;
+  }
   if (!recipe?.shoppingRepair || !ps.shop.slots.some(s => s && !s.sold && s.kind === 'chess'
     && (ps.priceOf(s) > ps.funds || freeSlot(ps.hand)<0) && recipe.importantBuy(m, ps, gd.chess(s.id)))) return false;
   if (!ps.shop.frozen) tryDo(() => ps.freeze());
@@ -1878,9 +1921,13 @@ export function levelUp(m, ps, { spare = false } = {}) {
     if (ps.funds < price) return;
     const r = m.round;
     const recipe = coreStrategy(m, ps._botFocusId);
-    const recipeTarget = recipe?.levelTarget(m, ps, { spare });
+    // [ASSUMED] The optional late-level gate inspects the same proposed roster used by arrangement.
+    // Read-only selection; no extra rehearsal, purchase, arrangement or random draw.
+    const fielded = recipe?.lateUpgradeLineup && r >= gd.bossRound && ps.shop.level === 5
+      ? chooseLineup(m, ps, context(m, ps)).set : null;
+    const recipeTarget = recipe?.levelTarget(m, ps, { spare, fielded });
     if (recipeTarget != null && ps.shop.level >= recipeTarget) return;
-    if (recipeTarget != null && !recipe.beforeUpgrade(m, ps, bondPlan(m, ps))) return;
+    if (recipeTarget != null && !recipe.beforeUpgrade(m, ps, fielded ? { ...bondPlan(m, ps), fielded } : bondPlan(m, ps))) return;
     if (recipeTarget != null && price > 0 && ps.funds < price + recipe.upgradeReserve(m, ps)) return;
     const target = recipeTarget ?? LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r)];
     const nextTarget = LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r + 1)];
@@ -1925,6 +1972,16 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     if (guard > 0) yield;
     coreStrategy(m, ps._botFocusId)?.liquidity?.(m, ps);
     const ctx = context(m, ps);
+    if (ctx.strategy?.focusedDraftSafety && m.wave && m.round > 1 && ps.shop.level === 2) {
+      const key = draftSafetyKey(m, ps);
+      if (ps._botDraftSafety?.key !== key) {
+        const chosen = chooseLineup(m, ps, ctx).set;
+        const layout = yield* planLayoutSteps(m, ps, chosen, LAYOUT_PARAMS,
+          { rng: createRng(deriveSeed(m.seed, `siracusa-safe-layout:${m.round}:${ps.seat}`)) });
+        const input = yield* bossInputSteps(m, ps, chosen, layout, { keepWithdrawn: true });
+        yield* evaluateDraftSafety(m, ps, input, key);
+      }
+    }
     const reserve = Math.max(bankReserve, spendAll ? 0 : ctx.strategy?.spendReserve(m, ps) || 0);
     const purchaseReserve = Math.max(reserve, spendAll ? 0 : ctx.strategy?.purchaseReserve?.(m, ps) || 0);
     if (ctx.strategy?.trade(m, ps, ctx)) { takeOffers(m, ps); continue; }
@@ -2037,7 +2094,7 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     }
     if (canRefresh) {
       if (holdCriticalShop(m, ps)) return;
-      if (ctx.strategy?.shoppingRepair && ps.shop.frozen) tryDo(()=>ps.freeze());
+      if ((ctx.strategy?.shoppingRepair || ctx.strategy?.holdShop) && ps.shop.frozen) tryDo(()=>ps.freeze());
       if (!tryDo(() => spendAction(m, ps, () => ps.refresh()))) return;
       refreshes++;
       continue;
@@ -2100,6 +2157,21 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
       // R14 has no farming. Keep the existing roster and mechanics; compare alternative legal complete layouts.
       for (let i=1;i<3;i++) plans.push(yield* planLayoutSteps(m, ps, chosen,
         { ...LAYOUT_PARAMS, ...REHEARSAL_VARIANTS[i] }, { rng: proposalRng(i) }));
+    }
+    if (!m.wave && ctx.strategy.finalProtectionPlans) {
+      plans.push(...yield* ctx.strategy.finalProtectionPlans(m, ps, chosen, plans, {
+        model: fieldModel(m, ps), unitOf, recOf: p => rangeRec(ps, (ps.gd || m.gd).chess(p.id)),
+        makePlan: () => new LayoutPlan(), ids: ctx.strategy.ids,
+      }));
+    }
+    if (m.wave && ctx.strategy.normalContactPlans) {
+      const alternatives = yield* ctx.strategy.normalContactPlans(m, ps, chosen, plans, {
+        model: fieldModel(m, ps), unitOf,
+        recOf: p => p.kind === 'token' ? (ps.gd || m.gd).token(p.id) : rangeRec(ps, (ps.gd || m.gd).chess(p.id)),
+        makePlan: () => new LayoutPlan(), ids: ctx.strategy.ids,
+      });
+      // Keep the valid original control. Two refinements replace trial slots, never expand the forecast budget.
+      for (let i = 0; i < Math.min(2, alternatives.length); i++) plans[i + 1] = alternatives[i];
     }
     const job = yield* createForecastSteps(m, ps, chosen, plans,
       plan => bossInputSteps(m, ps, plan.lineup || chosen, plan, { keepWithdrawn: true }), ctx.strategy);
