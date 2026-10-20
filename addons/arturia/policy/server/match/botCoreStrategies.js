@@ -1,3 +1,4 @@
+import { withSiracusaKeyValue } from './botStrategies/siracusaKeyValue.js';
 // Core-named recipes are looked up AFTER the opening picker or explicit band commitment has chosen a core.
 // This registry deliberately has no selection weights and consumes no random numbers.
 import { siracusa } from './botStrategies/siracusa.js';
@@ -19,7 +20,7 @@ export const CORE_STRATEGIES = Object.freeze({ [siracusa.core]: siracusa, [later
 export function coreStrategy(m, core) {
   if (m.botCoreStrategies === false) return null;
   if (core === laterano.core && m.opts?.botLateranoExperiment) return LATERANO_EXPERIMENTS[m.opts.botLateranoExperiment];
-  if (core === siracusa.core && Array.isArray(m.opts?.botSiracusaEngines) && m.opts.botSiracusaEngines.includes('boss')) return withSiracusaMobileArcane(withSiracusaFocusedDraft(withSiracusaAromaFixed(siracusaBoss, m)));
+  if (core === siracusa.core && Array.isArray(m.opts?.botSiracusaEngines) && m.opts.botSiracusaEngines.includes('boss')) return withSiracusaKeyValue(withSiracusaMobileArcane(withSiracusaFocusedDraft(withSiracusaAromaFixed(siracusaBoss, m))));
   if (core === laterano.core && Array.isArray(m.opts?.botLateranoLessons) && lateranoLesson(m, 'forecast')) return lateranoForecast;
   if (core === laterano.core && Array.isArray(m.opts?.botLateranoLessons) && lateranoLesson(m, 'engagement')) return lateranoEngagement;
   if (core === laterano.core && Array.isArray(m.opts?.botLateranoLessons) && lateranoLesson(m, 'contact')) return lateranoContact;

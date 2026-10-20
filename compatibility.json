@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-19",
+  "checkedAt": "2026-10-21",
   "plugins": {
-    "arturia": "0.1.3",
+    "arturia": "0.2.0",
     "lavinia": "0.1.2"
   },
   "hosts": [
@@ -15,14 +15,14 @@
         "passed": 26,
         "failed": 0
       },
-      "scope": "Both plugins: installation, coexistence, real old-policy upgrades, R14 combat and byte-exact uninstall"
+      "scope": "Both plugins: installation, coexistence, v0.1.3 Arturia policy upgrade, solo/cooperative R14 combat, recovery and byte-exact uninstall"
     },
     {
       "channel": "retained-base",
       "ref": "main-base",
       "commit": "3e589285584828a20075893a0575a9e5660dcc10",
       "packageVersion": "0.2.4",
-      "scope": "Both plugins: installation, coexistence, real old-policy upgrades, R14 combat and byte-exact uninstall",
+      "scope": "Both plugins: installation, coexistence, v0.1.3 Arturia policy upgrade, solo/cooperative R14 combat, recovery and byte-exact uninstall",
       "integrationTests": {
         "passed": 26,
         "failed": 0
@@ -43,7 +43,7 @@
     "passed": 1,
     "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
   },
-  "limitations": "Compatibility checks, not win-rate measurements. Arturia v0.1.3 updates its frozen strategy and adapter selection; Lavinia v0.1.2 bytes remain unchanged. Exact-commit release CI must pass for every listed CI host before publication.",
+  "limitations": "Compatibility checks, not win-rate measurements. Arturia v0.2.0 updates its frozen strategy and adapter selection; Lavinia v0.1.2 bytes remain unchanged. Exact-commit release CI must pass for every listed CI host before publication.",
   "previousChecks": [
     {
       "checkedAt": "2026-10-19",
@@ -114,11 +114,50 @@
           }
         }
       ]
+    },
+    {
+      "checkedAt": "2026-10-19",
+      "plugins": {
+        "arturia": "0.1.3",
+        "lavinia": "0.1.2"
+      },
+      "hosts": [
+        {
+          "channel": "release",
+          "ref": "v0.3.1",
+          "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+          "packageVersion": "0.3.1",
+          "integrationTests": {
+            "passed": 26,
+            "failed": 0
+          },
+          "scope": "Both plugins: installation, coexistence, real old-policy upgrades, R14 combat and byte-exact uninstall"
+        },
+        {
+          "channel": "retained-base",
+          "ref": "main-base",
+          "commit": "3e589285584828a20075893a0575a9e5660dcc10",
+          "packageVersion": "0.2.4",
+          "scope": "Both plugins: installation, coexistence, real old-policy upgrades, R14 combat and byte-exact uninstall",
+          "integrationTests": {
+            "passed": 26,
+            "failed": 0
+          }
+        }
+      ]
     }
   ],
   "requiredReleaseCiHosts": [
     "6ab2468279e926d107788f63d7fe219b85f67b4a",
     "b3deebdae4a92642c007d217a1a4573e5d3612c5",
     "c9d804f470b8d7422ae04eb66faf671cef21ad52"
-  ]
+  ],
+  "upstreamCheckedAt": "2026-10-21",
+  "upstreamLatestRelease": "v0.3.1",
+  "upstreamMaster": "c9d804f470b8d7422ae04eb66faf671cef21ad52",
+  "additionalArturiaSoloValidation": {
+    "host": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+    "passed": 8,
+    "failed": 0
+  }
 }

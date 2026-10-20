@@ -8,7 +8,8 @@
 
 | 版本 | 下载 | 说明与校验 |
 |---|---|---|
-| **v0.1.3 · 当前版** | [AI-Arturia-v0.1.3.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.1.3/AI-Arturia-v0.1.3.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.1.3) |
+| **v0.2.0 · 当前版** | [AI-Arturia-v0.2.0.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.0/AI-Arturia-v0.2.0.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.0) |
+| v0.1.3 | [AI-Arturia-v0.1.3.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.1.3/AI-Arturia-v0.1.3.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.1.3) |
 | v0.1.2 | [AI-Arturia-v0.1.2.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.1.2/AI-Arturia-v0.1.2.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.1.2) |
 | v0.1.1 | [AI-Arturia-v0.1.1.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.1.1/AI-Arturia-v0.1.1.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.1.1) |
 | v0.1.0 | [AI-Arturia-v0.1.0.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.1.0/AI-Arturia-v0.1.0.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.1.0) |

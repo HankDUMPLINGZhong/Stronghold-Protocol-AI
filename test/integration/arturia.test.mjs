@@ -88,18 +88,21 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(h.m.opts.botFormationRoles, undefined);
     assert.deepEqual(view.opts.botLateranoLessons, ['quintus', 'roster']);
     assert.equal(view.opts.botFormationRoles, true);
-    assert.equal(view.opts.botLateranoExperiment, 'team27-lucien-contact');
+    assert.equal(view.opts.botLateranoExperiment, 'team27-early-three');
     assert.equal(view.botRehearsal, 3);
     const recipe = bondPlan(view, h.ps('arturia')).strategy;
     assert.equal(recipe.core, adapter.CORE);
     assert.equal(recipe.forecast, true);
     assert.equal(recipe.shoppingRepair, true);
     assert.equal(recipe.developmentForecast, undefined);
+    assert.equal(typeof recipe.earlyTwoState, 'function');
+    assert.equal(typeof recipe.earlyThreeState, 'function');
+    assert.equal(recipe.matureFiveState, undefined);
     const manifest = JSON.parse(readFileSync(resolve(bundle, 'addon.json')));
-    assert.equal(manifest.version, '0.1.3');
+    assert.equal(manifest.version, '0.2.0');
     assert.equal(manifest.policy, POLICY_REF);
     assert.equal(manifest.policyObject, view.opts.botLateranoExperiment);
-    assert.equal(manifest.benchmark.hard, '27/28'); assert.equal(manifest.benchmark.abyss, '13/28');
+    assert.equal(manifest.benchmark.hard, '27/28'); assert.equal(manifest.benchmark.abyss, '16/28');
     assert.deepEqual(readFileSync(resolve(root, 'addons/arturia/addon.json')), readFileSync(resolve(bundle, 'addon.json')));
     assert.ok(existsSync(resolve(root, 'addons/arturia/安装插件.bat')));
     h.invariants();
@@ -119,7 +122,7 @@ test('real upstream battles and later rounds accept the retained policy', () => 
   } finally { h.m.dispose(); }
 });
 
-test('packaged v0.1.3 uses the selected map layouts through the adapter', async () => {
+test('packaged v0.2.0 uses the selected map layouts through the adapter', async () => {
   const {give}=harness;
   const {planLayout,bondPlan}=await load('server/match/arturia/policy/server/match/botDevelopment.js');
   const h=harness.makeMatch({mode:'solo',difficulty:'ABYSS',seed:25864,fake:true});
@@ -147,20 +150,22 @@ test('packaged v0.1.3 uses the selected map layouts through the adapter', async 
   } finally {h.m.dispose();}
 });
 
-test('frozen policy executes shopping and boss rehearsals through R14 on the target engine', { timeout: 180_000 }, () => {
-  const h = harness.makeMatch({ mode: 'coop', difficulty: 'HARD', seed: 7, captureFrames: false,
-    seats: seats().filter(s => s.isBot).map((s, seat) => ({ ...s, seat })) });
-  try {
-    h.start().toPrep(1);
-    // Compatibility exercise, not a benchmark: prevent early elimination from skipping late APIs.
-    for (const ps of h.m.players.values()) ps.lp = 10000;
-    if (h.m.teamLp != null) h.m.teamLp = 10000;
-    h.toPrep(14);
-    assert.ok(h.run(() => h.m.round > 14 || h.ended != null), 'R14 battle completes');
-    assert.deepEqual(h.logs.error, []);
-    assert.deepEqual(h.logs.warn, [], 'no hidden engine API fallback in late prep or rehearsals');
-    h.invariants();
-  } finally { h.m.dispose(); }
+test('frozen policy executes solo and cooperative shopping and boss rehearsals through R14', { timeout: 180_000 }, () => {
+  for (const mode of ['coop', 'solo']) {
+    const h = harness.makeMatch({ mode, difficulty: 'HARD', seed: 7, captureFrames: false,
+      seats: seats().filter(s => s.isBot && (mode === 'coop' || s.botPersona === 'arturia')).map((s, seat) => ({ ...s, seat })) });
+    try {
+      h.start().toPrep(1);
+      // Compatibility exercise, not a benchmark: prevent early elimination from skipping late APIs.
+      for (const ps of h.m.players.values()) ps.lp = 10000;
+      if (h.m.teamLp != null) h.m.teamLp = 10000;
+      h.toPrep(14);
+      assert.ok(h.run(() => h.m.round > 14 || h.ended != null), 'R14 battle completes');
+      assert.deepEqual(h.logs.error, []);
+      assert.deepEqual(h.logs.warn, [], 'no hidden engine API fallback in late prep or rehearsals');
+      h.invariants();
+    } finally { h.m.dispose(); }
+  }
 });
 
 test('lobby permissions, identity, uniqueness, room mode and seat forwarding', async () => {

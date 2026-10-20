@@ -1,3 +1,5 @@
+import { largeBodyCoveragePlan } from './botStrategies/siracusaLargeBodyCoverage.js';
+import { lucienRightPlan } from './botStrategies/siracusaLucienRight.js';
 // server/match/botDevelopment.js — opt-in growth AI (DESIGN §6.6, META §1.6).
 // The original bot.js remains the independently selectable legacy implementation.
 // Growth commits to a viable core, selects a seeded damage sub-route, and keeps a shared economy objective.
@@ -1793,8 +1795,13 @@ export function* botPrepEndSteps(m, ps, job = null) {
   // what the next prep's bench shed may judge by value: what is owned now (later gains wait for a placement step)
   rememberOwned(ps);
   m.autoPickPersonalChoice(ps, 'bot');
+  const rightPlan = lucienRightPlan(m, ps, { rangeRec, rangeTiles });
+  if (rightPlan) yield* applyPlanSteps(m, ps, [...ps.board.values()].filter((p) => p.kind === 'chess'), rightPlan);
+  const bodyPlan = largeBodyCoveragePlan(m, ps, { fieldModel, rangeRec, rangeTiles, isHealer, effDps });
+  if (bodyPlan) yield* applyPlanSteps(m, ps, [...ps.board.values()].filter((p) => p.kind === 'chess'), bodyPlan);
   const finalBoardSteps = coreStrategy(m, ps._botFocusId)?.finalBoardSteps;
-  if (finalBoardSteps) yield* finalBoardSteps(m, ps, { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps, applyPlanSteps });
+  if (finalBoardSteps) yield* finalBoardSteps(m, ps, { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps, applyPlanSteps,
+    planLayoutSteps: (owner, pieces, options) => planLayoutSteps(m, owner, pieces, LAYOUT_PARAMS, options) });
   tryDo(() => ps.setReady(true));
 }
 
@@ -1927,7 +1934,13 @@ export function levelUp(m, ps, { spare = false } = {}) {
       ? chooseLineup(m, ps, context(m, ps)).set : null;
     const recipeTarget = recipe?.levelTarget(m, ps, { spare, fielded });
     if (recipeTarget != null && ps.shop.level >= recipeTarget) return;
-    if (recipeTarget != null && !recipe.beforeUpgrade(m, ps, fielded ? { ...bondPlan(m, ps), fielded } : bondPlan(m, ps))) return;
+    let rewardContext;
+    const order = recipe?.upgradeMergeOrder?.(m, ps, { scoreReward: id => buyScore(m, ps, id, rewardContext ||= context(m, ps), true) });
+    if (order && !order.upgradeFirst) {
+      (ps._botMergeOrder ||= []).push({ round: r, level: ps.shop.level, funds: ps.funds, first: 'merge', current: order.current, next: order.next });
+      return;
+    }
+    if (recipeTarget != null && !recipe.beforeUpgrade(m, order?.gatePlayer || ps, fielded ? { ...bondPlan(m, ps), fielded } : bondPlan(m, ps))) return;
     if (recipeTarget != null && price > 0 && ps.funds < price + recipe.upgradeReserve(m, ps)) return;
     const target = recipeTarget ?? LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r)];
     const nextTarget = LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r + 1)];
@@ -1943,6 +1956,22 @@ export function levelUp(m, ps, { spare = false } = {}) {
     if (!want && ps.funds >= price + 14) want = true;
     if (!want || !tryDo(() => spendAction(m, ps, () => ps.levelUp()))) return;
     if (recipe && ps.shop.level === 4) ps._botFourAt = m.round;
+    if (order) {
+      const audit = { round: r, level: order.level, funds: ps.funds + price, first: 'upgrade', current: order.current, next: order.next, purchases: [] };
+      (ps._botMergeOrder ||= []).push(audit);
+      // Upgrade retains visible cards. Complete the reserved merges immediately, before another upgrade or refresh.
+      for (const slot of order.slots) {
+        const index = ps.shop.slots.indexOf(slot);
+        if (index < 0 || slot.sold || !ps.completesChessMerge(slot.id)) continue;
+        if (freeSlot(ps.hand) < 0 && !(recipe.shoppingRepair && freeShoppingSlot(m, ps))) break;
+        const before = recipe.afterPurchase ? new Set(ps.allChess().map(p => p.uid)) : null;
+        if (!tryDo(() => spendAction(m, ps, () => ps.buy(index)))) break;
+        if (before) recipe.afterPurchase(m, ps, slot, before);
+        audit.purchases.push(slot.id);
+        useEconomyItems(m, ps); recipe.useEconomy?.(m, ps); takeOffers(m, ps);
+      }
+      return;
+    }
   }
 }
 
@@ -1984,7 +2013,10 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     }
     const reserve = Math.max(bankReserve, spendAll ? 0 : ctx.strategy?.spendReserve(m, ps) || 0);
     const purchaseReserve = Math.max(reserve, spendAll ? 0 : ctx.strategy?.purchaseReserve?.(m, ps) || 0);
-    if (ctx.strategy?.trade(m, ps, ctx)) { takeOffers(m, ps); continue; }
+    if (ctx.strategy?.trade(m, ps, ctx, {
+      lineupFor: view => chooseLineup(m, view, context(m, view)),
+      lineupScore: (view, pieces) => lineupScore(m, view, pieces, context(m, view)),
+    })) { takeOffers(m, ps); continue; }
     // Refresh layers require an active core. Put three owned core members on the board before refreshing.
     if (ctx.strategy && !ps.bonds[ctx.focus]?.active && (ctx.owned.counts.get(ctx.focus) || 0) >= 3) yield* arrangeSteps(m, ps);
     const ownedN = ps.allChess().length;

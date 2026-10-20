@@ -21,7 +21,7 @@ before(async () => {
     { cwd: process.env.SP_GAME_REPO });
   execFileSync('tar', ['-xf', tar, '-C', root]);
   fresh = resolve(temp, 'new'); previous = resolve(temp, 'old'); build(fresh);
-  build(previous, { manifest: 'releases/arturia-v0.1.2.json', sourceRoot: 'releases/arturia-v0.1.2/source', runtime: 'releases/arturia-v0.1.2/runtime.js' });
+  build(previous, { manifest: 'releases/arturia-v0.1.3.json', sourceRoot: 'releases/arturia-v0.1.3/source', runtime: 'releases/arturia-v0.1.3/runtime.js' });
   oldMeta = JSON.parse(readFileSync(resolve(previous, 'addon.json')));
   assert.notEqual(oldMeta.files['runtime.js'], JSON.parse(readFileSync(resolve(fresh, 'addon.json'))).files['runtime.js']);
   // Add one obsolete payload to the real prior policy to exercise cleanup as well as migration.
@@ -46,7 +46,7 @@ test('upgrade preflight is read-only; edited old files and downgrades are reject
 
 test('install upgrades a recorded old version, removes obsolete payloads and is idempotent', async () => {
   const old = journal(), result = await install('install', root), current = journal();
-  assert.equal(result.upgradedFrom, '0.1.2'); assert.equal(current.version, '0.1.3');
+  assert.equal(result.upgradedFrom, '0.1.3'); assert.equal(current.version, '0.2.0');
   assert.equal(existsSync(resolve(root, 'server/match/arturia/policy/obsolete.js')), false);
   for (const [name, entry] of Object.entries(current.files)) {
     assert.equal(sha(readFileSync(resolve(root, name))), entry.after, name);
@@ -75,7 +75,7 @@ test('a persistent interrupted-upgrade backup recovers before retry, and uninsta
   writeFileSync(resolve(root, extra), 'partial'); writeFileSync(resolve(root, 'shared/protocol.js'), 'partial');
   writeFileSync(resolve(root, '.arturia-addon/install.json'), 'partial');
   await assert.rejects(install('check', root), /Interrupted upgrade/);
-  assert.equal((await install('install', root)).upgradedFrom, '0.1.2');
+  assert.equal((await install('install', root)).upgradedFrom, '0.1.3');
   assert.equal(existsSync(resolve(root, extra)), false);
   const current = journal(); await install('uninstall', root);
   for (const [name, entry] of Object.entries(current.files)) {

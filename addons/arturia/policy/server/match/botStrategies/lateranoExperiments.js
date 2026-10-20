@@ -32,6 +32,27 @@ import { withLateranoVisionTrade } from './lateranoVisionTrade.js';
 import { withLateranoSupportSingles } from './lateranoSupportSingles.js';
 import { withLateranoLionSpread } from './lateranoLionSpread.js';
 import { withLateranoMobileBoss } from './lateranoMobileBoss.js';
+import { withLateranoControlBoss } from './lateranoControlBoss.js';
+import { withLateranoMergeOrder } from './lateranoMergeOrder.js';
+import { withLateranoKeyLiquidity } from './lateranoKeyLiquidity.js';
+import { withLateranoKeyValue } from './lateranoKeyValue.js';
+import { withLateranoKeyHealing } from './lateranoKeyHealing.js';
+import { withLateranoMostimaAmplifier } from './lateranoMostimaAmplifier.js';
+import { withLateranoPrecisionFarming } from './lateranoPrecisionFarming.js';
+import { withLateranoRewardPackage } from './lateranoRewardPackage.js';
+import { withLateranoRetiredFrontline } from './lateranoRetiredFrontline.js';
+import { withLateranoHealingChoice } from './lateranoHealingChoice.js';
+import { withLateranoEliteBond } from './lateranoEliteBond.js';
+import { withLateranoDuplicateGrowth } from './lateranoDuplicateGrowth.js';
+import { withLateranoNoTippiTin } from './lateranoNoTippiTin.js';
+import { withLateranoPrecisionReserve } from './lateranoPrecisionReserve.js';
+import { withLateranoPrecisionFallback } from './lateranoPrecisionFallback.js';
+import { withLateranoR14Transfer } from './lateranoR14Transfer.js';
+import { withLateranoBossEscort } from './lateranoBossEscort.js';
+import { lateranoMatureFive } from './lateranoMatureFive.js';
+import { withLateranoEarlyTempo } from './lateranoEarlyTempo.js';
+import { withLateranoEarlyTwo } from './lateranoEarlyTwo.js';
+import { withLateranoEarlyThree } from './lateranoEarlyThree.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -179,12 +200,13 @@ export function lateranoMilestones(m, ps) {
     mostima: own(m, ps, ids.mostima).some(p => gd.isGolden(p.id)) };
 }
 
-function gated(levels, requireMostima, base = lateranoWhitelist, minimumMembers = () => 6) {
-  const relaxed = (m, ps) => minimumMembers(m, ps) === 5;
+function gated(levels, requireMostima, base = lateranoWhitelist, minimumMembers = () => 6, fiveReady = () => false) {
+  const mature = (m, ps) => ps.shop.level === 4 && fiveReady(m, ps);
+  const relaxed = (m, ps) => minimumMembers(m, ps) === 5 || mature(m, ps);
   const blocked = (m, ps) => {
     const state = lateranoMilestones(m, ps);
     const members = Math.max(ps.bonds[CORE]?.count || 0, memberCount(m, ps, CORE) + Math.max(0, ps.bondCountBonus?.[CORE] || 0));
-    return levels.includes(ps.shop.level + 1) && (members < minimumMembers(m, ps) || requireMostima && !state.mostima);
+    return levels.includes(ps.shop.level + 1) && (!mature(m, ps) && members < minimumMembers(m, ps) || requireMostima && !state.mostima);
   };
   return Object.freeze({ ...base,
     levelTarget(m, ps, options) {
@@ -243,18 +265,27 @@ const retention21 = withLateranoRetention(retained21);
 const vision21 = Object.freeze({ ...retained21, keep: retention21.keep, preserve: retention21.preserve });
 const visionOpening = withLateranoOpening(vision21);
 const map02 = withLateranoMap02(visionOpening);
-function giftedFour(fromRound) {
-  const gate = gated([5], false, repairWhite19, paganiniMinimumMembers(fromRound));
+function giftedFour(fromRound, fiveReady) {
+  const gate = gated([5], false, repairWhite19, paganiniMinimumMembers(fromRound), fiveReady);
   const retention = withLateranoRetention(gate);
   const vision = Object.freeze({ ...gate, keep: retention.keep, preserve: retention.preserve, observeSpend: observePaganiniSpend });
   return withLateranoMapLines(withLateranoMap02(withLateranoOpening(vision)), ['infection','tide']);
 }
 const giftR11 = giftedFour(11);
 const finalR11 = withLateranoFinale(giftR11);
-const buy26 = withLateranoFinale(withLateranoSkillful(giftR11, { roster: false }), { allProtectedWithdrawals: true });
-const team27 = withLateranoTeam(buy26, { roster: true });
-const promotionDeadline = withLateranoPromotion(team27, { deadlineFallback: true });
-const bladeSixReady = withLateranoSixReady(withLateranoArchettoBlade(promotionDeadline));
+// Both objects use the identical retained stack; only the root four-to-five member gate differs.
+function retainedTeam27(root) {
+  const buy26 = withLateranoFinale(withLateranoSkillful(root, { roster: false }), { allProtectedWithdrawals: true });
+  const team27 = withLateranoTeam(buy26, { roster: true });
+  const promotionDeadline = withLateranoPromotion(team27, { deadlineFallback: true });
+  const bladeSixReady = withLateranoSixReady(withLateranoArchettoBlade(promotionDeadline));
+  const controlBoss = withLateranoControlBoss(withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']), ['boss_4', 'boss_7']);
+  const keyHealing = withLateranoKeyHealing(controlBoss);
+  return { buy26, team27, promotionDeadline, bladeSixReady, controlBoss, keyHealing, r14Transfer: withLateranoR14Transfer(keyHealing) };
+}
+const { buy26, team27, promotionDeadline, bladeSixReady, controlBoss, keyHealing, r14Transfer } = retainedTeam27(giftR11);
+const matureFive = Object.freeze({ ...retainedTeam27(giftedFour(11, (m, ps) => lateranoMatureFive(m, ps).ready)).r14Transfer,
+  matureFiveState: lateranoMatureFive });
 const approach25 = withLateranoApproach(bladeSixReady);
 const contactTeamLower = withRelatedTransfer(withLateranoContactTeam(approach25, { lower: true }));
 const contactTeamLateSix = withLateranoUpgradeReserve(contactTeamLower);
@@ -266,6 +297,11 @@ const medicSingle = withLateranoSingleSkill(medicChain);
 const medicFour = withLateranoFastFour(medicSingle);
 const medicFourR11 = withLateranoFourDevelopment(medicFour, { releaseRound: 11 });
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
+  'team27-early-three-mature-five': withLateranoEarlyThree(matureFive),
+  'team27-early-three': withLateranoEarlyThree(r14Transfer),
+  'team27-early-two': withLateranoEarlyTwo(r14Transfer),
+  'team27-early-tempo': withLateranoEarlyTempo(r14Transfer),
+  'team27-mature-five': matureFive,
   'six-before-five': gated([5], false), 'six-before-six': gated([6], false),
   'six-mostima-before-five': gated([5], true), 'six-mostima-before-five-six': gated([5,6], true),
   repair17: lateranoRepair17, repair19: lateranoRepair19,
@@ -298,6 +334,29 @@ export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast
   'team27-lion-spread': withLateranoLionSpread(bladeSixReady),
   'team27-gun-contact': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_2']),
   'team27-lucien-contact': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']),
+  'team27-quintus-medic': withLateranoControlBoss(withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']), ['boss_4']),
+  'team27-sami-columns': withLateranoControlBoss(withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']), ['boss_7']),
+  'team27-control-boss': controlBoss,
+  'team27-merge-order': withLateranoMergeOrder(controlBoss),
+  'team27-key-liquidity': withLateranoKeyLiquidity(controlBoss),
+  'team27-key-value': withLateranoKeyValue(controlBoss),
+  'team27-key-healing': keyHealing,
+  'team27-precision-reserve': withLateranoPrecisionReserve(keyHealing),
+  'team27-precision-reserve-final': withLateranoPrecisionFallback(withLateranoPrecisionReserve(keyHealing)),
+  'team27-r14-transfer': r14Transfer,
+  'team27-boss-escort': withLateranoBossEscort(r14Transfer),
+  'team27-no-tippi-tin': withLateranoNoTippiTin(keyHealing),
+  'team27-elite-bond': withLateranoEliteBond(keyHealing),
+  'team27-duplicate-keep-elite': withLateranoDuplicateGrowth(keyHealing),
+  'team27-duplicate-relax-elite': withLateranoDuplicateGrowth(keyHealing, { retainElite: false }),
+  'team27-mostima-amplifier': withLateranoMostimaAmplifier(keyHealing),
+  'team27-precision-farming': withLateranoPrecisionFarming(keyHealing),
+  'team27-reward-package': withLateranoRewardPackage(keyHealing),
+  'team27-retired-frontline': withLateranoRetiredFrontline(keyHealing),
+  'team27-healing-choice': withLateranoHealingChoice(keyHealing),
+  'team27-funded-healing-choice': withLateranoHealingChoice(withLateranoRetiredFrontline(keyHealing)),
+  'team27-key-heal-hold': withLateranoKeyHealing(controlBoss, { funding: false, holdSix: true }),
+  'team27-key-healing-hold': withLateranoKeyHealing(controlBoss, { holdSix: true }),
   'team27-mobile-boss': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_2', 'boss_5']),
   'team27-vision-star-trade': withLateranoVisionTrade(bladeSixReady),
   'team27-r14-native-elite': withLateranoR14EliteHold(bladeSixReady),
