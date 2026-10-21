@@ -98,10 +98,13 @@ export function controlBossCoverage(layout, ctx) {
   return i >= 0 && [...ctx.critical].every(j => layout[i].heal.has(layout[j].key));
 }
 
-export function* controlBossSteps(m, ps, helpers, enabled) {
-  if (!m.isSolo || m.round !== m.gd.bossRound || !enabled.includes(m.bossId) || m.botRehearsal < 2) return;
+export function* controlBossSteps(m, ps, helpers, enabled, { collect = false } = {}) {
+  if ((!m.isSolo && !(collect && m.mode === 'coop')) || m.round !== m.gd.bossRound || !enabled.includes(m.bossId) || m.botRehearsal < 2) return;
   const { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps } = helpers;
-  const original = field(ps), rosters = m.bossId === 'boss_4' ? quintusMedicRosters(ps) : [original];
+  const original = field(ps);
+  const owners = collect ? new Set([...ps.board.values()].filter(p => p.kind === 'token').map(p => p.ownerUid)) : new Set();
+  const rosters = (m.bossId === 'boss_4' ? quintusMedicRosters(ps) : [original])
+    .filter(chosen => [...owners].every(uid => chosen.some(p => p.uid === uid)));
   if (!rosters.length) return;
   const start = performance.now(), model = fieldModel(m, ps), bodies = new Set(model.bossBodies.flatMap(b => b.tiles));
   if (!bodies.size) return;
@@ -133,6 +136,7 @@ export function* controlBossSteps(m, ps, helpers, enabled) {
         const key = `${r},${c}`;
         if (reserved.has(key) || !ps._legal(p, r, c)) continue;
         for (const dir of DIRS) {
+          if (owners.has(p.uid) && (ps.find(p.uid).key !== key || p.dir !== dir)) continue;
           const cover = new Set(rangeTiles(rec, r, c, dir));
           const contact = [...bodies].some(key => cover.has(key));
           // Keep non-contact options so local repairs can start from an imperfect retained board.
@@ -187,6 +191,7 @@ export function* controlBossSteps(m, ps, helpers, enabled) {
   for (const p of proposals) if (!diverse.includes(p)) diverse.push(p);
   const plans = m.bossId === 'boss_7' ? [originalPlan, ...proposals.slice(0, 2).map(p => planOf(p.chosen, p.layout))]
     : diverse.slice(0, 3).map(p => planOf(p.chosen, p.layout));
+  if (collect) return [originalPlan, ...plans.filter(p => p !== originalPlan)];
   function* compare(candidates) {
     const input = p => bossInputSteps(m, ps, p.lineup, p, { keepWithdrawn: true });
     const first = yield* createBossRehearsalSteps(m, ps, original, candidates, input);

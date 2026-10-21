@@ -1746,6 +1746,8 @@ export function* botPrepBeginSteps(m, ps) {
   //    merges completed while buying queue reward offers that expire at prep end — take them right away
   sellJunk(m, ps);
   yield;
+  const economySteps = coreStrategy(m, ps._botFocusId)?.beforeEconomySteps;
+  if (economySteps) yield* economySteps(m, ps, { LayoutPlan });
   if (coreStrategy(m, ps._botFocusId)?.priorityLevel(m, ps)) levelUp(m, ps);
   yield* buyLoopSteps(m, ps, { fillOnly: true, maxRefreshes: 0 });
   takeOffers(m, ps);

@@ -54,7 +54,7 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
   const candidates=plans.filter(p => {
     const key=signature(p); if (seen.has(key)) return false; seen.add(key); return true;
   }).slice(0,planLimit > FORECAST_PLANS && m.botRehearsal >= FORECAST_PLANS ? planLimit : Math.min(FORECAST_PLANS,m.botRehearsal));
-  if (candidates.length<2) return null;
+  if (candidates.length<2 && !(candidates.length === 1 && !boss && recipe?.forecastReadinessOnly === true)) return null;
   const inputs=[];
   for (const plan of candidates) {
     const input = yield* inputSteps(plan);

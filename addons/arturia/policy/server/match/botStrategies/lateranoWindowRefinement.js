@@ -11,11 +11,14 @@ const distance = (a, b) => Math.max(Math.abs(a.r - b.r), Math.abs(a.c - b.c));
 const signature = locs => locs.map(p => `${p.key}:${p.dir}`).join('|');
 
 /** Preserve summon positions and all non-position combat inputs verbatim. */
-export function windowBattleInput(original, plan) {
+export function windowBattleInput(original, plan, { readingOrder = false } = {}) {
   const input = structuredClone(original);
   for (const u of input.units) if (u.kind === 'chess' && plan.has(u.uid)) {
     [u.row, u.col] = plan.get(u.uid).split(',').map(Number); u.dir = plan.dirs.get(u.uid);
   }
+  // PlayerState serializes the deployed field in row/column reading order. Retain that exact order
+  // for co-op forecasts after moving chess, including the interleaved pinned summons.
+  if (readingOrder) input.units.sort((a,b) => b.row-a.row || a.col-b.col);
   return input;
 }
 
@@ -126,9 +129,10 @@ export function windowProposals(layout, options, ctx, stage) {
   return selected;
 }
 
-export function* lateranoWindowSteps(m, ps, h, recipe) {
+export function* lateranoWindowSteps(m, ps, h, recipe, { cooperative = false, bossOnly = false } = {}) {
   const normal = !!m.wave;
-  if (!m.isSolo || m.botRehearsal < 2 || m.round < 4 || m.round > m.gd.bossRound) return;
+  if ((!m.isSolo && !(cooperative && m.mode === 'coop')) || m.botRehearsal < 2 || m.round < 4 || m.round > m.gd.bossRound
+    || cooperative && (m.isSolo || bossOnly && normal)) return;
   const chosen = [...ps.board.values()].filter(p => p.kind === 'chess');
   if (chosen.length < 3) return;
   const start = performance.now(), model = h.fieldModel(m, ps), records = chosen.map(p => h.rangeRec(ps, ps.gd.chess(p.id)));
@@ -166,20 +170,26 @@ export function* lateranoWindowSteps(m, ps, h, recipe) {
   if (current.some(p => !p)) return;
   const planOf = layout => { const plan = new h.LayoutPlan(); layout.forEach((p, i) => {
     plan.set(chosen[i].uid, p.key); plan.dirs.set(chosen[i].uid, p.dir);
-  }); return plan; };
+  }); if (cooperative) plan.lineup = chosen; return plan; };
   const batches = [];
   const originalInput = ps.battleInput();
   function* inputSteps(plan) {
     yield;
-    return windowBattleInput(originalInput, plan);
+    return windowBattleInput(originalInput, plan, { readingOrder: cooperative });
   }
   for (const stage of ['facing', 'near', 'reposition']) {
     const proposals = windowProposals(current, options, ctx, stage);
     if (!proposals.length) continue;
     const candidates = [current, ...proposals.map(p => p.layout)], plans = candidates.map(planOf);
-    const job = yield* createForecastSteps(m, ps, chosen, plans, inputSteps, { rehearsalValue: recipe.rehearsalValue });
+    const job = cooperative ? yield* h.windowForecast(m, ps, chosen, plans, inputSteps, recipe)
+      : yield* createForecastSteps(m, ps, chosen, plans, inputSteps, { rehearsalValue: recipe.rehearsalValue });
     if (!job) continue;
     while (!job.run(4)) yield;
+    if (cooperative && job.stale) {
+      (ps._botCoopWindowHistory ||= []).push({ round: m.round, boss: !normal, stale: true,
+        batches, abortedStage: stage, ms: performance.now() - start });
+      return; // Every stage was read-only; keep the inherited actual board after a teammate change.
+    }
     let index = job.bestIndex;
     if (normal && index > 0) {
       const old = job.outcomes.filter(o => o.index === 0), next = job.outcomes.filter(o => o.index === index);
@@ -194,9 +204,15 @@ export function* lateranoWindowSteps(m, ps, h, recipe) {
   const plan = planOf(current);
   // Only operators move; summons remain reserved. All final swaps pass normal PlayerState legality.
   applyControlPositions(ps, plan);
-  ps._botLateranoWindow = { round: m.round, batches, ms: performance.now() - start,
+  const audit = { round: m.round, batches, ms: performance.now() - start,
     positions: [...plan].map(([uid, key]) => ({ uid, key, dir: plan.dirs.get(uid) })) };
-  (ps._botWindowHistory ||= []).push(ps._botLateranoWindow);
+  if (cooperative) {
+    if (JSON.stringify(ps.battleInput()) !== JSON.stringify(windowBattleInput(originalInput, plan, { readingOrder: true }))) throw Error('Co-op window differs from forecast input');
+    (ps._botCoopWindowHistory ||= []).push({ ...audit, boss: !normal, stale: false });
+  } else {
+    ps._botLateranoWindow = audit;
+    (ps._botWindowHistory ||= []).push(audit);
+  }
 }
 
 export function withLateranoWindowRefinement(recipe) {

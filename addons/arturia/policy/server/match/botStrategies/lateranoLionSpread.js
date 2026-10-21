@@ -6,8 +6,8 @@ import { createRng, deriveSeed } from '../../../../../../sim/rng.js';
 // Independent forecast only; no actual battle result is consulted. Killed Skillful sources keep their aura.
 const priority={chess_char_6_13_a:9,chess_char_6_01_a:9,chess_char_5_01_a:5,chess_char_3_21_a:5,
  chess_char_4_02_a:1.5,chess_char_4_01_a:0.5,chess_char_6_09_a:1,chess_char_2_01_a:3};
-export function* lateranoLionSpreadSteps(m,ps,helpers){
- if (!m.isSolo || m.round !== m.gd.bossRound || m.bossId !== 'boss_6' || m.botRehearsal < 2) return;
+export function* lateranoLionSpreadSteps(m,ps,helpers,{collect=false}={}){
+ if ((!m.isSolo && !(collect && m.mode==='coop')) || m.round !== m.gd.bossRound || m.bossId !== 'boss_6' || m.botRehearsal < 2) return;
  const { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps, applyPlanSteps } = helpers;
  const start=performance.now(),chosen=[...ps.board.values()].filter(p=>p.kind==='chess');
  const model=fieldModel(m,ps),body=model.bossBodies.flatMap(x=>x.tiles),center=model.bossBodies[0].center;
@@ -20,11 +20,14 @@ export function* lateranoLionSpreadSteps(m,ps,helpers){
     skill:(rec.bonds||[]).includes('skillfulShip'),noHeal:rec.subProfessionId==='reaper'};
  });
  const skillActive=!!ps.bonds.skillfulShip?.active,skillRadius=(ps.bonds.skillfulShip?.layers||0)>=40?8:4;
+ const reserved=collect?new Set([...ps.board].filter(([,p])=>p.kind!=='chess').map(([key])=>key)):new Set();
+ const owners=collect?new Set([...ps.board.values()].filter(p=>p.kind==='token').map(p=>p.ownerUid)):new Set();
  const adjacent=(p,q)=>skillRadius===8?Math.max(Math.abs(p.r-q.r),Math.abs(p.c-q.c))<=1:Math.abs(p.r-q.r)+Math.abs(p.c-q.c)<=1;
  const options=chosen.map((p,i)=>{
   const list=[];
   for(let r=9;r<=12;r++)for(let c=2;c<=10;c++)if(ps._legal(p,r,c))for(const dir of ['RIGHT','UP','LEFT','DOWN']){
    const key=r+','+c;
+   if(reserved.has(key)||owners.has(p.uid)&&(ps.find(p.uid).key!==key||p.dir!==dir))continue;
    if(!info[i].heal&&!rangeTiles(records[i],r,c,dir).some(k=>body.includes(k)))continue;
    list.push({key,r,c,dir,near:(r-center[0])**2+(c-center[1])**2<=3.4**2,
     heal:info[i].heal?healingTiles(records[i],r,c,dir):null});
@@ -77,6 +80,8 @@ export function* lateranoLionSpreadSteps(m,ps,helpers){
  if(selected.length<2)return;
  const original=new LayoutPlan();for(const [key,p]of ps.board)if(p.kind==='chess'){original.set(p.uid,key);original.dirs.set(p.uid,p.dir);}
  const plans=[original,...selected.map(p=>{const plan=new LayoutPlan();p.layout.forEach((loc,i)=>{plan.set(chosen[i].uid,loc.key);plan.dirs.set(chosen[i].uid,loc.dir);});return plan;})];
+ // Co-op owns its team forecast and application; geometry collection never constructs a solo battle.
+ if(collect){for(const plan of plans)plan.lineup=chosen;return plans;}
  const job=yield* createBossRehearsalSteps(m,ps,chosen,plans,p=>bossInputSteps(m,ps,chosen,p));
  if(!job)return;while(!job.run(4))yield;
  const before=[...ps.board].filter(([,p])=>p.kind==='chess').map(([key,p])=>({uid:p.uid,id:p.id,key,dir:p.dir}));

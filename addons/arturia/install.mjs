@@ -1,7 +1,8 @@
-import { readFile, writeFile, mkdir, readdir, lstat, unlink } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir, lstat, unlink, mkdtemp, rm } from 'node:fs/promises';
 import { resolve, dirname, relative, isAbsolute } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
+import { tmpdir } from 'node:os';
 import { patchFiles, PATCH_PATHS } from './patches.mjs';
 
 const bundle = dirname(fileURLToPath(import.meta.url));
@@ -49,9 +50,109 @@ function compareVersion(a, b) {
   return x[0] - y[0] || x[1] - y[1] || x[2] - y[2];
 }
 
+const COEXIST = '.arturia-addon/coexist-upgrade.json';
+async function restoreCoexist(root) {
+  const recovery = JSON.parse(await readFile(await safePath(root, COEXIST), 'utf8'));
+  for (const [name, bytes] of Object.entries(recovery.files)) {
+    if (bytes != null) await put(root, name, Buffer.from(bytes, 'base64'));
+    else { const path = await safePath(root, name); if (await exists(path)) await unlink(path); }
+  }
+  await unlink(await safePath(root, COEXIST));
+}
+
+// Plan the complete layered installation in a temporary host before touching the real one.
+// Reinstalling the exact companion rebases its original-byte journal onto the new Arturia.
+async function installWithLavinia(mode, root) {
+  if (await exists(await safePath(root, '.lavinia-addon/upgrade.json')))
+    throw new Error('Interrupted Lavinia upgrade; recover it with the Lavinia installer first.');
+  const companionState = '.lavinia-addon/install.json', ownState = '.arturia-addon/install.json';
+  const companion = JSON.parse(await readFile(await safePath(root, companionState), 'utf8'));
+  const own = await exists(await safePath(root, ownState))
+    ? JSON.parse(await readFile(await safePath(root, ownState), 'utf8')) : null;
+  const names = new Set([companionState, ownState, ...PATCH_PATHS,
+    ...Object.keys(companion.files), ...Object.keys(own?.files || {})]);
+  for (const name of await readdir(await safePath(root, 'public/i18n')))
+    if (name.endsWith('.json')) names.add(`public/i18n/${name}`);
+  for (const addon of ['arturia', 'lavinia']) {
+    const directory = await safePath(root, `addons/${addon}`);
+    if (await exists(directory)) for (const name of await readdir(directory, { recursive: true })) {
+      const relativeName = `addons/${addon}/${name}`.replaceAll('\\', '/');
+      if ((await lstat(await safePath(root, relativeName))).isFile()) names.add(relativeName);
+    }
+  }
+  const before = new Map();
+  for (const name of names) {
+    const path = await safePath(root, name);
+    before.set(name, await exists(path) ? await readFile(path) : null);
+  }
+  for (const [name, entry] of Object.entries(companion.files))
+    if (!before.get(name) || hash(before.get(name)) !== entry.after)
+      throw new Error(`Changed since install; refusing companion upgrade: ${name}`);
+  const temp = await mkdtemp(resolve(tmpdir(), 'arturia-coexist-'));
+  try {
+    const staged = resolve(temp, 'game'), preserved = resolve(temp, 'lavinia');
+    await mkdir(staged); await mkdir(preserved);
+    for (const [name, bytes] of before) if (bytes != null) await put(staged, name, bytes);
+    // Preserve the installed distribution before its staged uninstall removes addons/lavinia.
+    for (const name of await readdir(await safePath(root, 'addons/lavinia'), { recursive: true })) {
+      const path = await safePath(root, `addons/lavinia/${name}`);
+      if ((await lstat(path)).isFile()) await put(preserved, name, await readFile(path));
+    }
+    const lavinia = await import(pathToFileURL(resolve(preserved, 'install.mjs')));
+    await lavinia.install('uninstall', staged);
+    const result = await install('install', staged);
+    await lavinia.install('install', staged);
+    await lavinia.install('check', staged);
+    for (const state of [ownState, companionState]) {
+      const journal = JSON.parse(await readFile(await safePath(staged, state), 'utf8'));
+      for (const name of Object.keys(journal.files)) names.add(name);
+    }
+    const writes = new Map();
+    for (const name of names) {
+      const path = await safePath(staged, name), bytes = await exists(path) ? await readFile(path) : null;
+      if (!before.has(name)) {
+        const current = await safePath(root, name);
+        if (await exists(current)) throw new Error(`Target already exists: ${name}`);
+        before.set(name, null);
+      }
+      if (!Buffer.from(before.get(name) || []).equals(Buffer.from(bytes || []))
+        || (before.get(name) == null) !== (bytes == null)) writes.set(name, bytes);
+    }
+    if (mode === 'check') return { compatible: true, version: result.installed, companionPreserved: companion.version };
+    if (!writes.size) return { ...result, companionPreserved: companion.version };
+    for (const [name, bytes] of before) {
+      const path = await safePath(root, name), current = await exists(path) ? await readFile(path) : null;
+      if ((current == null) !== (bytes == null) || (current && !current.equals(bytes)))
+        throw new Error(`Changed during upgrade planning: ${name}`);
+    }
+    // Both journals and every changed file roll back together, including after process interruption.
+    await put(root, COEXIST, JSON.stringify({ files: Object.fromEntries([...before]
+      .map(([name, bytes]) => [name, bytes?.toString('base64') ?? null])) }) + '\n');
+    try {
+      for (const [name, bytes] of writes.entries()) {
+        if (bytes == null) { const path = await safePath(root, name); if (await exists(path)) await unlink(path); }
+        else await put(root, name, bytes);
+      }
+      await unlink(await safePath(root, COEXIST));
+    } catch (error) {
+      try { await restoreCoexist(root); }
+      catch (rollback) { throw new AggregateError([error, rollback], 'Coexistence upgrade failed; keep .arturia-addon/coexist-upgrade.json and retry with this installer.'); }
+      throw error;
+    }
+    return { ...result, companionPreserved: companion.version };
+  } finally {
+    // temp is the absolute directory returned by mkdtemp, outside the installation.
+    if (relative(resolve(tmpdir()), temp).startsWith('arturia-coexist-')) await rm(temp, { recursive: true, force: true });
+  }
+}
+
 export async function install(mode, directory) {
   const root = resolve(directory), stateName = '.arturia-addon/install.json';
   const statePath = await safePath(root, stateName);
+  if (await exists(await safePath(root, COEXIST))) {
+    if (mode === 'check') throw new Error('Interrupted coexistence upgrade; run install to restore both plugins and retry.');
+    await restoreCoexist(root);
+  }
   if (await exists(await safePath(root, UPGRADE))) {
     if (mode === 'check') throw new Error('Interrupted upgrade; run install to restore the previous version and retry.');
     await restoreUpgrade(root);
@@ -73,6 +174,7 @@ export async function install(mode, directory) {
     return { restored: Object.keys(state.files).length };
   }
   if (!['check', 'install'].includes(mode)) throw new Error('Usage: node install.mjs check|install|uninstall <game-directory>');
+  if (await exists(await safePath(root, '.lavinia-addon/install.json'))) return installWithLavinia(mode, root);
   const meta = JSON.parse(await readFile(resolve(bundle, 'addon.json'), 'utf8'));
   const oldJournal = await exists(statePath) ? await readFile(statePath) : null;
   const old = oldJournal ? JSON.parse(oldJournal.toString('utf8')) : null;

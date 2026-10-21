@@ -61,9 +61,15 @@ import { withLateranoEnemyTypes } from './lateranoEnemyTypes.js';
 import { withLateranoDifficultyVision } from './lateranoDifficultyVision.js';
 import { withLateranoMostimaAmmo } from './lateranoMostimaAmmo.js';
 import { withLateranoBossFormation } from './lateranoBossFormation.js';
+import { withLateranoCoopSafety } from './lateranoCoopSafety.js';
+import { withLateranoCoopBoss } from './lateranoCoopBoss.js';
+import { withLateranoCoopSupply, withLateranoCoopEnemyRoster, withLateranoCoopTempo,
+  withLateranoCoopDoll, withLateranoCoopMerge } from './lateranoCoopFactors.js';
 import { withLateranoLastHealing } from './lateranoLastHealing.js';
 import { withLateranoHealingDelivery } from './lateranoHealingDelivery.js';
 import { withLateranoEmergencyRoster } from './lateranoEmergencyRoster.js';
+import { withLateranoCoopBossSpecial } from './lateranoCoopBossSpecial.js';
+import { withLateranoCoopWindow } from './lateranoCoopWindow.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -314,6 +320,10 @@ const mostimaAmmo = withLateranoMostimaAmmo(retainedEnemyTypes);
 const tenSampleBoss = withLateranoBossFormation(mostimaAmmo, { samples: 10, aggregate: true });
 const strictVision = withLateranoBossFormation(withLateranoMostimaAmmo(retainedEnemyTypes, { protectVision: true }), { samples: 10, aggregate: true });
 const conservativeVision = withLateranoBossFormation(withLateranoMostimaAmmo(retainedEnemyTypes, { protectVision: 'value' }), { samples: 10, aggregate: true });
+const coopBaseline = withLateranoCoopBoss(withLateranoCoopSafety(withLateranoDifficultyVision(strictVision, conservativeVision)));
+const coopSupply = withLateranoCoopSupply(coopBaseline);
+const coopMerge11 = withLateranoCoopMerge(coopSupply);
+const coopBoss13 = withLateranoCoopBossSpecial(coopMerge11);
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
   'team27-mostima-ammo': mostimaAmmo,
   'team27-mostima-ammo-linked': withLateranoBossFormation(mostimaAmmo),
@@ -332,6 +342,21 @@ export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast
   'team27-ammo-vision': strictVision,
   'team27-ammo-vision-value': conservativeVision,
   'team28-vision-difficulty': withLateranoDifficultyVision(strictVision, conservativeVision),
+  'coop-normal-safety-v1': withLateranoCoopSafety(withLateranoDifficultyVision(strictVision, conservativeVision)),
+  'coop-boss-linked-s10': withLateranoCoopBoss(withLateranoDifficultyVision(strictVision, conservativeVision)),
+  'coop-safety-boss-linked-s10': coopBaseline,
+  'coop-nine-supply': coopSupply,
+  'coop-nine-enemy-roster': withLateranoCoopEnemyRoster(coopBaseline),
+  'coop-nine-tempo': withLateranoCoopTempo(coopBaseline),
+  'coop-nine-doll': withLateranoCoopDoll(coopBaseline),
+  'coop-nine-merge-order': withLateranoCoopMerge(coopBaseline),
+  'coop-ten-enemy-roster': withLateranoCoopEnemyRoster(coopSupply),
+  'coop-ten-tempo': withLateranoCoopTempo(coopSupply),
+  'coop-ten-doll': withLateranoCoopDoll(coopSupply),
+  'coop-ten-merge-order': coopMerge11,
+  'coop-eleven-boss-specials': coopBoss13,
+  'coop-thirteen-window': withLateranoCoopWindow(coopBoss13),
+  'coop-thirteen-boss-window': withLateranoCoopWindow(coopBoss13,{bossOnly:true}),
   'team27-enemy-types': withLateranoEnemyTypes(withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll)))),
   'team27-enemy-types-bonds': retainedEnemyTypes,
   'team27-early-three-income-doll-window-stealth-swap': withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll))),

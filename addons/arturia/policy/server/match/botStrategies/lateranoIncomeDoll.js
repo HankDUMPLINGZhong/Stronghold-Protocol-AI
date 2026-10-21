@@ -42,8 +42,8 @@ function saleCost(m, ps, recipe, p, remaining) {
 }
 
 /** Plan only real sales that together afford one visible doll; no mutation or RNG. */
-export function lateranoIncomeDollPlan(m, ps, recipe, { deferredIndex = null } = {}) {
-  if (!scoped(m, ps) && deferredIndex == null) return null;
+export function lateranoIncomeDollPlan(m, ps, recipe, { deferredIndex = null, scope = scoped, benchOnly = false } = {}) {
+  if (!scope(m, ps) && deferredIndex == null) return null;
   const gd = gdOf(m, ps), owned = ps.allChess();
   if (!owned.some(p => (p.items?.length || 0) < gd.equipPerChess)) return null;
   const targets = ps.shop.slots.map((slot, index) => ({ slot, index }))
@@ -54,7 +54,8 @@ export function lateranoIncomeDollPlan(m, ps, recipe, { deferredIndex = null } =
     const price = ps.priceOf(target.slot), sales = [];
     let funds = ps.funds, remaining = owned.slice();
     while (funds < price) {
-      const candidates = remaining.map(p => ({ p, cost: saleCost(m, ps, recipe, p, remaining) }))
+      const candidates = remaining.filter(p => !benchOnly || ['hand', 'temp'].includes(ps.find(p.uid)?.area))
+        .map(p => ({ p, cost: saleCost(m, ps, recipe, p, remaining) }))
         .filter(x => x.cost != null && gd.sellPrice(x.p.id) > 0)
         .sort((a, b) => a.cost - b.cost || a.p.uid - b.p.uid);
       if (!candidates.length) break;
@@ -70,7 +71,7 @@ export function lateranoIncomeDollPlan(m, ps, recipe, { deferredIndex = null } =
   return null;
 }
 
-export function withLateranoIncomeDoll(recipe, { lockAt = Infinity, skipAt = Infinity } = {}) {
+export function withLateranoIncomeDoll(recipe, { lockAt = Infinity, skipAt = Infinity, scope = scoped, benchOnly = false } = {}) {
   const pending = (m, ps) => {
     const held = ps._botIncomeDollHeld;
     if (!held || m.mode !== 'solo' || ps.bandId !== 'band_paganini' || ps._botFocusId !== CORE
@@ -85,7 +86,7 @@ export function withLateranoIncomeDoll(recipe, { lockAt = Infinity, skipAt = Inf
       || recipe.purchaseItemAllowed(m, ps, rec),
   }) : recipe;
   const planFor = (m, ps) => lateranoIncomeDollPlan(m, ps, local,
-    deferred(m, ps) ? { deferredIndex: pending(m, ps).index } : {});
+    { scope, benchOnly, ...(deferred(m, ps) ? { deferredIndex: pending(m, ps).index } : {}) });
   function purchase(m, ps) {
     let changed = false;
     for (let guard = 0; guard < 4; guard++) {
@@ -135,7 +136,7 @@ export function withLateranoIncomeDoll(recipe, { lockAt = Infinity, skipAt = Inf
     trade(m, ps, ctx, tools) { return purchase(m, ps) || recipe.trade(m, ps, ctx, tools); },
     beforeUpgrade(m, ps, plan) { return !purchase(m, ps) && recipe.beforeUpgrade(m, ps, plan); },
     importantItem(m, ps, rec) {
-      return (scoped(m, ps) || deferred(m, ps)) && rec.id === DOLL || recipe.importantItem?.(m, ps, rec) || false;
+      return (scope(m, ps) || deferred(m, ps)) && rec.id === DOLL || recipe.importantItem?.(m, ps, rec) || false;
     },
     ...(Number.isFinite(lockAt) ? { purchaseItemAllowed: local.purchaseItemAllowed,
       holdShop: (m, ps) => !!pending(m, ps) || recipe.holdShop?.(m, ps) || false } : {}),

@@ -19,6 +19,8 @@ export const CORE_STRATEGIES = Object.freeze({ [siracusa.core]: siracusa, [later
 
 export function coreStrategy(m, core) {
   if (m.botCoreStrategies === false) return null;
+  if (core === laterano.core && m.mode === 'coop' && m.opts?.botLateranoCoopExperiment)
+    return LATERANO_EXPERIMENTS[m.opts.botLateranoCoopExperiment];
   if (core === laterano.core && m.opts?.botLateranoExperiment) return LATERANO_EXPERIMENTS[m.opts.botLateranoExperiment];
   if (core === siracusa.core && Array.isArray(m.opts?.botSiracusaEngines) && m.opts.botSiracusaEngines.includes('boss')) return withSiracusaKeyValue(withSiracusaMobileArcane(withSiracusaFocusedDraft(withSiracusaAromaFixed(siracusaBoss, m))));
   if (core === laterano.core && Array.isArray(m.opts?.botLateranoLessons) && lateranoLesson(m, 'forecast')) return lateranoForecast;

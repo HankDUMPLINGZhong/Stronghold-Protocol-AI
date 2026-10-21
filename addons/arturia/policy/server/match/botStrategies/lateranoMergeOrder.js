@@ -24,7 +24,7 @@ export function expectedMergeReward(entries, count = 3) {
   return value;
 }
 
-export function lateranoMergeOrder(m, ps, recipe, scoreReward) {
+export function lateranoMergeOrder(m, ps, recipe, scoreReward, { publicTeammates = false } = {}) {
   const gd = gdOf(m, ps), level = ps.shop.level, price = Math.max(0, ps.shop.upgradePrice);
   if (level >= gd.maxShopLevel || gd.rewardOffer().count > 3 || !ps.hand.some(p => !p)) return null;
   const seen = new Set(), slots = [];
@@ -40,7 +40,16 @@ export function lateranoMergeOrder(m, ps, recipe, scoreReward) {
   const owned = new Map();
   for (const p of ps.allChess()) {
     const base = gd.baseIdOf(p.id);
-    owned.set(base, (owned.get(base) || 0) + (p.poolCopies ?? (gd.isGolden(p.id) ? gd.goldenCopies : 1)));
+    const copies = gd.isGolden(p.id) ? gd.goldenCopies : 1;
+    owned.set(base, (owned.get(base) || 0) + (publicTeammates ? copies : p.poolCopies ?? copies));
+  }
+  // Only visible deployed teammate holdings, never their private hands, shops or actual hidden pool depletion.
+  if (publicTeammates) for (const other of m.players.values()) {
+    if (other.playerId === ps.playerId || !other.alive) continue;
+    for (const p of other.board.values()) if (p.kind === 'chess') {
+      const base = gd.baseIdOf(p.id);
+      owned.set(base, (owned.get(base) || 0) + (gd.isGolden(p.id) ? gd.goldenCopies : 1));
+    }
   }
   const banned = new Set(m.bannedChess || []), ro = gd.rewardOffer();
   const estimate = tier => {
@@ -61,8 +70,11 @@ export function lateranoMergeOrder(m, ps, recipe, scoreReward) {
   return { upgradeFirst, slots, gatePlayer: view, current, next, level, cost };
 }
 
-export function withLateranoMergeOrder(recipe) {
+export function withLateranoMergeOrder(recipe, { cooperative = false } = {}) {
   return Object.freeze({ ...recipe,
-    upgradeMergeOrder(m, ps, { scoreReward }) { return lateranoMergeOrder(m, ps, recipe, scoreReward); },
+    upgradeMergeOrder(m, ps, { scoreReward }) {
+      if (cooperative && m.mode !== 'coop') return recipe.upgradeMergeOrder?.(m, ps, { scoreReward });
+      return lateranoMergeOrder(m, ps, recipe, scoreReward, { publicTeammates: cooperative });
+    },
   });
 }

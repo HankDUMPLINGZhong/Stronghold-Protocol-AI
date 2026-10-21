@@ -68,8 +68,8 @@ export function mobileBossValue(layout, ctx) {
   return score;
 }
 
-export function* mobileBossSteps(m, ps, helpers, enabled) {
-  if (!m.isSolo || m.round !== m.gd.bossRound || !enabled.includes(m.bossId) || m.botRehearsal < 2) return;
+export function* mobileBossSteps(m, ps, helpers, enabled, { collect = false } = {}) {
+  if ((!m.isSolo && !(collect && m.mode === 'coop')) || m.round !== m.gd.bossRound || !enabled.includes(m.bossId) || m.botRehearsal < 2) return;
   const { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps } = helpers;
   const chosen = [...ps.board.values()].filter(p => p.kind === 'chess');
   if (chosen.length < 2) return;
@@ -89,12 +89,14 @@ export function* mobileBossSteps(m, ps, helpers, enabled) {
   });
   const anchor = info.map((u, i) => ({ ...u, i })).sort((a, b) => Number(b.tank) - Number(a.tank) || b.def - a.def || a.i - b.i)[0].i;
   const reserved = new Set([...ps.board].filter(([, p]) => p.kind !== 'chess').map(([key]) => key));
+  const owners = collect ? new Set([...ps.board.values()].filter(p => p.kind === 'token').map(p => p.ownerUid)) : new Set();
   const options = chosen.map((p, i) => {
     const out = [];
     for (let r = 9; r <= 12; r++) for (let c = 2; c <= 10; c++) {
       const key = `${r},${c}`;
       if (reserved.has(key) || !ps._legal(p, r, c)) continue;
       for (const dir of DIRS) {
+        if (owners.has(p.uid) && (ps.find(p.uid).key !== key || p.dir !== dir)) continue;
         const cover = new Set(rangeTiles(records[i], r, c, dir));
         const contact = nodes.reduce((n, p) => n + (cover.has(p.key) ? p.weight : 0), 0);
         if (!info[i].heal && contact === 0) continue;
@@ -148,6 +150,7 @@ export function* mobileBossSteps(m, ps, helpers, enabled) {
   for (const [key, p] of ps.board) if (p.kind === 'chess') { original.set(p.uid, key); original.dirs.set(p.uid, p.dir); }
   const plans = [original, ...selected.map(p => { const plan = new LayoutPlan();
     p.layout.forEach((loc, i) => { plan.set(chosen[i].uid, loc.key); plan.dirs.set(chosen[i].uid, loc.dir); }); return plan; })];
+  if (collect) { for (const plan of plans) plan.lineup = chosen; return plans; }
   function* comparePlans(candidates) {
     const first = yield* createBossRehearsalSteps(m, ps, chosen, candidates, p => bossInputSteps(m, ps, chosen, p));
     if (!first) return null;

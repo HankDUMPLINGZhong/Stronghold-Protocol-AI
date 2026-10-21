@@ -8,7 +8,8 @@
 
 | 版本 | 下载 | 说明与校验 |
 |---|---|---|
-| **v0.2.1 · 当前版** | [AI-Arturia-v0.2.1.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.1/AI-Arturia-v0.2.1.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.1) |
+| **v0.2.2 · 当前版** | [AI-Arturia-v0.2.2.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.2/AI-Arturia-v0.2.2.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.2) |
+| v0.2.1 | [AI-Arturia-v0.2.1.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.1/AI-Arturia-v0.2.1.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.1) |
 | v0.2.0 | [AI-Arturia-v0.2.0.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.0/AI-Arturia-v0.2.0.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.0) |
 | v0.1.3 | [AI-Arturia-v0.1.3.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.1.3/AI-Arturia-v0.1.3.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.1.3) |
 | v0.1.2 | [AI-Arturia-v0.1.2.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.1.2/AI-Arturia-v0.1.2.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.1.2) |
@@ -29,4 +30,4 @@
 
 [安装与共存说明](addons/lavinia/README.md) · [策略简介](docs/strategies/siracusa.md)
 
-两款共存时先安装阿尔图罗，再安装拉维妮娅；升级／卸载阿尔图罗前先卸载拉维妮娅。阿尔图罗历史发行现统一使用`arturia-`前缀，旧`v0.1.x`标签保留为源码别名，下载请使用本页的新链接。附件名称、校验和及对应策略源码保持不变。
+两款共存时先安装阿尔图罗，再安装拉维妮娅；图图v0.2.2起升级自动保留拉维妮娅；卸载阿尔图罗前仍先卸载拉维妮娅。阿尔图罗历史发行现统一使用`arturia-`前缀，旧`v0.1.x`标签保留为源码别名，下载请使用本页的新链接。附件名称、校验和及对应策略源码保持不变。

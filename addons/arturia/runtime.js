@@ -14,7 +14,8 @@ export function policyView(m) {
     const opts = Object.freeze({ ...m.opts, botStrategy: 'growth', botCoreStrategies: true, botRehearsal: 3,
       botFrontlineRepair: false, botFormationRoles: true, botHumanLessons: false,
       botSiracusaEngines: false, botLateranoLessons: Object.freeze(['quintus', 'roster']),
-      botLateranoExperiment: 'team28-vision-difficulty', botSiracusaArcaneWeight: 0.65,
+      botLateranoExperiment: 'team28-vision-difficulty',
+      botLateranoCoopExperiment: 'coop-eleven-boss-specials', botSiracusaArcaneWeight: 0.65,
       botSiracusaAdjustments: Object.freeze([]), botSiracusaInvestorDeadline: 9 });
     views.set(m, new Proxy(m, {
       get(target, key) {

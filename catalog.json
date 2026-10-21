@@ -5,10 +5,10 @@
       "name": "AI·阿尔图罗",
       "core": "lateranoShip",
       "status": "released",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "addon": "addons/arturia",
-      "sourceRoot": "releases/arturia-v0.2.1/source",
-      "manifest": "releases/arturia-v0.2.1.json"
+      "sourceRoot": "releases/arturia-v0.2.2/source",
+      "manifest": "releases/arturia-v0.2.2.json"
     },
     "lavinia": {
       "name": "AI·拉维妮娅",

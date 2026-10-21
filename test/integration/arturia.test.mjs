@@ -89,6 +89,8 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.deepEqual(view.opts.botLateranoLessons, ['quintus', 'roster']);
     assert.equal(view.opts.botFormationRoles, true);
     assert.equal(view.opts.botLateranoExperiment, 'team28-vision-difficulty');
+    assert.equal(view.opts.botLateranoCoopExperiment, 'coop-eleven-boss-specials');
+    assert.equal(h.m.opts.botLateranoCoopExperiment, undefined);
     assert.equal(view.botRehearsal, 3);
     const recipe = bondPlan(view, h.ps('arturia')).strategy;
     assert.equal(recipe.core, adapter.CORE);
@@ -99,9 +101,15 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(typeof recipe.earlyThreeState, 'function');
     assert.equal(recipe.matureFiveState, undefined);
     const manifest = JSON.parse(readFileSync(resolve(bundle, 'addon.json')));
-    assert.equal(manifest.version, '0.2.1');
+    assert.equal(manifest.version, '0.2.2');
     assert.equal(manifest.policy, POLICY_REF);
     assert.equal(manifest.policyObject, view.opts.botLateranoExperiment);
+    assert.equal(manifest.coopPolicyObject, view.opts.botLateranoCoopExperiment);
+    const { LATERANO_EXPERIMENTS } = await load('server/match/arturia/policy/server/match/botStrategies/lateranoExperiments.js');
+    const { coreStrategy } = await load('server/match/arturia/policy/server/match/botCoreStrategies.js');
+    assert.equal(recipe, LATERANO_EXPERIMENTS[manifest.coopPolicyObject]);
+    assert.notEqual(recipe, LATERANO_EXPERIMENTS[manifest.policyObject]);
+    assert.equal(coreStrategy({ mode: 'solo', opts: view.opts }, adapter.CORE), LATERANO_EXPERIMENTS[manifest.policyObject]);
     assert.equal(manifest.benchmark.hard, '28/28'); assert.equal(manifest.benchmark.abyss, '20/28');
     assert.deepEqual(readFileSync(resolve(root, 'addons/arturia/addon.json')), readFileSync(resolve(bundle, 'addon.json')));
     assert.ok(existsSync(resolve(root, 'addons/arturia/安装插件.bat')));
@@ -122,7 +130,7 @@ test('real upstream battles and later rounds accept the retained policy', () => 
   } finally { h.m.dispose(); }
 });
 
-test('packaged v0.2.1 uses the selected map layouts through the adapter', async () => {
+test('packaged v0.2.2 uses the selected map layouts through the adapter', async () => {
   const {give}=harness;
   const {planLayout,bondPlan}=await load('server/match/arturia/policy/server/match/botDevelopment.js');
   const h=harness.makeMatch({mode:'solo',difficulty:'ABYSS',seed:25864,fake:true});
