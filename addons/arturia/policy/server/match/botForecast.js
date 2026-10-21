@@ -46,6 +46,9 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
   if (boss && !group) return null; // Co-op needs joint planning, not an imaginary empty teammate.
   const wave = boss ? group.wave : m.wave;
   if (!wave) return null;
+  // [ASSUMED] Explicit boss-only sampling experiment; every retained policy still uses two samples.
+  const samples = boss && recipe?.forecastContext && recipe?.selectForecast
+    && [4, 6, 8, 10, 12].includes(recipe.forecastSamples) ? recipe.forecastSamples : FORECAST_SAMPLES;
   const seen=new Set();
   const planLimit = boss && recipe?.finalProtectionPlans && recipe.forecastPlanLimit === 6 ? 6 : FORECAST_PLANS;
   const candidates=plans.filter(p => {
@@ -64,7 +67,7 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
     ? Math.ceil((after+ps.lp/Math.max(.01,m.gd.bossOvertimeDrainReal)+5)*m.gd.combatTimeScale*30)
     : Math.ceil(((wave.timeLimit || 60)+5)*30);
   const trials=[];
-  for (let index=0;index<candidates.length;index++) for (let sample=0;sample<FORECAST_SAMPLES;sample++) {
+  for (let index=0;index<candidates.length;index++) for (let sample=0;sample<samples;sample++) {
     // The sample seed is deliberately independent of candidate index, scheduling and all mutable match RNGs.
     const pool=boss ? new SharedBossPool(hp) : null;
     const input=structuredClone(inputs[index]); if (boss) input.lpForBoss=ps.lp;
@@ -108,7 +111,8 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
           if (!valid) job.outcomes.push({ index:trial.index,sample:trial.sample,valid:false });
           else if (boss) job.outcomes.push({ index:trial.index,sample:trial.sample,valid:true,
             won:trial.pool.hp<=0 ? 1 : 0, damageShare:1-Math.max(0,trial.pool.hp)/hp,
-            lp:ps.lp-trial.lost-m.gd.bossOvertimeDue(b.time,after), layers:0 });
+            lp:ps.lp-trial.lost-m.gd.bossOvertimeDue(b.time,after), layers:0,
+            ...(recipe?.forecastBossMetrics && trial.metrics ? trial.metrics(pp) : {}) });
           else {
             const leaks=(pp.leaked || []).filter(l => l && l.counted!==false);
             job.outcomes.push({ index:trial.index,sample:trial.sample,valid:true,

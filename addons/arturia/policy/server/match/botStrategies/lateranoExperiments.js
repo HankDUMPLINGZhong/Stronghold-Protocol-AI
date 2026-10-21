@@ -53,6 +53,17 @@ import { lateranoMatureFive } from './lateranoMatureFive.js';
 import { withLateranoEarlyTempo } from './lateranoEarlyTempo.js';
 import { withLateranoEarlyTwo } from './lateranoEarlyTwo.js';
 import { withLateranoEarlyThree } from './lateranoEarlyThree.js';
+import { withLateranoIncomeDoll } from './lateranoIncomeDoll.js';
+import { withLateranoWindowRefinement } from './lateranoWindowRefinement.js';
+import { withLateranoStealthWave } from './lateranoStealthWave.js';
+import { withLateranoFinalSwap } from './lateranoFinalSwap.js';
+import { withLateranoEnemyTypes } from './lateranoEnemyTypes.js';
+import { withLateranoDifficultyVision } from './lateranoDifficultyVision.js';
+import { withLateranoMostimaAmmo } from './lateranoMostimaAmmo.js';
+import { withLateranoBossFormation } from './lateranoBossFormation.js';
+import { withLateranoLastHealing } from './lateranoLastHealing.js';
+import { withLateranoHealingDelivery } from './lateranoHealingDelivery.js';
+import { withLateranoEmergencyRoster } from './lateranoEmergencyRoster.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -296,9 +307,45 @@ const medicChain = withLateranoMedicChain(medicBase);
 const medicSingle = withLateranoSingleSkill(medicChain);
 const medicFour = withLateranoFastFour(medicSingle);
 const medicFourR11 = withLateranoFourDevelopment(medicFour, { releaseRound: 11 });
+const retainedEarlyThree = withLateranoEarlyThree(r14Transfer);
+const retainedIncomeDoll = withLateranoIncomeDoll(retainedEarlyThree);
+const retainedEnemyTypes = withLateranoEnemyTypes(withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll))), { preserveSecondaries: true });
+const mostimaAmmo = withLateranoMostimaAmmo(retainedEnemyTypes);
+const tenSampleBoss = withLateranoBossFormation(mostimaAmmo, { samples: 10, aggregate: true });
+const strictVision = withLateranoBossFormation(withLateranoMostimaAmmo(retainedEnemyTypes, { protectVision: true }), { samples: 10, aggregate: true });
+const conservativeVision = withLateranoBossFormation(withLateranoMostimaAmmo(retainedEnemyTypes, { protectVision: 'value' }), { samples: 10, aggregate: true });
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
+  'team27-mostima-ammo': mostimaAmmo,
+  'team27-mostima-ammo-linked': withLateranoBossFormation(mostimaAmmo),
+  'team27-mostima-ammo-linked-s4': withLateranoBossFormation(mostimaAmmo, { samples: 4 }),
+  'team27-mostima-ammo-linked-s8': withLateranoBossFormation(mostimaAmmo, { samples: 8 }),
+  'team27-mostima-ammo-linked-s12': withLateranoBossFormation(mostimaAmmo, { samples: 12 }),
+  'team27-mostima-ammo-linked-s12-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 12, aggregate: true }),
+  'team27-mostima-ammo-linked-s4-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 4, aggregate: true }),
+  'team27-mostima-ammo-linked-s6-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 6, aggregate: true }),
+  'team27-mostima-ammo-linked-s8-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 8, aggregate: true }),
+  'team27-mostima-ammo-linked-s10-aggregate': tenSampleBoss,
+  'team27-last-healing': withLateranoLastHealing(tenSampleBoss),
+  'team27-healing-delivery': withLateranoHealingDelivery(tenSampleBoss),
+  'team27-quintus-second-tank': withLateranoEmergencyRoster(tenSampleBoss, 'quintus'),
+  'team27-emergency-wave': withLateranoEmergencyRoster(tenSampleBoss, 'wave'),
+  'team27-ammo-vision': strictVision,
+  'team27-ammo-vision-value': conservativeVision,
+  'team28-vision-difficulty': withLateranoDifficultyVision(strictVision, conservativeVision),
+  'team27-enemy-types': withLateranoEnemyTypes(withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll)))),
+  'team27-enemy-types-bonds': retainedEnemyTypes,
+  'team27-early-three-income-doll-window-stealth-swap': withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll))),
+  'team27-early-three-stealth': withLateranoStealthWave(retainedEarlyThree),
+  'team27-early-three-income-doll-window-stealth': withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll)),
+  'team27-early-three-window': withLateranoWindowRefinement(retainedEarlyThree),
+  'team27-early-three-income-doll-window': withLateranoWindowRefinement(retainedIncomeDoll),
+  'team27-early-three-income-doll': retainedIncomeDoll,
+  'team27-early-three-doll-lock3': withLateranoIncomeDoll(retainedEarlyThree, { lockAt: 3 }),
+  'team27-early-three-doll-lock2': withLateranoIncomeDoll(retainedEarlyThree, { lockAt: 2 }),
+  'team27-early-three-doll-skip3': withLateranoIncomeDoll(retainedEarlyThree, { skipAt: 3 }),
+  'team27-early-three-doll-skip2': withLateranoIncomeDoll(retainedEarlyThree, { skipAt: 2 }),
   'team27-early-three-mature-five': withLateranoEarlyThree(matureFive),
-  'team27-early-three': withLateranoEarlyThree(r14Transfer),
+  'team27-early-three': retainedEarlyThree,
   'team27-early-two': withLateranoEarlyTwo(r14Transfer),
   'team27-early-tempo': withLateranoEarlyTempo(r14Transfer),
   'team27-mature-five': matureFive,

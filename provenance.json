@@ -39,7 +39,7 @@
     "server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "server/match/botForecast.js": "cb15749c374b06a4de81331ca882035134016e5e74c836d11f1765775393e694"
   },
-  "scope": "Released Arturia v0.2.0 and Lavinia v0.1.2 dependency closures; immutable earlier releases retained.",
+  "scope": "Released Arturia v0.2.1 and Lavinia v0.1.2 dependency closures; immutable earlier releases retained.",
   "installerFeatures": {
     "automaticUpgrade": true,
     "rollbackOnFailure": true,
@@ -123,10 +123,10 @@
       "changes": "Selected Siracusa operating and late-upgrade policy plus Lucien solo final-battle formation; unchanged named-teammate protocol and adapter."
     },
     "arturia": {
-      "version": "0.2.0",
-      "policy": "sha256:43fb41352212bf8cd5cb48277748f5a100850bc5a6399dbedb33d974ea92983d",
+      "version": "0.2.1",
+      "policy": "sha256:3febaa61c9bab55db67a060b94b0bd3a42b3e8ea8517b693af8ff3ccfe594e32",
       "policySource": "Immutable verified source snapshot; per-file SHA-256, not a Git commit claim",
-      "manifest": "releases/arturia-v0.2.0.json",
+      "manifest": "releases/arturia-v0.2.1.json",
       "sourceFiles": {
         "server/match/botDevelopment.js": "954e93bbf6831f6fbb40635a1874b6c01b4b3a6d86fecaed2ec1ca5b6c199717",
         "server/match/botStrategies/siracusaLargeBodyCoverage.js": "a327e13468d6da2cb00288d7345452e905c142da9d8dd3b481ff5b0b09d5be42",
@@ -150,7 +150,7 @@
         "server/match/botEconomy.js": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53",
         "server/match/botStrategies/lateranoForecast.js": "651b7e17b5919fedf9ef2a686c9375636131a5933e65a246453ea5c0f5fa89dc",
         "server/match/botLateranoDevelopment.js": "c43b3494f55e67d954500eef137f0384a75cc76376c160591219fe9464e0af51",
-        "server/match/botStrategies/lateranoExperiments.js": "f1501ddeab9ad27046cae785068926259e579c48820a9e12d9306430e91d2068",
+        "server/match/botStrategies/lateranoExperiments.js": "188572475420c017505c99a195ab7b4b150488bfcbf15f7f6c239a710bf5ae88",
         "server/match/botStrategies/lateranoRetention.js": "dc3459d26c74a9297539c8e75a5fb7de0ecc92696cb8b58b8579ac2e22f369dd",
         "server/match/botStrategies/lateranoContactRepair.js": "a27ec6d82462848b65c25feca320b11afcd16f9fd3b259f1d332c6f23e4a1d22",
         "server/match/botStrategies/lateranoOpening.js": "5a1a9d6cf153dc7a8204a5f2ed510a11be80f3d6f334509778ff6906f179c3a8",
@@ -189,7 +189,7 @@
         "server/match/botStrategies/lateranoKeyValue.js": "5a430a738e3b44e3cbf926d12625a65425039790364c9f5aea7cae7248cd2311",
         "server/match/botStrategies/lateranoKeyHealing.js": "b7eeccabc55b1603ffdd27501b5057e8e417c777a4b9925e5fb7be4afbd96246",
         "server/match/botStrategies/lateranoMostimaAmplifier.js": "767791601f8955ce9a41cb5e1a76b7f3463325c74c95c9ab5247a0ffbfb1bf45",
-        "server/match/botForecast.js": "fde912637cc095551140e7d5ce5120179df1d89cf405b488638538cd130b10f2",
+        "server/match/botForecast.js": "a45c47386b56cd83bef3c1e8c5d3f9dbf2b0c889607f6f6ba46f8592d78ed212",
         "server/match/botStrategies/lateranoPrecisionFarming.js": "b9fb7ed60676ed368ccc8fa1376e34ccc9f86846d03d0a7fc244791db20d9d1a",
         "server/match/botStrategies/lateranoRewardPackage.js": "7ef163e344a2ee11aa2206219bdeffac0a304e0b8a949f7f5414142bac91bebd",
         "server/match/botStrategies/lateranoRetiredFrontline.js": "a464ba4ca22fb040aac3a00f9e5cfa139e1c9f42a87a7817f57692d7d28acd7c",
@@ -205,12 +205,24 @@
         "server/match/botStrategies/lateranoEarlyTempo.js": "de8a8a1039c400f93bf71e9009beff2683579ffb3d33d298fa63f0c6399f05c0",
         "server/match/botStrategies/lateranoEarlyTwo.js": "295f1a7c35348a5466ffa40b33fafab2fa2e9160ca449ad907d5cc8e292fd6bc",
         "server/match/botStrategies/lateranoEarlyThree.js": "fa1e7ed51de5ca671faf84ace8fa1dfbe87766ae21538300bacf5307eb727a43",
+        "server/match/botStrategies/lateranoIncomeDoll.js": "2ffc06ace205b2db46f06d110305450c6d4800236a829749c6389cfc5977054b",
+        "server/match/botStrategies/lateranoWindowRefinement.js": "f87b011085e61690a1c35d72d35741bd974db8b7863244e2f6dbb6676c4069dc",
+        "server/match/botStrategies/lateranoStealthWave.js": "fbcb7442d696b4d12885dccf13919b9660e1e4a860c7318dfc319a5a52686c60",
+        "server/match/botStrategies/lateranoFinalSwap.js": "49e843d5aa99f22b979c6cf032f7a05f94320198fd1f96034ebbbb4462b5ea92",
+        "server/match/botStrategies/lateranoEnemyTypes.js": "900979a5301edf4d1ae27eb46dc5dc6f8d78fd423f9427e22db45fcf387721ad",
+        "server/match/botStrategies/lateranoDifficultyVision.js": "add54b88c0ccfd94c2680d965cf6fa8d9dfbaeb2d74413ec1c1e4f5ae5daf558",
+        "server/match/botStrategies/lateranoMostimaAmmo.js": "29e77bd2f147060ba3aefe3a754581c4afca434da5602e13ff826c56bfd762d9",
+        "server/match/botStrategies/lateranoVisionValue.js": "95e95eaa984349a2fc6704ce3748c5d8be615fbd2f195d269ae0e5c334778ce2",
+        "server/match/botStrategies/lateranoBossFormation.js": "dccdc4e110c9d5cbfd239b813139bdeae95107f31ee54710210204c64460091a",
+        "server/match/botStrategies/lateranoLastHealing.js": "01e3728de3df852cf8e1dd5592428389b92c8ab33a2b95f55c1bca9ec35cc693",
+        "server/match/botStrategies/lateranoHealingDelivery.js": "47d74f70ac6a0d7c1acbfe9127624f05229735b942db9b66d29192f978b52e8b",
+        "server/match/botStrategies/lateranoEmergencyRoster.js": "38b86a01ce13d1434c86388db32ecd53dd125b73cc46d02d434247419021d2ff",
         "server/match/botStrategies/lateranoEngagement.js": "4ff8cd465769a8ea595dfd9639474ee76e1d9161bd0e7fec7e263dd84f4714ab",
         "server/match/botStrategies/lateranoSami.js": "670b468919031528cf3846f5a7f003a40724e5f1a35ac279694fa51d0be5e3ad",
         "server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
         "server/match/botStrategies/siracusaDraftSafety.js": "af9da7e3e9f91560478c5c452a8001de2161c5636b85b2fac601763336869bdf"
       },
-      "changes": "Current adopted Laterano early-two/three baseline, inherited key-card valuation, funding and final-battle transfer policy; maturity-five and diagnostic layout/healing fixes excluded."
+      "changes": "Adopted difficulty-dependent Foresight, Mostima ammunition support, targeted stealth positioning and R14 linked formation; independently retained solo and cooperative baselines."
     }
   }
 }

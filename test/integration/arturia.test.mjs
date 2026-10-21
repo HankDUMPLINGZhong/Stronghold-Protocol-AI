@@ -88,7 +88,7 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(h.m.opts.botFormationRoles, undefined);
     assert.deepEqual(view.opts.botLateranoLessons, ['quintus', 'roster']);
     assert.equal(view.opts.botFormationRoles, true);
-    assert.equal(view.opts.botLateranoExperiment, 'team27-early-three');
+    assert.equal(view.opts.botLateranoExperiment, 'team28-vision-difficulty');
     assert.equal(view.botRehearsal, 3);
     const recipe = bondPlan(view, h.ps('arturia')).strategy;
     assert.equal(recipe.core, adapter.CORE);
@@ -99,10 +99,10 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(typeof recipe.earlyThreeState, 'function');
     assert.equal(recipe.matureFiveState, undefined);
     const manifest = JSON.parse(readFileSync(resolve(bundle, 'addon.json')));
-    assert.equal(manifest.version, '0.2.0');
+    assert.equal(manifest.version, '0.2.1');
     assert.equal(manifest.policy, POLICY_REF);
     assert.equal(manifest.policyObject, view.opts.botLateranoExperiment);
-    assert.equal(manifest.benchmark.hard, '27/28'); assert.equal(manifest.benchmark.abyss, '16/28');
+    assert.equal(manifest.benchmark.hard, '28/28'); assert.equal(manifest.benchmark.abyss, '20/28');
     assert.deepEqual(readFileSync(resolve(root, 'addons/arturia/addon.json')), readFileSync(resolve(bundle, 'addon.json')));
     assert.ok(existsSync(resolve(root, 'addons/arturia/安装插件.bat')));
     h.invariants();
@@ -122,7 +122,7 @@ test('real upstream battles and later rounds accept the retained policy', () => 
   } finally { h.m.dispose(); }
 });
 
-test('packaged v0.2.0 uses the selected map layouts through the adapter', async () => {
+test('packaged v0.2.1 uses the selected map layouts through the adapter', async () => {
   const {give}=harness;
   const {planLayout,bondPlan}=await load('server/match/arturia/policy/server/match/botDevelopment.js');
   const h=harness.makeMatch({mode:'solo',difficulty:'ABYSS',seed:25864,fake:true});
@@ -150,10 +150,12 @@ test('packaged v0.2.0 uses the selected map layouts through the adapter', async 
   } finally {h.m.dispose();}
 });
 
-test('frozen policy executes solo and cooperative shopping and boss rehearsals through R14', { timeout: 180_000 }, () => {
-  for (const mode of ['coop', 'solo']) {
+test('frozen policy executes one-, two- and four-player shopping and battles through R14', { timeout: 240_000 }, () => {
+  for (const [mode, count] of [['solo', 1], ['coop', 2], ['coop', 4]]) {
+    const players = seats().filter(s => s.isBot && (mode === 'coop' || s.botPersona === 'arturia'));
+    while (players.length < count) players.push({ playerId: `original-${players.length}`, name: 'Original AI', isBot: true, connected: true });
     const h = harness.makeMatch({ mode, difficulty: 'HARD', seed: 7, captureFrames: false,
-      seats: seats().filter(s => s.isBot && (mode === 'coop' || s.botPersona === 'arturia')).map((s, seat) => ({ ...s, seat })) });
+      seats: players.map((s, seat) => ({ ...s, seat })) });
     try {
       h.start().toPrep(1);
       // Compatibility exercise, not a benchmark: prevent early elimination from skipping late APIs.

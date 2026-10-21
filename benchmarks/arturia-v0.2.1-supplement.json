@@ -1,0 +1,202 @@
+{
+  "policy": "sha256:3febaa61c9bab55db67a060b94b0bd3a42b3e8ea8517b693af8ff3ccfe594e32",
+  "scope": "Fixed supplemental solo cases, separate from the primary corpus",
+  "matches": [
+    {
+      "config": "solo:HARD",
+      "seed": 72004,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72009,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72011,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72022,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72034,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72037,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72038,
+      "victory": true,
+      "rounds": 15,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72052,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72053,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72054,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72057,
+      "victory": true,
+      "rounds": 15,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72058,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72159,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 72183,
+      "victory": true,
+      "rounds": 15,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72004,
+      "victory": false,
+      "rounds": 13,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72009,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72011,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72022,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72034,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72037,
+      "victory": false,
+      "rounds": 13,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72038,
+      "victory": false,
+      "rounds": 13,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72052,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72053,
+      "victory": false,
+      "rounds": 13,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72054,
+      "victory": false,
+      "rounds": 13,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72057,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72058,
+      "victory": false,
+      "rounds": 13,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72159,
+      "victory": true,
+      "rounds": 14,
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 72183,
+      "victory": false,
+      "rounds": 13,
+      "errors": 0
+    }
+  ]
+}
