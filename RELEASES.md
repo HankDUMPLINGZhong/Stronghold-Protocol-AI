@@ -2,7 +2,7 @@
 
 两款插件独立更新、独立编号，Tag 使用`arturia-vX.Y.Z`和`lavinia-vX.Y.Z`。标题使用`【拉特兰-潘格尼尼】阿尔图罗·vX.Y.Z`和`【贾维-叙拉古】拉维妮娅·vX.Y.Z`。GitHub的默认Releases页按时间混合展示；下方入口只显示对应插件的发行版本。
 
-## 阿尔图罗（图图） · 拉特兰
+## 阿尔图罗 · 拉特兰
 
 **[只看阿尔图罗的全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-arturia%22)**
 
