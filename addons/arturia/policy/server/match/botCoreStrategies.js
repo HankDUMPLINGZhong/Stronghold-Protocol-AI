@@ -17,6 +17,12 @@ import { lateranoSami, lateranoFocusedSami } from './botStrategies/lateranoSami.
 
 export const CORE_STRATEGIES = Object.freeze({ [siracusa.core]: siracusa, [laterano.core]: laterano });
 
+/** Policy boundary for teammate-derived valuations; actual matches still use complete player states. */
+export function readsTeammateRoster(m, ps) {
+  return m.mode !== 'coop' || m.isSolo || ps.bandId !== 'band_paganini'
+    || coreStrategy(m, ps._botFocusId || laterano.core)?.teammateInformation !== 'lp-only';
+}
+
 export function coreStrategy(m, core) {
   if (m.botCoreStrategies === false) return null;
   if (core === laterano.core && m.mode === 'coop' && m.opts?.botLateranoCoopExperiment)

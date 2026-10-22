@@ -1,5 +1,6 @@
 // [ASSUMED] Compare nominal pick-three rewards, not the seeded next offer or a combat replay.
 // Copy weights use public initial stock minus this player's holdings; hidden pool depletion is not inspected.
+import { readsTeammateRoster } from '../botCoreStrategies.js';
 const gdOf = (m, ps) => ps.gd || m.gd;
 
 /** Exact expected best value of up to three distinct, copy-weighted identities. No random draws. */
@@ -44,7 +45,7 @@ export function lateranoMergeOrder(m, ps, recipe, scoreReward, { publicTeammates
     owned.set(base, (owned.get(base) || 0) + (publicTeammates ? copies : p.poolCopies ?? copies));
   }
   // Only visible deployed teammate holdings, never their private hands, shops or actual hidden pool depletion.
-  if (publicTeammates) for (const other of m.players.values()) {
+  if (publicTeammates && readsTeammateRoster(m, ps)) for (const other of m.players.values()) {
     if (other.playerId === ps.playerId || !other.alive) continue;
     for (const p of other.board.values()) if (p.kind === 'chess') {
       const base = gd.baseIdOf(p.id);

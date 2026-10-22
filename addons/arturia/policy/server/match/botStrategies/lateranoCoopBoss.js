@@ -8,6 +8,7 @@ import { bossFormationSnapshot, bossLinkedPlans } from './lateranoBossFormation.
 import { stealthBattleInput } from './lateranoStealthWave.js';
 import { applyControlPositions } from './lateranoControlBoss.js';
 import { selectFinalSwap } from './lateranoFinalSwap.js';
+import { coopSelfBossSession, createCoopSelfBossForecast } from './lateranoCoopBossSelf.js';
 
 const eligible = m => m.mode === 'coop' && !m.isSolo && !m.wave && m.round === m.gd.bossRound && m.botRehearsal >= 2;
 const signature = p => [...p].sort((a,b)=>a[0]-b[0]).map(([u,k])=>`${u}@${k}:${p.dirs.get(u)}`).join('|');
@@ -59,6 +60,7 @@ export function coopBossFields(m, ps, input, pool, sample) {
 /** Independent common samples. Overtime drains team LP once, not once per boss field. */
 export function* createCoopBossForecast(m, ps, plans, samples=10) {
   if(!eligible(m)||plans.length<2||!m.bossWaves?.length)return null;
+  if(coopSelfBossSession(ps))return yield* createCoopSelfBossForecast(m,ps,plans,samples);
   const stamp=contextKey(m,ps),hp=bossPoolHp(m.gd,m.bossId,m.alivePlayers().length);
   const lp=m.alivePlayers().reduce((n,p)=>n+Math.max(0,p.lp),0);
   const after=m.gd.bossLevelTime(m.round)||m.gd.bossOvertimeAfterReal;

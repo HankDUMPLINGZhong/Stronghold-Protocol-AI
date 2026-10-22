@@ -70,6 +70,14 @@ import { withLateranoHealingDelivery } from './lateranoHealingDelivery.js';
 import { withLateranoEmergencyRoster } from './lateranoEmergencyRoster.js';
 import { withLateranoCoopBossSpecial } from './lateranoCoopBossSpecial.js';
 import { withLateranoCoopWindow } from './lateranoCoopWindow.js';
+import { withLateranoCoopRoles } from './lateranoCoopRoles.js';
+import { withLateranoCoopEarlyInvestment, withLateranoCoopVisibleUpgrade } from './lateranoCoopUpgrade.js';
+import { withLateranoCoopProgression, coopContinuousFiveReady } from './lateranoCoopProgression.js';
+import { withLateranoCoopFiveGate } from './lateranoCoopFiveGate.js';
+import { withLateranoCoopDevelopment } from './lateranoCoopDevelopment.js';
+import { withLateranoCoopVisionTrade } from './lateranoCoopVisionTrade.js';
+import { withLateranoCoopMarketValue } from './lateranoCoopMarketValue.js';
+import { withLateranoCoopBossSelf } from './lateranoCoopBossSelf.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -324,6 +332,15 @@ const coopBaseline = withLateranoCoopBoss(withLateranoCoopSafety(withLateranoDif
 const coopSupply = withLateranoCoopSupply(coopBaseline);
 const coopMerge11 = withLateranoCoopMerge(coopSupply);
 const coopBoss13 = withLateranoCoopBossSpecial(coopMerge11);
+const coopRoles14 = withLateranoCoopRoles(coopBoss13);
+const coopDevelopment14 = withLateranoCoopDevelopment(coopRoles14);
+const coopFourFiveEconomy = retainedTeam27(gated([5], false, repairWhite19, () => 4)).r14Transfer;
+const coopActiveFiveEconomy = retainedTeam27(gated([5], false, repairWhite19, () => 3)).r14Transfer;
+const coopProgressEconomy = retainedTeam27(giftedFour(11, coopContinuousFiveReady)).r14Transfer;
+const coopLoneSupply = withLateranoCoopBossSpecial(withLateranoCoopMerge(withLateranoCoopSupply(coopBaseline,{loneReadiness:true})));
+const coopLone13 = Object.freeze({...coopBoss13,finalBoardSteps:coopLoneSupply.finalBoardSteps});
+const coopMarketValue15=withLateranoCoopVisionTrade(withLateranoCoopMarketValue(coopDevelopment14));
+const coopOwnBoss16 = withLateranoCoopBossSelf(coopMarketValue15);
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
   'team27-mostima-ammo': mostimaAmmo,
   'team27-mostima-ammo-linked': withLateranoBossFormation(mostimaAmmo),
@@ -355,6 +372,23 @@ export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast
   'coop-ten-doll': withLateranoCoopDoll(coopSupply),
   'coop-ten-merge-order': coopMerge11,
   'coop-eleven-boss-specials': coopBoss13,
+  'coop-thirteen-emergency-roles': coopRoles14,
+  'coop-fourteen-development': coopDevelopment14,
+  'coop-fourteen-development-trade': withLateranoCoopVisionTrade(coopDevelopment14),
+  'coop-fourteen-development-trade-value': coopMarketValue15,
+  'coop-fifteen-own-boss-damage': coopOwnBoss16,
+  'coop-sixteen-team-lp-only': Object.freeze({ ...coopOwnBoss16, teammateInformation: 'lp-only' }),
+  'coop-fourteen-development-bold': withLateranoCoopDevelopment(coopRoles14, { risk: 'bold' }),
+  'coop-fourteen-five-four-members': withLateranoCoopFiveGate(coopRoles14, coopFourFiveEconomy),
+  'coop-fourteen-five-active-core': withLateranoCoopFiveGate(coopRoles14, coopActiveFiveEconomy, { requireActive: true }),
+  'coop-fourteen-early-investment': withLateranoCoopEarlyInvestment(coopRoles14),
+  'coop-fourteen-visible-upgrade': withLateranoCoopVisibleUpgrade(coopRoles14),
+  'coop-fourteen-combined-upgrade': withLateranoCoopVisibleUpgrade(withLateranoCoopEarlyInvestment(coopRoles14)),
+  'coop-fourteen-continuous-upgrade': withLateranoCoopProgression(coopRoles14, coopProgressEconomy),
+  'coop-fourteen-emergency-two': withLateranoCoopRoles(coopBoss13,{minLeaks:2}),
+  'coop-thirteen-lone-supply': coopLone13,
+  'coop-fourteen-emergency-lone-supply': withLateranoCoopRoles(coopLone13,{minLeaks:3}),
+  'coop-thirteen-final-roster': withLateranoCoopRoles(coopBoss13,{final:true}),
   'coop-thirteen-window': withLateranoCoopWindow(coopBoss13),
   'coop-thirteen-boss-window': withLateranoCoopWindow(coopBoss13,{bossOnly:true}),
   'team27-enemy-types': withLateranoEnemyTypes(withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll)))),

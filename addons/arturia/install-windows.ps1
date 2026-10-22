@@ -61,7 +61,7 @@ function Invoke-ArturiaInstaller {
     Write-Host "Node：$nodeExe"
     & $nodeExe (Join-Path $PSScriptRoot 'install.mjs') $Mode $gameRoot | Out-Host
     if ($LASTEXITCODE -ne 0) { throw '操作失败，详细原因见上方。' }
-    if ($Mode -eq 'install') { Write-Host '阿尔图罗 v0.2.2 安装成功。请重新启动游戏服务并刷新浏览器。' }
+    if ($Mode -eq 'install') { Write-Host '阿尔图罗 v0.2.3 安装成功。请重新启动游戏服务并刷新浏览器。' }
     elseif ($Mode -eq 'uninstall') { Write-Host '插件已卸载，原文件已恢复。请重新启动游戏服务。' }
     else { Write-Host '兼容性检查通过，未修改游戏文件。' }
     return 0

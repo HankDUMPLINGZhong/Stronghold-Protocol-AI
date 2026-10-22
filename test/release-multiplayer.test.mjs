@@ -23,11 +23,11 @@ test('release metrics use every game and Arturia only, keeping team arrival and 
 });
 
 test('published multiplayer rows reproduce the complete named-teammate samples and public table', () => {
-  const report = JSON.parse(readFileSync(new URL('../benchmarks/arturia-v0.2.2-multiplayer.json', import.meta.url)));
+  const report = JSON.parse(readFileSync(new URL('../benchmarks/arturia-v0.2.3-multiplayer.json', import.meta.url)));
   assert.equal(report.matches.length, 112);
   assert.deepEqual(multiplayerRows(report.matches), report.rows);
-  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['arturia2', 13, 56], ['arturia4', 13, 56]]);
+  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['arturia2', 16, 56], ['arturia4', 13, 56]]);
   const table = multiplayerTable(report.rows);
-  for (const path of ['README.md', 'docs/strategies/laterano.md', 'addons/arturia/README.md', 'benchmarks/arturia-v0.2.2-multiplayer.md'])
+  for (const path of ['README.md', 'docs/strategies/laterano.md', 'addons/arturia/README.md', 'benchmarks/arturia-v0.2.3-multiplayer.md'])
     assert.ok(readFileSync(new URL('../' + path, import.meta.url), 'utf8').includes(table), path);
 });

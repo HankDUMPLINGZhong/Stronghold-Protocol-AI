@@ -20,7 +20,7 @@ import { mitigate } from '../../../../../sim/damage.js';
 import { HOVER_KEYS } from '../../../../../sim/content/enemies.js';
 import { attackRangeGrid, loadoutRecord, resolveRecordLoadout } from '../../../../../../shared/loadoutRecord.js';
 import { coreTarget, fixedBandCore, openingCore, selectRoute, growthValue, developmentBuy, refreshGrowth, layoutGrowth, promotionGrowth } from './botStrategy.js';
-import { coreStrategy } from './botCoreStrategies.js';
+import { coreStrategy, readsTeammateRoster } from './botCoreStrategies.js';
 import { economyItemBonus, economyChessBonus, useEconomyItems } from './botEconomy.js';
 import { isLineCaster, linePlacementGate, engagementFronts, frontlineCoverage, isFormationAnchor, formationValue, healingTiles, acceptsHealing } from './botPositioning.js';
 import { bodyKeys } from '../../../../../sim/body.js';
@@ -297,11 +297,12 @@ function mainCoreBond(m, p) {
  * across rounds.
  */
 export function bondPlan(m, ps, owned = ownedBonds(m, ps)) {
-  const key = `${ps.bandId}|${m.round}|${ps.shop.level}|${[...owned.counts.entries()].map(([k, v]) => k + v).join()}|${Object.values(ps.layers).join()}|${m.alivePlayers().map((p) => mainCoreBond(m, p)).join()}`;
+  const publicMates = readsTeammateRoster(m, ps) ? m.alivePlayers() : [];
+  const key = `${ps.bandId}|${m.round}|${ps.shop.level}|${[...owned.counts.entries()].map(([k, v]) => k + v).join()}|${Object.values(ps.layers).join()}|${publicMates.map((p) => mainCoreBond(m, p)).join()}`;
   if (ps._botFocus && ps._botFocus.key === key) return ps._botFocus;
   const prev = ps._botFocusId ?? null;
   const mates = new Set();
-  for (const p of m.alivePlayers()) {
+  for (const p of publicMates) {
     if (p === ps) continue;
     const b = mainCoreBond(m, p);
     if (b) mates.add(b);
@@ -595,7 +596,7 @@ function buyScore(m, ps, id, ctx, reward = false) {
   // [ASSUMED] A soft 18-point cooperation weight (PR #407), not an official rule or a reserved card.
   // Leave high-tier shared chess to living teammates whose opening strategy needs its faction.
   // Humans and bots count equally; a single soft penalty still allows valuable own merges.
-  if (c.tier >= 5 && !c.isGolden && !c.diyFor && m.pool.has(base) && m.alivePlayers().some((mate) =>
+  if (readsTeammateRoster(m, ps) && c.tier >= 5 && !c.isGolden && !c.diyFor && m.pool.has(base) && m.alivePlayers().some((mate) =>
     mate !== ps && gd.bandBondIds(mate.bandId).some((b) => !gd.modeInactiveBonds.has(b) && c.bonds.includes(b)))) s -= 18;
   return s;
 }

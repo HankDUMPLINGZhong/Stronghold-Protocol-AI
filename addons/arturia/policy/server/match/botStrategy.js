@@ -2,7 +2,7 @@
 // [ASSUMED] All valuation weights, forecast trigger counts and planning horizons here are AI heuristics.
 // They never grant layers, mutate the match, inspect future shop rolls or change official effects.
 import { rotateOffset } from '../../../../../sim/dir.js';
-import { coreStrategy } from './botCoreStrategies.js';
+import { coreStrategy, readsTeammateRoster } from './botCoreStrategies.js';
 
 const splitIds = (s) => String(s || '').split(',').map((s) => s.trim()).filter(Boolean);
 const enabled = (gd, id) => !!gd.bond(id) && !gd.modeInactiveBonds.has(id);
@@ -68,7 +68,7 @@ export function openingCore(m, ps, owned) {
     for (const [base, entry] of m.pool.entries) if (entry.left > 0 && gd.chess(base)?.bonds?.includes(id)) available.add(base);
     if (available.size < coreTarget(gd, id, ps.deployCap)) continue;
     const visible = ps.shop.slots.filter((s) => s && !s.sold && s.kind === 'chess' && gd.chess(s.id)?.bonds?.includes(id)).length;
-    const mates = m.alivePlayers().filter((p) => p !== ps && p._botFocusId === id).length;
+    const mates = readsTeammateRoster(m, ps) ? m.alivePlayers().filter((p) => p !== ps && p._botFocusId === id).length : 0;
     const weight = (1 + visible * 4 + (owned.counts.get(id) || 0) * 8 + (gd.bandBondIds(ps.bandId).includes(id) ? 8 : 0)) / (1 + mates * 3);
     choices.push({ id, weight });
   }

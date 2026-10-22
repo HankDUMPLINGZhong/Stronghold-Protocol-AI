@@ -2,7 +2,7 @@
   "schema": 1,
   "checkedAt": "2026-10-22",
   "plugins": {
-    "arturia": "0.2.2",
+    "arturia": "0.2.3",
     "lavinia": "0.1.2"
   },
   "hosts": [
@@ -15,14 +15,14 @@
         "passed": 31,
         "failed": 0
       },
-      "scope": "Both plugins: installation, coexistence, v0.2.1 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall"
+      "scope": "Both plugins: installation, coexistence, v0.2.2 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall"
     },
     {
       "channel": "retained-base",
       "ref": "main-base",
       "commit": "3e589285584828a20075893a0575a9e5660dcc10",
       "packageVersion": "0.2.4",
-      "scope": "Both plugins: installation, coexistence, v0.2.1 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall",
+      "scope": "Both plugins: installation, coexistence, v0.2.2 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall",
       "integrationTests": {
         "passed": 31,
         "failed": 0
@@ -43,7 +43,7 @@
     "passed": 1,
     "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
   },
-  "limitations": "Compatibility checks, not win-rate measurements. Arturia v0.2.2 updates its frozen strategy and adapter selection; Lavinia v0.1.2 bytes remain unchanged. Exact-commit release CI must pass for every listed CI host before publication.",
+  "limitations": "Compatibility checks, not win-rate measurements. Arturia v0.2.3 updates its frozen strategy and adapter selection; Lavinia v0.1.2 bytes remain unchanged. Exact-commit release CI must pass for every listed CI host before publication.",
   "previousChecks": [
     {
       "checkedAt": "2026-10-19",
@@ -208,6 +208,37 @@
           "scope": "Both plugins: installation, coexistence, v0.2.0 Arturia upgrade, one-/two-/four-player R14 combat, recovery and byte-exact uninstall",
           "integrationTests": {
             "passed": 26,
+            "failed": 0
+          }
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-10-22",
+      "plugins": {
+        "arturia": "0.2.2",
+        "lavinia": "0.1.2"
+      },
+      "hosts": [
+        {
+          "channel": "release",
+          "ref": "v0.3.1",
+          "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+          "packageVersion": "0.3.1",
+          "integrationTests": {
+            "passed": 31,
+            "failed": 0
+          },
+          "scope": "Both plugins: installation, coexistence, v0.2.1 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall"
+        },
+        {
+          "channel": "retained-base",
+          "ref": "main-base",
+          "commit": "3e589285584828a20075893a0575a9e5660dcc10",
+          "packageVersion": "0.2.4",
+          "scope": "Both plugins: installation, coexistence, v0.2.1 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall",
+          "integrationTests": {
+            "passed": 31,
             "failed": 0
           }
         }
