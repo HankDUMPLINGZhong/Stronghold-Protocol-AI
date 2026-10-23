@@ -1,3 +1,5 @@
+import { isExtendedHost, patchExtendedHost } from './extended-host.mjs';
+export const extraPatchPaths = files => isExtendedHost(files) ? ['server/match/rewind.js'] : [];
 // Explicit, fail-closed edits to upstream 6ab24682. No source files are replaced wholesale.
 function replace(source, before, after, file) {
   if (source.split(before).length !== 2) throw new Error(`Unsupported installation: ${file}: anchor must occur exactly once: ${before.slice(0, 75)}`);
@@ -126,7 +128,8 @@ export const PATCH_PATHS = ['shared/protocol.js', 'server/lobby.js', 'server/mat
   'server/match/match/phases.js', 'public/js/screens/room.js'];
 
 // Existing Arturia stays byte-for-byte frozen. Add only Lavinia hooks on top of its supported host integration.
-export function patchFiles(files) {
+export function patchFiles(files, normalized = false) {
+  if (!normalized && isExtendedHost(files)) return patchExtendedHost(files, source => patchFiles(source, true));
   if (!files.get('server/match/bot.js').includes("from './arturia/index.js'")) return patchCleanFiles(files);
   const out = new Map(files), edit = (file, before, after) => out.set(file, replace(out.get(file), before, after, file));
   const lobby = 'server/lobby.js', bot = 'server/match/bot.js', phases = 'server/match/match/phases.js', room = 'public/js/screens/room.js';

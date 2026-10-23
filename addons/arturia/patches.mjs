@@ -1,3 +1,5 @@
+import { isExtendedHost, patchExtendedHost } from './extended-host.mjs';
+export const extraPatchPaths = files => isExtendedHost(files) ? ['server/match/rewind.js'] : [];
 // Explicit, fail-closed edits to upstream 6ab24682. No source files are replaced wholesale.
 function replace(source, before, after, file) {
   if (source.split(before).length !== 2) throw new Error(`Unsupported installation: ${file}: anchor must occur exactly once: ${before.slice(0, 75)}`);
@@ -49,7 +51,8 @@ const elitePicker = [
   '',
 ].join('\n');
 
-export function patchFiles(files) {
+export function patchFiles(files, normalized = false) {
+  if (!normalized && isExtendedHost(files)) return patchExtendedHost(files, source => patchFiles(source, true));
   const out = new Map(files);
   const edit = (file, before, after) => out.set(file, replace(out.get(file), before, after, file));
   const lobby = 'server/lobby.js', bot = 'server/match/bot.js', phases = 'server/match/match/phases.js';

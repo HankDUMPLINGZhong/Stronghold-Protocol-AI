@@ -3,7 +3,7 @@ import { resolve, dirname, relative, isAbsolute } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
-import { patchFiles, PATCH_PATHS } from './patches.mjs';
+import { patchFiles, PATCH_PATHS, extraPatchPaths } from './patches.mjs';
 
 const bundle = dirname(fileURLToPath(import.meta.url));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -71,6 +71,8 @@ async function installWithLavinia(mode, root) {
     ? JSON.parse(await readFile(await safePath(root, ownState), 'utf8')) : null;
   const names = new Set([companionState, ownState, ...PATCH_PATHS,
     ...Object.keys(companion.files), ...Object.keys(own?.files || {})]);
+  // Include optional host integration files before staging either standalone installer.
+  if (await exists(await safePath(root, 'server/match/rewind.js'))) names.add('server/match/rewind.js');
   for (const name of await readdir(await safePath(root, 'public/i18n')))
     if (name.endsWith('.json')) names.add(`public/i18n/${name}`);
   for (const addon of ['arturia', 'lavinia']) {
@@ -203,6 +205,7 @@ export async function install(mode, directory) {
   };
   const files = new Map();
   for (const name of PATCH_PATHS) files.set(name, (await original(name)).toString('utf8').replaceAll('\r\n', '\n'));
+  for (const name of extraPatchPaths(files)) files.set(name, (await original(name)).toString('utf8').replaceAll('\r\n', '\n'));
   for (const name of await readdir(inside(root, 'public/i18n'))) if (name.endsWith('.json')) {
     files.set(`public/i18n/${name}`, (await original(`public/i18n/${name}`)).toString('utf8'));
   }
@@ -222,7 +225,7 @@ export async function install(mode, directory) {
     changes.set(target, { before: null, bytes });
   }
   // Keep the complete portable installer in addons/, so players can remove the unpacked download.
-  for (const name of [...Object.keys(meta.files), 'install.mjs', 'patches.mjs', 'addon.json', 'README.md', 'CHANGELOG.md', 'LICENSE', '安装插件.bat', 'install-windows.ps1']) {
+  for (const name of [...Object.keys(meta.files), 'install.mjs', 'patches.mjs', 'extended-host.mjs', 'addon.json', 'README.md', 'CHANGELOG.md', 'LICENSE', '安装插件.bat', 'install-windows.ps1']) {
     const bytes = await readFile(await safePath(bundle, name));
     const target = `addons/arturia/${name}`;
     const before = await original(target);

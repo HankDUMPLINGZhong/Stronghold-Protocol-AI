@@ -12,7 +12,19 @@ for(const ref of process.env.LAVINIA_TEST_REFS?.split(',')||[UPSTREAM_REF])for(c
   const fresh=resolve(temp,'fresh'),old=resolve(temp,'old');build(fresh);
   const oldMeta=JSON.parse(readFileSync(resolve(source,`releases/lavinia-v${from}.json`)));
   build(old,{version:from,manifest:`releases/lavinia-v${from}.json`,sourceRoot:'releases/lavinia-v0.1.0/source'});
-  if(from==='0.1.0')cpSync(resolve(source,'test/fixtures/lavinia-v0.1.0-patches.mjs'),resolve(old,'patches.mjs'));
+  if(from==='0.1.0'){
+    cpSync(resolve(source,'test/fixtures/lavinia-v0.1.0-patches.mjs'),resolve(old,'patches.mjs'));
+    const installer=resolve(old,'install.mjs');
+    writeFileSync(installer,readFileSync(installer,'utf8').replace("import { patchFiles, PATCH_PATHS, extraPatchPaths } from './patches.mjs';", "import { patchFiles, PATCH_PATHS } from './patches.mjs';\nconst extraPatchPaths = () => [];"));
+    // The historical installer predates extended-host integration; it must still refuse it without writing.
+    if(readFileSync(resolve(root,'server/match/match/phases.js'),'utf8').includes('installDraftFacade')){
+      const {install:historical}=await import(pathToFileURL(resolve(old,'install.mjs')));
+      const before=readFileSync(resolve(root,'server/lobby.js'));
+      await assert.rejects(historical('install',root),/Unsupported installation/);
+      assert.deepEqual(readFileSync(resolve(root,'server/lobby.js')),before);
+      return;
+    }
+  }
   const {install}=await import(pathToFileURL(resolve(fresh,'install.mjs'))),{install:previous}=await import(pathToFileURL(resolve(old,'install.mjs')));
   let art;if(dual){const folder=resolve(temp,'arturia');buildArturia(folder);art=(await import(pathToFileURL(resolve(folder,'install.mjs')))).install;await art('install',root);}
   const target=resolve(root,'server/lobby.js'),before=readFileSync(target);await previous('install',root);

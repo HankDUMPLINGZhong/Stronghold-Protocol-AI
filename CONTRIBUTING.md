@@ -12,6 +12,8 @@ PR经审查后纳入原项目`dev`分支验证。确认改进后运行完整固�
 
 ## 构建与验证发行包
 
+扩展分支的条件安装适配及单独回归入口见[扩展宿主适配（待发布）](docs/extended-host-compatibility.md)。这不改变已有发行包的兼容范围。
+
 需要Node.js22+；打包ZIP另需Python3。构建无额外npm依赖：
 
 ```powershell
