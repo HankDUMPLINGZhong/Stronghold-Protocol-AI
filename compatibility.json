@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-22",
+  "checkedAt": "2026-10-23",
   "plugins": {
-    "arturia": "0.2.3",
+    "arturia": "0.2.4",
     "lavinia": "0.1.2"
   },
   "hosts": [
@@ -15,18 +15,37 @@
         "passed": 31,
         "failed": 0
       },
-      "scope": "Both plugins: installation, coexistence, v0.2.2 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall"
+      "scope": "Both plugins on original upstream: install, coexistence, v0.2.3-to-v0.2.4 Arturia upgrade preserving Lavinia, R14 combat, transactional recovery and byte-exact uninstall"
     },
     {
       "channel": "retained-base",
       "ref": "main-base",
       "commit": "3e589285584828a20075893a0575a9e5660dcc10",
       "packageVersion": "0.2.4",
-      "scope": "Both plugins: installation, coexistence, v0.2.2 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall",
+      "scope": "Both plugins on original upstream: install, coexistence, v0.2.3-to-v0.2.4 Arturia upgrade preserving Lavinia, R14 combat, transactional recovery and byte-exact uninstall",
       "integrationTests": {
         "passed": 31,
         "failed": 0
       }
+    },
+    {
+      "channel": "extended",
+      "repository": "zhewang448/Stronghold-Protocol",
+      "ref": "v0.3.1-extended.9",
+      "commit": "fddf41fe8f5b85e87951d85b53df2d800948a387",
+      "packageVersion": "0.3.1",
+      "plugins": [
+        "arturia"
+      ],
+      "integrationTests": {
+        "passed": 12,
+        "failed": 0
+      },
+      "extendedChecks": {
+        "passed": 7,
+        "failed": 0
+      },
+      "scope": "Arturia only: conditional install, group-local priority/reservation and pools, PREP rewind and disk identity recovery; actual combat through R14 for one/two/four players; 8/20-player draft and preparation checks only"
     }
   ],
   "coverage": [
@@ -43,7 +62,7 @@
     "passed": 1,
     "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
   },
-  "limitations": "Compatibility checks, not win-rate measurements. Arturia v0.2.3 updates its frozen strategy and adapter selection; Lavinia v0.1.2 bytes remain unchanged. Exact-commit release CI must pass for every listed CI host before publication.",
+  "limitations": "Compatibility checks are not win-rate measurements. Extended-host support is Arturia v0.2.4 only; the published Lavinia v0.1.2 installer is unchanged and supports original upstream. Exact-commit CI must pass for all four configured hosts before publication.",
   "previousChecks": [
     {
       "checkedAt": "2026-10-19",
@@ -237,6 +256,37 @@
           "commit": "3e589285584828a20075893a0575a9e5660dcc10",
           "packageVersion": "0.2.4",
           "scope": "Both plugins: installation, coexistence, v0.2.1 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall",
+          "integrationTests": {
+            "passed": 31,
+            "failed": 0
+          }
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-10-22",
+      "plugins": {
+        "arturia": "0.2.3",
+        "lavinia": "0.1.2"
+      },
+      "hosts": [
+        {
+          "channel": "release",
+          "ref": "v0.3.1",
+          "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+          "packageVersion": "0.3.1",
+          "integrationTests": {
+            "passed": 31,
+            "failed": 0
+          },
+          "scope": "Both plugins: installation, coexistence, v0.2.2 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall"
+        },
+        {
+          "channel": "retained-base",
+          "ref": "main-base",
+          "commit": "3e589285584828a20075893a0575a9e5660dcc10",
+          "packageVersion": "0.2.4",
+          "scope": "Both plugins: installation, coexistence, v0.2.2 Arturia upgrade preserving Lavinia, one-/two-/four-player R14 combat, transactional recovery and byte-exact uninstall",
           "integrationTests": {
             "passed": 31,
             "failed": 0

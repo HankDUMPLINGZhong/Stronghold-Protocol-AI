@@ -50,7 +50,7 @@ export function linkedFormationPlan(ps, h, original, targets) {
 }
 
 /** Candidate diversity follows role positions, never a stage ID, seed, previous match or cached victory. */
-export function bossLinkedPlans(m, ps, h, recipe, original = bossFormationSnapshot(ps, h), { healingRange = healingTiles } = {}) {
+export function bossLinkedPlans(m, ps, h, recipe, original = bossFormationSnapshot(ps, h), { healingRange = ps._botCoopHealingRange || healingTiles } = {}) {
   const units = original.lineup.slice().sort((a, b) => a.uid - b.uid), rec = p => h.rangeRec(ps, ps.gd.chess(p.id));
   const mains = new Set([recipe.ids.exusiaiAlter, recipe.ids.lemuen]);
   const carryValue = p => {

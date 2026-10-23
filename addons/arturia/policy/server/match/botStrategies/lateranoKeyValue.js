@@ -30,7 +30,10 @@ function targetValue(m, ps, recipe, slot) {
   const merge = ps.completesChessMerge(slot.id), final = m.round === gd.bossRound;
   const sixth = !same.length && gd.chess(slot.id).bonds.includes('lateranoShip') && ownedLateranoCount(m, ps) === 5;
   if (sixth) return 12;
-  if (id === ids.mostima) return merge ? 12 : same.length ? 4 : 8;
+  if (id === ids.mostima) {
+    if (ps._botCoopLateAcquisition && same.length) return merge ? 2 + Math.max(0, gd.bossRound - m.round) * 3 : 1;
+    return merge ? 12 : same.length ? 4 : 8;
+  }
   if ([ids.executorAlter, ids.exusiaiAlter, ids.lemuen].includes(id)) {
     if (merge) return 10;
     // An ordinary Saint is an optional development means. Do not cash out a bench to gamble on promotion late.

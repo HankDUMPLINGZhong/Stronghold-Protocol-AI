@@ -5,6 +5,7 @@ import { GEO } from '../../../../../../shared/constants.js';
 import { deriveSeed } from '../../../../../sim/rng.js';
 import { withBounties } from '../../../../waves.js';
 import { bossPoolHp, SharedBossPool } from '../../../../finalAssault.js';
+import { unitePathEnabled, unitePathContext, unitePathValue, protectUnitePath } from './botStrategies/lateranoCoopUnitePath.js';
 
 export const FORECAST_SAMPLES = 2;
 export const FORECAST_PLANS = 3;
@@ -48,7 +49,9 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
   if (!wave) return null;
   // [ASSUMED] Explicit boss-only sampling experiment; every retained policy still uses two samples.
   const samples = boss && recipe?.forecastContext && recipe?.selectForecast
-    && [4, 6, 8, 10, 12].includes(recipe.forecastSamples) ? recipe.forecastSamples : FORECAST_SAMPLES;
+    && [4, 6, 8, 10, 12].includes(recipe.forecastSamples) ? recipe.forecastSamples
+    : !boss && m.mode === 'coop' && !m.isSolo && recipe?.forecastContext && recipe?.selectForecast
+      && recipe.forecastNormalSamples === 6 ? 6 : FORECAST_SAMPLES;
   const seen=new Set();
   const planLimit = boss && recipe?.finalProtectionPlans && recipe.forecastPlanLimit === 6 ? 6 : FORECAST_PLANS;
   const candidates=plans.filter(p => {
@@ -61,6 +64,9 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
     inputs.push(recipe?.prepareForecastInput?.(m, ps, chosen, plan, input) || input); yield;
   }
   const context = recipe?.forecastContext?.(m, ps, chosen, candidates, recipe);
+  const pathContexts = !boss && unitePathEnabled(m, ps, candidates) ? inputs.map(input => unitePathContext(m, ps, input)) : null;
+  const pathOptions = pathContexts && candidates.every(p => p.coopUnitePathBalance)
+    ? { balanced: true, urgent: m.alivePlayers().some(p => p.playerId !== ps.playerId && p.lp <= m.gd.lpCapPerRound) } : undefined;
   const hp = boss ? bossPoolHp(m.gd,m.bossId,1) : 0;
   const after = m.gd.bossLevelTime(m.round) || m.gd.bossOvertimeAfterReal;
   const cap = boss
@@ -120,6 +126,7 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
               lost:Math.min(m.gd.lpCapPerRound,leaks.length),
               leaks:leaks.length,killed:pp.killed || 0,deaths:pp.deaths || 0,
               layers:recipe?.rehearsalValue?.(m,ps,pp) || 0,
+              ...(pathContexts ? { unitePath: unitePathValue(pathContexts[trial.index], pp) } : {}),
               ...(trial.metrics ? trial.metrics(pp) : {}) });
           }
         } catch (e) {
@@ -130,9 +137,9 @@ export function* createForecastSteps(m, ps, chosen, plans, inputSteps, recipe) {
         if (Number.isFinite(budgetMs) && performance.now()-start>=budgetMs) return false;
       }
       if (context) {
-        job.development = recipe.selectForecast(candidates, job.outcomes, context);
+        job.development = recipe.selectForecast(candidates, pathContexts ? protectUnitePath(job.outcomes, pathOptions) : job.outcomes, context);
         job.bestIndex = job.development.index;
-      } else job.bestIndex=selectForecast(candidates,job.outcomes,boss);
+      } else job.bestIndex=selectForecast(candidates,pathContexts ? protectUnitePath(job.outcomes, pathOptions) : job.outcomes,boss);
       job.best=candidates[job.bestIndex]; job.chosen=job.best.lineup || chosen;
       job.done=true; return true;
     },

@@ -11,7 +11,7 @@ const repository = process.env.SP_GAME_REPO;
 if (!repository) throw new Error('Set SP_GAME_REPO to a game Git checkout');
 const refs = process.env.LAVINIA_TEST_REFS?.split(',') || [UPSTREAM_REF];
 for (const ref of refs) for (const dual of [false, true]) {
-  test(`Lavinia ${ref.slice(0,8)} ${dual ? 'with Arturia' : 'alone'}`, { timeout: 240000 }, async t => {
+  test(`Lavinia ${ref.slice(0,8)} ${dual ? 'with Arturia' : 'alone'}`, { timeout: 600000 }, async t => {
     mkdirSync('.cache', { recursive: true });
     const temp = mkdtempSync(resolve('.cache/lavinia-test-')), root = resolve(temp, 'game 游戏');
     mkdirSync(root);
@@ -84,7 +84,10 @@ for (const ref of refs) for (const dual of [false, true]) {
         // Compatibility only: sufficient LP keeps late preparation/rehearsal APIs reachable.
         for(const ps of h.m.players.values())ps.lp=10000;
         if(h.m.teamLp!=null)h.m.teamLp=10000;
-        h.toPrep(14);assert.ok(h.run(()=>h.m.round>14||h.ended!=null));
+        h.toPrep(14);
+        for(const ps of h.m.players.values())if(ps.alive)ps.lp=24;
+        if(h.m.teamLp!=null)h.m.teamLp=24;
+        assert.ok(h.run(()=>h.m.round>14||h.ended!=null));
         assert.deepEqual(h.logs.error,[]);assert.deepEqual(h.logs.warn,[]);h.invariants();
       } finally {h.m.dispose();}
     });

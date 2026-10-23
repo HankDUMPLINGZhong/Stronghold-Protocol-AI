@@ -105,6 +105,7 @@ export function* createCoopBossForecast(m, ps, plans, samples=10) {
 
 export function* coopBossSteps(m, ps, h, recipe) {
   if(!eligible(m))return;
+  ps._botCoopRetainBossBranches?.();
   const started=performance.now(),proposals=coopBossPlans(m,ps,h,recipe),batches=[];
   let best=proposals[0];
   for(let i=1;i<proposals.length;i+=2){

@@ -5,10 +5,10 @@ import { developmentCarries, developmentLayoutValue, observeDevelopment, prepare
 import { pieceBonds } from '../../../../../bondsMeta.js';
 import { pieceDir } from '../../../../../board.js';
 import { healingTiles, acceptsHealing } from '../botPositioning.js';
-import { coopEntryState } from './lateranoCoopSafety.js';
+import { coopEntryState, coopGrowthFirstEnabled } from './lateranoCoopSafety.js';
 import { windowBattleInput } from './lateranoWindowRefinement.js';
 import { applyControlPositions } from './lateranoControlBoss.js';
-import { readsTeammateRoster } from '../botCoreStrategies.js';
+import { coreStrategy, readsTeammateRoster } from '../botCoreStrategies.js';
 
 const CORE = 'lateranoShip', SKILL = 'skillfulShip', VISION = 'visiShip';
 const DIRS = ['RIGHT', 'UP', 'DOWN', 'LEFT'];
@@ -104,7 +104,9 @@ export function* coopDevelopmentPlans(m, ps, h, recipe) {
 
 /** Public LP and already-owned field only. Saint is a carry, never the tank or external healer. */
 export function coopDevelopmentContext(m,ps,recipe,plans,{risk=true}={}) {
-  const limits=COOP_GROWTH_RISK[risk==='bold'?'bold':'cautious'];
+  const policy=coreStrategy(m,CORE),retainedLimits=COOP_GROWTH_RISK[risk==='bold'?'bold':'cautious'];
+  const limits=policy?.coopDevelopmentRiskPerRound>0
+    ?Object.freeze({...retainedLimits,perRound:policy.coopDevelopmentRiskPerRound}):retainedLimits;
   const chosen=plans[0].lineup, recs=chosen.map(p=>ps.gd.chess(p.id));
   const protectedUids=new Set(chosen.filter((p,i)=>MAIN.has(ps.gd.baseIdOf(p.id))||tank(recs[i])||healer(recs[i])).map(p=>p.uid));
   const carries=developmentCarries(chosen.map((p,i)=>({uid:p.uid,rec:recs[i]})));
@@ -121,6 +123,7 @@ export function coopDevelopmentContext(m,ps,recipe,plans,{risk=true}={}) {
   },0)/weight;
   return {carries,protectedUids,saintUid:saint?.uid??null,layers:{...ps.layers},remaining:m.gd.bossRound-m.round,
     lemuen:chosen.some(p=>ps.gd.baseIdOf(p.id)===recipe.ids.lemuen),precisionShare,skillful:!!ps.bonds[SKILL]?.active,
+    allowClearLeak:policy?.coopDevelopmentAllowClearLeak===true,growthFirst:coopGrowthFirstEnabled(m,ps),
     lp:ps.lp,spent,round:m.round,limits,hasTeammates:others.length>0,allowRisk:!!risk&&m.round<=limits.lastRound&&ps.lp>=limits.minLP
       &&spent<limits.total&&!unexpected&&allySafe};
 }
@@ -156,23 +159,23 @@ export function selectCoopDevelopment(plans,outcomes,ctx) {
     && ['growth','leaks','lost','coverage','auraMinimum','saintCoverage','entryReady','criticalDown'].every(k=>Number.isFinite(r[k]))
     && [...ctx.protectedUids].every(uid=>r.critical?.[uid]&&Number.isFinite(r.critical[uid].ready)));
   if(!valid(rows[0]))return{index:0,cost:0};
-  const safeRole=(a,b)=>a.entryReady+1e-6>=b.entryReady&&a.criticalDown<=b.criticalDown
+  const safeRole=(a,b)=>(ctx.growthFirst||a.entryReady+1e-6>=b.entryReady)&&a.criticalDown<=b.criticalDown
     && [...ctx.protectedUids].every(uid=>(a.protectedDeaths?.[uid]||0)<=(b.protectedDeaths?.[uid]||0)
       && (a.protectedFirstDeaths?.[uid]??Infinity)+1>=(b.protectedFirstDeaths?.[uid]??Infinity)
-      && (!b.critical[uid].alive||a.critical[uid].alive)&&a.critical[uid].ready+.05>=b.critical[uid].ready);
+      && (!b.critical[uid].alive||a.critical[uid].alive)&&(ctx.growthFirst||a.critical[uid].ready+.05>=b.critical[uid].ready));
   const aura=(a,b)=>!ctx.skillful||a.auraMinimum+.01>=Math.min(.8,b.auraMinimum)
     && a.coverage+.01>=Math.min(.8,b.coverage)&&a.saintCoverage+.01>=Math.min(.8,b.saintCoverage);
   const permitted=i=>valid(rows[i])&&rows[i].every((r,s)=>safeRole(r,rows[0][s])&&aura(r,rows[0][s]));
   let best=0;
   for(let i=1;i<rows.length;i++)if(permitted(i)&&rows[i].every((r,s)=>r.leaks<=rows[0][s].leaks&&r.lost<=rows[0][s].lost)
-    && mean(rows[i],'growth')>mean(rows[best],'growth')+1)best=i;
+    && mean(rows[i],'growth')>mean(rows[best],'growth')+(ctx.growthFirst?1e-6:1))best=i;
   const safe=best;let cost=0,utility=mean(rows[best],'growth');
   if(ctx.allowRisk&&max(rows[safe],'leaks')<=ctx.limits.referenceLeaks)for(let i=1;i<rows.length;i++){
     if(!permitted(i))continue;
     const extra=rows[i].map((r,s)=>Math.max(0,r.lost-rows[safe][s].lost)),debit=Math.max(...extra);
     if(!debit||debit>ctx.limits.perRound||ctx.spent+debit>ctx.limits.total||ctx.lp-max(rows[i],'lost')<ctx.limits.remainingLP
       ||rows[i].some((r,s)=>r.leaks>rows[safe][s].leaks+ctx.limits.perRound||!safeRole(r,rows[safe][s])
-        ||ctx.hasTeammates&&rows[safe][s].leaks===0&&r.leaks>0
+        ||ctx.hasTeammates&&!ctx.allowClearLeak&&rows[safe][s].leaks===0&&r.leaks>0
         ||r.criticalDown>0||ctx.skillful&&(r.auraMinimum<.8||r.saintCoverage<.8)
         ||r.growth<rows[safe][s].growth+3+4*debit))continue;
     const next=mean(rows[i],'growth')-extra.reduce((n,x)=>n+x,0)/extra.length*6;
@@ -210,7 +213,7 @@ export function* coopDevelopmentSteps(m,ps,h,recipe,options) {
   const spent=(ps._botCoopDevelopment?.spent||0)+job.development.cost;
   ps._botCoopDevelopment={round:m.round,lp:ps.lp,spent,worstLoss:job.development.worstLoss||0};
   (ps._botCoopDevelopmentHistory||=[]).push({round:m.round,index:job.bestIndex,...job.development,spent,
-    allowRisk:ctx.allowRisk,limits:ctx.limits,hasTeammates:ctx.hasTeammates,lp:ps.lp,stale:false,outcomes:job.outcomes,ms:performance.now()-start,
+    allowRisk:ctx.allowRisk,allowClearLeak:ctx.allowClearLeak,growthFirst:ctx.growthFirst,skillful:ctx.skillful,limits:ctx.limits,hasTeammates:ctx.hasTeammates,lp:ps.lp,stale:false,outcomes:job.outcomes,ms:performance.now()-start,
     candidates:job.plans.map(p=>({positions:p.lineup.map(u=>({uid:u.uid,id:u.id,key:p.get(u.uid),dir:p.dirs.get(u.uid)}))}))});
 }
 
@@ -219,4 +222,10 @@ export function withLateranoCoopDevelopment(recipe,options={}) {
     if(recipe.finalBoardSteps)yield* recipe.finalBoardSteps(m,ps,h);
     yield* coopDevelopmentSteps(m,ps,h,recipe,options);
   }});
+}
+
+/** [ASSUMED] Independent trial: relax only the perfect-clear helper veto, retaining all risk/readiness guards. */
+export function withCoopDevelopmentClearTrade(recipe,{perRound}={}) {
+  return Object.freeze({...recipe,coopDevelopmentAllowClearLeak:true,
+    ...(perRound>0?{coopDevelopmentRiskPerRound:perRound}:{})});
 }

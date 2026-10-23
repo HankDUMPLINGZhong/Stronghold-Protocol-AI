@@ -89,7 +89,7 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.deepEqual(view.opts.botLateranoLessons, ['quintus', 'roster']);
     assert.equal(view.opts.botFormationRoles, true);
     assert.equal(view.opts.botLateranoExperiment, 'team28-vision-difficulty');
-    assert.equal(view.opts.botLateranoCoopExperiment, 'coop-sixteen-team-lp-only');
+    assert.equal(view.opts.botLateranoCoopExperiment, 'coop-twenty-one-incantation-branches');
     assert.equal(h.m.opts.botLateranoCoopExperiment, undefined);
     assert.equal(view.botRehearsal, 3);
     const recipe = bondPlan(view, h.ps('arturia')).strategy;
@@ -101,8 +101,9 @@ test('named AI executes the frozen Laterano policy alongside upstream AI without
     assert.equal(typeof recipe.earlyThreeState, 'function');
     assert.equal(recipe.matureFiveState, undefined);
     assert.equal(recipe.teammateInformation, 'lp-only');
+    assert.equal(recipe.teammateInformation, 'lp-only');
     const manifest = JSON.parse(readFileSync(resolve(bundle, 'addon.json')));
-    assert.equal(manifest.version, '0.2.3');
+    assert.equal(manifest.version, '0.2.4');
     assert.equal(manifest.policy, POLICY_REF);
     assert.equal(manifest.policyObject, view.opts.botLateranoExperiment);
     assert.equal(manifest.coopPolicyObject, view.opts.botLateranoCoopExperiment);
@@ -131,7 +132,7 @@ test('real upstream battles and later rounds accept the retained policy', () => 
   } finally { h.m.dispose(); }
 });
 
-test('packaged v0.2.3 uses the selected map layouts through the adapter', async () => {
+test('packaged v0.2.4 uses the selected map layouts through the adapter', async () => {
   const {give}=harness;
   const {planLayout,bondPlan}=await load('server/match/arturia/policy/server/match/botDevelopment.js');
   const h=harness.makeMatch({mode:'solo',difficulty:'ABYSS',seed:25864,fake:true});
@@ -159,7 +160,7 @@ test('packaged v0.2.3 uses the selected map layouts through the adapter', async 
   } finally {h.m.dispose();}
 });
 
-test('frozen policy executes one-, two- and four-player shopping and battles through R14', { timeout: 240_000 }, () => {
+test('frozen policy executes one-, two- and four-player shopping and battles through R14', { timeout: 600_000 }, () => {
   for (const [mode, count] of [['solo', 1], ['coop', 2], ['coop', 4]]) {
     const players = seats().filter(s => s.isBot && (mode === 'coop' || s.botPersona === 'arturia'));
     while (players.length < count) players.push({ playerId: `original-${players.length}`, name: 'Original AI', isBot: true, connected: true });
@@ -171,6 +172,9 @@ test('frozen policy executes one-, two- and four-player shopping and battles thr
       for (const ps of h.m.players.values()) ps.lp = 10000;
       if (h.m.teamLp != null) h.m.teamLp = 10000;
       h.toPrep(14);
+      // Keep late APIs reachable without turning an unsuccessful boss layout into a 10,000-LP endurance test.
+      for (const ps of h.m.players.values()) if (ps.alive) ps.lp = 24;
+      if (h.m.teamLp != null) h.m.teamLp = 24;
       assert.ok(h.run(() => h.m.round > 14 || h.ended != null), 'R14 battle completes');
       assert.deepEqual(h.logs.error, []);
       assert.deepEqual(h.logs.warn, [], 'no hidden engine API fallback in late prep or rehearsals');

@@ -8,7 +8,7 @@ import { mostimaVisionContext } from './lateranoVisionValue.js';
 import { enemyRosterPlans, enemyTypeInfo } from './lateranoEnemyTypes.js';
 import { stealthRosterPlans, stealthBattleInput, stealthWaveInfo } from './lateranoStealthWave.js';
 import { applyControlPositions } from './lateranoControlBoss.js';
-import { coopEntryState, selectCoopSafety } from './lateranoCoopSafety.js';
+import { coopEntryState, selectCoopSafety, coopGrowthFirstEnabled } from './lateranoCoopSafety.js';
 import { withLateranoIncomeDoll } from './lateranoIncomeDoll.js';
 import { withLateranoMergeOrder } from './lateranoMergeOrder.js';
 
@@ -50,17 +50,25 @@ function preserveBonds(ps, plan) {
 }
 
 /** Supply may improve layers only with no loss of transferable critical survival, readiness or Skillful coverage. */
-export function selectCoopSupply(plans, outcomes, visionContext, { ignoreReadiness = false } = {}) {
+export function selectCoopSupply(plans, outcomes, visionContext, { ignoreReadiness = false, growthFirst = false, defenseFallback = false } = {}) {
   const base = outcomes.filter(r => r.index === 0).sort((a, b) => a.sample - b.sample);
   const filtered = outcomes.map(r => {
     if (r.index === 0) return r;
     const before = base[r.sample];
     const safe = before && [r.entryReady, r.criticalDown, r.skillfulCovered].every(Number.isFinite)
-      && r.criticalDown <= before.criticalDown && (ignoreReadiness || r.entryReady + 1e-6 >= before.entryReady)
+      && r.criticalDown <= before.criticalDown && (ignoreReadiness || growthFirst || r.entryReady + 1e-6 >= before.entryReady)
       && r.skillfulCovered >= before.skillfulCovered;
     return safe ? r : { ...r, valid: false };
   });
-  return selectMostimaAmmo(plans, filtered, { protectVision: 'value', visionContext });
+  const selected = selectMostimaAmmo(plans, filtered, { protectVision: 'value', visionContext });
+  if (!defenseFallback || selected.index || !base.some(r => r.lost > 0)) return selected;
+  // No extra risk or role loss: only a strict per-sample non-regressing LP improvement can release growth.
+  const safer = new Set(plans.map((_, i) => i).filter(i => i > 0 && filtered.filter(r => r.index === i).length === FORECAST_SAMPLES
+    && filtered.filter(r => r.index === i).every(r => r.valid && Number.isFinite(r.deaths)
+      && r.deaths <= base[r.sample]?.deaths && r.lost <= base[r.sample]?.lost && r.leaks <= base[r.sample]?.leaks)
+    && filtered.some(r => r.index === i && r.lost < base[r.sample]?.lost)));
+  const fallback = selectCoopSafety(plans, filtered.filter(r => r.index === 0 || safer.has(r.index)), { growthFirst });
+  return fallback.index ? { ...fallback, defenseFallback: true } : selected;
 }
 
 /** One-to-one roster swaps use the real placement API. No shop, sale or item actions are allowed here. */
@@ -105,11 +113,15 @@ export function* coopSupplySteps(m, ps, h, recipe, { loneReadiness = false } = {
   const plans = mostimaAmmoPlans(m, ps, h, recipe, { protectVision: 'value' });
   const context = mostimaVisionContext(m, ps, recipe);
   const ignoreReadiness = loneReadiness && m.alivePlayers().length === 1;
+  const growthFirst=coopGrowthFirstEnabled(m,ps);
   const job = yield* rosterJob(m, ps, plans, {
-    select: (plans, outcomes) => selectCoopSupply(plans, outcomes, context, { ignoreReadiness }),
+    select: (plans, outcomes) => selectCoopSupply(plans, outcomes, context, { ignoreReadiness, growthFirst,
+      defenseFallback: !!ps._botCoopSupplyDefenseFallback }),
     extra: plan => ({ skillfulCovered: coopSkillfulCoverage(ps, plan) }),
   });
-  if (job) (ps._botCoopFactorHistory ||= []).push({ factor: 'supply', round: m.round, ...job,
+  if (job) (ps._botCoopFactorHistory ||= []).push({ factor: 'supply', round: m.round, ...job, growthFirst,
+    ...(ps._botCoopSupplyDefenseFallback ? { defenseFallback: true } : {}),
+    ...(growthFirst?{visionContext:context}:{}),
     ...(loneReadiness ? { loneReadinessBypassed: ignoreReadiness } : {}), ms: performance.now() - start });
 }
 

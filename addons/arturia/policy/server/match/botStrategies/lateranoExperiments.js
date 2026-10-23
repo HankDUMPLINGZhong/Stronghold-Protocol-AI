@@ -1,3 +1,15 @@
+import { withCoopIncantationRecovery, withCoopLatePrecisionPackage, withCoopSupplyDefenseFallback } from './lateranoCoopRegressionFactors.js';
+import { withCoopAtomicWindow } from './lateranoCoopAtomicWindow.js';
+import { withCoopLateAcquisition, withCoopPartialMerge } from './lateranoCoopLateEconomy.js';
+import { withCoopReserveRepair } from './lateranoCoopReserveRepair.js';
+import { withCoopTeamWindow } from './lateranoCoopTeamWindow.js';
+import { withCoopUnitePath } from './lateranoCoopUnitePath.js';
+import { withCoopQuintusLocal } from './lateranoCoopQuintusLocal.js';
+import { withCoopBossExchange } from './lateranoCoopBossExchange.js';
+import { withCoopNormalExchange } from './lateranoCoopNormalExchange.js';
+import {withCoopOwnBossModel,withCoopBossLocalRecovery} from './lateranoCoopFailureFactors.js';
+import {withLateranoCoopRecruitRecovery} from './lateranoCoopRecruitRecovery.js';
+import {withCoopBossPrep,withCoopLateVision,withCoopRoutineMimic,withCoopRecruitBeforeRefresh,withCoopWithdrawal} from './lateranoCoopUnusedFactors.js';
 // Developer-only recipe objects over the original fixed-roster 19/2 forecast, not the growth-forecast experiment.
 // [ASSUMED] Purchase caps and transfer priorities below are policy; all actions use the normal equipment API.
 import { lateranoFocused } from './lateranoFocused.js';
@@ -61,7 +73,7 @@ import { withLateranoEnemyTypes } from './lateranoEnemyTypes.js';
 import { withLateranoDifficultyVision } from './lateranoDifficultyVision.js';
 import { withLateranoMostimaAmmo } from './lateranoMostimaAmmo.js';
 import { withLateranoBossFormation } from './lateranoBossFormation.js';
-import { withLateranoCoopSafety } from './lateranoCoopSafety.js';
+import { withLateranoCoopSafety, withCoopGrowthFirst } from './lateranoCoopSafety.js';
 import { withLateranoCoopBoss } from './lateranoCoopBoss.js';
 import { withLateranoCoopSupply, withLateranoCoopEnemyRoster, withLateranoCoopTempo,
   withLateranoCoopDoll, withLateranoCoopMerge } from './lateranoCoopFactors.js';
@@ -77,6 +89,7 @@ import { withLateranoCoopFiveGate } from './lateranoCoopFiveGate.js';
 import { withLateranoCoopDevelopment } from './lateranoCoopDevelopment.js';
 import { withLateranoCoopVisionTrade } from './lateranoCoopVisionTrade.js';
 import { withLateranoCoopMarketValue } from './lateranoCoopMarketValue.js';
+import { withLateranoCoopRescue } from './lateranoCoopRescue.js';
 import { withLateranoCoopBossSelf } from './lateranoCoopBossSelf.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
@@ -341,6 +354,11 @@ const coopLoneSupply = withLateranoCoopBossSpecial(withLateranoCoopMerge(withLat
 const coopLone13 = Object.freeze({...coopBoss13,finalBoardSteps:coopLoneSupply.finalBoardSteps});
 const coopMarketValue15=withLateranoCoopVisionTrade(withLateranoCoopMarketValue(coopDevelopment14));
 const coopOwnBoss16 = withLateranoCoopBossSelf(coopMarketValue15);
+const coopRescue17 = withLateranoCoopRescue(Object.freeze({ ...coopOwnBoss16, teammateInformation: 'lp-only' }));
+const coopRecruit17 = withCoopRecruitBeforeRefresh(coopRescue17);
+const coopRecovery17 = withLateranoCoopRecruitRecovery(coopRecruit17);
+const coopSelectedGrowthPrepFin = Object.freeze({ ...withCoopGrowthFirst( withCoopBossLocalRecovery(withLateranoCoopRecruitRecovery(coopRecovery17,undefined,{anyFatal:true}))), coopNativeLayerProjection: true, coopNativePrepFinOnly: true });
+
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
   'team27-mostima-ammo': mostimaAmmo,
   'team27-mostima-ammo-linked': withLateranoBossFormation(mostimaAmmo),
@@ -378,6 +396,36 @@ export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast
   'coop-fourteen-development-trade-value': coopMarketValue15,
   'coop-fifteen-own-boss-damage': coopOwnBoss16,
   'coop-sixteen-team-lp-only': Object.freeze({ ...coopOwnBoss16, teammateInformation: 'lp-only' }),
+  'coop-sixteen-fatal-rescue': coopRescue17,
+  'coop-seventeen-boss-prep': withCoopBossPrep(coopRescue17),
+  'coop-seventeen-late-vision': withCoopLateVision(coopRescue17),
+  'coop-seventeen-routine-mimic': withCoopRoutineMimic(coopRescue17),
+  'coop-seventeen-recruit-refresh': coopRecruit17,
+  'coop-seventeen-recruit-recovery': coopRecovery17,
+  'coop-seventeen-fatal-layout': withLateranoCoopRecruitRecovery(coopRecovery17,undefined,{anyFatal:true}),
+  'coop-seventeen-public-boss-template': withCoopOwnBossModel(coopRecovery17,'template'),
+  'coop-seventeen-public-boss-pool': withCoopOwnBossModel(coopRecovery17,'pool'),
+  'coop-seventeen-local-boss-recovery': withCoopBossLocalRecovery(coopRecovery17),
+  'coop-seventeen-fatal-local-boss-recovery': withCoopBossLocalRecovery(withLateranoCoopRecruitRecovery(coopRecovery17,undefined,{anyFatal:true})),
+  'coop-seventeen-clear-growth-first': withCoopGrowthFirst( withCoopBossLocalRecovery(withLateranoCoopRecruitRecovery(coopRecovery17,undefined,{anyFatal:true}))),
+  'coop-seventeen-growth-prep-fin': coopSelectedGrowthPrepFin,
+  'coop-seventeen-growth-prep-fin-unite-path': withCoopUnitePath(coopSelectedGrowthPrepFin),
+  'coop-seventeen-growth-prep-fin-path-balance': withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true}),
+  'coop-seventeen-growth-prep-fin-path-balance-quintus-local': withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})),
+  'coop-eighteen-boss-exchange': withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true}))),
+  'coop-twentyone-normal-exchange': withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})))),
+  'coop-normal-reserve-repair': withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true}))))),
+  'coop-normal-team-window': withCoopTeamWindow(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true}))))),
+  'coop-normal-combined-repair': withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})))))),
+  'coop-twenty-role-allocation': withCoopAtomicWindow(withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})))))), { roleDiversity: true }),
+  'coop-twenty-one-incantation-branches': withCoopIncantationRecovery(withCoopAtomicWindow(withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})))))), { roleDiversity: true }), { retainBranches: true }),
+  'coop-twenty-one-supply-defense': withCoopSupplyDefenseFallback(withCoopAtomicWindow(withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})))))), { roleDiversity: true })),
+  'coop-twenty-one-precision-package': withCoopLatePrecisionPackage(withCoopAtomicWindow(withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})))))), { roleDiversity: true })),
+  'coop-twenty-one-incantation': withCoopIncantationRecovery(withCoopAtomicWindow(withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true})))))), { roleDiversity: true })),
+  'coop-twenty-late-acquisition': withCoopLateAcquisition(withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true}))))))),
+  'coop-twenty-partial-merge': withCoopPartialMerge(withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopSelectedGrowthPrepFin,{balanced:true}))))))),
+  'coop-seventeen-growth-unite-path': withCoopUnitePath(withCoopGrowthFirst( withCoopBossLocalRecovery(withLateranoCoopRecruitRecovery(coopRecovery17,undefined,{anyFatal:true})))),
+  'coop-seventeen-withdrawal': withCoopWithdrawal(coopRescue17),
   'coop-fourteen-development-bold': withLateranoCoopDevelopment(coopRoles14, { risk: 'bold' }),
   'coop-fourteen-five-four-members': withLateranoCoopFiveGate(coopRoles14, coopFourFiveEconomy),
   'coop-fourteen-five-active-core': withLateranoCoopFiveGate(coopRoles14, coopActiveFiveEconomy, { requireActive: true }),

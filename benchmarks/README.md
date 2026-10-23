@@ -7,8 +7,8 @@
 | [policies.json](policies.json) | 两位精英干员与各自原版同开局对照的配置 |
 | [results.json](results.json) | 两位精英干员与各自原版的224局结果、逐局摘要与统计 |
 | [coop-abyss-diversity-v1.json](coop-abyss-diversity-v1.json) | 多人终极固定56场景，二人和四人复用同一测试集 |
-| [arturia-v0.2.3-multiplayer.md](arturia-v0.2.3-multiplayer.md) | 图图多人发行表：二人、四人各一行，只列包含图图的队伍 |
-| [arturia-v0.2.3-multiplayer.json](arturia-v0.2.3-multiplayer.json) | 112局多人原始指标及可重算汇总，不包含全原版对照成绩 |
+| [arturia-v0.2.4-multiplayer.md](arturia-v0.2.4-multiplayer.md) | 图图多人发行表：二人、四人各一行，只列包含图图的队伍 |
+| [arturia-v0.2.4-multiplayer.json](arturia-v0.2.4-multiplayer.json) | 112局多人原始指标及可重算汇总，不包含全原版对照成绩 |
 
 从20001–30000共10000个种子预生成敌人环境，按7种关底Boss、7张地图和中间敌人覆盖均衡选出28种场景，每难度分别运行。**选种不读取AI胜负**；关闭随机盟约禁用，公开已发布两位精英干员与各自原版的同开局对照。
 

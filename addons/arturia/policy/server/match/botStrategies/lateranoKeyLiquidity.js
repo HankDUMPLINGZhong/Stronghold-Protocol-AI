@@ -28,10 +28,14 @@ function targetRank(m, ps, recipe, slot) {
 
 function saleRank(m, ps, recipe, p, remaining, target, valuation = null) {
   const gd = gdOf(m, ps), rec = gd.chess(p.id), id = base(gd, p), { ids } = recipe;
+  if (ps._botCoopPrecisionSaleGuard?.(p, remaining)) return -1;
   if (p.items?.length || id === base(gd, target) || !remaining.some(x => x.uid === p.uid)) return -1;
   const hard = [ids.mostima, ids.executorAlter, ids.exusiaiAlter, ids.lemuen, ids.archetto, ids.faith,
     ids.ptilopsis4, ids.ptilopsis5, ids.titi, ids.astgenne];
   const bonds = pieceBonds(gd, p), same = remaining.filter(x => base(gd, x) === id);
+  // The optional outer co-op pair policy is a hard sale veto, including valuation overrides and cash-out plans.
+  if (ps._botCoopKeepLowTierPairs && rec.tier <= 3 && !gd.isGolden(p.id)
+    && ps.allChess().filter(x => base(gd, x) === id && !gd.isGolden(x.id)).length >= 2) return -1;
   if (hard.includes(id) || bonds.includes('maniShip') || rec.tier >= 5 && bonds.some(b => ['preciShip', 'skillfulShip'].includes(b))) return -1;
   if (bonds.includes(CORE) && same.filter(x => !gd.isGolden(x.id)).length >= 2) return -1;
   const after = remaining.filter(x => x.uid !== p.uid), removed = new Set(ps.allChess().filter(x => !after.some(y => y.uid === x.uid)).map(x => x.uid));

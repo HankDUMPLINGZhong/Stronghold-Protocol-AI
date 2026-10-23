@@ -8,7 +8,7 @@ import { bossFormationSnapshot } from './lateranoBossFormation.js';
 import { controlBonds, applyControlPositions } from './lateranoControlBoss.js';
 import { stealthBattleInput } from './lateranoStealthWave.js';
 import { enemyPositionPlans, enemyTypeInfo } from './lateranoEnemyTypes.js';
-import { coopEntryState, selectCoopSafety } from './lateranoCoopSafety.js';
+import { coopEntryState, selectCoopSafety, coopGrowthFirstEnabled } from './lateranoCoopSafety.js';
 import { coopBossPlans, createCoopBossForecast } from './lateranoCoopBoss.js';
 
 const CORE = 'lateranoShip', MAIN = new Set(['chess_char_6_13_a','chess_char_6_01_a','chess_char_5_01_a','chess_char_3_21_a']);
@@ -23,7 +23,7 @@ const quality = (ps,p) => ps.gd.chess(p.id).tier + (ps.gd.isGolden(p.id)?5:0) + 
 /** Build a legal entry path even when a melee replacement cannot enter the removed ranged tile.
  * A reciprocal swap stages the outgoing unit on a compatible tile; no withdrawal needs a free bench slot.
  */
-function entryPlan(ps,h,original,lineup) {
+export function coopRoleEntryPlan(ps,h,original,lineup) {
   const plan=new h.LayoutPlan();plan.lineup=lineup;
   for(const p of original.lineup){plan.set(p.uid,original.get(p.uid));plan.dirs.set(p.uid,original.dirs.get(p.uid));}
   const added=lineup.filter(p=>!original.lineup.includes(p)),removed=original.lineup.filter(p=>!lineup.includes(p));
@@ -76,7 +76,7 @@ export function coopRolePlans(m,ps,h,recipe,{final=false}={}) {
       +(final&&precise<3&&preciseAfter>=3?150:0)
       +lineup.reduce((n,p)=>n+quality(ps,p),0)-chosen.reduce((n,p)=>n+quality(ps,p),0);
     if(score<=0)return;
-    const plan=entryPlan(ps,h,original,lineup);if(plan)proposals.push({plan,score,added:added.map(p=>p.uid).sort((a,b)=>a-b).join(',')});
+    const plan=coopRoleEntryPlan(ps,h,original,lineup);if(plan)proposals.push({plan,score,added:added.map(p=>p.uid).sort((a,b)=>a-b).join(',')});
   };
   for(const a of bench){
     const allowed=final?(pieceBonds(ps.gd,a).includes('preciShip')||MAIN.has(base(ps,a))||healer(rec(a))&&chosen.some(p=>acceptsHealing(rec(p))))
@@ -125,10 +125,10 @@ export function applyCoopRolePlan(ps,plan) {
   if(JSON.stringify(ps.battleInput())!==JSON.stringify(expected))throw Error('Role replacement differs from forecast');
 }
 
-export function selectCoopEmergencyRoles(plans,outcomes,minLeaks=3) {
+export function selectCoopEmergencyRoles(plans,outcomes,minLeaks=3,options={}) {
   const rows=outcomes.filter(o=>o.index===0);
   if(rows.length!==2||rows.some(o=>!o.valid||o.leaks<minLeaks))return {index:0};
-  const selected=selectCoopSafety(plans,outcomes),next=outcomes.filter(o=>o.index===selected.index);
+  const selected=selectCoopSafety(plans,outcomes,options),next=outcomes.filter(o=>o.index===selected.index);
   if(selected.index&&!(Math.max(...next.map(o=>o.lost))<Math.max(...rows.map(o=>o.lost))
     ||next.reduce((n,o)=>n+o.lost,0)<rows.reduce((n,o)=>n+o.lost,0)))return {index:0};
   return selected;
@@ -141,7 +141,7 @@ export function* coopEmergencyRoleSteps(m,ps,h,recipe,{minLeaks=3}={}) {
   const job=yield* createForecastSteps(m,ps,plans[0].lineup,plans,inputs,{
     prepareForecastInput:(m,ps,_chosen,plan,input)=>prepareDevelopmentInput(m,ps,plan.lineup,plan,input),
     forecastContext:()=>({}),observeForecast:(_b,_c,plan)=>pp=>coopEntryState(ps,plan,pp),
-    selectForecast:(plans,outcomes)=>selectCoopEmergencyRoles(plans,outcomes,minLeaks)});
+    selectForecast:(plans,outcomes)=>selectCoopEmergencyRoles(plans,outcomes,minLeaks,{growthFirst:coopGrowthFirstEnabled(m,ps)})});
   if(!job)return;while(!job.run(4))yield;if(job.bestIndex)applyCoopRolePlan(ps,job.best);
   (ps._botCoopRoleHistory||=[]).push({round:m.round,index:job.bestIndex,outcomes:job.outcomes,
     candidates:plans.map(p=>({lineup:p.lineup.map(u=>u.id),positions:[...p].map(([uid,key])=>({uid,key,dir:p.dirs.get(uid)}))})),ms:performance.now()-start});

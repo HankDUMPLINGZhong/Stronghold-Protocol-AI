@@ -1804,6 +1804,12 @@ export function* botPrepEndSteps(m, ps, job = null) {
   if (bodyPlan) yield* applyPlanSteps(m, ps, [...ps.board.values()].filter((p) => p.kind === 'chess'), bodyPlan);
   const finalBoardSteps = coreStrategy(m, ps._botFocusId)?.finalBoardSteps;
   if (finalBoardSteps) yield* finalBoardSteps(m, ps, { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps, applyPlanSteps,
+    *recoverEconomySteps() {
+      // Explicit opt-in emergency hook: visible cards/rewards only, no extra upgrades or refreshes.
+      takeOffers(m, ps); useEconomyItems(m, ps); coreStrategy(m, ps._botFocusId)?.useEconomy(m, ps);
+      yield* buyLoopSteps(m, ps, { spendAll: true, maxRefreshes: 0 });
+      takeOffers(m, ps); yield* arrangeSteps(m, ps); equipItems(m, ps); yield;
+    },
     planLayoutSteps: (owner, pieces, options) => planLayoutSteps(m, owner, pieces, LAYOUT_PARAMS, options) });
   tryDo(() => ps.setReady(true));
 }
@@ -1973,6 +1979,8 @@ export function levelUp(m, ps, { spare = false } = {}) {
         audit.purchases.push(slot.id);
         useEconomyItems(m, ps); recipe.useEconomy?.(m, ps); takeOffers(m, ps);
       }
+      if (order.pendingSlots?.some(s => !s.sold && ps.completesChessMerge(s.id)
+        && ps.priceOf(s) > ps.funds) && !ps.shop.frozen) ps.freeze();
       return;
     }
   }
@@ -2129,6 +2137,9 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     }
     if (canRefresh) {
       if (holdCriticalShop(m, ps)) return;
+      if (ctx.strategy?.beforeRefreshSteps && (yield* ctx.strategy.beforeRefreshSteps(m,ps,{
+        LayoutPlan,takeOffers:()=>takeOffers(m,ps),
+      }))) continue;
       if ((ctx.strategy?.shoppingRepair || ctx.strategy?.holdShop) && ps.shop.frozen) tryDo(()=>ps.freeze());
       if (!tryDo(() => spendAction(m, ps, () => ps.refresh()))) return;
       refreshes++;
@@ -2157,6 +2168,18 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
   // withdraw board chess that are not chosen (to free cap) when the hand has space
   for (const [, p] of [...ps.board]) {
     if (p.kind !== 'chess' || chosenSet.has(p.uid)) continue;
+    if (freeSlot(ps.hand) < 0 && ctx.strategy?.beforeWithdrawal?.(m, ps, p, { chosen, freeShoppingSlot }) === true) continue;
+    if(freeSlot(ps.hand)<0&&ctx.strategy?.withdrawalPriority?.(m,ps,p)>0){
+      const priority=ctx.strategy.withdrawalPriority(m,ps,p);
+      freeShoppingSlot(m,ps);
+      if(freeSlot(ps.hand)<0){
+        const reserve=ps.hand.filter(q=>q?.kind==='chess'&&!chosenSet.has(q.uid)&&!(q.items?.length)
+          &&!preserveChess(m,ps,q)&&!ctx.strategy.keep(m,ps,chessRec(m,q.id,ps),ctx)
+          &&(ctx.strategy.withdrawalPriority(m,ps,q)||0)<priority)
+          .sort((a,b)=>pieceValue(m,ps,a,ctx)-pieceValue(m,ps,b,ctx)||a.uid-b.uid)[0];
+        if(reserve&&sellChess(m,ps,reserve)) (ps._botCoopUnusedHistory||=[]).push({kind:'withdrawal-reserve',round:m.round,kept:p.id,sold:reserve.id});
+      }else (ps._botCoopUnusedHistory||=[]).push({kind:'withdrawal-item-space',round:m.round,kept:p.id});
+    }
     if (freeSlot(ps.hand) < 0 && preserveChess(m, ps, p)) {
       const safe = ctx.strategy?.safeWithdrawals;
       if (typeof safe === 'function' ? safe(m, ps, p) : safe === true) freeShoppingSlot(m, ps);

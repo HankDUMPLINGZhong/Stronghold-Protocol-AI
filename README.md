@@ -2,7 +2,7 @@
 
 为[卫戍协议：盟约 Web 复刻](https://github.com/sganggs/Stronghold-Protocol)开发的 AI 队友与策略。**本地规则决策＋战斗预演，不接 LLM，不用 API Key，没有 Token 消耗。**
 
-本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.2.3（拉特兰）** 和 **AI·拉维妮娅 v0.1.2（叙拉古）**。
+本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.2.4（拉特兰）** 和 **AI·拉维妮娅 v0.1.2（叙拉古）**。
 
 ## 下载与安装
 
@@ -12,12 +12,12 @@
 
 解压后双击“安装插件.bat”；游戏等待室通过 **添加精英干员 → 拉维妮娅** 添加，使用斥罪精二头像，优先且只选贾维／叙拉古。单独在场第一选；与图图同场时图图第一、拉维妮娅第二。图图v0.2.2起，安装／升级会自动保留已安装的拉维妮娅，无需手动卸载重装；卸载图图前仍先卸载拉维妮娅。
 
-**[下载阿尔图罗 v0.2.3 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.3/AI-Arturia-v0.2.3.zip)** · [版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.3)
+**[下载阿尔图罗 v0.2.4 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.4/AI-Arturia-v0.2.4.zip)** · [版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.4)
 
 改动与历史成绩见[版本记录](CHANGELOG.md)。升级时关闭服务，运行新版“安装插件.bat”，会校验并自动升级已完整安装的旧版，同时原样保留拉维妮娅的版本和策略；失败或中断可恢复两款原安装。
 
 1. 关闭游戏服务，解压安装包。
-2. 将解压后的 `AI-Arturia-v0.2.3` 文件夹放进游戏根目录，或便携版“启动游戏.bat”旁边。
+2. 将解压后的 `AI-Arturia-v0.2.4` 文件夹放进游戏根目录，或便携版“启动游戏.bat”旁边。
 3. 双击 **安装插件.bat**。安装器会识别游戏和 Node，自动创建并写入 `addons/arturia`；找不到目录时可手动选择。
 4. 使用原来的启动脚本重启游戏，刷新浏览器，在等待室点击 **添加精英干员 → 阿尔图罗**。
 
@@ -26,6 +26,8 @@
 支持的游戏版本包括本地保留的 **0.2.4**、上游 **0.3.0**、**0.3.1**（`b3deebda`）与2026-10-22核验的 **master快照**（`c9d804f4`）。当前两款在0.2.4和0.3.1各通过31项集成测试，包含旧版升级、两款共存、真实战斗到R14和无损卸载；其他宿主由发行CI及隔离回归验证。完整记录见[宿主兼容性](compatibility.json)。这是修改少量接入文件的源码扩展包，不能从游戏插件工作台导入；内容插件版本仅支持原版玩法及纯外观插件。升级游戏前先卸载，详见[安装说明](addons/arturia/README.md)。
 
 两款插件独立编号：`arturia-vX.Y.Z`和`lavinia-vX.Y.Z`，按实际改动分别升版；宿主兼容范围单独记录。只更新验证记录或Release标题不升插件版本。标题格式为`【拉特兰-潘格尼尼】阿尔图罗·vX.Y.Z`与`【贾维-叙拉古】拉维妮娅·vX.Y.Z`。
+
+阿尔图罗v0.2.4新增支持[zhewang448扩展分支v0.3.1-extended.9](https://github.com/zhewang448/Stronghold-Protocol/tree/fddf41fe8f5b85e87951d85b53df2d800948a387)，自动识别分组轮选与等待室结构。原上游继续按原流程安装，未知结构在写入前拒绝。扩展分支的独立卡池、组内优先选策略和回档恢复说明见[扩展宿主适配](docs/extended-host-compatibility.md)。拉维妮娅现有v0.1.2发行包仍只支持原上游，其扩展安装适配尚未发行。
 
 ### 添加精英后却出现原版AI
 
@@ -53,7 +55,7 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 
 ## 已发布策略与成绩
 
-当前发布 **AI·阿尔图罗 v0.2.3（拉特兰）** 与 **AI·拉维妮娅 v0.1.2（叙拉古）**。
+当前发布 **AI·阿尔图罗 v0.2.4（拉特兰）** 与 **AI·拉维妮娅 v0.1.2（叙拉古）**。
 
 以下为`enemy-diversity-v1`固定**单人**测评集，每难度28局、关闭随机盟约禁用，使用真实战斗。过关指击败R14领袖，不等于隐藏Boss全清，不代表多人房或自然开局胜率。
 
@@ -68,12 +70,12 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 
 | 多人模式（终极） | 胜场/总场数 | 平均到达回合 | 图图拉特兰平均层数 | 图图平均漏怪 | 图图平均兜怪 |
 |---|---:|---:|---:|---:|---:|
-| 二人：图图＋bot | 16/56 | 12.41 | 158.75 | 30.55 | 24.79 |
-| 四人：图图＋3bot | 13/56 | 12.95 | 168.13 | 26.93 | 55.45 |
+| 二人：图图＋bot | 22/56 | 12.63 | 186.39 | 28.04 | 25.46 |
+| 四人：图图＋3bot | 18/56 | 13.07 | 193.91 | 26.50 | 56.71 |
 
 多人平均到达回合取队伍实际进入的最高回合，含失败当轮；其余三项仅统计图图本人，按全部56局平均。拉特兰层数取结束／淘汰前仍生效的层数，提前淘汰不剔除；漏怪为自家普通波联防前计数，兜怪为联防中归属图图的计数敌人击杀（含召唤物），不摊分队友或环境击杀。
 
-[多人逐局结果与测试口径](benchmarks/arturia-v0.2.3-multiplayer.md)
+[多人逐局结果与测试口径](benchmarks/arturia-v0.2.4-multiplayer.md)
 
 拉维妮娅与原版采用**相同贾维／叙拉古开局**：
 

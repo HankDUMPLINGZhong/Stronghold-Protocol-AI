@@ -26,7 +26,7 @@ async function fixture({ laviniaOnly = false, fault = false } = {}) {
   execFileSync('git', ['archive', '--output', tar, process.env.ARTURIA_TEST_REF || UPSTREAM_REF], { cwd: process.env.SP_GAME_REPO });
   execFileSync('tar', ['-xf', tar, '-C', root]);
   const old = resolve(temp, 'old'), fresh = resolve(temp, 'fresh'), lav = resolve(temp, 'lavinia');
-  build(old, { manifest: 'releases/arturia-v0.2.2.json', sourceRoot: 'releases/arturia-v0.2.2/source', runtime: 'releases/arturia-v0.2.2/runtime.js' });
+  build(old, { manifest: 'releases/arturia-v0.2.3.json', sourceRoot: 'releases/arturia-v0.2.3/source', runtime: 'releases/arturia-v0.2.3/runtime.js' });
   build(fresh); buildLavinia(lav);
   if (fault) {
     const path = resolve(fresh, 'install.mjs'), source = readFileSync(path, 'utf8');
@@ -47,7 +47,7 @@ test('Arturia upgrade preserves installed Lavinia, supports read-only preflight 
   assert.equal((await current.install('check', root)).companionPreserved, '0.1.2');
   assert.deepEqual(snapshot(root), old);
   const result = await current.install('install', root);
-  assert.equal(result.upgradedFrom, '0.2.2'); assert.equal(result.installed, '0.2.3');
+  assert.equal(result.upgradedFrom, '0.2.3'); assert.equal(result.installed, '0.2.4');
   assert.equal(result.companionPreserved, '0.1.2');
   assert.equal(journal(root, stateNames[1]).version, '0.1.2');
   for (const [name, entry] of Object.entries(lavinia.files))
@@ -91,7 +91,7 @@ test('a failure while committing a coexistence upgrade restores both journals an
   await assert.rejects(current.install('install',root),/Injected coexistence failure/);
   assert.deepEqual(snapshot(root),before);
   assert.equal(existsSync(resolve(root,'.arturia-addon/coexist-upgrade.json')),false);
-  assert.equal(existsSync(resolve(root,'server/match/arturia/policy/server/match/botStrategies/lateranoCoopBossSelf.js')),false);
+  assert.equal(existsSync(resolve(root,'server/match/arturia/policy/server/match/botStrategies/lateranoCoopRegressionFactors.js')),false);
 });
 
 test('interrupted coexistence upgrades recover both plugins before retrying', async () => {

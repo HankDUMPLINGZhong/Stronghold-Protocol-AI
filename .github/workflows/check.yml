@@ -8,10 +8,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        host:
-          - 6ab2468279e926d107788f63d7fe219b85f67b4a
-          - b3deebdae4a92642c007d217a1a4573e5d3612c5
-          - c9d804f470b8d7422ae04eb66faf671cef21ad52
+        include:
+          - host: 6ab2468279e926d107788f63d7fe219b85f67b4a
+            repository: sganggs/Stronghold-Protocol
+          - host: b3deebdae4a92642c007d217a1a4573e5d3612c5
+            repository: sganggs/Stronghold-Protocol
+          - host: c9d804f470b8d7422ae04eb66faf671cef21ad52
+            repository: sganggs/Stronghold-Protocol
+          - host: fddf41fe8f5b85e87951d85b53df2d800948a387
+            repository: zhewang448/Stronghold-Protocol
+            extended: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,17 +29,23 @@ jobs:
       - name: Check out the tested game host
         uses: actions/checkout@v4
         with:
-          repository: sganggs/Stronghold-Protocol
+          repository: ${{ matrix.repository }}
           ref: ${{ matrix.host }}
           path: .cache/upstream
       - run: npm ci
         working-directory: .cache/upstream
       - name: Integrate without changing the host checkout
-        run: npm run test:integration
+        run: ${{ matrix.extended && 'node --test test/integration/arturia.test.mjs test/integration/arturia-upgrade.test.mjs' || 'npm run test:integration' }}
         env:
           SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
           ARTURIA_TEST_REF: ${{ matrix.host }}
           LAVINIA_TEST_REFS: ${{ matrix.host }}
+      - name: Verify extended-host groups, pools and recovery
+        if: matrix.extended
+        run: npm run test:extended
+        env:
+          SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
+          ARTURIA_TEST_REF: ${{ matrix.host }}
       - name: Verify service restart on the current release
         if: matrix.host == 'b3deebdae4a92642c007d217a1a4573e5d3612c5'
         run: npm run test:restart
