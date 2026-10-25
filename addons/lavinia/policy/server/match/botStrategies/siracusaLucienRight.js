@@ -4,7 +4,7 @@ import { canPlace, placeClass, legalTiles, pieceDir } from '../../../../../board
 import { pieceBonds } from '../../../../../bondsMeta.js';
 
 // Coordinates are the owner's display rows; the board stores row = 21 - displayRow.
-const ANCHORS = [
+export const LUCIEN_RIGHT_ANCHORS = [
   ['4_10', 11, 4, 'RIGHT'], // Aroma keeps the original long horizontal firing lane.
   ['5_22', 10, 7, 'RIGHT'], // Nymph fears toward the shared right-hand firing zone.
   ['2_16', 11, 8, 'RIGHT'],
@@ -32,7 +32,7 @@ export function lucienRightPlan(m, ps, { rangeRec, rangeTiles }) {
     if (p.kind === 'chess' && pieceBonds(gd, p).includes('raidShip')) put(p, key, 'RIGHT');
   }
   const byValue = (a, b) => Number(gd.isGolden(b.id)) - Number(gd.isGolden(a.id)) || a.uid - b.uid;
-  for (const [suffix, row, col, dir] of ANCHORS) {
+  for (const [suffix, row, col, dir] of LUCIEN_RIGHT_ANCHORS) {
     const p = units.filter((p) => !plan.has(p.uid) && gd.baseIdOf(p.id) === `chess_char_${suffix}_a`).sort(byValue)[0];
     const r = 21 - row, key = `${r},${col}`;
     if (p && !taken.has(key) && canPlace(map, placeClass(ps, gd.chess(p.id)), r, col)) put(p, key, dir);

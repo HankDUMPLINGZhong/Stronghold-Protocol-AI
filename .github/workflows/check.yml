@@ -35,7 +35,7 @@ jobs:
       - run: npm ci
         working-directory: .cache/upstream
       - name: Integrate without changing the host checkout
-        run: ${{ matrix.extended && 'node --test test/integration/arturia.test.mjs test/integration/arturia-upgrade.test.mjs' || 'npm run test:integration' }}
+        run: npm run test:integration
         env:
           SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
           ARTURIA_TEST_REF: ${{ matrix.host }}
@@ -46,6 +46,7 @@ jobs:
         env:
           SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
           ARTURIA_TEST_REF: ${{ matrix.host }}
+          SP_EXTENDED_DUAL: 1
       - name: Verify service restart on the current release
         if: matrix.host == 'b3deebdae4a92642c007d217a1a4573e5d3612c5'
         run: npm run test:restart

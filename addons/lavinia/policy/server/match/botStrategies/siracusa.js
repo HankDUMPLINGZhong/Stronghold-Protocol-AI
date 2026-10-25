@@ -8,6 +8,7 @@ import { rotateOffset } from '../../../../../../sim/dir.js';
 import { pieceBonds } from '../../../../../bondsMeta.js';
 import { reserveRaidPositions } from '../botRaidPositioning.js';
 import { savingsCash, releaseSavings, preserveSavings, bankRemainder } from '../botSavings.js';
+import { botSell } from '../botSiracusaSales.js';
 import { siracusaAdjustment, investorWindow, investorPurchaseAllowed, trimInvestorCopies, investorCycleValue, afterInvestorPurchase, tradeInvestorGift, useInvestorLiquidity } from '../botInvestorEconomy.js';
 
 const CORE = 'siracusaShip';
@@ -496,7 +497,7 @@ function trade(m, ps, plan) {
     const layerCycle = id === ids.honeysuckle && plan.route?.id === swift.id && ps.bonds.investShip?.active
       && (ps.layers.swiftShip || 0) < 229 && (hasElite || m.round >= 11);
     if (!freeCycle && !layerCycle) continue;
-    const result = ps.sell(p.uid);
+    const result = botSell(m, ps, p.uid);
     if (result && !result.error) {
       const stats = ps._botRecipeStats ||= { refreshTrades: 0, layerTrades: 0 };
       const key = freeCycle ? 'refreshTrades' : 'layerTrades';

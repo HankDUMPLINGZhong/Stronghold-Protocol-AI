@@ -10,7 +10,7 @@ import { build as buildLavinia } from '../addons/lavinia/build.mjs';
 import { patchFiles as patchArturia, PATCH_PATHS } from '../addons/arturia/patches.mjs';
 import { patchFiles as patchLavinia } from '../addons/lavinia/patches.mjs';
 
-const dual=process.env.SP_EXTENDED_DUAL==='1';
+const dual=true;
 const cache=path.resolve('.cache'); fs.mkdirSync(cache,{recursive:true});
 const temp=fs.mkdtempSync(path.join(cache,'extended-compat-'));
 const base=process.env.SP_BASE_REPO;

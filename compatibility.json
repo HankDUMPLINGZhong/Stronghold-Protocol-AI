@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-23",
+  "checkedAt": "2026-10-25",
   "plugins": {
     "arturia": "0.2.4",
-    "lavinia": "0.1.2"
+    "lavinia": "0.2.0"
   },
   "hosts": [
     {
@@ -11,22 +11,14 @@
       "ref": "v0.3.1",
       "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
       "packageVersion": "0.3.1",
-      "integrationTests": {
-        "passed": 31,
-        "failed": 0
-      },
-      "scope": "Both plugins on original upstream: install, coexistence, v0.2.3-to-v0.2.4 Arturia upgrade preserving Lavinia, R14 combat, transactional recovery and byte-exact uninstall"
+      "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
     },
     {
       "channel": "retained-base",
       "ref": "main-base",
       "commit": "3e589285584828a20075893a0575a9e5660dcc10",
       "packageVersion": "0.2.4",
-      "scope": "Both plugins on original upstream: install, coexistence, v0.2.3-to-v0.2.4 Arturia upgrade preserving Lavinia, R14 combat, transactional recovery and byte-exact uninstall",
-      "integrationTests": {
-        "passed": 31,
-        "failed": 0
-      }
+      "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
     },
     {
       "channel": "extended",
@@ -35,17 +27,14 @@
       "commit": "fddf41fe8f5b85e87951d85b53df2d800948a387",
       "packageVersion": "0.3.1",
       "plugins": [
-        "arturia"
+        "arturia",
+        "lavinia"
       ],
-      "integrationTests": {
-        "passed": 12,
-        "failed": 0
-      },
       "extendedChecks": {
         "passed": 7,
         "failed": 0
       },
-      "scope": "Arturia only: conditional install, group-local priority/reservation and pools, PREP rewind and disk identity recovery; actual combat through R14 for one/two/four players; 8/20-player draft and preparation checks only"
+      "scope": "Both plugins: conditional install, group-local priority/reservation and pools, rewind and disk identity recovery; real compatibility battles through R14; not extension win-rate measurements."
     }
   ],
   "coverage": [
@@ -62,7 +51,7 @@
     "passed": 1,
     "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
   },
-  "limitations": "Compatibility checks are not win-rate measurements. Extended-host support is Arturia v0.2.4 only; the published Lavinia v0.1.2 installer is unchanged and supports original upstream. Exact-commit CI must pass for all four configured hosts before publication.",
+  "limitations": "Compatibility checks are not win-rate measurements. Both current plugins support the pinned extended.9 snapshot. Historical Lavinia v0.1.2 remains immutable and supports original upstream only. Exact-commit CI must pass for all four configured hosts before publication.",
   "previousChecks": [
     {
       "checkedAt": "2026-10-19",
@@ -291,6 +280,45 @@
             "passed": 31,
             "failed": 0
           }
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-10-23",
+      "plugins": {
+        "arturia": "0.2.4",
+        "lavinia": "0.1.2"
+      },
+      "hosts": [
+        {
+          "channel": "release",
+          "ref": "v0.3.1",
+          "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+          "packageVersion": "0.3.1",
+          "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
+        },
+        {
+          "channel": "retained-base",
+          "ref": "main-base",
+          "commit": "3e589285584828a20075893a0575a9e5660dcc10",
+          "packageVersion": "0.2.4",
+          "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
+        },
+        {
+          "channel": "extended",
+          "repository": "zhewang448/Stronghold-Protocol",
+          "ref": "v0.3.1-extended.9",
+          "commit": "fddf41fe8f5b85e87951d85b53df2d800948a387",
+          "packageVersion": "0.3.1",
+          "plugins": [
+            "arturia",
+            "lavinia"
+          ],
+          "extendedChecks": {
+            "passed": 7,
+            "failed": 0
+          },
+          "scope": "Both plugins: conditional install, group-local priority/reservation and pools, rewind and disk identity recovery; real compatibility battles through R14; not extension win-rate measurements."
         }
       ]
     }

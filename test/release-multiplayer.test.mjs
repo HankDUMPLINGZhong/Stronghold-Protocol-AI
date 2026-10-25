@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { multiplayerRows, multiplayerTable } from '../tools/release-multiplayer-report.mjs';
+import { laviniaRows, laviniaTable } from '../tools/release-lavinia-report.mjs';
 
 const game = (scenario, seed, reachedRound, lateranoLayers, leaks, uniteKills, victory = false) =>
   ({ scenario, seed, reachedRound, completed: true, errors: 0, victory, arturia: { lateranoLayers, leaks, uniteKills } });
@@ -30,4 +31,15 @@ test('published multiplayer rows reproduce the complete named-teammate samples a
   const table = multiplayerTable(report.rows);
   for (const path of ['README.md', 'docs/strategies/laterano.md', 'addons/arturia/README.md', 'benchmarks/arturia-v0.2.4-multiplayer.md'])
     assert.ok(readFileSync(new URL('../' + path, import.meta.url), 'utf8').includes(table), path);
+});
+
+test('Lavinia release retains both complete corpora, personal metrics and reproducible public rows', () => {
+  const report = JSON.parse(readFileSync(new URL('../benchmarks/lavinia-v0.2.0-multiplayer.json', import.meta.url)));
+  assert.equal(report.matches.length, 112);
+  assert.deepEqual(laviniaRows(report.matches), report.rows);
+  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['siracusa2', 9, 56], ['siracusa4', 11, 56]]);
+  assert.ok(report.matches.some(r => r.lavinia.eliminatedRound < r.reachedRound), 'early eliminations remain included');
+  const table = laviniaTable(report.rows);
+  for (const p of ['README.md', 'docs/strategies/siracusa.md', 'benchmarks/lavinia-v0.2.0-multiplayer.md'])
+    assert.ok(readFileSync(new URL('../' + p, import.meta.url), 'utf8').includes(table), p);
 });

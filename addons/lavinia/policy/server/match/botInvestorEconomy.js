@@ -1,6 +1,7 @@
 // [ASSUMED] Optional Siracusa investment policy, using real buy/gain/merge/sell operations only.
 // Values and liquidity thresholds are AI decisions; SERVER_GAIN repetition remains the engine's responsibility.
 import { releaseSavings, savingsCash } from './botSavings.js';
+import { botSell } from './botSiracusaSales.js';
 
 export const siracusaAdjustment = (m, name) => m.opts?.botSiracusaAdjustments == null
   ? false : m.opts.botSiracusaAdjustments.includes(name);
@@ -27,7 +28,7 @@ export function trimInvestorCopies(m, ps) {
     // Prefer the deployed/equipped representative; never sell locked gear to enforce a shopping rule.
     copies.sort((a, b) => Number(ps.find(b.uid)?.area === 'board') - Number(ps.find(a.uid)?.area === 'board')
       || (b.items?.length || 0) - (a.items?.length || 0) || Number(gd.isGolden(b.id)) - Number(gd.isGolden(a.id)) || a.uid - b.uid);
-    for (const p of copies.slice(1)) if (!p.items?.length && ps.find(p.uid)?.area !== 'board' && ps.sell(p.uid)?.ok) {
+    for (const p of copies.slice(1)) if (!p.items?.length && ps.find(p.uid)?.area !== 'board' && botSell(m, ps, p.uid)?.ok) {
       const stats = ps._botRecipeStats ||= {};
       stats.investorDuplicatesSold = (stats.investorDuplicatesSold || 0) + 1;
     }
@@ -73,7 +74,7 @@ export function tradeInvestorGift(m, ps) {
     const copies = ps.allChess().filter((q) => gd.baseIdOf(q.id) === gd.baseIdOf(p.id));
     // A live pair can produce a next-tier offer; a leftover single after an elite is disposable.
     if (copies.filter((q) => !gd.isGolden(q.id)).length >= 2 && !copies.some((q) => gd.isGolden(q.id))) continue;
-    if (ps.sell(uid)?.ok) {
+    if (botSell(m, ps, uid)?.ok) {
       const stats = ps._botRecipeStats ||= {};
       stats.investorGiftSales = (stats.investorGiftSales || 0) + 1;
       return true;

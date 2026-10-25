@@ -4,6 +4,7 @@ import { layerGainRoom } from '../../../../../../shared/constants.js';
 import { rotateOffset } from '../../../../../sim/dir.js';
 import { pieceBonds } from '../../../../bondsMeta.js';
 import { isFormationAnchor } from './botPositioning.js';
+import { coreStrategy } from './botCoreStrategies.js';
 
 const CORE = 'lateranoShip', SKILL = 'skillfulShip';
 const avg = (a, key) => a.reduce((s, r) => s + (r[key] || 0), 0) / a.length;
@@ -25,7 +26,8 @@ export function developmentCarries(units) {
 /** Public deterministic positional traits, including a copier's OWN origin/bonds and bounded copy chains.
  * This deliberately projects layer-only handlers; it never executes arbitrary economic/reward effects.
  */
-export function prepLayerForecast(gd, units, bonds, event, spent = 0, refreshes = 0) {
+export function prepLayerForecast(gd, units, bonds, event, spent = 0, refreshes = 0,
+  { nativeAll = false, handCount = null, gainedChess = null, shopLevel = null } = {}) {
   const at = new Map(units.map(u => [u.key, u])), gains = {};
   const neighbour = (u, behind = false) => {
     const [dr, dc] = rotateOffset(0, behind ? -1 : 1, u.dir);
@@ -47,6 +49,18 @@ export function prepLayerForecast(gd, units, bonds, event, spent = 0, refreshes 
     }
     for (const g of gs) {
       const bb = g.bb || {}, str = g.bbStr || {};
+      if (handCount !== null && g.effectKey === 'SERVER_ADD_BOND_METHOD' && str.add_method === 'hand_count') {
+        for (const id of (str.bond || '').split(',')) add(id, handCount * (bb.multi ?? 1));
+      }
+      if (gainedChess !== null && g.effectKey === 'SERVER_ADD_BOND_METHOD' && str.add_method === 'round_gain_char') {
+        for (const id of (str.bond || '').split(',')) add(id, gainedChess * (bb.multi ?? 1));
+      }
+      if (shopLevel !== null && g.effectKey === 'SERVER_ADD_BOND_METHOD' && str.add_method === 'shoplv') {
+        for (const id of (str.bond || '').split(',')) add(id, shopLevel * (bb.multi ?? 1));
+      }
+      if (nativeAll && g.effectKey === 'SERVER_ADD_BOND_CHESS_ALL') {
+        for (const id of u.bonds || u.rec.bonds || []) add(id, bb.count || 0);
+      }
       if (g.effectKey === 'SERVER_ADD_BOND_POSITION') {
         for (const t of [u, neighbour(u, str.dir === 'behind')].filter(Boolean)) {
           for (const id of t.bonds || t.rec.bonds || []) add(id, bb.count || 0);
@@ -133,9 +147,17 @@ export function prepareDevelopmentInput(m, ps, chosen, plan, input) {
     const [r, c] = plan.get(p.uid).split(',').map(Number);
     return { uid: p.uid, rec: gd.chess(p.id), bonds: pieceBonds(gd, p), r, c, key: `${r},${c}`, dir: plan.dirOf(p.uid) };
   });
-  const fin = prepLayerForecast(gd, units, input.bonds, 'SERVER_PREP_FIN', ps.round.spent, ps.round.refreshes);
+  // Opt-in forecast correction only. Candidate generation and actual prep settlement remain inherited.
+  const policy = ps.bandId === 'band_paganini' && ps._botFocusId === CORE ? coreStrategy(m, CORE) : null;
+  const coop = m.mode === 'coop' && !m.isSolo;
+  const nativeAll = coop && policy?.coopNativeLayerProjection === true
+    || m.isSolo && policy?.soloNativePrepFinProjection === true;
+  plan.coopUnitePath = coop && policy?.coopUnitePath === true;
+  plan.coopUnitePathBalance = coop && policy?.coopUnitePathBalance === true;
+  const fin = prepLayerForecast(gd, units, input.bonds, 'SERVER_PREP_FIN', ps.round.spent, ps.round.refreshes, { nativeAll });
   for (const [id, n] of Object.entries(fin)) input.bonds[id].layers += n;
-  const next = m.round < m.gd.bossRound - 1 ? prepLayerForecast(gd, units, input.bonds, 'SERVER_PREP_START') : {};
+  const next = m.round < m.gd.bossRound - 1 ? prepLayerForecast(gd, units, input.bonds, 'SERVER_PREP_START', 0, 0,
+    { nativeAll: coop && nativeAll && !policy.coopNativePrepFinOnly }) : {};
   plan.development = { fin, next, units };
   return input;
 }

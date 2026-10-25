@@ -3,6 +3,7 @@
 import {routeLayerEngine} from './siracusaFocusedDraft.js';
 import {bankRemainder} from '../botSavings.js';
 import {pieceBonds} from '../../../../../bondsMeta.js';
+import {botSell} from '../botSiracusaSales.js';
 const CORE='siracusaShip',SURTR='chess_char_5_07_a',AROMA='chess_char_4_10_a',TEXAS2='chess_char_4_16_a';
 const PREFERRED_RAID=new Set(['chess_char_3_12_a','chess_char_4_04_a']);
 const gdOf=(m,ps)=>ps.gd||m.gd,base=(gd,p)=>gd.baseIdOf(p.id??p.chessId),owned=(ps)=>ps.allChess();
@@ -51,8 +52,8 @@ function policyAllows(baseline,m,ps,rec,reward){const cb=reward?'rewardAllowed':
 }
 function cleanup(m,ps){if(!mobileSmallLeader(m)||m.round===1)return;const gd=gdOf(m,ps),raid=raidReserve(m,ps),arcane=mobileArcaneReserve(m,ps);
  for(const p of [...owned(ps)]){const rec=gd.chess(p.id);if(!external(rec)||base(gd,p)===SURTR||(p.items||[]).length)continue;
-  if(rec.bonds.includes('raidShip')&&(!raid||base(gd,p)!==base(gd,raid)))ps.sell(p.uid);
-  else if(rec.bonds.includes('arcaneShip')&&!rec.bonds.includes('raidShip')&&arcane&&base(gd,p)!==base(gd,arcane))ps.sell(p.uid);
+  if(rec.bonds.includes('raidShip')&&(!raid||base(gd,p)!==base(gd,raid)))botSell(m,ps,p.uid);
+  else if(rec.bonds.includes('arcaneShip')&&!rec.bonds.includes('raidShip')&&arcane&&base(gd,p)!==base(gd,arcane))botSell(m,ps,p.uid);
  }
 }
 const cache=new WeakMap();
@@ -72,9 +73,9 @@ export function withSiracusaMobileArcane(baseline){if(!cache.has(baseline))cache
  shopLockAudit(m,ps){const old=baseline.shopLockAudit(m,ps);if(!mobileSmallLeader(m))return old;
   const arcane=mobileArcaneReserve(m,ps),raid=raidReserve(m,ps);return {...old,mobileArcane:{route:ps._botRoute?.id,swiftLayers:ps.layers.swiftShip||0,
    arcaneReserve:arcane?{uid:arcane.uid,id:arcane.id}:null,raidReserve:raid?{uid:raid.uid,id:raid.id}:null}};},
- bankRemainder(m,ps){if(!mobileSmallLeader(m))return baseline.bankRemainder(m,ps);if(m.round===2)return false;
+ bankRemainder(m,ps,{chessAllowed=()=>true}={}){if(!mobileSmallLeader(m))return baseline.bankRemainder(m,ps,{chessAllowed});if(m.round===2)return false;
   const bought=bankRemainder(m,ps,{itemAllowed:baseline.itemAllowed,chessAllowed:rec=>policyAllows(baseline,m,ps,rec,false)&&mobileProjectAllowed(m,ps,rec)
-   &&!(external(rec)&&['arcaneShip','raidShip','swiftShip'].some(id=>rec.bonds.includes(id)))});cleanup(m,ps);return bought;},
+   &&chessAllowed(rec)&&!(external(rec)&&['arcaneShip','raidShip','swiftShip'].some(id=>rec.bonds.includes(id)))});cleanup(m,ps);return bought;},
  cleanupAcquisitions(m,ps){baseline.cleanupAcquisitions?.(m,ps);cleanup(m,ps);},
  afterPurchase(m,ps,slot,before){baseline.afterPurchase?.(m,ps,slot,before);cleanup(m,ps);},
 }));return cache.get(baseline);}

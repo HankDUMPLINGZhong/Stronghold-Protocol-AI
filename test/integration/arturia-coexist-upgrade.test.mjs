@@ -44,12 +44,12 @@ async function fixture({ laviniaOnly = false, fault = false } = {}) {
 test('Arturia upgrade preserves installed Lavinia, supports read-only preflight and remains idempotent', async () => {
   const { root, current, companion } = await fixture();
   const old = snapshot(root), lavinia = journal(root, stateNames[1]);
-  assert.equal((await current.install('check', root)).companionPreserved, '0.1.2');
+  assert.equal((await current.install('check', root)).companionPreserved, '0.2.0');
   assert.deepEqual(snapshot(root), old);
   const result = await current.install('install', root);
   assert.equal(result.upgradedFrom, '0.2.3'); assert.equal(result.installed, '0.2.4');
-  assert.equal(result.companionPreserved, '0.1.2');
-  assert.equal(journal(root, stateNames[1]).version, '0.1.2');
+  assert.equal(result.companionPreserved, '0.2.0');
+  assert.equal(journal(root, stateNames[1]).version, '0.2.0');
   for (const [name, entry] of Object.entries(lavinia.files))
     if (name.startsWith('server/match/lavinia/') || name.startsWith('addons/lavinia/'))
       assert.equal(hash(readFileSync(resolve(root, name))), entry.after, name);
@@ -107,7 +107,7 @@ test('interrupted coexistence upgrades recover both plugins before retrying', as
 
 test('Arturia can be installed after Lavinia without removing or upgrading the companion', async () => {
   const { root,current,companion }=await fixture({laviniaOnly:true});
-  assert.equal((await current.install('install',root)).companionPreserved,'0.1.2');
+  assert.equal((await current.install('install',root)).companionPreserved,'0.2.0');
   assert.equal((await companion.install('check',root)).alreadyInstalled,true);
   await companion.install('uninstall',root); await current.install('uninstall',root);
   assert.equal(existsSync(resolve(root,'server/match/arturia/index.js')),false);

@@ -81,6 +81,8 @@ for (const ref of refs) for (const dual of [false, true]) {
         assert.equal(h.m.opts,original);assert.equal(h.m.opts.botFormationRoles,undefined);
         assert.deepEqual(adapter.policyView(h.m).opts.botSiracusaEngines,['promotion','hybrid','boss']);
         assert.equal(adapter.policyView(h.m).opts.botLateranoLessons,false);
+        assert.equal(adapter.policyView(h.m).opts.botSiracusaCoopExperiment,'coop-two-r7-core-pair');
+        assert.equal(adapter.policyView(h.m).opts.botLateranoCoopExperiment,false);
         // Compatibility only: sufficient LP keeps late preparation/rehearsal APIs reachable.
         for(const ps of h.m.players.values())ps.lp=10000;
         if(h.m.teamLp!=null)h.m.teamLp=10000;

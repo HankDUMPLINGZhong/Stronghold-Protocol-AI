@@ -1,3 +1,8 @@
+import { withCoopWithdrawalPackage } from './lateranoCoopWithdrawalPackage.js';
+import { withCoopIncantationRecovery, withCoopLatePrecisionPackage, withCoopSupplyDefenseFallback } from './lateranoCoopRegressionFactors.js';
+import { withCoopAtomicWindow } from './lateranoCoopAtomicWindow.js';
+import { withSoloPrepFinProjection, withSoloRoleAllocation, withSoloEmergencyRecovery } from './lateranoSoloTransfer.js';
+import { withCoopLateAcquisition, withCoopPartialMerge } from './lateranoCoopLateEconomy.js';
 // Developer-only recipe objects over the original fixed-roster 19/2 forecast, not the growth-forecast experiment.
 // [ASSUMED] Purchase caps and transfer priorities below are policy; all actions use the normal equipment API.
 import { lateranoFocused } from './lateranoFocused.js';
@@ -30,6 +35,70 @@ import { withLateranoR14EliteHold } from './lateranoR14EliteHold.js';
 import { withLateranoR14PairHold } from './lateranoR14PairHold.js';
 import { withLateranoVisionTrade } from './lateranoVisionTrade.js';
 import { withLateranoSupportSingles } from './lateranoSupportSingles.js';
+import { withLateranoLionSpread } from './lateranoLionSpread.js';
+import { withLateranoMobileBoss } from './lateranoMobileBoss.js';
+import { withLateranoControlBoss } from './lateranoControlBoss.js';
+import { withLateranoMergeOrder } from './lateranoMergeOrder.js';
+import { withLateranoKeyLiquidity } from './lateranoKeyLiquidity.js';
+import { withLateranoKeyValue } from './lateranoKeyValue.js';
+import { withLateranoKeyHealing } from './lateranoKeyHealing.js';
+import { withLateranoMostimaAmplifier } from './lateranoMostimaAmplifier.js';
+import { withLateranoPrecisionFarming } from './lateranoPrecisionFarming.js';
+import { withLateranoRewardPackage } from './lateranoRewardPackage.js';
+import { withLateranoRetiredFrontline } from './lateranoRetiredFrontline.js';
+import { withLateranoHealingChoice } from './lateranoHealingChoice.js';
+import { withLateranoEliteBond } from './lateranoEliteBond.js';
+import { withLateranoDuplicateGrowth } from './lateranoDuplicateGrowth.js';
+import { withLateranoNoTippiTin } from './lateranoNoTippiTin.js';
+import { withLateranoPrecisionReserve } from './lateranoPrecisionReserve.js';
+import { withLateranoPrecisionFallback } from './lateranoPrecisionFallback.js';
+import { withLateranoR14Transfer } from './lateranoR14Transfer.js';
+import { withLateranoBossEscort } from './lateranoBossEscort.js';
+import { lateranoMatureFive } from './lateranoMatureFive.js';
+import { withLateranoEarlyTempo } from './lateranoEarlyTempo.js';
+import { withLateranoEarlyTwo } from './lateranoEarlyTwo.js';
+import { withLateranoEarlyThree } from './lateranoEarlyThree.js';
+import { withLateranoIncomeDoll } from './lateranoIncomeDoll.js';
+import { withLateranoWindowRefinement } from './lateranoWindowRefinement.js';
+import { withLateranoStealthWave } from './lateranoStealthWave.js';
+import { withLateranoFinalSwap } from './lateranoFinalSwap.js';
+import { withLateranoEnemyTypes } from './lateranoEnemyTypes.js';
+import { withLateranoDifficultyVision } from './lateranoDifficultyVision.js';
+import { withLateranoMostimaAmmo } from './lateranoMostimaAmmo.js';
+import { withLateranoBossFormation } from './lateranoBossFormation.js';
+import { withLateranoCoopSafety, withCoopGrowthFirst } from './lateranoCoopSafety.js';
+import { withCoopUnitePath } from './lateranoCoopUnitePath.js';
+import { withCoopQuintusLocal } from './lateranoCoopQuintusLocal.js';
+import { withCoopBossExchange } from './lateranoCoopBossExchange.js';
+import { withCoopReserveRepair } from './lateranoCoopReserveRepair.js';
+import { withCoopTeamWindow } from './lateranoCoopTeamWindow.js';
+import { withCoopNormalExchange } from './lateranoCoopNormalExchange.js';
+import { withLateranoCoopBoss } from './lateranoCoopBoss.js';
+import { withLateranoCoopSupply, withLateranoCoopEnemyRoster, withLateranoCoopTempo,
+  withLateranoCoopDoll, withLateranoCoopMerge } from './lateranoCoopFactors.js';
+import { withLateranoLastHealing } from './lateranoLastHealing.js';
+import { withLateranoHealingDelivery } from './lateranoHealingDelivery.js';
+import { withLateranoEmergencyRoster } from './lateranoEmergencyRoster.js';
+import { withLateranoCoopBossSpecial } from './lateranoCoopBossSpecial.js';
+import { withLateranoCoopWindow } from './lateranoCoopWindow.js';
+import { withLateranoCoopRoles } from './lateranoCoopRoles.js';
+import { withLateranoCoopPlanning } from './lateranoCoopPlanning.js';
+import { withLateranoCoopEarlyInvestment, withLateranoCoopVisibleUpgrade } from './lateranoCoopUpgrade.js';
+import { withLateranoCoopProgression, coopContinuousFiveReady } from './lateranoCoopProgression.js';
+import { withLateranoCoopFiveGate } from './lateranoCoopFiveGate.js';
+import { withLateranoCoopDevelopment, withCoopDevelopmentClearTrade } from './lateranoCoopDevelopment.js';
+import { withLateranoCoopVisionTrade } from './lateranoCoopVisionTrade.js';
+import { withLateranoCoopMarketRepair } from './lateranoCoopMarketRepair.js';
+import { withLateranoCoopMarketValue } from './lateranoCoopMarketValue.js';
+import { withLateranoCoopBossSelf } from './lateranoCoopBossSelf.js';
+import { withLateranoCoopStealth } from './lateranoCoopStealth.js';
+import { withLateranoCoopRescue } from './lateranoCoopRescue.js';
+import { withLateranoCoopContact } from './lateranoCoopContact.js';
+import { withLateranoCoopCorner } from './lateranoCoopCorner.js';
+import { withLateranoCoopSaintMap } from './lateranoCoopSaintMap.js';
+import {withCoopBossPrep,withCoopLateVision,withCoopRoutineMimic,withCoopRecruitBeforeRefresh,withCoopWithdrawal} from './lateranoCoopUnusedFactors.js';
+import {withLateranoCoopRecruitRecovery} from './lateranoCoopRecruitRecovery.js';
+import {withCoopOwnBossModel,withCoopBossLocalRecovery} from './lateranoCoopFailureFactors.js';
 
 const CORE = lateranoFocused.core, { ids } = lateranoFocused;
 const gdOf = (m, ps) => ps.gd || m.gd;
@@ -177,12 +246,13 @@ export function lateranoMilestones(m, ps) {
     mostima: own(m, ps, ids.mostima).some(p => gd.isGolden(p.id)) };
 }
 
-function gated(levels, requireMostima, base = lateranoWhitelist, minimumMembers = () => 6) {
-  const relaxed = (m, ps) => minimumMembers(m, ps) === 5;
+function gated(levels, requireMostima, base = lateranoWhitelist, minimumMembers = () => 6, fiveReady = () => false) {
+  const mature = (m, ps) => ps.shop.level === 4 && fiveReady(m, ps);
+  const relaxed = (m, ps) => minimumMembers(m, ps) === 5 || mature(m, ps);
   const blocked = (m, ps) => {
     const state = lateranoMilestones(m, ps);
     const members = Math.max(ps.bonds[CORE]?.count || 0, memberCount(m, ps, CORE) + Math.max(0, ps.bondCountBonus?.[CORE] || 0));
-    return levels.includes(ps.shop.level + 1) && (members < minimumMembers(m, ps) || requireMostima && !state.mostima);
+    return levels.includes(ps.shop.level + 1) && (!mature(m, ps) && members < minimumMembers(m, ps) || requireMostima && !state.mostima);
   };
   return Object.freeze({ ...base,
     levelTarget(m, ps, options) {
@@ -241,18 +311,27 @@ const retention21 = withLateranoRetention(retained21);
 const vision21 = Object.freeze({ ...retained21, keep: retention21.keep, preserve: retention21.preserve });
 const visionOpening = withLateranoOpening(vision21);
 const map02 = withLateranoMap02(visionOpening);
-function giftedFour(fromRound) {
-  const gate = gated([5], false, repairWhite19, paganiniMinimumMembers(fromRound));
+function giftedFour(fromRound, fiveReady) {
+  const gate = gated([5], false, repairWhite19, paganiniMinimumMembers(fromRound), fiveReady);
   const retention = withLateranoRetention(gate);
   const vision = Object.freeze({ ...gate, keep: retention.keep, preserve: retention.preserve, observeSpend: observePaganiniSpend });
   return withLateranoMapLines(withLateranoMap02(withLateranoOpening(vision)), ['infection','tide']);
 }
 const giftR11 = giftedFour(11);
 const finalR11 = withLateranoFinale(giftR11);
-const buy26 = withLateranoFinale(withLateranoSkillful(giftR11, { roster: false }), { allProtectedWithdrawals: true });
-const team27 = withLateranoTeam(buy26, { roster: true });
-const promotionDeadline = withLateranoPromotion(team27, { deadlineFallback: true });
-const bladeSixReady = withLateranoSixReady(withLateranoArchettoBlade(promotionDeadline));
+// Both objects use the identical retained stack; only the root four-to-five member gate differs.
+function retainedTeam27(root) {
+  const buy26 = withLateranoFinale(withLateranoSkillful(root, { roster: false }), { allProtectedWithdrawals: true });
+  const team27 = withLateranoTeam(buy26, { roster: true });
+  const promotionDeadline = withLateranoPromotion(team27, { deadlineFallback: true });
+  const bladeSixReady = withLateranoSixReady(withLateranoArchettoBlade(promotionDeadline));
+  const controlBoss = withLateranoControlBoss(withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']), ['boss_4', 'boss_7']);
+  const keyHealing = withLateranoKeyHealing(controlBoss);
+  return { buy26, team27, promotionDeadline, bladeSixReady, controlBoss, keyHealing, r14Transfer: withLateranoR14Transfer(keyHealing) };
+}
+const { buy26, team27, promotionDeadline, bladeSixReady, controlBoss, keyHealing, r14Transfer } = retainedTeam27(giftR11);
+const matureFive = Object.freeze({ ...retainedTeam27(giftedFour(11, (m, ps) => lateranoMatureFive(m, ps).ready)).r14Transfer,
+  matureFiveState: lateranoMatureFive });
 const approach25 = withLateranoApproach(bladeSixReady);
 const contactTeamLower = withRelatedTransfer(withLateranoContactTeam(approach25, { lower: true }));
 const contactTeamLateSix = withLateranoUpgradeReserve(contactTeamLower);
@@ -263,7 +342,151 @@ const medicChain = withLateranoMedicChain(medicBase);
 const medicSingle = withLateranoSingleSkill(medicChain);
 const medicFour = withLateranoFastFour(medicSingle);
 const medicFourR11 = withLateranoFourDevelopment(medicFour, { releaseRound: 11 });
+const retainedEarlyThree = withLateranoEarlyThree(r14Transfer);
+const retainedIncomeDoll = withLateranoIncomeDoll(retainedEarlyThree);
+const retainedEnemyTypes = withLateranoEnemyTypes(withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll))), { preserveSecondaries: true });
+const mostimaAmmo = withLateranoMostimaAmmo(retainedEnemyTypes);
+const tenSampleBoss = withLateranoBossFormation(mostimaAmmo, { samples: 10, aggregate: true });
+const strictVision = withLateranoBossFormation(withLateranoMostimaAmmo(retainedEnemyTypes, { protectVision: true }), { samples: 10, aggregate: true });
+const conservativeVision = withLateranoBossFormation(withLateranoMostimaAmmo(retainedEnemyTypes, { protectVision: 'value' }), { samples: 10, aggregate: true });
+const soloTeam28 = withLateranoDifficultyVision(strictVision, conservativeVision);
+const coopBaseline = withLateranoCoopBoss(withLateranoCoopSafety(withLateranoDifficultyVision(strictVision, conservativeVision)));
+const coopSupply = withLateranoCoopSupply(coopBaseline);
+const coopMerge11 = withLateranoCoopMerge(coopSupply);
+const coopBoss13 = withLateranoCoopBossSpecial(coopMerge11);
+const coopRoles14 = withLateranoCoopRoles(coopBoss13);
+const coopDevelopment14 = withLateranoCoopDevelopment(coopRoles14);
+const coopMarketValue15 = withLateranoCoopVisionTrade(withLateranoCoopMarketValue(coopDevelopment14));
+const coopOwnBoss16 = withLateranoCoopBossSelf(coopMarketValue15);
+const coopLP16 = Object.freeze({ ...coopOwnBoss16, teammateInformation: 'lp-only' });
+const coopRescue17 = withLateranoCoopRescue(coopLP16);
+const coopRecruit17 = withCoopRecruitBeforeRefresh(coopRescue17);
+const coopRecovery17 = withLateranoCoopRecruitRecovery(coopRecruit17);
+const coopFatalLocal17 = withCoopBossLocalRecovery(withLateranoCoopRecruitRecovery(coopRecovery17,undefined,{anyFatal:true}));
+const coopGrowthPrepFin17 = Object.freeze({ ...withCoopGrowthFirst(coopFatalLocal17),
+  coopNativeLayerProjection: true, coopNativePrepFinOnly: true });
+const coopFourFiveEconomy = retainedTeam27(gated([5], false, repairWhite19, () => 4)).r14Transfer;
+const coopActiveFiveEconomy = retainedTeam27(gated([5], false, repairWhite19, () => 3)).r14Transfer;
+const coopProgressEconomy = retainedTeam27(giftedFour(11, coopContinuousFiveReady)).r14Transfer;
+const coopLoneSupply = withLateranoCoopBossSpecial(withLateranoCoopMerge(withLateranoCoopSupply(coopBaseline,{loneReadiness:true})));
+const coopLone13 = Object.freeze({...coopBoss13,finalBoardSteps:coopLoneSupply.finalBoardSteps});
+const coopRepair20 = withCoopTeamWindow(withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopGrowthPrepFin17, { balanced: true }))))));
+const coopSelected21 = withCoopAtomicWindow(coopRepair20, { roleDiversity: true });
 export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast19, whitelist: lateranoWhitelist,
+  'team27-mostima-ammo': mostimaAmmo,
+  'team27-mostima-ammo-linked': withLateranoBossFormation(mostimaAmmo),
+  'team27-mostima-ammo-linked-s4': withLateranoBossFormation(mostimaAmmo, { samples: 4 }),
+  'team27-mostima-ammo-linked-s8': withLateranoBossFormation(mostimaAmmo, { samples: 8 }),
+  'team27-mostima-ammo-linked-s12': withLateranoBossFormation(mostimaAmmo, { samples: 12 }),
+  'team27-mostima-ammo-linked-s12-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 12, aggregate: true }),
+  'team27-mostima-ammo-linked-s4-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 4, aggregate: true }),
+  'team27-mostima-ammo-linked-s6-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 6, aggregate: true }),
+  'team27-mostima-ammo-linked-s8-aggregate': withLateranoBossFormation(mostimaAmmo, { samples: 8, aggregate: true }),
+  'team27-mostima-ammo-linked-s10-aggregate': tenSampleBoss,
+  'team27-last-healing': withLateranoLastHealing(tenSampleBoss),
+  'team27-healing-delivery': withLateranoHealingDelivery(tenSampleBoss),
+  'team27-quintus-second-tank': withLateranoEmergencyRoster(tenSampleBoss, 'quintus'),
+  'team27-emergency-wave': withLateranoEmergencyRoster(tenSampleBoss, 'wave'),
+  'team27-ammo-vision': strictVision,
+  'team27-ammo-vision-value': conservativeVision,
+  'team28-vision-difficulty': withLateranoDifficultyVision(strictVision, conservativeVision),
+  'team28-solo-prep-fin': withSoloPrepFinProjection(soloTeam28),
+  'team28-solo-role-allocation': withSoloRoleAllocation(soloTeam28),
+  'team28-solo-emergency-recovery': withSoloEmergencyRecovery(soloTeam28),
+  'coop-normal-safety-v1': withLateranoCoopSafety(withLateranoDifficultyVision(strictVision, conservativeVision)),
+  'coop-boss-linked-s10': withLateranoCoopBoss(withLateranoDifficultyVision(strictVision, conservativeVision)),
+  'coop-safety-boss-linked-s10': coopBaseline,
+  'coop-nine-supply': coopSupply,
+  'coop-nine-enemy-roster': withLateranoCoopEnemyRoster(coopBaseline),
+  'coop-nine-tempo': withLateranoCoopTempo(coopBaseline),
+  'coop-nine-doll': withLateranoCoopDoll(coopBaseline),
+  'coop-nine-merge-order': withLateranoCoopMerge(coopBaseline),
+  'coop-ten-enemy-roster': withLateranoCoopEnemyRoster(coopSupply),
+  'coop-ten-tempo': withLateranoCoopTempo(coopSupply),
+  'coop-ten-doll': withLateranoCoopDoll(coopSupply),
+  'coop-ten-merge-order': coopMerge11,
+  'coop-eleven-boss-specials': coopBoss13,
+  'coop-thirteen-emergency-roles': coopRoles14,
+  'coop-fourteen-efficient-boss': withLateranoCoopPlanning(coopRoles14),
+  'coop-fourteen-development': coopDevelopment14,
+  'coop-fourteen-development-trade': withLateranoCoopVisionTrade(coopDevelopment14),
+  'coop-fourteen-development-trade-repair': withLateranoCoopVisionTrade(withLateranoCoopMarketRepair(coopDevelopment14)),
+  'coop-fourteen-development-trade-value': coopMarketValue15,
+  'coop-fifteen-own-boss-damage': coopOwnBoss16,
+  'coop-sixteen-team-lp-only': coopLP16,
+  'coop-sixteen-contact-lines': withLateranoCoopContact(coopLP16),
+  'coop-sixteen-corner02': withLateranoCoopCorner(coopLP16),
+  'coop-sixteen-fatal-rescue': coopRescue17,
+  'coop-seventeen-saint-map': withLateranoCoopSaintMap(coopRescue17),
+  'coop-seventeen-boss-prep': withCoopBossPrep(coopRescue17),
+  'coop-seventeen-late-vision': withCoopLateVision(coopRescue17),
+  'coop-seventeen-routine-mimic': withCoopRoutineMimic(coopRescue17),
+  'coop-seventeen-recruit-refresh': coopRecruit17,
+  'coop-seventeen-recruit-recovery': coopRecovery17,
+  'coop-seventeen-fatal-layout': withLateranoCoopRecruitRecovery(coopRecovery17,undefined,{anyFatal:true}),
+  'coop-seventeen-public-boss-template': withCoopOwnBossModel(coopRecovery17,'template'),
+  'coop-seventeen-public-boss-pool': withCoopOwnBossModel(coopRecovery17,'pool'),
+  'coop-seventeen-local-boss-recovery': withCoopBossLocalRecovery(coopRecovery17),
+  'coop-seventeen-fatal-local-boss-recovery': coopFatalLocal17,
+  'coop-seventeen-development-clear-trade': withCoopDevelopmentClearTrade(coopFatalLocal17),
+  'coop-seventeen-development-clear-trade-five': withCoopDevelopmentClearTrade(coopFatalLocal17,{perRound:5}),
+  'coop-seventeen-clear-growth-first': withCoopGrowthFirst(coopFatalLocal17),
+  'coop-seventeen-growth-projection': Object.freeze({ ...withCoopGrowthFirst(coopFatalLocal17), coopNativeLayerProjection: true }),
+  'coop-seventeen-growth-prep-fin': coopGrowthPrepFin17,
+  'coop-seventeen-growth-prep-fin-unite-path': withCoopUnitePath(coopGrowthPrepFin17),
+  'coop-seventeen-growth-prep-fin-path-balance': withCoopUnitePath(coopGrowthPrepFin17, { balanced: true }),
+  'coop-seventeen-growth-prep-fin-path-balance-quintus-local': withCoopQuintusLocal(withCoopUnitePath(coopGrowthPrepFin17, { balanced: true })),
+  'coop-eighteen-boss-exchange': withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopGrowthPrepFin17, { balanced: true }))),
+  'coop-twentyone-normal-exchange': withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopGrowthPrepFin17, { balanced: true })))),
+  'coop-normal-reserve-repair': withCoopReserveRepair(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopGrowthPrepFin17, { balanced: true }))))),
+  'coop-normal-team-window': withCoopTeamWindow(withCoopNormalExchange(withCoopBossExchange(withCoopQuintusLocal(withCoopUnitePath(coopGrowthPrepFin17, { balanced: true }))))),
+  'coop-normal-combined-repair': coopRepair20,
+  'coop-twenty-withdrawal-package': withCoopWithdrawalPackage(coopRepair20),
+  'coop-twenty-withdrawal-low-tier': withCoopWithdrawalPackage(coopRepair20, { retireLowTier: true }),
+  'coop-twenty-withdrawal-low-tier-pairs': withCoopWithdrawalPackage(coopRepair20, { retireLowTier: true, keepLowTierPairs: true }),
+  'coop-twenty-atomic-window': withCoopAtomicWindow(coopRepair20),
+  'coop-twenty-role-allocation': coopSelected21,
+  'coop-twenty-one-incantation': withCoopIncantationRecovery(coopSelected21),
+  'coop-twenty-one-incantation-branches': withCoopIncantationRecovery(coopSelected21, { retainBranches: true }),
+  'coop-twenty-one-precision-package': withCoopLatePrecisionPackage(coopSelected21),
+  'coop-twenty-one-supply-defense': withCoopSupplyDefenseFallback(coopSelected21),
+  'coop-twenty-late-acquisition': withCoopLateAcquisition(coopRepair20),
+  'coop-twenty-role-late': withCoopAtomicWindow(withCoopLateAcquisition(coopRepair20), { roleDiversity: true }),
+  'coop-twenty-partial-merge': withCoopPartialMerge(coopRepair20),
+  'coop-seventeen-growth-unite-path': withCoopUnitePath(withCoopGrowthFirst(coopFatalLocal17)),
+  'coop-seventeen-withdrawal': withCoopWithdrawal(coopRescue17),
+  'coop-sixteen-stealth-response': withLateranoCoopStealth(coopLP16),
+  'coop-sixteen-stealth-elite': withLateranoCoopStealth(coopLP16,{pursueElite:true}),
+  'coop-fourteen-development-bold': withLateranoCoopDevelopment(coopRoles14, { risk: 'bold' }),
+  'coop-fourteen-five-four-members': withLateranoCoopFiveGate(coopRoles14, coopFourFiveEconomy),
+  'coop-fourteen-five-active-core': withLateranoCoopFiveGate(coopRoles14, coopActiveFiveEconomy, { requireActive: true }),
+  'coop-fourteen-early-investment': withLateranoCoopEarlyInvestment(coopRoles14),
+  'coop-fourteen-visible-upgrade': withLateranoCoopVisibleUpgrade(coopRoles14),
+  'coop-fourteen-combined-upgrade': withLateranoCoopVisibleUpgrade(withLateranoCoopEarlyInvestment(coopRoles14)),
+  'coop-fourteen-continuous-upgrade': withLateranoCoopProgression(coopRoles14, coopProgressEconomy),
+  'coop-fourteen-emergency-two': withLateranoCoopRoles(coopBoss13,{minLeaks:2}),
+  'coop-thirteen-lone-supply': coopLone13,
+  'coop-fourteen-emergency-lone-supply': withLateranoCoopRoles(coopLone13,{minLeaks:3}),
+  'coop-thirteen-final-roster': withLateranoCoopRoles(coopBoss13,{final:true}),
+  'coop-thirteen-window': withLateranoCoopWindow(coopBoss13),
+  'coop-thirteen-boss-window': withLateranoCoopWindow(coopBoss13,{bossOnly:true}),
+  'team27-enemy-types': withLateranoEnemyTypes(withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll)))),
+  'team27-enemy-types-bonds': retainedEnemyTypes,
+  'team27-early-three-income-doll-window-stealth-swap': withLateranoFinalSwap(withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll))),
+  'team27-early-three-stealth': withLateranoStealthWave(retainedEarlyThree),
+  'team27-early-three-income-doll-window-stealth': withLateranoStealthWave(withLateranoWindowRefinement(retainedIncomeDoll)),
+  'team27-early-three-window': withLateranoWindowRefinement(retainedEarlyThree),
+  'team27-early-three-income-doll-window': withLateranoWindowRefinement(retainedIncomeDoll),
+  'team27-early-three-income-doll': retainedIncomeDoll,
+  'team27-early-three-doll-lock3': withLateranoIncomeDoll(retainedEarlyThree, { lockAt: 3 }),
+  'team27-early-three-doll-lock2': withLateranoIncomeDoll(retainedEarlyThree, { lockAt: 2 }),
+  'team27-early-three-doll-skip3': withLateranoIncomeDoll(retainedEarlyThree, { skipAt: 3 }),
+  'team27-early-three-doll-skip2': withLateranoIncomeDoll(retainedEarlyThree, { skipAt: 2 }),
+  'team27-early-three-mature-five': withLateranoEarlyThree(matureFive),
+  'team27-early-three': retainedEarlyThree,
+  'team27-early-two': withLateranoEarlyTwo(r14Transfer),
+  'team27-early-tempo': withLateranoEarlyTempo(r14Transfer),
+  'team27-mature-five': matureFive,
   'six-before-five': gated([5], false), 'six-before-six': gated([6], false),
   'six-mostima-before-five': gated([5], true), 'six-mostima-before-five-six': gated([5,6], true),
   repair17: lateranoRepair17, repair19: lateranoRepair19,
@@ -293,6 +516,33 @@ export const LATERANO_EXPERIMENTS = Object.freeze({ forecast19: lateranoForecast
   'team27-archetto-blade': withLateranoArchettoBlade(promotionDeadline),
   'team27-six-ready': withLateranoSixReady(promotionDeadline),
   'team27-blade-six-ready': bladeSixReady,
+  'team27-lion-spread': withLateranoLionSpread(bladeSixReady),
+  'team27-gun-contact': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_2']),
+  'team27-lucien-contact': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']),
+  'team27-quintus-medic': withLateranoControlBoss(withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']), ['boss_4']),
+  'team27-sami-columns': withLateranoControlBoss(withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_5']), ['boss_7']),
+  'team27-control-boss': controlBoss,
+  'team27-merge-order': withLateranoMergeOrder(controlBoss),
+  'team27-key-liquidity': withLateranoKeyLiquidity(controlBoss),
+  'team27-key-value': withLateranoKeyValue(controlBoss),
+  'team27-key-healing': keyHealing,
+  'team27-precision-reserve': withLateranoPrecisionReserve(keyHealing),
+  'team27-precision-reserve-final': withLateranoPrecisionFallback(withLateranoPrecisionReserve(keyHealing)),
+  'team27-r14-transfer': r14Transfer,
+  'team27-boss-escort': withLateranoBossEscort(r14Transfer),
+  'team27-no-tippi-tin': withLateranoNoTippiTin(keyHealing),
+  'team27-elite-bond': withLateranoEliteBond(keyHealing),
+  'team27-duplicate-keep-elite': withLateranoDuplicateGrowth(keyHealing),
+  'team27-duplicate-relax-elite': withLateranoDuplicateGrowth(keyHealing, { retainElite: false }),
+  'team27-mostima-amplifier': withLateranoMostimaAmplifier(keyHealing),
+  'team27-precision-farming': withLateranoPrecisionFarming(keyHealing),
+  'team27-reward-package': withLateranoRewardPackage(keyHealing),
+  'team27-retired-frontline': withLateranoRetiredFrontline(keyHealing),
+  'team27-healing-choice': withLateranoHealingChoice(keyHealing),
+  'team27-funded-healing-choice': withLateranoHealingChoice(withLateranoRetiredFrontline(keyHealing)),
+  'team27-key-heal-hold': withLateranoKeyHealing(controlBoss, { funding: false, holdSix: true }),
+  'team27-key-healing-hold': withLateranoKeyHealing(controlBoss, { holdSix: true }),
+  'team27-mobile-boss': withLateranoMobileBoss(withLateranoLionSpread(bladeSixReady), ['boss_2', 'boss_5']),
   'team27-vision-star-trade': withLateranoVisionTrade(bladeSixReady),
   'team27-r14-native-elite': withLateranoR14EliteHold(bladeSixReady),
   'team27-r14-all-pairs': withLateranoR14PairHold(bladeSixReady),

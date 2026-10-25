@@ -2,7 +2,7 @@ import { readFile, writeFile, mkdir, readdir, lstat, unlink } from 'node:fs/prom
 import { resolve, dirname, relative, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { patchFiles, PATCH_PATHS } from './patches.mjs';
+import { patchFiles, PATCH_PATHS, extraPatchPaths } from './patches.mjs';
 
 const bundle = dirname(fileURLToPath(import.meta.url));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -101,6 +101,7 @@ export async function install(mode, directory) {
   };
   const files = new Map();
   for (const name of PATCH_PATHS) files.set(name, (await original(name)).toString('utf8').replaceAll('\r\n', '\n'));
+  for (const name of extraPatchPaths(files)) files.set(name, (await original(name)).toString('utf8').replaceAll('\r\n', '\n'));
   for (const name of await readdir(inside(root, 'public/i18n'))) if (name.endsWith('.json')) {
     files.set(`public/i18n/${name}`, (await original(`public/i18n/${name}`)).toString('utf8'));
   }
@@ -120,7 +121,7 @@ export async function install(mode, directory) {
     changes.set(target, { before: null, bytes });
   }
   // Keep the complete portable installer in addons/, so players can remove the unpacked download.
-  for (const name of [...Object.keys(meta.files), 'install.mjs', 'patches.mjs', 'addon.json', 'README.md', 'CHANGELOG.md', 'LICENSE', '安装插件.bat', 'install-windows.ps1']) {
+  for (const name of [...Object.keys(meta.files), 'install.mjs', 'patches.mjs', 'extended-host.mjs', 'addon.json', 'README.md', 'CHANGELOG.md', 'LICENSE', '安装插件.bat', 'install-windows.ps1']) {
     const bytes = await readFile(await safePath(bundle, name));
     const target = `addons/lavinia/${name}`;
     const before = await original(target);

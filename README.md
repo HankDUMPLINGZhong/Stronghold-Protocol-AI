@@ -2,13 +2,13 @@
 
 为[卫戍协议：盟约 Web 复刻](https://github.com/sganggs/Stronghold-Protocol)开发的 AI 队友与策略。**本地规则决策＋战斗预演，不接 LLM，不用 API Key，没有 Token 消耗。**
 
-本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.2.4（拉特兰）** 和 **AI·拉维妮娅 v0.1.2（叙拉古）**。
+本仓库用于发布策略插件、公开发行源码及接收PR；日常开发和详细经验仍保留在原项目的`dev`分支。当前可安装 **AI·阿尔图罗 v0.2.4（拉特兰）** 和 **AI·拉维妮娅 v0.2.0（叙拉古）**。
 
 ## 下载与安装
 
 按插件查看版本：[阿尔图罗（图图）的全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-arturia%22) · [拉维妮娅的全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-lavinia%22) · [分类下载索引](RELEASES.md)
 
-**[下载拉维妮娅 v0.1.2 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.1.2/AI-Lavinia-v0.1.2.zip)** · [拉维妮娅版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.1.2)
+**[下载拉维妮娅 v0.2.0 安装包](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.0/AI-Lavinia-v0.2.0.zip)** · [拉维妮娅版本与校验文件](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.0)
 
 解压后双击“安装插件.bat”；游戏等待室通过 **添加精英干员 → 拉维妮娅** 添加，使用斥罪精二头像，优先且只选贾维／叙拉古。单独在场第一选；与图图同场时图图第一、拉维妮娅第二。图图v0.2.2起，安装／升级会自动保留已安装的拉维妮娅，无需手动卸载重装；卸载图图前仍先卸载拉维妮娅。
 
@@ -27,7 +27,7 @@
 
 两款插件独立编号：`arturia-vX.Y.Z`和`lavinia-vX.Y.Z`，按实际改动分别升版；宿主兼容范围单独记录。只更新验证记录或Release标题不升插件版本。标题格式为`【拉特兰-潘格尼尼】阿尔图罗·vX.Y.Z`与`【贾维-叙拉古】拉维妮娅·vX.Y.Z`。
 
-阿尔图罗v0.2.4新增支持[zhewang448扩展分支v0.3.1-extended.9](https://github.com/zhewang448/Stronghold-Protocol/tree/fddf41fe8f5b85e87951d85b53df2d800948a387)，自动识别分组轮选与等待室结构。原上游继续按原流程安装，未知结构在写入前拒绝。扩展分支的独立卡池、组内优先选策略和回档恢复说明见[扩展宿主适配](docs/extended-host-compatibility.md)。拉维妮娅现有v0.1.2发行包仍只支持原上游，其扩展安装适配尚未发行。
+阿尔图罗v0.2.4新增支持[zhewang448扩展分支v0.3.1-extended.9](https://github.com/zhewang448/Stronghold-Protocol/tree/fddf41fe8f5b85e87951d85b53df2d800948a387)，自动识别分组轮选与等待室结构。原上游继续按原流程安装，未知结构在写入前拒绝。扩展分支的独立卡池、组内优先选策略和回档恢复说明见[扩展宿主适配](docs/extended-host-compatibility.md)。拉维妮娅v0.2.0同样支持该扩展快照，采用组内优先轮选和独立卡池。
 
 ### 添加精英后却出现原版AI
 
@@ -55,7 +55,7 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 
 ## 已发布策略与成绩
 
-当前发布 **AI·阿尔图罗 v0.2.4（拉特兰）** 与 **AI·拉维妮娅 v0.1.2（叙拉古）**。
+当前发布 **AI·阿尔图罗 v0.2.4（拉特兰）** 与 **AI·拉维妮娅 v0.2.0（叙拉古）**。
 
 以下为`enemy-diversity-v1`固定**单人**测评集，每难度28局、关闭随机盟约禁用，使用真实战斗。过关指击败R14领袖，不等于隐藏Boss全清，不代表多人房或自然开局胜率。
 
@@ -82,11 +82,20 @@ node .\addons\arturia\install.mjs install 'D:\Games\Stronghold-Protocol'
 | AI | 绝境胜场 | 绝境平均存活回合 | 绝境R13平均叙拉古层数 | 终极胜场 | 终极平均存活回合 | 终极R13平均叙拉古层数 |
 |---|---:|---:|---:|---:|---:|---:|
 | 原版 bot | 3/28 | 12.82 | 46.48（25局） | 0/28 | 10.57 | 36.00（10局） |
-| 拉维妮娅／叙拉古 | 28/28 | 14.82 | 272.00（28局） | 12/28 | 12.21 | 257.14（21局） |
+| 拉维妮娅／叙拉古 | 28/28 | 14.82 | 272.00（28局） | 12/28 | 12.43 | 254.82（22局） |
 
 拉特兰完整448局复测与补充28局通过，主56局为28/28、20/28，补充为14/14、7/14。
 
-叙拉古完整开发矩阵448局验证通过，主56局复现28/12，其余392局对照不变；补充16局为8/8、3/8。
+叙拉古最新开发矩阵448局验证通过，主56局为28/12；本轮终极策略采用后，其他420条绝境与其他AI记录不变；补充16局为8/8、3/8。
+
+拉维妮娅的多人模式数据（终极）：
+
+| 多人模式（终极） | 胜场/总场数 | 平均到达回合 | 拉维妮娅叙拉古平均层数 | 拉维妮娅平均漏怪 | 拉维妮娅平均兜怪 |
+|---|---:|---:|---:|---:|---:|
+| 二人：拉维妮娅＋bot | 9/56 | 10.98 | 147.98 | 35.27 | 13.84 |
+| 四人：拉维妮娅＋3bot | 11/56 | 12.43 | 163.38 | 40.52 | 27.41 |
+
+到达回合含失败当轮；其余三项只取拉维妮娅本人，按全部56局平均，含提前淘汰。原开发0.2.4宿主的固定诊断集，不代表扩展分支或自然随机开局胜率。
 
 存活回合取全部28局已通过回合的均值；层数只统计到达R13检查点的局，括号为样本数，提前淘汰不混入0层。
 

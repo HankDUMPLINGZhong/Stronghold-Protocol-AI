@@ -1,0 +1,5194 @@
+{
+  "scope": "Supplemental solo R14 results; HARD retained unchanged, ABYSS remeasured after adoption; separate from primary corpus",
+  "policy": "sha256:6e1831e5360a1b2aac972a930ce699262392b1e2283d8d46b4e4ad6883678625",
+  "matches": [
+    {
+      "config": "solo:HARD",
+      "seed": 51001,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 16,
+              "value": 21,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 13,
+              "total": 13,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 36,
+              "value": 29,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 24,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 48,
+              "value": 36,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 72,
+              "value": 37,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 23,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 96,
+              "value": 37,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 132,
+              "value": 35,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 164,
+              "value": 35,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 20,
+              "total": 20,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 218,
+              "value": 33,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 6,
+              "layers": 284,
+              "value": 58,
+              "elites": 6,
+              "items": 0,
+              "lost": 0,
+              "killed": 33,
+              "total": 33,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 370,
+              "value": 64,
+              "elites": 7,
+              "items": 0,
+              "lost": 0,
+              "killed": 85,
+              "total": 31,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 5,
+              "layers": 492,
+              "value": 57,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 7,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 23
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 51002,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 15,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 12,
+              "total": 12,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 0,
+              "value": 22,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 12,
+              "value": 26,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 28,
+              "value": 29,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 23,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 44,
+              "value": 29,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 68,
+              "value": 32,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 66,
+              "total": 22,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 106,
+              "value": 39,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 24,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 168,
+              "value": 44,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 36,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 230,
+              "value": 45,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 38,
+              "total": 38,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 316,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 43,
+              "total": 43,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 450,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 51003,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 3,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 7,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 5,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 4,
+              "value": 11,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 22,
+              "value": 22,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 21,
+              "total": 21,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 36,
+              "value": 31,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 66,
+              "value": 37,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 25,
+              "total": 25,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 95,
+              "value": 43,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 123,
+              "value": 52,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 16,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 169,
+              "value": 46,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 22,
+              "total": 22,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 6,
+              "tiers": 8,
+              "layers": 245,
+              "value": 56,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 28,
+              "total": 28,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 310,
+              "value": 39,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 105,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 428,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 34,
+              "total": 34,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 590,
+              "value": 52,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 7,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 23
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 51004,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 5,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 3,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 6,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 20,
+              "total": 7,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 0,
+              "value": 13,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 8,
+              "value": 23,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 16,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 20,
+              "value": 30,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 22,
+              "total": 22,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 36,
+              "value": 35,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 52,
+              "value": 35,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 11,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 102,
+              "value": 43,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 158,
+              "value": 30,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 23,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 215,
+              "value": 37,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 297,
+              "value": 36,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 377,
+              "value": 51,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 50,
+              "total": 50,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 8,
+              "layers": 543,
+              "value": 65,
+              "elites": 6,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 23
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 51005,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 5,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 2,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 2,
+              "units": 5,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 0,
+              "value": 12,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 15,
+              "total": 13,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 26,
+              "value": 25,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 38,
+              "value": 29,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 50,
+              "value": 29,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 33,
+              "total": 33,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 80,
+              "value": 36,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 13,
+              "total": 13,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 144,
+              "value": 39,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 31,
+              "total": 31,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 174,
+              "value": 39,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 226,
+              "value": 44,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 290,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 358,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 39,
+              "total": 39,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 496,
+              "value": 55,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 21
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 51006,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 6,
+              "total": 6,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 18,
+              "total": 6,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 2,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 6,
+              "value": 13,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 8,
+              "value": 23,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 16,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 18,
+              "value": 28,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 46,
+              "value": 36,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 21,
+              "total": 21,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 60,
+              "value": 39,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 15,
+              "total": 15,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 87,
+              "value": 39,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 17,
+              "leaks": 3,
+              "bountyLeaks": 1,
+              "bountyKeys": [
+                "enemy_1516_jakill"
+              ]
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 145,
+              "value": 43,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 18,
+              "total": 18,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 186,
+              "value": 43,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 28,
+              "total": 28,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 248,
+              "value": 44,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 309,
+              "value": 45,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 429,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 6,
+              "total": 6,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 51007,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 10,
+              "leaks": 1,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 15,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 17,
+              "total": 17,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 4,
+              "value": 22,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 24,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 22,
+              "value": 30,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 24,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 40,
+              "value": 31,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 5,
+              "layers": 58,
+              "value": 32,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 7,
+              "total": 14,
+              "leaks": 7,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 88,
+              "value": 40,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 24,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 120,
+              "value": 46,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 171,
+              "value": 42,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 25,
+              "total": 25,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 225,
+              "value": 40,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 14,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 335,
+              "value": 45,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 39,
+              "total": 39,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 6,
+              "tiers": 8,
+              "layers": 479,
+              "value": 60,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 15
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:HARD",
+      "seed": 51008,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 7,
+              "total": 7,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 3,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 7,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 5,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 14,
+              "value": 18,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 26,
+              "value": 27,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 18,
+              "total": 18,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 42,
+              "value": 30,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 22,
+              "total": 22,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 72,
+              "value": 41,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 17,
+              "total": 17,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 72,
+              "value": 41,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 124,
+              "value": 48,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 6,
+              "layers": 149,
+              "value": 48,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 194,
+              "value": 40,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 238,
+              "value": 48,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 31,
+              "total": 31,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 4,
+              "layers": 310,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 37,
+              "total": 37,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 6,
+              "layers": 432,
+              "value": 68,
+              "elites": 6,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 7,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51001,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 5,
+              "total": 8,
+              "leaks": 3,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 18,
+              "value": 23,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 13,
+              "total": 13,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 26,
+              "value": 23,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 24,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 36,
+              "value": 31,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 62,
+              "value": 38,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 23,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 14,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 84,
+              "value": 38,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 13,
+              "total": 19,
+              "leaks": 6,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 14,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 128,
+              "value": 38,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 14,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 163,
+              "value": 38,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 20,
+              "total": 20,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 13,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 229,
+              "value": 44,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 18,
+              "total": 19,
+              "leaks": 1,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 13,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 345,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 33,
+              "total": 33,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 13,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 489,
+              "value": 46,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 85,
+              "total": 31,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 13,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 613,
+              "value": 55,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 7,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 13
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51002,
+      "victory": false,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 7,
+              "total": 8,
+              "leaks": 1,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 15,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 12,
+              "leaks": 2,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 22,
+              "value": 26,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 32,
+              "value": 27,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 27,
+              "leaks": 3,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 42,
+              "value": 27,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 23,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 52,
+              "value": 27,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 26,
+              "leaks": 7,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": false,
+              "level": 4,
+              "units": 0,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 0,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 51,
+              "total": 22,
+              "leaks": 13,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51003,
+      "victory": false,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 3,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 7,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 5,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 4,
+              "value": 11,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 23,
+              "value": 22,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 21,
+              "total": 21,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 41,
+              "value": 31,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 72,
+              "value": 37,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 25,
+              "total": 25,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 102,
+              "value": 43,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 132,
+              "value": 52,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 16,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 168,
+              "value": 46,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 22,
+              "total": 22,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 211,
+              "value": 55,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 28,
+              "total": 28,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 302,
+              "value": 58,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 105,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 394,
+              "value": 54,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 34,
+              "total": 34,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 14,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 7,
+              "layers": 496,
+              "value": 60,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51004,
+      "victory": false,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 5,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 3,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 6,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 20,
+              "total": 7,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 0,
+              "value": 14,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 4,
+              "value": 18,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 16,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 24,
+              "value": 26,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 22,
+              "leaks": 6,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 48,
+              "value": 34,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 3,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 64,
+              "value": 42,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 11,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 5,
+              "layers": 94,
+              "value": 41,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 149,
+              "value": 45,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 23,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 218,
+              "value": 36,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 296,
+              "value": 42,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 6,
+              "tiers": 7,
+              "layers": 368,
+              "value": 43,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 50,
+              "total": 50,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 14,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 418,
+              "value": 39,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 8,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51005,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 5,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 3,
+              "total": 9,
+              "leaks": 6,
+              "bountyLeaks": 1,
+              "bountyKeys": [
+                "enemy_1195_sfyin"
+              ]
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 17,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 10,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 15,
+              "total": 13,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 16,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 6,
+              "value": 24,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 18,
+              "total": 19,
+              "leaks": 1,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 16,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 22,
+              "value": 29,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 16,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 52,
+              "value": 35,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 33,
+              "total": 33,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 4,
+              "units": 7,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 70,
+              "value": 37,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 7,
+              "total": 13,
+              "leaks": 6,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 106,
+              "value": 41,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 31,
+              "total": 31,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 4,
+              "layers": 158,
+              "value": 42,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 212,
+              "value": 37,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 318,
+              "value": 52,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 414,
+              "value": 47,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 39,
+              "total": 39,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 10,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 530,
+              "value": 47,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 5,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 10
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51006,
+      "victory": false,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 6,
+              "total": 6,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 6,
+              "leaks": 2,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 21,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 2,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 13,
+              "alive": true,
+              "level": 2,
+              "units": 6,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 6,
+              "value": 13,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 2,
+              "total": 10,
+              "leaks": 8,
+              "bountyLeaks": 1,
+              "bountyKeys": [
+                "enemy_1161_tidmag"
+              ]
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 9,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 8,
+              "value": 20,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 12,
+              "total": 16,
+              "leaks": 4,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 9,
+              "alive": true,
+              "level": 3,
+              "units": 7,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 14,
+              "value": 25,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 9,
+              "alive": true,
+              "level": 3,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 42,
+              "value": 39,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 21,
+              "total": 21,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 9,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 60,
+              "value": 39,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 15,
+              "total": 15,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 4,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 88,
+              "value": 39,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 12,
+              "total": 17,
+              "leaks": 5,
+              "bountyLeaks": 1,
+              "bountyKeys": [
+                "enemy_1516_jakill"
+              ]
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 4,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 114,
+              "value": 39,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 18,
+              "total": 18,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 4,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 6,
+              "layers": 144,
+              "value": 45,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 28,
+              "total": 28,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 4,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 4,
+              "layers": 214,
+              "value": 44,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 4,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 5,
+              "layers": 314,
+              "value": 57,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 27,
+              "total": 27,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 14,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 4,
+              "layers": 366,
+              "value": 52,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 18,
+              "total": 8,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51007,
+      "victory": true,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 4,
+              "total": 4,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 10,
+              "leaks": 1,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 18,
+              "alive": true,
+              "level": 2,
+              "units": 4,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 9,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 6,
+              "total": 10,
+              "leaks": 4,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 0,
+              "value": 15,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 17,
+              "leaks": 3,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 7,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 2,
+              "tiers": 2,
+              "layers": 4,
+              "value": 22,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 24,
+              "leaks": 8,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 3,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 22,
+              "value": 24,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 23,
+              "total": 24,
+              "leaks": 1,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 3,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 76,
+              "value": 32,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 26,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 100,
+              "value": 31,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 14,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 138,
+              "value": 34,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 24,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 165,
+              "value": 35,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 229,
+              "value": 39,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 25,
+              "total": 25,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 5,
+              "tiers": 6,
+              "layers": 297,
+              "value": 40,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 14,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 6,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 6,
+              "tiers": 7,
+              "layers": 467,
+              "value": 49,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 39,
+              "total": 39,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 15,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 6,
+              "tiers": 7,
+              "layers": 581,
+              "value": 49,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 16,
+              "total": 8,
+              "leaks": 2,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    },
+    {
+      "config": "solo:ABYSS",
+      "seed": 51008,
+      "victory": false,
+      "rounds": [
+        {
+          "round": 1,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 1,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 7,
+              "total": 7,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 2,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 2,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 4,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 9,
+              "total": 9,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 3,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 3,
+              "bonds": 0,
+              "tiers": 0,
+              "layers": 0,
+              "value": 7,
+              "elites": 0,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 4,
+          "players": {
+            "ai_0": {
+              "lp": 23,
+              "alive": true,
+              "level": 2,
+              "units": 5,
+              "bonds": 1,
+              "tiers": 1,
+              "layers": 14,
+              "value": 18,
+              "elites": 1,
+              "items": 0,
+              "lost": 0,
+              "killed": 10,
+              "total": 10,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 5,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 7,
+              "bonds": 3,
+              "tiers": 3,
+              "layers": 26,
+              "value": 27,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 17,
+              "total": 18,
+              "leaks": 1,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 6,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 44,
+              "value": 30,
+              "elites": 2,
+              "items": 0,
+              "lost": 0,
+              "killed": 22,
+              "total": 22,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 7,
+          "players": {
+            "ai_0": {
+              "lp": 22,
+              "alive": true,
+              "level": 2,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 60,
+              "value": 36,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 17,
+              "total": 17,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 8,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 4,
+              "layers": 88,
+              "value": 36,
+              "elites": 3,
+              "items": 0,
+              "lost": 0,
+              "killed": 24,
+              "total": 26,
+              "leaks": 2,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 9,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 4,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 140,
+              "value": 46,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 32,
+              "total": 32,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 10,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 156,
+              "value": 46,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 19,
+              "total": 19,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 11,
+          "players": {
+            "ai_0": {
+              "lp": 20,
+              "alive": true,
+              "level": 5,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 6,
+              "layers": 206,
+              "value": 53,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 30,
+              "total": 30,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 12,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 6,
+              "layers": 236,
+              "value": 53,
+              "elites": 5,
+              "items": 0,
+              "lost": 0,
+              "killed": 26,
+              "total": 31,
+              "leaks": 5,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 13,
+          "players": {
+            "ai_0": {
+              "lp": 15,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 3,
+              "tiers": 4,
+              "layers": 296,
+              "value": 51,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 37,
+              "total": 37,
+              "leaks": 0,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          }
+        },
+        {
+          "round": 14,
+          "players": {
+            "ai_0": {
+              "lp": 0,
+              "alive": true,
+              "level": 6,
+              "units": 8,
+              "bonds": 4,
+              "tiers": 5,
+              "layers": 318,
+              "value": 51,
+              "elites": 4,
+              "items": 0,
+              "lost": 0,
+              "killed": 14,
+              "total": 8,
+              "leaks": 2,
+              "bountyLeaks": 0,
+              "bountyKeys": []
+            }
+          },
+          "teamLp": 0
+        }
+      ],
+      "errors": 0
+    }
+  ]
+}

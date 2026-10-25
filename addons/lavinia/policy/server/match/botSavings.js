@@ -1,6 +1,7 @@
 // [ASSUMED] Expiring funds can buy real assets rather than only blind refreshes. Optional per-recipe policy.
 // No balance changes: currency is held in the hand; parking operators are bought/sold through PlayerState.
 const gdOf = (m, ps) => ps.gd || m.gd;
+import { botSell } from './botSiracusaSales.js';
 export const savingsCash = (rec) => rec?.buffs?.some((b) => b.key === 'equip_destory_gain_random_coin');
 const stateOf = (ps) => ps._botSavings ||= { releasedAt: -1, parked: [] };
 const statsOf = (ps) => ps._botRecipeStats ||= {};
@@ -11,7 +12,7 @@ export function releaseSavings(m, ps, { current = false, target = Infinity } = {
     state.releasedAt = m.round;
     for (const saved of state.parked.filter((p) => p.round < m.round)) {
       const piece = ps.find(saved.uid)?.piece;
-      if (piece?.kind === 'chess' && piece.id === saved.id && !piece.items?.length && ps.sell(piece.uid)?.ok) {
+      if (piece?.kind === 'chess' && piece.id === saved.id && !piece.items?.length && botSell(m, ps, piece.uid)?.ok) {
         const stats = statsOf(ps); stats.soldSavings = (stats.soldSavings || 0) + 1;
       }
     }

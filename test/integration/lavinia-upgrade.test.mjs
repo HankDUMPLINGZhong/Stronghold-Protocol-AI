@@ -4,14 +4,24 @@ import {resolve} from 'node:path';import {pathToFileURL} from 'node:url';import 
 import {build,UPSTREAM_REF} from '../../addons/lavinia/build.mjs';import {build as buildArturia} from '../../addons/arturia/build.mjs';
 const repo=process.env.SP_GAME_REPO;if(!repo)throw new Error('Set SP_GAME_REPO');
 const source=resolve(import.meta.dirname,'../..'),hash=b=>createHash('sha256').update(b).digest('hex');
-for(const ref of process.env.LAVINIA_TEST_REFS?.split(',')||[UPSTREAM_REF])for(const dual of [false,true])for(const from of ['0.1.0','0.1.1']){
- test(`Lavinia real v${from} to v0.1.2 policy upgrade ${ref.slice(0,8)} dual=${dual}`,async()=>{
+for(const ref of process.env.LAVINIA_TEST_REFS?.split(',')||[UPSTREAM_REF])for(const dual of [false,true])for(const from of ['0.1.0','0.1.1','0.1.2']){
+ test(`Lavinia real v${from} to v0.2.0 policy upgrade ${ref.slice(0,8)} dual=${dual}`,async()=>{
   mkdirSync('.cache',{recursive:true});const temp=mkdtempSync(resolve('.cache/lavinia-upgrade-')),root=resolve(temp,'game');mkdirSync(root);
   const tar=resolve(temp,'host.tar');execFileSync('git',['archive','--output',tar,ref],{cwd:repo});execFileSync('tar',['-xf',tar,'-C',root]);
   if(existsSync(resolve(repo,'node_modules')))symlinkSync(resolve(repo,'node_modules'),resolve(root,'node_modules'),process.platform==='win32'?'junction':'dir');
   const fresh=resolve(temp,'fresh'),old=resolve(temp,'old');build(fresh);
   const oldMeta=JSON.parse(readFileSync(resolve(source,`releases/lavinia-v${from}.json`)));
-  build(old,{version:from,manifest:`releases/lavinia-v${from}.json`,sourceRoot:'releases/lavinia-v0.1.0/source'});
+  build(old,{version:from,manifest:`releases/lavinia-v${from}.json`,sourceRoot:oldMeta.sourceRoot||'releases/lavinia-v0.1.0/source',runtime:'releases/lavinia-v0.1.2/runtime.js'});
+  if(from==='0.1.2'){
+    cpSync(resolve(source,'test/fixtures/lavinia-v0.1.2-patches.mjs'),resolve(old,'patches.mjs'));
+    cpSync(resolve(source,'test/fixtures/lavinia-v0.1.2-install.mjs'),resolve(old,'install.mjs'));
+    if(readFileSync(resolve(root,'server/match/match/phases.js'),'utf8').includes('installDraftFacade')){
+      const {install:historical}=await import(pathToFileURL(resolve(old,'install.mjs')));
+      const before=readFileSync(resolve(root,'server/lobby.js'));
+      await assert.rejects(historical('install',root),/Unsupported installation/);
+      assert.deepEqual(readFileSync(resolve(root,'server/lobby.js')),before);return;
+    }
+  }
   if(from==='0.1.0'){
     cpSync(resolve(source,'test/fixtures/lavinia-v0.1.0-patches.mjs'),resolve(old,'patches.mjs'));
     const installer=resolve(old,'install.mjs');
@@ -31,7 +41,7 @@ for(const ref of process.env.LAVINIA_TEST_REFS?.split(',')||[UPSTREAM_REF])for(c
   assert.ok(readFileSync(target,'utf8').includes(from==='0.1.0'?"'AI拉维妮娅'":"'AI·拉维妮娅'"));
   const oldJournal=JSON.parse(readFileSync(resolve(root,'.lavinia-addon/install.json')));
   const policy=new Map(Object.keys(oldMeta.files).map(name=>{const path='server/match/lavinia/'+(name==='runtime.js'?'index.js':name);return[path,hash(readFileSync(resolve(root,path)))];}));
-  await install('check',root);const result=await install('install',root);assert.equal(result.upgradedFrom,from);assert.equal(result.installed,'0.1.2');
+  await install('check',root);const result=await install('install',root);assert.equal(result.upgradedFrom,from);assert.equal(result.installed,'0.2.0');
   assert.ok(readFileSync(target,'utf8').includes("'AI·拉维妮娅'"));assert.equal(readFileSync(target,'utf8').includes("'AI拉维妮娅'"),false);
   const nextMeta=JSON.parse(readFileSync(resolve(fresh,'addon.json')));let changed=0;
   for(const [name,digest]of Object.entries(nextMeta.files)){

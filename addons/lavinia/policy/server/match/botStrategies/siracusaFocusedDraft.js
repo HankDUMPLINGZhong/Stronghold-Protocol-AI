@@ -88,9 +88,9 @@ export function withSiracusaFocusedDraft(baseline) {
     purchaseItemAllowed: (m,ps,rec) => m.round !== 2 && (baseline.purchaseItemAllowed?.(m,ps,rec) ?? true),
     cleanupAcquisitions(m,ps) { baseline.cleanupAcquisitions?.(m,ps); opening(m,ps); },
     afterPurchase(m,ps,slot,before) { baseline.afterPurchase?.(m,ps,slot,before); opening(m,ps); },
-    bankRemainder(m,ps) {
+    bankRemainder(m,ps,{chessAllowed=()=>true}={}) {
       if (m.round===2) return false; // The one fund after upgrading goes to a refresh.
-      return bankRemainder(m,ps,{itemAllowed:baseline.itemAllowed,chessAllowed:rec=>draftAllowed(m,ps,rec)});
+      return bankRemainder(m,ps,{itemAllowed:baseline.itemAllowed,chessAllowed:rec=>chessAllowed(rec)&&draftAllowed(m,ps,rec)});
     },
     buyBonus(m,ps,rec,plan,counts) {
       return baseline.buyBonus(m,ps,rec,plan,counts) + (ps.shop.level === 2 && base(gdOf(m,ps),rec) === LAPPLAND ? 60 : 0)

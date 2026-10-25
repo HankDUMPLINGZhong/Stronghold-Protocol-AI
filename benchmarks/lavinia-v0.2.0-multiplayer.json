@@ -1,0 +1,2173 @@
+{
+  "schema": 1,
+  "plugin": "lavinia",
+  "version": "0.2.0",
+  "policy": "sha256:6e1831e5360a1b2aac972a930ce699262392b1e2283d8d46b4e4ad6883678625",
+  "suiteId": "coop-abyss-diversity-v1",
+  "suiteSha256": "b825f76735b4a48c4acdf76b42324f992a0c5e560a66b2466717c2a9d8c468ad",
+  "difficulty": "ABYSS",
+  "randomBans": false,
+  "rehearsal": 3,
+  "policies": {
+    "two": "coop-two-r7-core-pair",
+    "four": "coop-first-aroma-cash"
+  },
+  "metricsPolicy": {
+    "reachedRound": "Team highest round entered, including the failed round.",
+    "siracusaLayers": "Named Lavinia terminal effective Siracusa layers before elimination; all games included.",
+    "leaks": "Named Lavinia own normal-wave leaks before Unite.",
+    "uniteKills": "Counted Unite enemy kills attributed to Lavinia or her summons; no teammate/environment allocation."
+  },
+  "matches": [
+    {
+      "scenario": "siracusa2",
+      "seed": 80740,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 390,
+        "leaks": 14,
+        "uniteKills": 81
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 80756,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 9,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 94,
+        "leaks": 35,
+        "uniteKills": 9
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 81753,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 96,
+        "leaks": 33,
+        "uniteKills": 5
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 82385,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 90,
+        "leaks": 30,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 82731,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 464,
+        "leaks": 21,
+        "uniteKills": 2
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 82750,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 96,
+        "leaks": 30,
+        "uniteKills": 1
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83660,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 408,
+        "leaks": 36,
+        "uniteKills": 43
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83715,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 348,
+        "leaks": 32,
+        "uniteKills": 33
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83727,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 195,
+        "leaks": 38,
+        "uniteKills": 29
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83742,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 132,
+        "leaks": 36,
+        "uniteKills": 15
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84259,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 74,
+        "leaks": 31,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84730,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 60,
+        "leaks": 38,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84734,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 100,
+        "leaks": 37,
+        "uniteKills": 12
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84735,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 116,
+        "leaks": 27,
+        "uniteKills": 10
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84739,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 504,
+        "leaks": 13,
+        "uniteKills": 61
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84744,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 310,
+        "leaks": 38,
+        "uniteKills": 45
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 85726,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 60,
+        "leaks": 37,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 85737,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 72,
+        "leaks": 35,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 85741,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 368,
+        "leaks": 37,
+        "uniteKills": 8
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 86734,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 202,
+        "leaks": 37,
+        "uniteKills": 7
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87429,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 386,
+        "leaks": 21,
+        "uniteKills": 80
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87699,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 314,
+        "leaks": 10,
+        "uniteKills": 87
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87716,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 172,
+        "leaks": 53,
+        "uniteKills": 1
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87724,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 222,
+        "leaks": 79,
+        "uniteKills": 5
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87734,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 238,
+        "leaks": 54,
+        "uniteKills": 13
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87735,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 20,
+        "leaks": 27,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 88729,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 82,
+        "leaks": 30,
+        "uniteKills": 5
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 88730,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 56,
+        "leaks": 28,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 88732,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 52,
+        "leaks": 51,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 89691,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 7,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 14,
+        "leaks": 41,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 89708,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 0,
+        "leaks": 38,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 89819,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 9,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 56,
+        "leaks": 61,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90504,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 24,
+        "leaks": 51,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90720,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 60,
+        "leaks": 31,
+        "uniteKills": 2
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90726,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 74,
+        "leaks": 43,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90878,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 7,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 49,
+        "leaks": 37,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91583,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 60,
+        "leaks": 41,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91721,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 9,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 14,
+        "leaks": 38,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91722,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 50,
+        "leaks": 43,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91723,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 92,
+        "leaks": 26,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 92720,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 52,
+        "leaks": 33,
+        "uniteKills": 2
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 93622,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 68,
+        "leaks": 38,
+        "uniteKills": 2
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 94675,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 6,
+        "eliminatedRound": 6,
+        "siracusaLayers": 0,
+        "leaks": 24,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 94714,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 30,
+        "leaks": 35,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95700,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 424,
+        "leaks": 12,
+        "uniteKills": 79
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95703,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 353,
+        "leaks": 28,
+        "uniteKills": 57
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95709,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 200,
+        "leaks": 48,
+        "uniteKills": 18
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95711,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 54,
+        "leaks": 44,
+        "uniteKills": 7
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 96708,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 9,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 69,
+        "leaks": 30,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 97589,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 324,
+        "leaks": 22,
+        "uniteKills": 46
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 97704,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 193,
+        "leaks": 52,
+        "uniteKills": 7
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 97705,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 9,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 38,
+        "leaks": 28,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 98687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 8,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 66,
+        "leaks": 46,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 98700,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 84,
+        "leaks": 26,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 99455,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 20,
+        "leaks": 42,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 99687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 9,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 98,
+        "leaks": 29,
+        "uniteKills": 3
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 80740,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 324,
+        "leaks": 22,
+        "uniteKills": 57
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 80756,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 62,
+        "leaks": 45,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 81753,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 196,
+        "leaks": 43,
+        "uniteKills": 25
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 82385,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 16,
+        "leaks": 39,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 82731,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 290,
+        "leaks": 61,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 82750,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 350,
+        "leaks": 22,
+        "uniteKills": 74
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83660,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 82,
+        "leaks": 61,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83715,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 374,
+        "leaks": 25,
+        "uniteKills": 62
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83727,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 15,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "siracusaLayers": 420,
+        "leaks": 14,
+        "uniteKills": 74
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83742,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 68,
+        "leaks": 35,
+        "uniteKills": 1
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84259,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 410,
+        "leaks": 33,
+        "uniteKills": 50
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84730,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 60,
+        "leaks": 42,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84734,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 342,
+        "leaks": 21,
+        "uniteKills": 36
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84735,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 92,
+        "leaks": 56,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84739,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 58,
+        "leaks": 25,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84744,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 36,
+        "leaks": 44,
+        "uniteKills": 1
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 85726,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 304,
+        "leaks": 32,
+        "uniteKills": 52
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 85737,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 16,
+        "leaks": 48,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 85741,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 210,
+        "leaks": 59,
+        "uniteKills": 43
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 86734,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 364,
+        "leaks": 28,
+        "uniteKills": 219
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87429,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 490,
+        "leaks": 18,
+        "uniteKills": 244
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87699,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 122,
+        "leaks": 33,
+        "uniteKills": 8
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87716,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 58,
+        "leaks": 34,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87724,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 48,
+        "leaks": 60,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87734,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 120,
+        "leaks": 33,
+        "uniteKills": 1
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87735,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 42,
+        "leaks": 32,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 88729,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 32,
+        "leaks": 36,
+        "uniteKills": 1
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 88730,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 280,
+        "leaks": 24,
+        "uniteKills": 100
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 88732,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 0,
+        "leaks": 57,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 89691,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 20,
+        "leaks": 46,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 89708,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 43,
+        "leaks": 35,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 89819,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 252,
+        "leaks": 69,
+        "uniteKills": 31
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90504,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 94,
+        "leaks": 44,
+        "uniteKills": 2
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90720,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 174,
+        "leaks": 36,
+        "uniteKills": 6
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90726,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 52,
+        "leaks": 35,
+        "uniteKills": 3
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90878,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 149,
+        "leaks": 40,
+        "uniteKills": 68
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91583,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 98,
+        "leaks": 37,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91721,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 6,
+        "leaks": 65,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91722,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 40,
+        "leaks": 52,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91723,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 94,
+        "leaks": 55,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 92720,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 9,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 24,
+        "leaks": 48,
+        "uniteKills": 2
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 93622,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 382,
+        "leaks": 31,
+        "uniteKills": 29
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 94675,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 196,
+        "leaks": 67,
+        "uniteKills": 44
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 94714,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 50,
+        "leaks": 54,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95700,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 13,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 170,
+        "leaks": 39,
+        "uniteKills": 32
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95703,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 367,
+        "leaks": 23,
+        "uniteKills": 69
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95709,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 58,
+        "leaks": 58,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95711,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 74,
+        "leaks": 61,
+        "uniteKills": 3
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 96708,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 241,
+        "leaks": 30,
+        "uniteKills": 20
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 97589,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 86,
+        "leaks": 59,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 97704,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 393,
+        "leaks": 26,
+        "uniteKills": 54
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 97705,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 10,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 16,
+        "leaks": 34,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 98687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_3",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 200,
+        "leaks": 29,
+        "uniteKills": 97
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 98700,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 11,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 72,
+        "leaks": 34,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 99455,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "completed": true,
+      "errors": 0,
+      "victory": false,
+      "reachedRound": 12,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 60,
+        "leaks": 53,
+        "uniteKills": 0
+      }
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 99687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_4",
+      "completed": true,
+      "errors": 0,
+      "victory": true,
+      "reachedRound": 14,
+      "lavinia": {
+        "playerId": "ai_0",
+        "seat": 0,
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 472,
+        "leaks": 27,
+        "uniteKills": 27
+      }
+    }
+  ],
+  "rows": [
+    {
+      "scenario": "siracusa2",
+      "label": "二人：拉维妮娅＋bot",
+      "wins": 9,
+      "total": 56,
+      "reachedRound": 10.982142857142858,
+      "siracusaLayers": 147.98214285714286,
+      "leaks": 35.267857142857146,
+      "uniteKills": 13.839285714285714
+    },
+    {
+      "scenario": "siracusa4",
+      "label": "四人：拉维妮娅＋3bot",
+      "wins": 11,
+      "total": 56,
+      "reachedRound": 12.428571428571429,
+      "siracusaLayers": 163.375,
+      "leaks": 40.517857142857146,
+      "uniteKills": 27.410714285714285
+    }
+  ]
+}

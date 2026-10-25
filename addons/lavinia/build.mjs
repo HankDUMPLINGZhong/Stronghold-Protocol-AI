@@ -31,9 +31,9 @@ export function build(output = resolve(repo, `dist/AI-Lavinia-v${released.versio
     put(`policy/${path}`, text);
   }
   policy('server/match/botDevelopment.js');
-  put('runtime.js', readFileSync(resolve(here, 'runtime.js'), 'utf8'));
+  put('runtime.js', readFileSync(release.runtime ? resolve(repo, release.runtime) : resolve(here, 'runtime.js'), 'utf8'));
   if (JSON.stringify(files) !== JSON.stringify(frozen.files)) throw new Error('Frozen output hashes differ');
-  for (const name of ['install.mjs', 'patches.mjs', 'README.md', 'CHANGELOG.md', '安装插件.bat', 'install-windows.ps1']) copyFileSync(resolve(here, name), resolve(root, name));
+  for (const name of ['install.mjs', 'patches.mjs', 'extended-host.mjs', 'README.md', 'CHANGELOG.md', '安装插件.bat', 'install-windows.ps1']) copyFileSync(resolve(here, name), resolve(root, name));
   copyFileSync(resolve(repo, 'LICENSE'), resolve(root, 'LICENSE'));
   writeFileSync(resolve(root, 'addon.json'), JSON.stringify({ ...frozen, sources, files }, null, 2) + '\n');
   return { root, policyFiles: seen.size, policy: frozen.policy };
