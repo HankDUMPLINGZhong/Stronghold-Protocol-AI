@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { multiplayerRows, multiplayerTable } from '../tools/release-multiplayer-report.mjs';
 import { laviniaRows, laviniaTable } from '../tools/release-lavinia-report.mjs';
+import { zumamaRows, zumamaTable } from '../tools/release-zumama-report.mjs';
 
 const game = (scenario, seed, reachedRound, lateranoLayers, leaks, uniteKills, victory = false) =>
   ({ scenario, seed, reachedRound, completed: true, errors: 0, victory, arturia: { lateranoLayers, leaks, uniteKills } });
@@ -29,7 +30,7 @@ test('published multiplayer rows reproduce the complete named-teammate samples a
   assert.deepEqual(multiplayerRows(report.matches), report.rows);
   assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['arturia2', 22, 56], ['arturia4', 18, 56]]);
   const table = multiplayerTable(report.rows);
-  for (const path of ['README.md', 'docs/strategies/laterano.md', 'addons/arturia/README.md', 'benchmarks/arturia-v0.2.4-multiplayer.md'])
+  for (const path of ['docs/strategies/laterano.md', 'addons/arturia/README.md', 'benchmarks/arturia-v0.2.4-multiplayer.md'])
     assert.ok(readFileSync(new URL('../' + path, import.meta.url), 'utf8').includes(table), path);
 });
 
@@ -40,6 +41,18 @@ test('Lavinia release retains both complete corpora, personal metrics and reprod
   assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['siracusa2', 9, 56], ['siracusa4', 11, 56]]);
   assert.ok(report.matches.some(r => r.lavinia.eliminatedRound < r.reachedRound), 'early eliminations remain included');
   const table = laviniaTable(report.rows);
-  for (const p of ['README.md', 'docs/strategies/siracusa.md', 'benchmarks/lavinia-v0.2.0-multiplayer.md'])
+  for (const p of ['docs/strategies/siracusa.md', 'benchmarks/lavinia-v0.2.0-multiplayer.md'])
+    assert.ok(readFileSync(new URL('../' + p, import.meta.url), 'utf8').includes(table), p);
+});
+
+test('Zumama release reproduces both full corpora and attributed Unite metrics', () => {
+  const report = JSON.parse(readFileSync(new URL('../benchmarks/zumama-v0.1.0-multiplayer.json', import.meta.url)));
+  assert.equal(report.matches.length, 112);
+  assert.deepEqual(zumamaRows(report.matches), report.rows);
+  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['zumama2', 18, 56], ['zumama4', 13, 56]]);
+  assert.ok(report.matches.some(r => r.zumama.eliminatedRound < r.reachedRound));
+  assert.equal(report.matches.reduce((n, r) => n + r.uniteEvidence.length, 0), 494);
+  const table = zumamaTable(report.rows);
+  for (const p of ['docs/strategies/sargon.md', 'benchmarks/zumama-v0.1.0-multiplayer.md'])
     assert.ok(readFileSync(new URL('../' + p, import.meta.url), 'utf8').includes(table), p);
 });

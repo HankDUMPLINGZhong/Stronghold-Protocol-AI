@@ -1,0 +1,1591 @@
+{
+  "date": "2026-10-26",
+  "scope": "Execution-only migration of previously adopted Sargon recipes to common computation API 1, runtime 1.0.0; deterministic lab replay, not wall-clock speedup or extension win-rate evidence.",
+  "policy": "sha256:9b7027843e05be7d98b3809cca7dccaa3f8eac8803bcfd275aa0aa6c3dbbdd21",
+  "sharedRuntime": {
+    "api": 1,
+    "version": "1.0.0",
+    "files": {
+      "cache.js": "3f74451cf5f986154cd7ac1a594f7ba4852d1f634ac3773a71d7bbec7f903b4a",
+      "forecast.js": "ba87a7d9b2a29eb43f481a770a00541a3c3ec29618c39d704adc5d21cfa161be",
+      "identity.js": "bcf0c139810af617f663f2bb133ab62546896e90d6b90ab77cfc1b4b03b968a7",
+      "index.js": "8587dd8f46d2b15c0e3b1728736c5e0cb6ce2b1f66f07ec1abc68a9bfd5ed397",
+      "ordered.js": "09ba03993262156650c2d3d1e65b0c636061a349cc984f982a43cac37cb76923",
+      "scopes.js": "6c1534acc4e1d8258e6d4fbeab56f94c3748819b17275dfeffa8533767250ec3",
+      "workerThread.js": "66e05460fb688c305dd6770dda3f428d3ba07e9535c16348a319d6da156160b2",
+      "workers.js": "052f2bdebc48c40dcc24ea325771655185d12bf69875cfcd4371c23802752389"
+    }
+  },
+  "complete": true,
+  "groups": {
+    "solo:HARD": {
+      "n": 28,
+      "wins": 28,
+      "exact": 28
+    },
+    "solo:ABYSS": {
+      "n": 28,
+      "wins": 15,
+      "exact": 28
+    },
+    "coop:2": {
+      "n": 56,
+      "wins": 18,
+      "exact": 56
+    },
+    "coop:4": {
+      "n": 56,
+      "wins": 13,
+      "exact": 56
+    }
+  },
+  "allFieldsExact": true,
+  "fields": {
+    "solo": [
+      "summary",
+      "rounds",
+      "battles",
+      "actions",
+      "specs",
+      "upgradeChecks",
+      "prepStarts",
+      "supportSnapshots",
+      "factorHistory",
+      "events"
+    ],
+    "coop": [
+      "summary",
+      "preps",
+      "battles",
+      "actions",
+      "picks",
+      "specs",
+      "upgradeChecks",
+      "factorHistory"
+    ]
+  },
+  "sameOpeningControls": {
+    "HARD": {
+      "n": 28,
+      "wins": 2
+    },
+    "ABYSS": {
+      "n": 28,
+      "wins": 0
+    }
+  },
+  "matches": [
+    {
+      "kind": "solo",
+      "seed": 26745,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26473,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 28882,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 27884,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 20906,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22388,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 20929,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 20923,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22459,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22790,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22769,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22788,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 23881,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22837,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22922,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 25894,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 24808,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 23873,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 24924,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26865,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 25864,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26203,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26760,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 29861,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26832,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26871,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 20923,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26915,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 27915,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 27915,
+      "difficulty": "HARD",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 20929,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22769,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 20906,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22459,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26473,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22790,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22922,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22388,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22837,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 23881,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 23873,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 24808,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 25864,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 22788,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26760,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 25894,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26745,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 24924,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 27884,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26865,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26832,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26203,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26915,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 29861,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 26871,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 80740,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "solo",
+      "seed": 28882,
+      "difficulty": "ABYSS",
+      "players": 1,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 82385,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 80756,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 82731,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83715,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 82750,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 81753,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84730,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83727,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83660,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83742,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84744,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84259,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84734,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 86734,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84739,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87724,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84735,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 85726,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 85741,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 88730,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 85737,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87429,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87716,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 88729,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87699,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 89819,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90878,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87734,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87735,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 89708,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 89691,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 88732,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91723,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90504,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90720,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91583,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91721,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90726,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 94714,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95711,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91722,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 92720,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 93622,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 97705,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 99687,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95703,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95700,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 94675,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 96708,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 97589,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95709,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 98687,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 82385,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 98700,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 97704,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 80740,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83715,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 99455,
+      "difficulty": "ABYSS",
+      "players": 2,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 80756,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 82731,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 81753,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84730,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 82750,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83660,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84744,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83742,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 83727,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84259,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84734,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84735,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 86734,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 84739,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87724,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 85737,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 85741,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 85726,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 88730,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87699,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87716,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87429,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 88729,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87735,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 89819,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90878,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 89691,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 87734,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 89708,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91723,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90720,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 88732,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91721,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90726,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 94714,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91722,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 90504,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95711,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 93622,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 91583,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 97705,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 99687,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95703,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 94675,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 92720,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95709,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 97589,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": true,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 95700,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 98700,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 96708,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 97704,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 98687,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    },
+    {
+      "kind": "coop",
+      "seed": 99455,
+      "difficulty": "ABYSS",
+      "players": 4,
+      "clear": false,
+      "exact": true,
+      "different": []
+    }
+  ]
+}

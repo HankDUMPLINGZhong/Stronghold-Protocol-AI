@@ -31,3 +31,30 @@ for(const [i,d]of ['HARD','ABYSS'].entries()){
 assert.equal(results.totalMatches,224);
 assert.deepEqual(Object.keys(results.matches).sort(),Object.keys(expected).sort());
 console.log('Verified: 56 fixed cases, 4 complete variants / 224 results, outcome-blind selection; Laterano28/20 and Siracusa28/12.');
+
+const zsolo=load('zumama-v0.1.0-solo.json'),zcoop=load('zumama-v0.1.0-multiplayer.json');
+const zcontrol=load('zumama-v0.1.0-same-opening-controls.json'),zvalidation=load('zumama-v0.1.0-validation.json');
+const coopSuite=load('coop-abyss-diversity-v1.json');
+assert.equal(zsolo.suiteSha256,results.suiteSha256);
+assert.equal(zcontrol.suiteSha256,results.suiteSha256);
+assert.equal(createHash('sha256').update(JSON.stringify(coopSuite)).digest('hex'),zcoop.suiteSha256);
+for(const [i,d]of ['HARD','ABYSS'].entries()){
+  const seeds=suite.cases.filter(c=>c.config===`solo:${d}`).map(c=>c.seed).sort((a,b)=>a-b);
+  const own=zsolo.matches.filter(g=>g.difficulty===d),control=zcontrol.matches.filter(g=>g.config===`solo:${d}`);
+  for(const games of [own,control]){
+    assert.deepEqual(games.map(g=>g.seed).sort((a,b)=>a-b),seeds);
+    assert.ok(games.every(g=>g.errors===0));
+  }
+  assert.ok(own.every(g=>g.completed));
+  assert.equal(own.filter(g=>g.victory).length,[28,15][i]);
+  assert.equal(control.filter(g=>g.victory).length,[2,0][i]);
+}
+for(const [scenario,wins]of [['zumama2',18],['zumama4',13]]){
+  const games=zcoop.matches.filter(g=>g.scenario===scenario);
+  assert.equal(games.length,56);assert.equal(games.filter(g=>g.victory).length,wins);
+  assert.deepEqual(games.map(g=>g.seed).sort((a,b)=>a-b),coopSuite.cases.map(g=>g.seed).sort((a,b)=>a-b));
+}
+assert.equal(zvalidation.complete,true);assert.equal(zvalidation.allFieldsExact,true);
+assert.equal(zvalidation.matches.length,168);assert.ok(zvalidation.matches.every(g=>g.exact&&g.different.length===0));
+assert.equal(zsolo.policy,zvalidation.policy);assert.equal(zcoop.policy,zvalidation.policy);
+console.log('Verified: Zumama 168 exact common-runtime replays, solo28/15, co-op18/13, same-Pepe controls2/0; complete frozen seed sets.');

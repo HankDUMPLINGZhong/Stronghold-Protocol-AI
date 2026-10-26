@@ -1,0 +1,1635 @@
+{
+  "schema": 1,
+  "plugin": "zumama",
+  "version": "0.1.0",
+  "policy": "sha256:9b7027843e05be7d98b3809cca7dccaa3f8eac8803bcfd275aa0aa6c3dbbdd21",
+  "suiteId": "enemy-diversity-v1",
+  "suiteSha256": "c2783d182e3287bdc952bd2b1c9ccf7535c16ba04ac64ed78189cccacaf35fda",
+  "randomBans": false,
+  "matches": [
+    {
+      "seed": 26745,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 171,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "25a88f586face18019a3b764ec7d673c50f18dc06c04ff43e24412690606eff7",
+        "rounds": "5f44c064ab97aebf92042f6b6503c8f6f4cb7ebe566fbc7baa4dfc703eb0fc00",
+        "battles": "d6daf2194637e5ae71db77c5dc217f971fbdee17b15294807c475b533dec0b35",
+        "actions": "9c764dec5bc729c0688160609e8510a153f339310684d08fa9b6df46c9e703fc",
+        "specs": "5937828f4aafe72856c921dd3d0a92f94c9d716290489ab1425952a47b25cc77",
+        "upgradeChecks": "8d4caf6ea95c8f5154516c9fff6f3e9fbc5ace6ca7236db9d136148168b3beb2",
+        "prepStarts": "564e228c87b2a4013519ec8159957bdf5aa444cd90696a879bb3ebaf017710f4",
+        "supportSnapshots": "1e984c7aecd1cc4f609190f7b78b33c16829cbe0add66c1abdac5a115ff292cc",
+        "factorHistory": "db71c774c90258683ce0ad318e795342ec3df3753e5b45cef6a69cc6335de34b",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26473,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 168,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "a7fabb648636c0d984ecf5b04abc04d6dcb1e33ed5141fad4a561054f3b5bc1b",
+        "rounds": "55b1d1d6fc2cc9d2d812308b774a39ade5b08392a75d9bebebaf07fce1e187e8",
+        "battles": "729ebcee81278de340859a249ba2991b09703743abf1729406e651522134c762",
+        "actions": "7c7e4fb582603c1fdaf8a87fa84cc35a06db0ff9a04c6a180543420a28a8d5a0",
+        "specs": "55e773ded0830cc3642a74c80691d269ee53ccca2e35266f6317e3aa39f33d35",
+        "upgradeChecks": "6177f294356e67bf3b9a25f0dbf80afdcca8c5435bc97942d6c7c874d2816c9b",
+        "prepStarts": "38812e38d44e6efeefd1737b93d0510d9cb5225034eac0c6b88cd93c49b5b5f7",
+        "supportSnapshots": "0c3bc9184f3992309adca19fad71b96ac4fd081db443bc8c52f4fc871b0069f1",
+        "factorHistory": "6eebe1bef4614fc722fda62f23d75b3de6a442080392f8ca9000dfcc3789295e",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 27884,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 146,
+        "leaks": 16,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "4a0f09a49926d3d393f401497c470c36cc6dc237579b241848b5ea4165e9f5dc",
+        "rounds": "6193eb893701dd6c09806d6c1e555febd98ba8b551499830c1892c99131e0e4b",
+        "battles": "1de6e4c5d67bfb2f26eea7b8e5891fb078ddd0138a8e122dd2ce3525d7346800",
+        "actions": "dfee41aeac52db068830b2d74f0bf9fffc0316bdecd276e0f2fae6ae283f5f46",
+        "specs": "9dfb36fb7c6426c6ebb9eb4391406136ed4dbe30cfd254624b165553e5529734",
+        "upgradeChecks": "e66eca2c2563f8e234a582402550fe06665c6ea13be91f99c3bccdb3bd75f5e7",
+        "prepStarts": "7bf9af5879f1f39ab36050d2b8f98970d6c9f225a6046a64acf48ec6f3cddcc0",
+        "supportSnapshots": "7f55e58afa16a5e01e31b31df95929ca33e2fe4b2ac6cbab945dea106ea6fb54",
+        "factorHistory": "330b37fd33a0b8816d154fdd2aff85d64f6788a5f5357767a7d2989915831534",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 28882,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 204,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "4417c515e12b8583c54a2806ea23e6754d232c5871eb360909d4d9e7d262b91f",
+        "rounds": "8acc2b01c916b2b24b5c951f6db53e15fd2590fd449bcd89c58536710759304f",
+        "battles": "b9bb2df3411ae2870ae4831ce73c8678cd15489b435be5353fc58fd036c0c840",
+        "actions": "8629a17adebfb99c7fcdd60427b4391d18d40b685b9014082be45156cca83eed",
+        "specs": "db9a4cc1e58561c3a1778f0a43225ca6cf103a7033efb4caaaffab927f52da90",
+        "upgradeChecks": "5bf1d785b2a0287d574b66cd6fa5b6f9fba7fd00d424f056e832911463db961c",
+        "prepStarts": "94b1bbf4fa406c84b2fe0ca7d5b97fcb8d09697230b013ec1572ef76b326a777",
+        "supportSnapshots": "813ebe6b69934abc89492e87ed37c4c3fa7758c6b1f4a7f5f087b5b80db9f518",
+        "factorHistory": "16e6a697ae6a775ef71b4d7e77c86ae7130ef84c2c245aa839e0549374c31559",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 20906,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 181,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "ed182822a52df673608ad8a710dbd54825c7088e079bba927b46c516f4c2ace3",
+        "rounds": "d9d43a7d146e7311d44d1ceb3df173b0d03ae860448202f6302542e4cfca1d09",
+        "battles": "68d8a00dfb19ee9b883526b5ea36a7677c338b9b452517330aca2b6ac8808886",
+        "actions": "7c90a536e7f99edc3389a205c251cd4a9374fce223456d0c1cbedd509e11ce15",
+        "specs": "36777b9db5cbf8916911381014fd34b9dde3d7093cb07de20857f373fa6181fe",
+        "upgradeChecks": "cc68563031388e0bb1c1be2bab54d60b1ce81150292383c5af4c2828e8e7354e",
+        "prepStarts": "2d0cb65644f3f3eb1bf1d0c4485a9097657655eac3aa414fdd468374071b76d7",
+        "supportSnapshots": "eeee18894352b6cf63031f9bbfa3f37c8a3ad6b5c5368114909a168b6b2feee6",
+        "factorHistory": "549c4366a7dc5b6535287d1e725b730e04346973da44ddf20acf26294b34b437",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 20923,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 146,
+        "leaks": 15,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "0085b2a0576a717a55b3c9699abe7d924ec5cf4f331b1217dc6a771494d81987",
+        "rounds": "6e7b9614bac490ca4f1619c5bea21292b5bb99fcf3cd49273f0b5e04a3fbf3f0",
+        "battles": "18197416a67970bbc5d530b08da0de443bf2723dac8ba0a4c08a4e3e61f055d9",
+        "actions": "f6695427a54a2ef1e5a20c1afee935ae88337259a3f13c714860bdaef0d32232",
+        "specs": "08637adb41000fa339ace35c056bf23e097d0d13aa72537a8ed4c58d6f8534c2",
+        "upgradeChecks": "1e80a416bf6d0fd79ac0240e3085d8f1c491c6254baf2d1411e168566f5e8712",
+        "prepStarts": "f6cb5075b050be4a072bf0d9d4ba5cae275ee200228d4cf3e602949f2a5c43a7",
+        "supportSnapshots": "7f378f298e66819ec52f6d492ef19ec3434baaf76d913ffc8931c9e07aebcaa9",
+        "factorHistory": "bbbb3c4c567058f0f8d96f7c6841c0c620b408636a278d83a2b4da7e32d12401",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 20929,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 134,
+        "leaks": 4,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "de752ccc5de9a0f7804467e95603aa257b69acaab187c78db5c6a2d917190f64",
+        "rounds": "911ebeb3c7d947e6e04ad8a881400e3602f7aa390c02aec42a983644c765a09a",
+        "battles": "9fb501d9645ce744bb0d83eaae81b63e19ae1128b10f0be558ab9d8cda2e4d91",
+        "actions": "84f45226b1b9df5bf782f7446cf595ce8a645356ef336af3b1b3fa6ee6382b71",
+        "specs": "9cf961887a970bccc6545bb1e6cf32300b14e1b251cc7e11caa244fb84d399c8",
+        "upgradeChecks": "65e002da494c69efa9cf5fceddfd044c8ea1afc36bc2e104d6e543e1bef1561d",
+        "prepStarts": "a3b7c9d381dc0f658c1a760fa0a6b9306ad1880f516ca05c6c4905da25b79d69",
+        "supportSnapshots": "2b54667934d442260bf1ac2188a71a91e94b3d41ba1a9b1732c58dfcbba77f1c",
+        "factorHistory": "ab841debc3991d00558c9c9ad0ded81a5f9635bf66f0340c66f33a58a21d6709",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22388,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "zumama": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "sargonLayers": 246,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "94714329eb82926c8118678e01548b1a952a0306570a80e077afe3c9543acc28",
+        "rounds": "72b6826eb59910ff82ea9c11727b68ff54c8aa03854f92fa73abee1d8cda5fc4",
+        "battles": "a9b6240746fbc6245ef56984a67109fa305ae15ed2163805b1880f4df7237e67",
+        "actions": "0ede587abd0b4e291d3a6148e3d70d642393382bd8d7a49840c0a68ea579ac14",
+        "specs": "d007e9fef0d9cf90a6b944362d93804e759b7cc1c510265490f847700cdc304c",
+        "upgradeChecks": "d7708dfe3a4ba2930a96cceea202ce40fd644b5233de49e17c2e3f8d96bcecef",
+        "prepStarts": "431d2daff028faaf2ad378941f68605cbbe0e496ebbe98d60c0f37ba81da2793",
+        "supportSnapshots": "c73132f7d3bf9d7d76b7c23acad286122778c5e805820f8edf069fc012c3b6bb",
+        "factorHistory": "fd15751bbf2d9e8e08ec56efc535ecc7c9a425136cee7487d3d08bf5908c5674",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22459,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 190,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "9f26e229c9b6d174e1dacda0d2ed835abe0b0cc0e6ae3f487197ae057548b4f9",
+        "rounds": "aba3dd65f48feac5f0e513c8d8886425bb45f449313d8dc990f28d0decefb766",
+        "battles": "40aa827ef112e0ce9e776dc0242f80600d22c073d4b85334de5c7666c9c40ada",
+        "actions": "da0f8516a2c3c821e13cb46d3f799bba1662669a7f762cc1364d2445685b1e74",
+        "specs": "7721109c0b679776b70f067c09aca0763d6555270293c2a7152e29a399a60d23",
+        "upgradeChecks": "3094acaeb002bfe7be257a471d99c32692a930c3f2b16ef96587363258ee3ba0",
+        "prepStarts": "50420971c41e5fedbf33ea702423a31f1b4f068468531f96b3fc13f494d404ba",
+        "supportSnapshots": "5e06141613dcd27b702d1f7333ffde83da8d3cd97d925ef8d578d4e666359fea",
+        "factorHistory": "dce2a0828de95944d26a7334841a7f4cbcada9461510e8341f84c3d711cb631c",
+        "events": "1e7c66b6ceb8ffff2b89af0951aabfa5b2c7b5dc9a2f6efb2a1cd3e2c2cb1b9a"
+      }
+    },
+    {
+      "seed": 22769,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 157,
+        "leaks": 3,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "089a8cea65111f420fac37d536941f989a3a5a3f3b7bb1e9f423e7a221f34528",
+        "rounds": "4f34044fb6c2242137227a88b975363453bd77b7a1dc1c0377cffca08a44e3c3",
+        "battles": "c38e82e28dc6a88756b25d2a87b0ce8e5664087b2098ebe4d8831e321768e50b",
+        "actions": "c77cc57ea080da50d40599b01d2d96c9388b23e21b1027f003855a3a6325f8d1",
+        "specs": "c0fcad30d38fc64496598a0afce35b7ffdce54bf23f56d0711fc5a02fd546a72",
+        "upgradeChecks": "9953b438ce71aa5088cbade8a60909b572b6ee32fec98f9563c792dccb6f2a19",
+        "prepStarts": "075e90625aa31dae6a50bb2e66dc86af9bb3c989b932b577955041f7090098a4",
+        "supportSnapshots": "63ecbb3e3f022c2d0ce340f3a024f41b6adf8e23d73424b4bdbe188f6e19e157",
+        "factorHistory": "ecbb76d3e85e198a831e881dc3146c037ad3f9ff84051564450ac60cbe317df0",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22788,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 210,
+        "leaks": 2,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "1ddb224417d45fed0fcbdfe2cc9b51f487d7d740155ab2e4ba9e119c6ed5c070",
+        "rounds": "af1d77f6629241e10767f9061047e57ab8568362bbc51f1abcb066d9e5d355de",
+        "battles": "ce51fdc119136ca8370419eafaf61aad8f2d57e50ee341e84d52298f73c4e854",
+        "actions": "c960e3da3b8afb2c243c331cd1925900ec7fda1101524eeaf8109f625fd35516",
+        "specs": "514ce7377c988d8a2f36db971b80dfcafa6f4201ef840a04cce76d4c07d9fa90",
+        "upgradeChecks": "f763f8dfdcabb39dfe494a5f472685e9f56447450bf88c46f7703312c314b11e",
+        "prepStarts": "e8a0dc66cb06789d2a9a4383550f0167f7855f63a69b8776397060c0e922e638",
+        "supportSnapshots": "936fa047b0670ebef66977f46b14a83f308144bf4753f2f9f9cb6d373dbb1c31",
+        "factorHistory": "153370b6c0839d5feb284853f20a8ac101c8189a8c07baa2edc11e3c7d4f57a1",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22790,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 161,
+        "leaks": 1,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "d290010c917b1a42e4ad0c102299005ccaac9683ef26ecc7457b63d5d1831dd6",
+        "rounds": "906492947c43b05efa782a64b0169fb260715b2739f568bdd9406802723ec487",
+        "battles": "dbc2a1cef14de748ab3c847f52869d9110fefe814d85b3c975fa48c7bc0128be",
+        "actions": "2e930ffcdd92b9c5e4a5280cb84bc6c15ff2ca0e7aa2ca8662063467f7d3d779",
+        "specs": "fc802998f2d48399f7c1bef9575d9059b1f97880b516d890a9883808732eca80",
+        "upgradeChecks": "dcc7eda4a47922ad48351a689e852121314a3a57f46aa8a85fbabacbd4604922",
+        "prepStarts": "fa61d0966a04b24a0221940d11f7b55b130fbd6a5dc4465efa2eccc32575f988",
+        "supportSnapshots": "3ffcba544292c1f9716e85830dec8e6e27fceedfe8570069fb9bc29e28777f92",
+        "factorHistory": "153fafd3b91c2fed010e6ffbb36873f8a91c04acf52670c5c7126489e59aeed1",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22837,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 184,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "ef8a259aab2d70fcabf65d01fa889aa393913cc079a38e61f3df7e2980bd7ece",
+        "rounds": "04ff512abdeaf5da5792b9c79307cc176f26eb2514aa294c7f610bc73cf5a1ca",
+        "battles": "610de6ae92390bd042f79627fb130d3196857f62d95b083371dc3eb85c0f2b35",
+        "actions": "646c44454c3154dc45af1cd496b08f4fbeb0c2ec5e944954fde64eae9a7f3903",
+        "specs": "ebbbcf5a1c8fdbfa0ab864b0f36db40501aa2ab515200aa4f4a4ead047b9c110",
+        "upgradeChecks": "122e0bb5d1adbcb57a56a35d0574dc519fbb43b7ed3f9da1c0b498f726daf55c",
+        "prepStarts": "656377de771ce4eb1190c88824b0db2ad23f25888b0cfbf405f4d4db4267efd3",
+        "supportSnapshots": "9cfb916bde4c416c1d08bbb0ea362e7df6febdbdd597c0987f1f66ebb4bbe126",
+        "factorHistory": "58025f68ed5d0b21b3536749cee214b931fa0030e6d589fbee354ef4d53407af",
+        "events": "3106c50f2b001e86859cc7bf3081a07266e8be9f4cfb3a8c7b9f214874b1577a"
+      }
+    },
+    {
+      "seed": 22922,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 163,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "ed6ba50ef903339fb017f106d76faa6239233425bb3f7f35ae2da7e195a2e612",
+        "rounds": "767106320af383486b538a04a2c9701c4ab4626f9d76db9da29b373d5d314ede",
+        "battles": "2276df2999958856dbe451fb9e0d778b23ba89be2211db823afc6544c9ac1554",
+        "actions": "0537ffb03940cb1cbe6c49c93b7e850ca4d3e1c0ecda7749633a24afa8b96e8b",
+        "specs": "b39aaae4a7dd773c344bdb7bfb1e6154bfba2d8c180176901d9af8cdb2befd2a",
+        "upgradeChecks": "c4031f8b0f0304c9ca1a8b9acd9290e123cfcd67a649a8cf243e4b75947f846b",
+        "prepStarts": "36fba8666f20d0ad1c8fd79e5d7cd9683baa125a6a819db5683e8fa048d25ad1",
+        "supportSnapshots": "35d8a9d34f6aed7dfe4cea0ddb0dde4d0f41815d914b5047ae9b441919867065",
+        "factorHistory": "559bcaf49a8b502e23e720168644bb179f6224d875c57bf62adea34c0fcb1f17",
+        "events": "3106c50f2b001e86859cc7bf3081a07266e8be9f4cfb3a8c7b9f214874b1577a"
+      }
+    },
+    {
+      "seed": 23873,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 201,
+        "leaks": 2,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "036630dd4f53d3e4c926b21704f44c285ae1482b613e7dbbbf731181434a5285",
+        "rounds": "927e993db76c35508b62470815b38b6ec9b882ebad3bbe83f67b033474fc9211",
+        "battles": "cea329151b5dcee370edf3778bbf63491b417001b42d88e284da249125d6902e",
+        "actions": "a9bb73aaa5570635b80b6629fa15c8e06d166a6ddda4b707e8e8471b23ac925a",
+        "specs": "bf9c3ed1994a8919267d929d438ea362cffbfb85ad6cb5657dfc5fa14abe93cc",
+        "upgradeChecks": "9ef3550456f78e5deb24a7b19ef3ea9db19234ae501af211a93f9aa8a833ed3d",
+        "prepStarts": "fdf6cb3e7881d56bb0a72c843d0900143271a07deeb467d9509a2d5698d2225b",
+        "supportSnapshots": "b5658f8d671be00df7e2ac99e0819723cbce0259590e9be932901234192821e4",
+        "factorHistory": "fc9492c2e158be810aa445f33562d0c9b6340ad55379e7bcdf712f63e092bdf4",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 23881,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 143,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "3b28e9722cb189ae22f1d2665c90fa1160c5b776f8f41633c367505390e7b8f0",
+        "rounds": "e8b93a57238bb851ec498c0da6c8b7deeae98ceb984800e5f3ba21977c9af402",
+        "battles": "523007a0d79d1506b55623419ac5ba4f21c71a00c0a0f13a95dd7bf3fb7a9926",
+        "actions": "1c40e81201f6a1f222f03f91a2c2df46e849eac4902d941be50284726550d8c9",
+        "specs": "ff62acc616c2324e3554bf6ef1395a182acb25e2c3c7f4975f2318c375ed8f05",
+        "upgradeChecks": "40044a00fedd74fd3ff8532f4d789ef738d05f3b2fd06fce74820b448db08e7f",
+        "prepStarts": "608bb136a034ca07bab2965cc578ecc9c26d21dc998870ffe7c500e61ca5da2a",
+        "supportSnapshots": "9a59819529e797ae4d8fa1cf1103435c04fc2d3dcd2be4ced5d3e6ec2cfead00",
+        "factorHistory": "88451b7261b8e4ed4e02ec6281e56bf9570d4975ef254c50995d87722696dee8",
+        "events": "f1c9576fbad5802ea396eee69c90397303e0dbd53c038b9deafffe365d41e786"
+      }
+    },
+    {
+      "seed": 24808,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 153,
+        "leaks": 1,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "9b3c336f0eca9d8f673ebf971bf521320edc83f61c0c34d60eda1337a64f4bcd",
+        "rounds": "72ae619d845ca7182adb05fb2239c6abee31f8e8c73728246ce16395b0660386",
+        "battles": "3d76b7316a28539e68a60e0b2c6a0df3a2de8d2916a93d393e4dac0667761ff4",
+        "actions": "c250b9fff72c95b1043c1c81b2834af5123401f51db7d4d9aabc362efd24f4a3",
+        "specs": "67c786dfa759c42f19b72bf41505d6794c4ee771f4108128f61efbcf1869b00d",
+        "upgradeChecks": "3edc0b55ca44599596fd3698379c1603f95b38f1cba307e2a7350abc02120f7d",
+        "prepStarts": "04460d354d38c4def2bee1b9f46db7bb794ad3e6cde948d6641baf36db8f4e89",
+        "supportSnapshots": "d0711a1955db31f326078328a73f652226221fe35cdf8a0d560f882cdcd292d9",
+        "factorHistory": "bbf57b9903e057043d605fe03580f799e183c57852e7ad897ab98fad4af67b74",
+        "events": "f8794fba814af288ff8b7bd800438fde331b9edf49905ec6cb73a7868383daf2"
+      }
+    },
+    {
+      "seed": 24924,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 123,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "2d6e13b54991eba8b05255558f7cefc7b46e0130d201f5b85c068aa200dc8d2c",
+        "rounds": "14fbf17acd5a6c20cd3afd6d198cb17d0b44dd63ee6c94d6183c06692cb7df98",
+        "battles": "14f7f2166c724a7fadc23a53429c61fe2b3f4f88d2d904d85b7285026485b14d",
+        "actions": "ac96e49b63124d678102a570ca1fa3816a96c023673de421aa1d0b76f2265ee5",
+        "specs": "4516f57f40315605cfdc4b4ac78aa7f6a9cb3d7b483327cc73c1a50aedfadedf",
+        "upgradeChecks": "b5c58b941739d29532483c6aa66667cf9885cf64e46930293b8d575c187c0ecc",
+        "prepStarts": "cd6fefd9916b207a975dfe092b76a6cf5e5c4479026a652d9dbc3c860aaedc64",
+        "supportSnapshots": "c60dd10346b0e1680ddd30f362349daccdbe4f7b5cfc2dd444404a3c6e3ae778",
+        "factorHistory": "aab3413dd99ccdb379fd0777e652d941a9ea9f134eb4b3c0bf73ab32e51cae71",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 25864,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 210,
+        "leaks": 12,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "e6eec757b64a2c80b4b07e6af6642193f4bb520a52af4354ee7d60e843e92111",
+        "rounds": "e9f2d6792a4b04d5f8bf09dd50e07380aee990da2309607f145abf92c01cd8bb",
+        "battles": "9e02d283e4f26e2eb4ce1a0236a23a1d666dcb685d9b9aa831293b7772abb2dd",
+        "actions": "457ffbc2f6a28e9575182028fc45835a4bdd993137d9bf821471056c0960e32a",
+        "specs": "ba614f1ed2446cf55827ea36fa2e357c0c90dac1fa94c54bf28a3ebfafdbdad1",
+        "upgradeChecks": "ca2dfd441c3542ccc339ac302eb83d6d292f8b1874cbc1e8002a0d0db0cbe93e",
+        "prepStarts": "3155dbb62d215fce40514c4d68abd2567dc610a6f48ed61d7726cc15ea1523cb",
+        "supportSnapshots": "dd8a8181e9482f94e7b80f9698f26beb9a82f2cb4c896cec913677006fc1699c",
+        "factorHistory": "f2a77f5de8d3cb2ea5a0807bdb47e34cec63bb1907bec1f0ae2b09072458b763",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 25894,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 178,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "b7eaca869ebf72673cb088ffe2043322d0906225c6f7c73667990856366c237f",
+        "rounds": "d6d1b03f7865af240dbf941c1f96f455e0f982ac56ab18841ab944b7fb31339a",
+        "battles": "304ee099fda2317a603826f1773e0ba58ea87de66870eca4fc0a27ee26ff35dc",
+        "actions": "e9579dbb97e5c6147f77aaaa31d15554044695b3953c9cd09f4e22b47123c2f4",
+        "specs": "ea2f0b5e3056b97f4604e6dd781bc3fdd0f76e4c070d1f3e72999fc2b8d1a3aa",
+        "upgradeChecks": "ad6a9add462f42272babffa3992c838f86b6fafa022c180ae74311c724800e52",
+        "prepStarts": "7e94ecdd0998a502ca558c7df4f42a584e06dca7ac1f310c32c2e1b295759778",
+        "supportSnapshots": "c249a5569c038eadf5c3358d0534d8029d07156942d5d78239fce4b5bd7459cc",
+        "factorHistory": "369bcc637569e97893c8a968770d14a7e9fd9ffe06d7e3afeef2da5ee39c43d8",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26203,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 146,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "504afbdc7e836bb032ee29974fc6d5fb0322e8d06f72a3ddb419a04fe9b8d969",
+        "rounds": "32e93202d6077590622033ab5755fd48f2e34de5922f72abe1ce06f010ee6254",
+        "battles": "53a37bc3d0bf46358298e6e24118c4977edbffd6c47889aa1ad5ed98b8744c84",
+        "actions": "68c585723be9d079cb64b3994e55f859ff6957c1ce77d4f61b8bd51130039f51",
+        "specs": "f64d2769927bedc2412b64d94a104d31a250759fb20ba62356aad1319b3c8fde",
+        "upgradeChecks": "57152d605676194d3e12cc4fcd23c155059cc77d8c762207b3cedd0e04cef457",
+        "prepStarts": "157723360c89c7120c3d52c43987e07ee0e76ba2718584cd20b47620da2f821a",
+        "supportSnapshots": "b42ac3916710e518f878096ee1a0aa15c9d42e3416ba2edae19d586c25124bb6",
+        "factorHistory": "fbc45c0934743003a0fcf018ff52ca4e7f1d672c7f17c2ed00f590156abb0316",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26760,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "zumama": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "sargonLayers": 251,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "e314420c81e7c56d2ca3925374cd4820bd66025033cc935c5e9c7e50c3a4562f",
+        "rounds": "a6a63b8341d7e7145ce9467b0b608b6e9fcb97bc1c3c12c888521513caa4159d",
+        "battles": "1c481717317c9acec75525ff53fa7a037380e5e700a55491c04d8eeb7c73b7a0",
+        "actions": "b1a7de01cbd9d128b9a0fb3369d1cb5f796559f03f6746b8f832548cbfe9934b",
+        "specs": "dfabbc2712ceb74a6b15a37e6544aed3eabd99d0612c92ac97744e1591c0e27c",
+        "upgradeChecks": "9be00c4924b0406ab9caa920e609dc878a5f519df57da069396bc03c8c6dd05e",
+        "prepStarts": "8286b05471284a8f2f198d42911fe92175f3997946cab327050d713ea379d9c8",
+        "supportSnapshots": "52384677e2971c084637bcbcd2b384b7fecbcff7a3dc01ec017146a7c2abd9b2",
+        "factorHistory": "47bdc3be77a03e4e92568ca8dc420191a335b621a7a14ba96549d1864ea53095",
+        "events": "386ff4e3e06113110dfff426fe9c21aa757ff5f1908aa19e512e824b69143bf6"
+      }
+    },
+    {
+      "seed": 26832,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 127,
+        "leaks": 1,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "57eda7fa9b032474ae58fe3b25e02438e9e29f81a2773a8c825452b938f529cf",
+        "rounds": "97b58bb594eb770e51c40c8448eb14ad126e35d9372239789197c91ba8a99418",
+        "battles": "5ec64653fd74345a3fe3326900447371ac1e73cd98bcabb45945b7a29376365a",
+        "actions": "55014c174c80d0faca0a38c904be0c6deeddb5d3eea0eab4604dbe9f649c53ca",
+        "specs": "976bba57eae70935799a0dba831de5c1df3b4508f8bdb43bd0f29615330c0648",
+        "upgradeChecks": "0b2093971cc7d62b922ee6347bc98abd29068382b37d676102120866ff2a6b0f",
+        "prepStarts": "96f94aa51b81a8d06a0ce10531dbf7a2b8be42391316f1899324a3c6b13192cc",
+        "supportSnapshots": "559031e51b2a6db344185e24a5a124f94e59e631394078961afb2d48d4d4917c",
+        "factorHistory": "32ec4d2e10c3720272a9e45d433d5d1bead3ea82aecad507f028c124dd7e7a06",
+        "events": "d5c5234a9d8e3f1e547d0ce8397f50642d3d2c59cb86bd29f45db11fa9195ed8"
+      }
+    },
+    {
+      "seed": 26865,
+      "difficulty": "HARD",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 155,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "ab15ea04009b19fc60f1454e8fb2e141dcdb2c123a933971a46613c93f8445bc",
+        "rounds": "a6b6eda18f571d0913b08c37e8fe8f8598ad5c2650464acb549983b8c04080f2",
+        "battles": "a31801c8184f78e517440c2489fe25ae58d86de0f4d18b9dbdeb8b990e59ce95",
+        "actions": "6640791a41a40389096e89217a2f128015d53012671e0007f40de92ff1da5fa2",
+        "specs": "22b39f2932fc7eaad74110a78d15ed6f1ae2c6387ce6a0b5a2dd75bc42d14396",
+        "upgradeChecks": "9941e09bbc3cff50b07a5992d6d2b81e3d71a382931afc81cc90adeec287003b",
+        "prepStarts": "2e7e642e7907b5063c924d99ef9388896edc886ee7002af443a61567481aa549",
+        "supportSnapshots": "25bba4b3b643d2ce50e05ba77e34d34111b180eff07cfc987b5b53350dffff82",
+        "factorHistory": "c23f0bd57b9845c49ea9634ea1ed0631e6c7716267e7d6d2721ddceb4b73824c",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26871,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 155,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "098cfbe1248fd3a95bec164bdded5041c757d3d70a8df638ee87ee674010a407",
+        "rounds": "0747711ea80ac3a97a1a962fa68feaa7be0ef85c7951e6758701fa756d8cbe72",
+        "battles": "7b500e08a477f3811e2c9a39581d5fe56e7b398d58621dc006f24fba0caf6acc",
+        "actions": "90173037f360f0d6a30508c54cbc1c006a60ed35b9e3911fd16451f8f36f3f54",
+        "specs": "a7434b28315655d6e9b1b8002d2c32079217290323b690a3e8b6f93d79bf6ecb",
+        "upgradeChecks": "a66022012ac8a8a544cfb17e0d8e10eb3dc7b42c28bce09cd6ec16416fb0b472",
+        "prepStarts": "7843a15c671162f087dacb9f9f09db01834015111b9cb7e2991b6898e982eb39",
+        "supportSnapshots": "584da77b4636ceed9507c842607891a2998f4f0b232a9dc19b38ba611eb12fa0",
+        "factorHistory": "89e5b0eaf04afbfebd55c84f1e43c2b90cf140ef7b061155912bf8288a0a2f8e",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26915,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 78,
+        "leaks": 7,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "5121185045a09a4c701c5e894cb314452a258e7888c610aaeb7aa301e28e2618",
+        "rounds": "f0161ce67d75646eccc87cd0e7928e4fd7a0b4341957a721754bbd748f2d6c9a",
+        "battles": "c381e4339880bc714b66c96c042e1b0a5acd0b5a6fc3a772ddce23be9146b0af",
+        "actions": "1af730c87d5b020d6c6ea0c6837ccd1ea8992d8892dd539c567c618fe7d96b60",
+        "specs": "67fdfae73c5ab413e5c194519cd729636aea46d906b8ca090bbc7bc09b8962a6",
+        "upgradeChecks": "b523bf3d1621ea14357791d73d55e737b87c5f7f23f3da239c1a540b0a30355a",
+        "prepStarts": "9ddec23d7d88694dbd6867492895f79241159c38dd89fd95b70753699a1b0144",
+        "supportSnapshots": "d06b6b5c21f98ed9053b431f21b8262dca4a4aff987da5fd6a143d56d98e9637",
+        "factorHistory": "0be32c174b1ba8354b3d272fd2d84676f5b31c4ed98db00989c691a56771cd39",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 27915,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "zumama": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "sargonLayers": 255,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "1530d09058ae08c72da9d7373d559d11269b3b50261d1254f55b7c7f6c77f80e",
+        "rounds": "07043689b519384f8dded95d70e50343166f831adfe4821772b6ccfe66ac9850",
+        "battles": "ec4ef9ccfd47ad4eef495fbe353efad5eb908ba2f7df74dcff3b221f7515b575",
+        "actions": "4cb2cf05389826754671c4c485868a3121fdcf3e80b61e25e81dd58e8ff91db2",
+        "specs": "3be8689c1763c6fbe4b4b0f243ebe96b28facf23edc980feb97a82ff12a8f4d1",
+        "upgradeChecks": "b3d96fbfc5033c30406f198e0b0dcc9754d9a3cca83561511549ab8f669f97ca",
+        "prepStarts": "54e15e9a6b7b2fcb5b91180c9ce40a99246fa75775d5c0889e8107c15cc5a9a5",
+        "supportSnapshots": "b7be04fda1556beb837b0fbd1c5d4605e2c58992b3f51cbc12d6405432db6f9a",
+        "factorHistory": "0628b6df2828f2a579f782fb32d722f168579714e040447a93c93f9f78842b84",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 29861,
+      "difficulty": "HARD",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 153,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "8bbad1040d0bf9acd5600b40d056de80746516789f130b7bc80e81934d84edd8",
+        "rounds": "a25c43f46dba0bdf4e6776d8d0ed8adc29c2a7e5ab4934efd56c847dbd763a43",
+        "battles": "7d3c6e86f09f43a575d15a6b9ca2b287e3850fa1703d25446e40e8f01425fed4",
+        "actions": "41268c12867739868d1a58dcdc772511f0d3e87da472d641d5189b87ef2343bf",
+        "specs": "76189b901cde7169aab089f5e0f200d2455921749184452f8fcde74e32f70b5f",
+        "upgradeChecks": "b175728f002999a358ae4cfe299ced66f2479cc1fd1be085e40e6dff4ad75562",
+        "prepStarts": "56a9ae966c9a72d12b571094d91e49e111984444debbbefb6c25bb608dfe0c4f",
+        "supportSnapshots": "800e7da1d98c20a34a2e53589c7572e744e8f5a059866db39e914aa0c470a68f",
+        "factorHistory": "79c87bd27e8d2c3d5a7b390464403228e792772801cd9639bc5b37a227fad276",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 20923,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "zumama": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "sargonLayers": 49,
+        "leaks": 32,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "1406ab91b80af48e76ead881b98625d84bc5c084ac64b41247b08cd7c2b7013d",
+        "rounds": "e46a4bd7c81b3776245935de3490f73a78ed6046108cad65c14e9fe6e82aa4f3",
+        "battles": "5ea11471b1c4240ffcbd68029c34a376897bbb8da7555fd20b2383e79f464a38",
+        "actions": "c3ffeb3d97a634fa0c09fc04a79e1726c7f8a1d4f982fc53e930db44cad5b61e",
+        "specs": "0738305c47a5b64ee37e535630da911bb0fbe3be4da4279094055a18f1448dfe",
+        "upgradeChecks": "726b8e539c0042f99ea35f4420fea92a42e2c333da0710f941f06882e9e2b2b8",
+        "prepStarts": "ba3bc474eab496272ad21af73482905e423449b300e69f1cfcae558b45361b98",
+        "supportSnapshots": "fac6d8d1cf0755131f113641fa167ddc40e72b57784a1e1fa02e07aed6cd7a8a",
+        "factorHistory": "5f80fecc790d33055f3e2b7c00b2a8b98545847e0c51b0411caebd3f155b59e9",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 20906,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "zumama": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "sargonLayers": 239,
+        "leaks": 0,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "da2b23a82a2926559f58853d052a6dcc95b0d0c42fc2c20a4de9713d3a9f8fec",
+        "rounds": "c0281cb8cad5f9f007e4ed91f6d00310d260457d63ca1ce00574cbef51c56759",
+        "battles": "84d8a06dea54651608039242f16645ec16b67b9dfec0129e5d94849e7eae8aac",
+        "actions": "9ce9ad6250540ad733b91921502b567c38036a277ea50913f849a66844cb6921",
+        "specs": "25cb8b6703ea6ac287a81857e3bdb5747636765516e61a8fd8eb0d2c9224cf6d",
+        "upgradeChecks": "fe6b7d28184f347a65a503ebc9e69c795a108c9e018e02b2ca85a6cb8958c1b4",
+        "prepStarts": "623ea55ae3a07aca4ad1139c098f9f24dbd448e4359335e929dbdc988c9b6724",
+        "supportSnapshots": "d7bfbde0f80a13d1931ec00bca266cdd66f8996e5f231adae4810c4aca846679",
+        "factorHistory": "ba5702e57e9c5ddc3831ee89dc949fd8296f427cc92891b3a01dc3ad7c22e4de",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26473,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "zumama": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "sargonLayers": 209,
+        "leaks": 6,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "3766022e24677f08859f2ea6181c739aeb7b6e27741f824474cc3fc93c4ff1c9",
+        "rounds": "6942ac1b8f088aef905fa4296d65326cf20e8077d86705b029972a124d0230be",
+        "battles": "a7d09eae70ad19686280e7dbc2e6eafcec6b2f9a004590df130d8b444415bfec",
+        "actions": "517ea46352dec8af2868c5085032d44e578147f3fbc9e16f0ac1ee3200062734",
+        "specs": "2abc4ecc1a6d97292d1036db0669053e99f8f3c1e19311c82fe7f807f83a104d",
+        "upgradeChecks": "d6f4d87778d1003c69fffb506f2a2ba9dea94e30da36d2a963934f0ef323d51a",
+        "prepStarts": "c3d0190f13780dfd6be493d76361204e258723f47455215b4f6c620ed830b658",
+        "supportSnapshots": "0f2a0edebcaa7bf5af1f4419388f5f66fa72e1aa6b2864004acc002e48dbdbdd",
+        "factorHistory": "7cd9557515f96a7171e596744e84ec6d9b7757e1658351fdfda8cee1f24f813b",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 27915,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 211,
+        "leaks": 4,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "37fd958008d4c178e25d634cf5da03e35c89ff278ef7f5b2d49b852f701a5935",
+        "rounds": "c444f06773eb2239ffff2b889a790b731309d2ec3b956d225e88992dd83bc735",
+        "battles": "da0b8253b0515fd4016ec00eff8f9da0ede4dfa9aa5b8a759325f9797e8e8ab0",
+        "actions": "70b8210f411a9d422d8cb84b2b73634f43af0820e0cc77111dfd142a6e8d7956",
+        "specs": "74288e9b6a83f2e78ec7edb6533dcd5646621b7dd983265634e81e9d4f8d2e44",
+        "upgradeChecks": "4051e45cc9caa0babb3bf075ffe046f246837ddb5ee41eac3372930fc9cb4718",
+        "prepStarts": "c51efeb7e08449b019f64b1076e8cd15e335ccc003963be9407f30e05fd7e17c",
+        "supportSnapshots": "7906d882c1fe0ed78fd00a911c7ff94204b727b19922f38cfdd2ebed0aac4efb",
+        "factorHistory": "a5b13764652d13c8c185109b9d4ea3451367e001f5520f2a34a172808d41660f",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 20929,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 172,
+        "leaks": 22,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "17086cc5be769762b5092438ef139d64cd74fcd752ffe7ae27abdc3681a9466b",
+        "rounds": "e0f6c23646ae064e66ab77b1a1f7069398c3d93dc9f1064b33bf382291af223c",
+        "battles": "bf81827c08ff5bf57fa420c7cfd9af19eeb46da78d2287e80cb210bbd26daa84",
+        "actions": "b84e2c29d8c0fb1cc3b2e828273aeaa8c28b95ad87fda43e47a29697266d3dae",
+        "specs": "72ba5ac33c6145903fa17aef38577ba35b8e7be0488a739cf8b3cf6e085cdf0b",
+        "upgradeChecks": "71f78dca20767ecc34cfbd02bdca93290289cf95fe24b4a2eae2398b3e7087cd",
+        "prepStarts": "939759a5d25ffda8bc7316e41d8bb3bf792687774c8a209a78e08d913dcc2984",
+        "supportSnapshots": "1039923c9fde714138a3e73255ed443a49c4c8bfe19ce220403c35a3ef132951",
+        "factorHistory": "00a999680efbd753fad248c3d0f3839b37e44d3f14b4bdb5bc0085a018a69736",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22459,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "zumama": {
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "sargonLayers": 87,
+        "leaks": 27,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "7121effc516a0734ad92de849f556bec69afb78584f8cdad9f6f01509df5a258",
+        "rounds": "b56d1b316e85aa1cc74d51a0f5ab16e3fe38dca7f9aab9047e14972b55661a4e",
+        "battles": "d3d78dcdf3ff1d38d32fe7b9c29f6238385be41c6e24a5ff2773bd89c0c16deb",
+        "actions": "c65395816254e97ad45f46c567aef58d49fd60374a1a69502c2b356367bc3e47",
+        "specs": "a227246e8c5e42bf4d6ded79f967914b0a12d7637b892a2b2d5bc59bccd9178e",
+        "upgradeChecks": "00fdc4cfc33e2c6f17eff67a8a3790b226383a021195775fb18216a464506559",
+        "prepStarts": "5186b295a92dd60e3ad42d7cfac543ab1c326eca54d84d6b306fa2953c182e3e",
+        "supportSnapshots": "7aa66d2b73c931a9c6d64fcaae5706f19a6a1d8e3b53e29640211998479ec7dd",
+        "factorHistory": "4c30abe69258eec48e3f5c2fa46f9ccf086624ed013432aebb4c58a20de8e862",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22388,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "zumama": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "sargonLayers": 265,
+        "leaks": 20,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "436a32142cc671709da07033932d0fe62001766a85f860766be28fe0b56ac6d2",
+        "rounds": "d8643ddea76fecf997726002dfcaf55f8f23f33180ec5e2120261a2f0a550cd1",
+        "battles": "9a78dfa1cc64c2484cef21706a258ce1a418fc457bc9a926a181c0570908e112",
+        "actions": "23214439f566f56fb8df665e90c574674b04cc474675adcc281cfe0418dae066",
+        "specs": "d3c0f6c56f59b59b687d65b7d7819e094f63ee7b917cd8bdbc1f85c038e1088a",
+        "upgradeChecks": "8c3ddc7832e845d6bc196d41328aebf3a24fc5f9c19ca7df317f7fa295a5b8ae",
+        "prepStarts": "21ac06cb8ea2a929a748fa02aa75b3b66a37ced25620c143f5247c6c074000e3",
+        "supportSnapshots": "e7a12e180cb4687a50216823074a5792e7004b6991897d7cc736cc3e73c0836f",
+        "factorHistory": "f8c4a71c2951134737f44180dccc4835d25de85b5d88da15c5d38da13a33c359",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22769,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 199,
+        "leaks": 9,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "f5392bef6a72168b3ff3ae1e88ea1534eba5ae926e2b78f0854247b8d0385a94",
+        "rounds": "22df806927695feeb67db5269e32a078d985508427cb878f3b4b8a7d4a6450ab",
+        "battles": "1c7401728f8217c0566e184015bb4587dd37b883e750b6402cf2860b8349f322",
+        "actions": "d8d735a4c44c85f15e97cc903a7468e06c2892dfca9c722aca8e59ae1ad81968",
+        "specs": "1ed5069ac7e6808168a57e7bdfd6ef39e18eec43f69ef5d4c3d4fb5e8e37f528",
+        "upgradeChecks": "ea7ef7471bc32f5fca13421576130588528a25eb56b328420e06386af75857ad",
+        "prepStarts": "bb04f8fecad82001e6dd99f8b54200b484d70335d725cb57cb28c679f0a2e379",
+        "supportSnapshots": "100034ccb9cf61ae8ab293c3a4546250f3206835da194c2e443eae02882d2a6a",
+        "factorHistory": "7fda89c60f8ecf7340e411bf467b0f1b01ff5746e2f8d653d41f59d1f1dc28bb",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22790,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 152,
+        "leaks": 17,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "f53f487a45a9bb966fdf10c5f25dc3bfffe9a7e92128d7017f7637ce84d96a4d",
+        "rounds": "dec9760cf2805e6d441f63832c143c9e7d8df91e698f06b7c2b08eb0d64d2ca3",
+        "battles": "444272b6c065a799801249d9c441648ce488e57c2bb6f4889b4b133b3942cd58",
+        "actions": "f5756b2392bf62ef7bec307b7322e0e49057959f695709372b2d90f50bacf88c",
+        "specs": "54cc32fa88e5caf517445eafce0ffa03c5bed3110589335b238d3a6620ad5753",
+        "upgradeChecks": "9d5371243be589138a258d6cf3c201a3afbfd4d222df801ffe1e23e322a28578",
+        "prepStarts": "7fc6880651e4a56a9651ad2cb2cbc67b60aa3a4f408431af87740997ce70f518",
+        "supportSnapshots": "0ed766f1b8d63df1cb72f43414e81d24cb2a0c6f9b65fc7c97d9a6ed1d8b2852",
+        "factorHistory": "34b0d0cd61d15be0b95e1bcee0ebe3ecf36da7e7b30a6ec179ceee25915b3ee4",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22837,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 211,
+        "leaks": 12,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "351911df9bdeb15f2101ae86f66b3beb428dc31d11d2bb897a6d2ed6466a751b",
+        "rounds": "3042d412cc1c012c329af64fcdac8fc0644aa1389fd222beed6a227a57233e6e",
+        "battles": "ba796f3981dc6a19d9a80ba0224ac12529bb32b1094e71fccee7ecb109f0c749",
+        "actions": "34a957564766d7696e2251aa55a8849fd7d8009578598ee12ae5f5f2b707d127",
+        "specs": "cb65234bd9add8fd0f366fad3bf8b1ec2e29dcf35353253df06186267c43cda3",
+        "upgradeChecks": "b29cb82f8dd7ae8aebedabfb1a67c371dc45103f88ac01486018ef6a51267b5e",
+        "prepStarts": "d94ccd2e2b64071d3b41fa9bf13cfac2f3ac1fafb52bc809bfc2663c603095a7",
+        "supportSnapshots": "8c786f1a1b4e844bf89939faa6a6ad21e20a8554e7fff862d36120ae3eeb17b6",
+        "factorHistory": "e1b50ab3e277853d4cfeccd6ad65b2e3de32b526b4d8e7a80941ae709107769d",
+        "events": "3106c50f2b001e86859cc7bf3081a07266e8be9f4cfb3a8c7b9f214874b1577a"
+      }
+    },
+    {
+      "seed": 22788,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 219,
+        "leaks": 7,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "bfa874e0ea301e9e190df65af1f1502f17968847e3a92fc42c890d1b8218e637",
+        "rounds": "dfea2951c09055a4b2ec0f7f8e48ccb6f68da576ef32906765334b32afa2c755",
+        "battles": "ebff42b0890e4c39cbe00a9b7ab21fecbaacedcffef6a47be2a8c0aa0a7531d5",
+        "actions": "0d121dbf66153ab03dd7ff02c150fc47febaeb0ef51090a26d078a5fdf07e0d5",
+        "specs": "d59b35b6a10fc1a6123a4fb91f4dbe0cfaeda0315e113b0ceecf822418a77ebf",
+        "upgradeChecks": "2be026816f3a1b11f8ea479af9b8c1e277343682a5db4d3c63909eb999981e6e",
+        "prepStarts": "7a5e208f474aa96a92a9a0e29b2dba2aba64a9f70ea73cb17d3c021586e0aee0",
+        "supportSnapshots": "ecb2a4949e4648214b80e1188f17f5bee4bb1b485cc9dc368c2b8831ea71df79",
+        "factorHistory": "b7c6a56749644b4da49054f9859536e25a6925a9f4ccfdb97b24303b918d152a",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 22922,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 178,
+        "leaks": 25,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "41a67195febc4ef5755d1ef986a2aa52fe9e6013071437e8ea8d9e3237cf3c67",
+        "rounds": "bc22e03996dadf19d6c5e1a8edf374c481e273471e09245eab674e294e6ec1e7",
+        "battles": "9ff10341c11815baeecb3760594fc2eaa608e929f44e0bd624f82bd85ad1600e",
+        "actions": "1b355ad8ac795b3a60f8ff2c367fd445ac7ccd62c3833ebc04972676ec89c292",
+        "specs": "cd504042419ff364cbf4489029d88fb934959c0c7ebe5db3e65db4c13cac25e4",
+        "upgradeChecks": "79d95c7d21769a8edbf7bf563e775a485e54a1c705eefdcf53fc5474571e20c3",
+        "prepStarts": "077b7944900a5b3431ea46db3ec8153957696696ae1e62b02376425fa6b7a7c1",
+        "supportSnapshots": "5eb9228f5325828db5e4b46675b3dfef59ddbdd52c84ddfb187a2fb93ec09214",
+        "factorHistory": "9d1ca9dead4ad71ed546f7af21f802e0136b0f41020118f02405a3ee689f8679",
+        "events": "3106c50f2b001e86859cc7bf3081a07266e8be9f4cfb3a8c7b9f214874b1577a"
+      }
+    },
+    {
+      "seed": 23881,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 192,
+        "leaks": 11,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "f54f04a93fdb949ecff4c276fbc870dad8a20424bb82ac0ea8b9fe92f2ae4d33",
+        "rounds": "58f49a3aa181cde45a5ae423093df8227e99c3c3ffa06aad8fc0543b9b4a778d",
+        "battles": "229206211d9eb5bf231fd9c4af8faf5ab6fd8c4a5b522fd0c2a7a5bf701bdc37",
+        "actions": "1dbc9c776128c41ca0458d4638cfb2d7bfec64a9c9e03a06e5d867c8d0ed304f",
+        "specs": "4a2d78949b79396f8b0510e8e57d7a99cd3f2538147cf7da9b13f78dfaff9f5b",
+        "upgradeChecks": "54d43de527019a239fc9736493fa37a3d65c0d4122fc6195205f232ec84524cc",
+        "prepStarts": "c42dc1c15fee3c7d8d6fefc2b20c8da49a746e2b83eba4cd5a52e3334f067126",
+        "supportSnapshots": "c35b0c47b576a10ea4ed5f0497313391e2d48e5527f6d832c3373de2a2b99bfc",
+        "factorHistory": "8c9e07ca5b6b02b36a444974351bb921acfb58a3f2b5fa7a3e6c5701465c4e0e",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 24808,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 219,
+        "leaks": 12,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "2a65ab38b6c91dcae1db694ccc0e74333e32e32d4357cd152a2a28d73081948d",
+        "rounds": "b4e806e1604631da930775dd81b995244b687adedc91e7f4369eb03dd0f99e9b",
+        "battles": "9827c40c8cc064fbbbdc41e6eac5baf23955349463957332f9dff1f377263c7a",
+        "actions": "c250b9fff72c95b1043c1c81b2834af5123401f51db7d4d9aabc362efd24f4a3",
+        "specs": "71d2b0bb06e590d1cc21fdb3c4daa41a7b961125b93c43f3934bca146025fd83",
+        "upgradeChecks": "2cc4e53ff5389c5ead3809b1c9b08bc1cc2318bb5fed28ccc3e1ebbd7c7959bb",
+        "prepStarts": "65b185e32930b3af6e8e35a8c71bac1de6859b33614d5e70f8e56a53e43538fd",
+        "supportSnapshots": "7206d24398102553307ee01f085e533feaebdee02ec34d717a6a1351d14b93c6",
+        "factorHistory": "8b5feb427fc07f71c23bdfe8960543bbfe4a7b038adb6b111b5d0f64c91be936",
+        "events": "f8794fba814af288ff8b7bd800438fde331b9edf49905ec6cb73a7868383daf2"
+      }
+    },
+    {
+      "seed": 24924,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 138,
+        "leaks": 2,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "31e9d2e19dcf6c5803abf61f6b88084c612b2eff181072a5db8dc6d69dc45eb2",
+        "rounds": "4f18c44fafc9302d30398d58a8a5b9b5ab81433dac3f4cd3afe90f22d3daef63",
+        "battles": "c61d7780c7b029de2c1e45a6cb0093423f609b2244646356a77f9b8eb1421350",
+        "actions": "e169fef0afd9ff9dbf428acde766d76c02b4edbe93f4ddda6f646aa6c75f05a0",
+        "specs": "58ab9f2223007eb87a867ccded75c9aa8f32710546cb269049eb12ac0f673cca",
+        "upgradeChecks": "1e3ad8ebaa111572bbf0038042039f7991c5d1b2cdf1d9d0b5c1eb5c7e35fcba",
+        "prepStarts": "674bebebf1a58ce9e4802f0ca67d651fa95f8c3a5e1cc04a03d4eb4573f82139",
+        "supportSnapshots": "ded7f0f9fa60c88e04d1740b7ede6cc413eb394f6560cc9a9a48d9c659f16964",
+        "factorHistory": "f0fa971c2cd2b09c9abe897d98e6abc90fdcd67e5a1296f3b72af5f7512340b2",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 23873,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 214,
+        "leaks": 10,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "55903d3544ea07d7af4761ee4e002d39276aada4aca3eca73b7a2be4dadab8ef",
+        "rounds": "d2c00f2630210a6d7b4aec6aba54e97bfcb79e7526c1e05dd1bc7c89a90e5e6a",
+        "battles": "4ef1e1332849861b06653f69fd61daa0714a8c1cf6906c0459534439dfc8ba1d",
+        "actions": "c1b8cf4896d74e825ff33a50e2923b40c347c2724ea642baf09fce5cf6fce683",
+        "specs": "618a1baf44e5556232129def2bc1225d23b06dbecc5da7c9dae61da45badb703",
+        "upgradeChecks": "9bc27f10512d01181f91ba6702588a5760a32a2c69e1a11776a132a4fc0e8890",
+        "prepStarts": "52ee5a076095259a8dea2c7f27dc76de4895ee52922e425afcb92ef27253dd06",
+        "supportSnapshots": "ac02e66f44d7539e56ed4e51cbb9b7669a7ce37ea95d195891e0a275e221d6f4",
+        "factorHistory": "96527ab6e7a4a0dd0791161ad64d88897597408878cc1dd20583a79ac6362d09",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 25864,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "zumama": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "sargonLayers": 184,
+        "leaks": 59,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "897c326aa6ed2bb7ca0435f106d9b200794ec5ffa849ac026b70ba5196015ba3",
+        "rounds": "55799ae522f5099160ffaec25cbca038553ec09f0c0b602d8dbe98bd4a517a13",
+        "battles": "05a477e41547557f3a004a7f0d9828ec26fbad55b575faf07d9f9baf07acf088",
+        "actions": "6511e91c9557f4e2376740378292d4c20a78556ca562c58f58e0163846c60a7a",
+        "specs": "69d601a5e57c8d00964290959244cf1c6a3cb3865790f3f037b52d4e9734f634",
+        "upgradeChecks": "e4d85ccbe965d26363d26f8f65fb217e7ca5d6aec8d906c99502f78c758fce9b",
+        "prepStarts": "0c415dc753ade26324d6986ef22c20df9a9cdcf99f36007973944c5057a5629c",
+        "supportSnapshots": "69a36795b8f546b9e9ad59337ba16fe203439e804451133e023d86aba9ff8ce2",
+        "factorHistory": "7abd696ca6cdba769424a9426e8e4dbaf4c15c2539a172ec4388d66ff27455f9",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 25894,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 232,
+        "leaks": 15,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "c04599b99d22f60862addb83158be40662a585429c4e8e2a6da3100f229496e6",
+        "rounds": "09053d07ccd19ff6e73a65f0a846d64c9258c6c8cfd78251968d245537329bb7",
+        "battles": "6a918b32bd98f8f5d4433a103417dc8975dbce548cacc77f59f90765f1aa0e87",
+        "actions": "05e64165bad64efeaabba1ca0a1a24f70bde462eb1e9d45696a62763be463faf",
+        "specs": "94b2eb02ccb46111e0f3e859e54993a898550dff81e7ebf1b915824a0031bef1",
+        "upgradeChecks": "5ce30c6a6a618fb167360786e9253fbdea5b9d216e784df8be193c9627888aaf",
+        "prepStarts": "00d0f0cd0e9a9a13cf3f352c6eba98fc6d151fc5380ac3bf7d708714e5f9fc8c",
+        "supportSnapshots": "200e6ad6066cf9eb655b8c4a88f9e79ac095c3632a368dacee2ae308e9ae6499",
+        "factorHistory": "84872f3ed3ab017415a1cb51600e53bac3a2c2325bda14c94125fceb717313b0",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26203,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 194,
+        "leaks": 21,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "400d48b76cd663e71ad7616fa037a9339a925738df92ee8accfb354f089a6734",
+        "rounds": "07dae24ee332080216bd672f1ec84a0e860d1884cc93769cadc21baa99b66cc5",
+        "battles": "b966614477a70bb531feb53675e838a6f3eac55d052528c8489612d9ace5d7c6",
+        "actions": "428c942004a764383d1a28c604be2a3fe5ba4128a7e00b1c30011811fe6c9643",
+        "specs": "d166bc975c87a2e24f2f4335738b62057bef04da74d62726134d245ab206ba94",
+        "upgradeChecks": "b4649d19390e53253dade5bae84bb94062becff081d447a98780da4fc7897d2f",
+        "prepStarts": "a26db4ee3ca5a93e81c41a4bedfc5a4a8d3f663b0e0f1dcdbf2acf4a07cfddf3",
+        "supportSnapshots": "354e2a9a9af58385020fa7a2f8642ece52433152afec46aacf434419b3058633",
+        "factorHistory": "db631da303367cf10f7e36b342fa175209369827af4dee9bf24821a36991e720",
+        "events": "d6f4d35bb42dc278dd48c1907e22e2822e7f2131af72c7cf2d8544b817ba0163"
+      }
+    },
+    {
+      "seed": 26760,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "zumama": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "sargonLayers": 278,
+        "leaks": 2,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "1a52fb167d347217742f9be809c6d20fc4732b861ddb1a413f8bfa9c46eb665a",
+        "rounds": "4be441d9d83fe390b656e6c3274d392e29a5dbaef0aed82a1d8f486b865eb523",
+        "battles": "7097cbe6009ea57f9fa2d8c2c0fb318f5deaab15372275b4d759a8bba110ad5b",
+        "actions": "08568c23d22dfb28b30b7807b6fe14a35187cd03b342a87ec5718fee6729dc87",
+        "specs": "45ff13f4de78abe41c784329cf4447585243d02d3cbf6fe3830fd9a24df255bf",
+        "upgradeChecks": "2b0340fcc4b20c4a416563d892e94992d02dcd29290ea13f5481f2a55437d610",
+        "prepStarts": "7f9c6b28fd920c994d3ca86ba0b78d2d7ac7686334f61fa14ac28f0eb57e36db",
+        "supportSnapshots": "10d07e608a4397cc17d3499f187898ca23cde6727af836556c374a5764e0fe63",
+        "factorHistory": "14db3962129361438743303a11e62aa0f1edeede34abf09f96ee5211d73f1111",
+        "events": "e978e9eb31f4f5274b27fd966ddb52078e9b1e75c1fcedd31b227239d62ad785"
+      }
+    },
+    {
+      "seed": 26745,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 184,
+        "leaks": 14,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "fc26ee31b51de7349441c6e92a2ad96ebb8c6a05e151eb9e0e0eb46c76769973",
+        "rounds": "46af5cb739f31eee138b8cc7844115354480050c34bd205f728af96a6f485fc5",
+        "battles": "162d304306ab144857554242a00b818a6558d3622c7f6efd512efb288904f65d",
+        "actions": "c468314c59601076b56ddfb23c01a29470ebc03f187e5f31917e81877d4da752",
+        "specs": "4ccf309b0d7f47e039bfe732da6f2ab0b21ac23bbd64f7d760a7045f6c598b4d",
+        "upgradeChecks": "c3c49c9fb827d074892d5a4c86b1db6c6ea4a65dbb80b8af5dfa8fa9c9c4b4d6",
+        "prepStarts": "b59945a20f644842bd9f54cb45c30b6c110929941d0763ef7fe90aff5b3d1445",
+        "supportSnapshots": "e144165de227c087e3c606ed52614db945c1f345235545a91cbccdd112a2e226",
+        "factorHistory": "3564dd654f6e7027feb0d8fe8e32a543377f80286787e2ba372ddf36a9ce4c4d",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26832,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 123,
+        "leaks": 12,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "00c2e15d035d50a1529b608214b9d45cb0c75fedeea8948e2cf4dc0af733ee7a",
+        "rounds": "e02297723ec7733ba242c309af7d2bb3740d3cfd7f92a23cb720f0c324ca6c95",
+        "battles": "081d3ab734616a9546b552d2523f475604ee75ef39589e44d90ae3cf01529beb",
+        "actions": "8ef641304166ac4bbcf4ede1ac320d9b61e96a622633d2879a18aeddc1bff997",
+        "specs": "ea4dd7fac32a5dc1dd7afba22b726dbfaf1102ef272673451c6d9c9eddd97154",
+        "upgradeChecks": "24b53624330d27f5cf55eaa2867222b1e4ff16539c7b645f2956b0c5df1afc0d",
+        "prepStarts": "365c2dcdad65ca0fdbdfeab9e67a1a95acf3eda6d907819926d487d6cf3bf949",
+        "supportSnapshots": "4b262e53637533d65bb9b58a2336f7be56a1560adbbcf00ef199ca667d1ec12a",
+        "factorHistory": "32b6e921073a061f6e1825217921ae1e64b99a0512de765f5205a4c4de376c57",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26871,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 150,
+        "leaks": 30,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "7ef8f22d98ee51c4416996e99a4cc501aaf9a30866477fd982cdcd18e8dbfd53",
+        "rounds": "647095cf4e14729a465807e3f0b3d7778947d12707103a8376081799794acc71",
+        "battles": "13043af22fdb72d142a1c6bc01bdeb8156508b3c6e38818715739cb0ea3f3cc0",
+        "actions": "90173037f360f0d6a30508c54cbc1c006a60ed35b9e3911fd16451f8f36f3f54",
+        "specs": "9fb98c2e28385178d0fc38361f4139df9719f61cf13eb5499eb4f8465c67074f",
+        "upgradeChecks": "a0de8e5ec94b7c97ee003adfa1d5d922bbfa5ee7806718f4b209c6190f7f71bc",
+        "prepStarts": "e29121df3307902cadffa32a3f32ad4c52fb2925d7e8ad321811cda76cf94449",
+        "supportSnapshots": "c065f54878f298ddce38f260f06ec71e7344e9cfd71e030994d82d5f7b2c0d0b",
+        "factorHistory": "8cbcc2cf4f13e00c82e3ee3fedbbfb759ca26b247012be910ddffcb777c021b1",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26865,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 158,
+        "leaks": 21,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "e03e22fb699d213aa0ebbfdbfb0e418b11646a2fe31911b25d4cf70c1d81b3f2",
+        "rounds": "ecc08ac4096d20787a95358882dd9337f788d39b9ae3f51cda53b3f71f0278d7",
+        "battles": "3378f25d1a0eb57934647c70cae3416a92343bdbb49a2571dbfd5a813d6d02a0",
+        "actions": "185c2eaaa6fdd4f5901c648016beb3aabc9fae9fb14b36ba8bc33e417c926269",
+        "specs": "40400f46a48b88d940a725abb104e047e1d5754e120eb248c44ceb256e2cb345",
+        "upgradeChecks": "1dfb343c3b7a1abf3c4f18e783d91bb5a60a1c74e01d50ffbdc862412cf076d8",
+        "prepStarts": "0fe381c43567dc88b4295ddd87c7c07b6beca741114c3aff57ad5a0bf38886bd",
+        "supportSnapshots": "540d296c7cbe81fe00f19fec88bfdaddea46e4b876dc050ff36d83ed845c26ce",
+        "factorHistory": "7d7931d174704b0d793818f587a28ae1865028e99a4b84cee2b707ee5e3be365",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 27884,
+      "difficulty": "ABYSS",
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "zumama": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "sargonLayers": 95,
+        "leaks": 24,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "0b90ee93782fe9273c5b9ee2153b4ad5473a84f5ed15b7b86a2d0b66998acc71",
+        "rounds": "05478a06fe64726dc53a9bb224e2f5eae8ad774351b17ff7c1ca674fb45f4ff6",
+        "battles": "5cefc5cf0fe5952fb6c655e5764c9c99f2de6edd12797b4ac6fc981eb3c5474f",
+        "actions": "a4312145718bee936ab41a1b5f77d3b31cff36552c6e742468cad9fdd25085da",
+        "specs": "8ef2b49b8742aa3a596559ca76860cc75996a95ea64e39d6dd0125a1f0480e41",
+        "upgradeChecks": "32ba06b1487ca273d864c33fe3d506dcdbfe7f1b8eab17c6c87125dfe1190d91",
+        "prepStarts": "60db142af5c5513982d92c579be4277560d3565bf538ae03f3804099145875af",
+        "supportSnapshots": "28e409dd4ec910ed5783563c948baa8a6e1f2fb15ea75b84654f65d41262084e",
+        "factorHistory": "380cb2f412544877b26960d39e7e317d0ba20c0cf0160a3b60666e738a0051d0",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 26915,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 154,
+        "leaks": 20,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "4b347e7c2269d95b5168db92e9d0946f62804e081be509f714df926894a5e817",
+        "rounds": "29fcb485757f76c8acdcda2a885c5879ce0218885b696273fa9e8c58c8f16a71",
+        "battles": "83f969f865c96b1f65739b58500ad3df9c5270d6951850f86710615972a86696",
+        "actions": "75edd7fb1897f7696239cbc10b49474fd1c5364725fc6abd3c5e321819202dc2",
+        "specs": "546a96cb2a203d429bb9a250e5376ce02ffef1a167b79f3ca093beb4d037e682",
+        "upgradeChecks": "0cedabf5cfe1d7a1962ac005f522aa62c66c0477c20a7fe06ee2ba05247ba518",
+        "prepStarts": "a88382aa23c9d5b0b6b65ba04dde85e4a33e9cb3fd2ab6ed088f33ab65e01bfb",
+        "supportSnapshots": "86ce9650df79742e0b36f99d0c9280d94a9d28ad9956b8c47f357f3ae7276eeb",
+        "factorHistory": "0dc661273f0134c464f1dc78abaaa7b6e31dbcfcaad365b7eddb81807bc90bed",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 28882,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 185,
+        "leaks": 5,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "f630bb8569dfaaa74fc1dfa2164ce1bb686e63735a78670a110c1f74af531c57",
+        "rounds": "4b1925109740aa874e329ffad470eef5d21e2d89d3c1f9489f1cf180b1db72ae",
+        "battles": "8cc2ef336ef4470a8f7f1c69081365392e1e5d8b0f6ff89ab838b7c49e21f530",
+        "actions": "d56f77a2f2f5ded1f6a2f7160476adb01c5852e6959d4f945310f981126b684d",
+        "specs": "7966562381eedb5a904c85567c1989ba3aa20a338527c5171d287db4dfc27bb8",
+        "upgradeChecks": "0d1f612112e9342653f24838efd7d64f008b138a47d690048389dfaeaf8519d0",
+        "prepStarts": "cdbb328dc2f5dd7fb2e0d481710307ad79c41cdf8bb370f3f7e3dea339e480b2",
+        "supportSnapshots": "bd0ed08196335dfc7494aec5ad114f8eb32ed613eabc98bc89d8f061cb100d86",
+        "factorHistory": "a3dcb865a64b195ce2a4bd3313f4f1d7658ffe7d8c937aac4cfc3eef867ba365",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "seed": 29861,
+      "difficulty": "ABYSS",
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "zumama": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "sargonLayers": 179,
+        "leaks": 9,
+        "uniteKills": 0
+      },
+      "adoptedDigests": {
+        "summary": "e3c11f1c14ecbc47b7020ad3c4a7dfed953862863d4025bd8a1aa952c429c653",
+        "rounds": "0208b1c831d6c7266b3a38fc487e899444dc65dab1a7821a7bc47709e4a8523a",
+        "battles": "9e3735bd06badbfe08a128be7af6f94fff1f34be4e18713b06e5fa72d7702231",
+        "actions": "4a85f76f617a65343168d7e8e3a7ba8b7ed6d5bc27d32ed31e12db5baf2c8713",
+        "specs": "1b3682f2c34e6700e081dc49904a582d6700bf873c92802bc32f886522f6f503",
+        "upgradeChecks": "ae37ccc0640d14cad8514fee84fbcad2beec17ab7e14b9638442b13e6a025b92",
+        "prepStarts": "c794a54c11a9a75c9a819cb94ef507eba74bb8152fb7d937146ffd7582ae70c2",
+        "supportSnapshots": "9b09e4683992727019ff326a4d9f5642df9a3766ca1e6177d77674a391c4c52f",
+        "factorHistory": "085844b59fcf31462f48c3e229a3eb519588330fa3df818a3707b426952eb197",
+        "events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    }
+  ]
+}

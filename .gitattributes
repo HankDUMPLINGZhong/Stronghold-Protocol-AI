@@ -22,3 +22,7 @@ releases/arturia-v0.2.3/source/** whitespace=-blank-at-eof
 releases/arturia-v0.2.4/source/** whitespace=cr-at-eol,-blank-at-eof
 
 releases/lavinia-v0.2.0/source/** whitespace=-blank-at-eof
+
+releases/zumama-v0.1.0/source/** whitespace=cr-at-eol,-blank-at-eof
+addons/zumama/runtime.js -text
+addons/zumama/policy/** -text whitespace=cr-at-eol,-blank-at-eof

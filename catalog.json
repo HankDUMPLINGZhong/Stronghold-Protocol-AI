@@ -18,6 +18,15 @@
       "addon": "addons/lavinia",
       "sourceRoot": "releases/lavinia-v0.2.0/source",
       "manifest": "releases/lavinia-v0.2.0.json"
+    },
+    "zumama": {
+      "name": "AI·祖玛玛",
+      "core": "sargonShip",
+      "status": "released",
+      "version": "0.1.0",
+      "addon": "addons/zumama",
+      "sourceRoot": "releases/zumama-v0.1.0/source",
+      "manifest": "releases/zumama-v0.1.0.json"
     }
   }
 }

@@ -2,7 +2,7 @@ from pathlib import Path
 import subprocess,zipfile,hashlib,sys
 root=Path(__file__).resolve().parent.parent
 strategy=sys.argv[1] if len(sys.argv)>1 else 'arturia'
-if strategy not in ('arturia','lavinia'):raise SystemExit('Choose arturia or lavinia')
+if strategy not in ('arturia','lavinia','zumama'):raise SystemExit('Choose arturia, lavinia or zumama')
 subprocess.run(['node',str(root/'addons'/strategy/'build.mjs')],cwd=root,check=True)
 import json
 version=json.loads((root/'catalog.json').read_text('utf-8'))['strategies'][strategy]['version']

@@ -1,6 +1,16 @@
 # 按插件下载
 
-两款插件独立更新、独立编号，Tag 使用`arturia-vX.Y.Z`和`lavinia-vX.Y.Z`。标题使用`【拉特兰-潘格尼尼】阿尔图罗·vX.Y.Z`和`【贾维-叙拉古】拉维妮娅·vX.Y.Z`。GitHub的默认Releases页按时间混合展示；下方入口只显示对应插件的发行版本。
+三款插件独立更新、独立编号，Tag 分别使用 `arturia-vX.Y.Z`、`lavinia-vX.Y.Z`、`zumama-vX.Y.Z`。标题分别使用 `【拉特兰-潘格尼尼】阿尔图罗·vX.Y.Z`、`【贾维-叙拉古】拉维妮娅·vX.Y.Z`、`【萨尔贡-佩佩】祖玛玛·vX.Y.Z`。GitHub 的默认 Releases 页按时间混合展示；下方入口只显示对应插件的发行版本。
+
+## 祖玛玛 · 萨尔贡
+
+**[只看祖玛玛全部版本](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases?q=%22addon-zumama%22)**
+
+| 版本 | 下载 | 说明与校验 |
+|---|---|---|
+| **v0.1.0 · 当前版** | [AI-Zumama-v0.1.0.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/zumama-v0.1.0/AI-Zumama-v0.1.0.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/zumama-v0.1.0) |
+
+[安装与共存](docs/installation.md) · [策略简介](docs/strategies/sargon.md)
 
 ## 阿尔图罗 · 拉特兰
 
@@ -33,4 +43,4 @@
 
 [安装与共存说明](addons/lavinia/README.md) · [策略简介](docs/strategies/siracusa.md)
 
-两款共存时先安装阿尔图罗，再安装拉维妮娅；图图v0.2.2起升级自动保留拉维妮娅；卸载阿尔图罗前仍先卸载拉维妮娅。阿尔图罗历史发行现统一使用`arturia-`前缀，旧`v0.1.x`标签保留为源码别名，下载请使用本页的新链接。附件名称、校验和及对应策略源码保持不变。
+安装祖玛玛后由共用管理器接入已有插件，三款均可独立升级、卸载；仅使用旧独立发行包时，按其原说明操作。详见[安装与共存](docs/installation.md)。阿尔图罗历史发行统一使用 `arturia-` 前缀，旧 `v0.1.x` 标签保留为源码别名；附件名称、校验和及对应策略源码保持不变。

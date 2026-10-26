@@ -1,0 +1,28 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
+import { build } from '../addons/zumama/build.mjs';
+const root=resolve(import.meta.dirname,'..'),sha=b=>createHash('sha256').update(b).digest('hex');
+test('Zumama freezes the adopted mode recipes and keeps shared computation separate', t => {
+  fs.mkdirSync(resolve(root,'.cache'),{recursive:true});
+  const dir=fs.mkdtempSync(resolve(root,'.cache/zumama-package-'));
+  t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
+  build(dir);
+  const meta=JSON.parse(fs.readFileSync(resolve(dir,'addon.json')));
+  assert.deepEqual(meta,JSON.parse(fs.readFileSync(resolve(root,'releases/zumama-v0.1.0.json'))));
+  assert.deepEqual(meta,JSON.parse(fs.readFileSync(resolve(root,'addons/zumama/addon.json'))));
+  assert.equal(meta.id,'ai-zumama');assert.equal(meta.version,'0.1.0');assert.equal(meta.hostApi,1);
+  assert.equal(meta.persona.name,'祖玛玛');assert.equal(meta.persona.avatar,'char_416_zumama');assert.equal(meta.persona.e2,true);
+  assert.equal(meta.persona.band,'band_pepe');assert.equal(meta.persona.prepareLast,true);
+  assert.deepEqual(meta.benchmark,{hard:'28/28',abyss:'15/28',multiplayer:{difficulty:'ABYSS',two:'18/56',four:'13/56',report:'benchmarks/zumama-v0.1.0-multiplayer.json'}});
+  assert.equal(Object.keys(meta.sources).length,203);assert.equal(Object.keys(meta.sharedRuntime.files).length,8);
+  assert.equal(Object.keys(meta.executionRoutes).length,22);
+  for(const[p,h]of Object.entries(meta.sources))assert.equal(sha(fs.readFileSync(resolve(root,meta.sourceRoot,p))),h,p);
+  for(const[p,h]of Object.entries(meta.files))assert.equal(sha(fs.readFileSync(resolve(dir,p))),h,p);
+  for(const[p,h]of Object.entries(meta.portableFiles))assert.equal(sha(fs.readFileSync(resolve(dir,p))),h,p);
+  for(const[p,h]of Object.entries(meta.sharedRuntime.files))assert.equal(sha(fs.readFileSync(resolve(dir,'compute',p))),h,p);
+  assert.equal(Object.keys(meta.files).some(n=>n.includes('/aiCompute/')),false);
+  assert.match(fs.readFileSync(resolve(dir,'common/patches.mjs'),'utf8'),/max-height:calc\(5em \+ \.04rem\)/);
+});

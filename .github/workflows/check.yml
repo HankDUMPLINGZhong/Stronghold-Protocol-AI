@@ -40,6 +40,11 @@ jobs:
           SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
           ARTURIA_TEST_REF: ${{ matrix.host }}
           LAVINIA_TEST_REFS: ${{ matrix.host }}
+      - name: Verify Zumama and three-persona shared installation
+        run: npm run test:zumama
+        env:
+          SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
+          ARTURIA_TEST_REF: ${{ matrix.host }}
       - name: Verify extended-host groups, pools and recovery
         if: matrix.extended
         run: npm run test:extended

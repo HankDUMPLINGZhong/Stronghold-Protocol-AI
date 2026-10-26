@@ -1,9 +1,10 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-25",
+  "checkedAt": "2026-10-26",
   "plugins": {
     "arturia": "0.2.4",
-    "lavinia": "0.2.0"
+    "lavinia": "0.2.0",
+    "zumama": "0.1.0"
   },
   "hosts": [
     {
@@ -11,14 +12,24 @@
       "ref": "v0.3.1",
       "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
       "packageVersion": "0.3.1",
-      "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
+      "scope": "Legacy Arturia/Lavinia remain frozen; Zumama shared manager, three-persona migration, priority/reservation, common computation, real combat, independent removal and exact restoration. Exact-commit release CI covers the declared upstream snapshots.",
+      "plugins": [
+        "arturia",
+        "lavinia",
+        "zumama"
+      ]
     },
     {
       "channel": "retained-base",
       "ref": "main-base",
       "commit": "3e589285584828a20075893a0575a9e5660dcc10",
       "packageVersion": "0.2.4",
-      "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
+      "scope": "Legacy Arturia/Lavinia remain frozen; Zumama shared manager, three-persona migration, priority/reservation, common computation, real combat, independent removal and exact restoration. Exact-commit release CI covers the declared upstream snapshots.",
+      "plugins": [
+        "arturia",
+        "lavinia",
+        "zumama"
+      ]
     },
     {
       "channel": "extended",
@@ -28,13 +39,14 @@
       "packageVersion": "0.3.1",
       "plugins": [
         "arturia",
-        "lavinia"
+        "lavinia",
+        "zumama"
       ],
       "extendedChecks": {
         "passed": 7,
         "failed": 0
       },
-      "scope": "Both plugins: conditional install, group-local priority/reservation and pools, rewind and disk identity recovery; real compatibility battles through R14; not extension win-rate measurements."
+      "scope": "Legacy Arturia/Lavinia remain frozen; Zumama shared manager, three-persona migration, priority/reservation, common computation, real combat, independent removal and exact restoration. Exact-commit release CI covers the declared upstream snapshots."
     }
   ],
   "coverage": [
@@ -51,7 +63,7 @@
     "passed": 1,
     "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
   },
-  "limitations": "Compatibility checks are not win-rate measurements. Both current plugins support the pinned extended.9 snapshot. Historical Lavinia v0.1.2 remains immutable and supports original upstream only. Exact-commit CI must pass for all four configured hosts before publication.",
+  "limitations": "Compatibility checks are not win-rate measurements. Zumama strategy scores use the retained 0.2.4 development engine. Only Zumama execution is routed to common computation; existing persona policy files are preserved. Extension group tests cover draft order and pool views; a full 20-player strategy baseline is not claimed.",
   "previousChecks": [
     {
       "checkedAt": "2026-10-19",
@@ -321,6 +333,45 @@
           "scope": "Both plugins: conditional install, group-local priority/reservation and pools, rewind and disk identity recovery; real compatibility battles through R14; not extension win-rate measurements."
         }
       ]
+    },
+    {
+      "checkedAt": "2026-10-25",
+      "plugins": {
+        "arturia": "0.2.4",
+        "lavinia": "0.2.0"
+      },
+      "hosts": [
+        {
+          "channel": "release",
+          "ref": "v0.3.1",
+          "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+          "packageVersion": "0.3.1",
+          "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
+        },
+        {
+          "channel": "retained-base",
+          "ref": "main-base",
+          "commit": "3e589285584828a20075893a0575a9e5660dcc10",
+          "packageVersion": "0.2.4",
+          "scope": "Both plugins: standalone/coexistence installation, Arturia upgrades preserving Lavinia v0.2.0, Lavinia upgrades from v0.1.x, R14 combat, recovery and byte-exact uninstall."
+        },
+        {
+          "channel": "extended",
+          "repository": "zhewang448/Stronghold-Protocol",
+          "ref": "v0.3.1-extended.9",
+          "commit": "fddf41fe8f5b85e87951d85b53df2d800948a387",
+          "packageVersion": "0.3.1",
+          "plugins": [
+            "arturia",
+            "lavinia"
+          ],
+          "extendedChecks": {
+            "passed": 7,
+            "failed": 0
+          },
+          "scope": "Both plugins: conditional install, group-local priority/reservation and pools, rewind and disk identity recovery; real compatibility battles through R14; not extension win-rate measurements."
+        }
+      ]
     }
   ],
   "requiredReleaseCiHosts": [
@@ -336,5 +387,22 @@
     "coop-2",
     "coop-4"
   ],
-  "arturiaUpgradePreservesLavinia": true
+  "arturiaUpgradePreservesLavinia": true,
+  "sharedComputation": {
+    "api": 1,
+    "version": "1.0.0",
+    "plugins": [
+      "zumama"
+    ],
+    "engineeringHashes": {
+      "cache.js": "3f74451cf5f986154cd7ac1a594f7ba4852d1f634ac3773a71d7bbec7f903b4a",
+      "forecast.js": "ba87a7d9b2a29eb43f481a770a00541a3c3ec29618c39d704adc5d21cfa161be",
+      "identity.js": "bcf0c139810af617f663f2bb133ab62546896e90d6b90ab77cfc1b4b03b968a7",
+      "index.js": "8587dd8f46d2b15c0e3b1728736c5e0cb6ce2b1f66f07ec1abc68a9bfd5ed397",
+      "ordered.js": "09ba03993262156650c2d3d1e65b0c636061a349cc984f982a43cac37cb76923",
+      "scopes.js": "6c1534acc4e1d8258e6d4fbeab56f94c3748819b17275dfeffa8533767250ec3",
+      "workerThread.js": "66e05460fb688c305dd6770dda3f428d3ba07e9535c16348a319d6da156160b2",
+      "workers.js": "052f2bdebc48c40dcc24ea325771655185d12bf69875cfcd4371c23802752389"
+    }
+  }
 }
