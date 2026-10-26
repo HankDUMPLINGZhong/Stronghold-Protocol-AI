@@ -1,5 +1,5 @@
 from pathlib import Path
-import subprocess,zipfile,hashlib,sys
+import subprocess,zipfile,hashlib,hmac,os,sys
 root=Path(__file__).resolve().parent.parent
 strategy=sys.argv[1] if len(sys.argv)>1 else 'arturia'
 if strategy not in ('arturia','lavinia','zumama'):raise SystemExit('Choose arturia, lavinia or zumama')
@@ -17,4 +17,8 @@ with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=
         z.writestr(info,f.read_bytes())
 checksum=hashlib.sha256(archive.read_bytes()).hexdigest()
 archive.with_suffix('.zip.sha256').write_text(checksum+'  '+archive.name+'\n',encoding='utf-8')
+signing_key=os.environ.get('RELEASE_SIGNING_KEY')
+if not signing_key:raise SystemExit('RELEASE_SIGNING_KEY env var must be set to sign the release artifact')
+signature=hmac.new(signing_key.encode('utf-8'),archive.read_bytes(),hashlib.sha256).hexdigest()
+archive.with_suffix('.zip.sig').write_text(signature+'  '+archive.name+'\n',encoding='utf-8')
 print(archive,checksum)
