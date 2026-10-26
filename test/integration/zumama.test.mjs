@@ -71,9 +71,16 @@ test('shared upgrades roll back and reject incompatible runtime or same-version 
   await installer('install',root);
   const journal=fs.readFileSync(path.join(root,'.ai-addons/install.json')),state=JSON.parse(journal),names=Object.keys(state.files),before=snapshot(root,names);
   const candidate=path.join(temp,'candidate');fs.cpSync(bundle,candidate,{recursive:true});
-  const meta=json(path.join(candidate,'addon.json'));meta.version='0.1.1';fs.writeFileSync(path.join(candidate,'addon.json'),JSON.stringify(meta,null,2)+'\n');
+  const meta=json(path.join(candidate,'addon.json'));
+  const next=meta.version.split('.').map(Number);next[2]++;meta.version=next.join('.');
+  fs.writeFileSync(path.join(candidate,'addon.json'),JSON.stringify(meta,null,2)+'\n');
   const manager=(await load(path.join(candidate,'common/install.mjs'))).install;
-  await assert.rejects(manager('install',root,candidate,{onWrite:n=>{if(n==='server/match/aiAddons/zumama/index.js')throw new Error('Injected transaction failure');}}),/Injected/);
+  await assert.rejects(manager('install',root,candidate,{onWrite:n=>{
+    if(n==='.ai-addons/install.json'){
+      assert.equal(json(path.join(root,'addons/zumama/addon.json')).version,meta.version,'the replacement metadata was actually written');
+      throw new Error('Injected transaction failure');
+    }
+  }}),/Injected/);
   assert.deepEqual(fs.readFileSync(path.join(root,'.ai-addons/install.json')),journal);assert.deepEqual(snapshot(root,names),before);
   meta.sharedRuntime.version='2.0.0';fs.writeFileSync(path.join(candidate,'addon.json'),JSON.stringify(meta,null,2)+'\n');
   // A single plugin may update its runtime; a compatible peer makes a conflicting replacement invalid.

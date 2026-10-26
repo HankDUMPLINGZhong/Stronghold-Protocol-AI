@@ -19,10 +19,31 @@ const load = p => import(pathToFileURL(p)), json = p => JSON.parse(fs.readFileSy
 const sha = b => createHash('sha256').update(b).digest('hex');
 const bundles = {};
 let suite;
+let modernHost=false;
 before(() => {
   assert.ok(source, 'Set SP_GAME_REPO');fs.mkdirSync(path.join(repo,'.cache'),{recursive:true});
+  modernHost=execFileSync('git',['show',ref+':server/match/bot.js'],{cwd:source,encoding:'utf8',maxBuffer:4*1024*1024}).includes('export function* botPrepBeginSteps(m, ps, options = {})');
   suite = fs.mkdtempSync(path.join(repo,'.cache/current-bundles-'));
   for (const id of ids) { bundles[id]=path.join(suite,id); builders[id](bundles[id]); }
+});
+
+for(const [label,mode,names] of [
+  ['Arturia solo','solo',['arturia']],['Lavinia solo','solo',['lavinia']],['Zumama solo','solo',['zumama']],
+  ['Zumama two-player','coop',['zumama','ordinary']],['all three elites four-player','coop',[...ids,'ordinary']],
+])test(`terminal ABYSS recipes on 0.3.3: ${label}`,{timeout:1200000},async t=>{
+  if(!modernHost)return t.skip('new upstream settlement/prep API regression');
+  const {root}=fixture(t);
+  for(const id of names.filter(id=>ids.includes(id)))await install(id,'install',root);
+  const {makeMatch}=await load(path.join(root,'test/match/harness.js'));
+  const h=makeMatch({mode,difficulty:'ABYSS',seed:7,captureFrames:false,seats:seats(names)});
+  try{
+    h.start().toPrep(1);h.run(()=>h.m.order.every(p=>p.ready));
+    // Compatibility, not win-rate measurement: retain every seat to exercise late-game branches.
+    for(const ps of h.m.order)ps.lp=10000;if(h.m.teamLp!=null)h.m.teamLp=10000;
+    h.toPrep(14);assert.ok(h.run(()=>h.m.round>14||h.ended!=null));
+    assert.deepEqual(h.logs.error,[]);assert.deepEqual(h.logs.warn,[]);h.invariants();
+  }finally{h.m.dispose();}
+  for(const id of names.filter(id=>ids.includes(id)))await install(id,'uninstall',root);
 });
 function fixture(t) {
   const temp=fs.mkdtempSync(path.join(repo,'.cache/current-host-')),root=path.join(temp,'game 游戏');fs.mkdirSync(root);
