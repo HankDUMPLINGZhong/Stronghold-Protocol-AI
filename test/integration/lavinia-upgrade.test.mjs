@@ -1,7 +1,7 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
 import {mkdirSync,mkdtempSync,readFileSync,writeFileSync,cpSync,symlinkSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';import {pathToFileURL} from 'node:url';import {execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';
-import {build,UPSTREAM_REF} from '../../addons/lavinia/build.mjs';import {build as buildArturia} from '../../addons/arturia/build.mjs';
+import {build,UPSTREAM_REF} from '../../addons/lavinia/legacy-build.mjs';import {build as buildArturia} from '../../addons/arturia/legacy-build.mjs';
 const repo=process.env.SP_GAME_REPO;if(!repo)throw new Error('Set SP_GAME_REPO');
 const source=resolve(import.meta.dirname,'../..'),hash=b=>createHash('sha256').update(b).digest('hex');
 for(const ref of process.env.LAVINIA_TEST_REFS?.split(',')||[UPSTREAM_REF])for(const dual of [false,true])for(const from of ['0.1.0','0.1.1','0.1.2']){

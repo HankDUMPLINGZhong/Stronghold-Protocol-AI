@@ -15,6 +15,9 @@ jobs:
             repository: sganggs/Stronghold-Protocol
           - host: c9d804f470b8d7422ae04eb66faf671cef21ad52
             repository: sganggs/Stronghold-Protocol
+          - host: f07b8965061bbc311ad7aa815879b09264a1e47d
+            repository: sganggs/Stronghold-Protocol
+            modern: true
           - host: fddf41fe8f5b85e87951d85b53df2d800948a387
             repository: zhewang448/Stronghold-Protocol
             extended: true
@@ -25,6 +28,10 @@ jobs:
           node-version: '22'
       - run: npm test
       - run: node tools/verify-benchmarks.mjs
+      - name: Require coverage of the latest official upstream release
+        run: node tools/check-upstream-release.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
       - run: npm run build
       - name: Check out the tested game host
         uses: actions/checkout@v4
@@ -34,14 +41,21 @@ jobs:
           path: .cache/upstream
       - run: npm ci
         working-directory: .cache/upstream
-      - name: Integrate without changing the host checkout
+      - name: Verify frozen standalone releases on their supported hosts
+        if: '!matrix.modern'
         run: npm run test:integration
         env:
           SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
           ARTURIA_TEST_REF: ${{ matrix.host }}
           LAVINIA_TEST_REFS: ${{ matrix.host }}
       - name: Verify Zumama and three-persona shared installation
+        if: '!matrix.modern'
         run: npm run test:zumama
+        env:
+          SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
+          ARTURIA_TEST_REF: ${{ matrix.host }}
+      - name: Verify current patch releases, real R14 combat, install orders and upgrades
+        run: npm run test:current
         env:
           SP_GAME_REPO: ${{ github.workspace }}/.cache/upstream
           ARTURIA_TEST_REF: ${{ matrix.host }}

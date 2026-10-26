@@ -14,7 +14,7 @@ test('standalone build reproduces all released policy and runtime hashes',()=>{
   const manifest=JSON.parse(readFileSync(resolve(output,'addon.json')));
   assert.deepEqual(manifest,frozen);
   for(const [name,expected] of Object.entries(manifest.files))assert.equal(hash(readFileSync(resolve(output,name))),expected,name);
-  for(const f of ['安装插件.bat','install-windows.ps1','install.mjs','patches.mjs','README.md','CHANGELOG.md','LICENSE'])assert.ok(readFileSync(resolve(output,f)).length>0,f);
+  for(const f of ['安装插件.bat','install-windows.ps1','install.mjs','common/patches.mjs','README.md','CHANGELOG.md','LICENSE'])assert.ok(readFileSync(resolve(output,f)).length>0,f);
 });
 test('the checked-in addon is the same verified release',()=>{
   const meta=JSON.parse(readFileSync(resolve(root,'addons/arturia/addon.json')));
@@ -29,7 +29,7 @@ test('every previous release keeps its complete immutable source snapshot',()=>{
   for(const file of readdirSync(resolve(root,'releases')).filter(f=>/^arturia-v.*\.json$/.test(f))){
     const manifest=JSON.parse(readFileSync(resolve(root,'releases',file)));
     for(const [name,expected]of Object.entries(manifest.sources))
-      assert.equal(hash(readFileSync(resolve(root,'releases',file.slice(0,-5),'source',name))),expected,file+':'+name);
+      assert.equal(hash(readFileSync(resolve(root,manifest.sourceRoot||('releases/'+file.slice(0,-5)+'/source'),name))),expected,file+':'+name);
   }
 });
 test('published headline benchmark has complete same-opening controls',()=>{

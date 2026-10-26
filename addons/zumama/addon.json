@@ -1,10 +1,10 @@
 {
   "id": "ai-zumama",
   "name": "AI·祖玛玛",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "hostApi": 1,
   "unofficial": true,
-  "upstream": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+  "upstream": "f07b8965061bbc311ad7aa815879b09264a1e47d",
   "policy": "sha256:9b7027843e05be7d98b3809cca7dccaa3f8eac8803bcfd275aa0aa6c3dbbdd21",
   "sourceRoot": "releases/zumama-v0.1.0/source",
   "entries": {
@@ -306,7 +306,7 @@
     "policy/server/match/sargon/solo-c-policy/server/match/botBossRehearsal.js": "2497ba67206c38f60e60d673c650fa7231291882b3e3d1e82bfccd8918880152",
     "policy/server/match/sargon/solo-c-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "policy/server/match/sargon/solo-c-policy/server/match/botStrategies/siracusaDraftSafety.js": "b85dbd4c6b4e8164bcc5e93faf12c8566ac7b6c1126dfe002544175e0ca1ae56",
-    "policy/server/match/sargon/solo-c-policy/server/match/botDevelopment.js": "a527eb1ea8448645b86f65a9d827368f467c66b3d852054d6fec29212be6fe7b",
+    "policy/server/match/sargon/solo-c-policy/server/match/botDevelopment.js": "f92a28caa4fb219878b8377a1f317bec1238245068a783304cde103041fc5ad8",
     "policy/server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonTransferConfig.js": "eea323a0050f8b274a09b19dc4e633667e453b5bb67b38a128530dbfbebea969",
     "policy/server/match/sargon/solo-budget-lp-policy/server/match/botPositioning.js": "b6caa64a2d371239ab2c999325b9106a3587948785e86064fa5249106c9f7310",
     "policy/server/match/sargon/solo-budget-lp-policy/server/match/botSavings.js": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0",
@@ -357,7 +357,7 @@
     "policy/server/match/sargon/solo-budget-lp-policy/server/match/botBossRehearsal.js": "2497ba67206c38f60e60d673c650fa7231291882b3e3d1e82bfccd8918880152",
     "policy/server/match/sargon/solo-budget-lp-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "policy/server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/siracusaDraftSafety.js": "b85dbd4c6b4e8164bcc5e93faf12c8566ac7b6c1126dfe002544175e0ca1ae56",
-    "policy/server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js": "a527eb1ea8448645b86f65a9d827368f467c66b3d852054d6fec29212be6fe7b",
+    "policy/server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js": "f92a28caa4fb219878b8377a1f317bec1238245068a783304cde103041fc5ad8",
     "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botPositioning.js": "b6caa64a2d371239ab2c999325b9106a3587948785e86064fa5249106c9f7310",
     "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botSavings.js": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0",
     "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js": "57b207a8e1ea5a97dd8cee2b3e39bf6c47c204675ca4622cee1ae4e8b3168ffc",
@@ -409,7 +409,7 @@
     "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botBossRehearsal.js": "2497ba67206c38f60e60d673c650fa7231291882b3e3d1e82bfccd8918880152",
     "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/siracusaDraftSafety.js": "b85dbd4c6b4e8164bcc5e93faf12c8566ac7b6c1126dfe002544175e0ca1ae56",
-    "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js": "55c547653847c808054aa73aeb04d0ecb93e5add2e6c32e9d1af7a74620c5fdb",
+    "policy/server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js": "c2281ed371463969e73c3cbc715deafe8e5979386f6db8901bd45ed6b6553da0",
     "policy/server/match/sargon/coop-four-review-policy/server/match/botPositioning.js": "b6caa64a2d371239ab2c999325b9106a3587948785e86064fa5249106c9f7310",
     "policy/server/match/sargon/coop-four-review-policy/server/match/botSavings.js": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0",
     "policy/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js": "57b207a8e1ea5a97dd8cee2b3e39bf6c47c204675ca4622cee1ae4e8b3168ffc",
@@ -463,8 +463,9 @@
     "policy/server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js": "2497ba67206c38f60e60d673c650fa7231291882b3e3d1e82bfccd8918880152",
     "policy/server/match/sargon/coop-four-review-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "policy/server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": "b85dbd4c6b4e8164bcc5e93faf12c8566ac7b6c1126dfe002544175e0ca1ae56",
-    "policy/server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": "55c547653847c808054aa73aeb04d0ecb93e5add2e6c32e9d1af7a74620c5fdb",
-    "runtime.js": "506429d99d9a2701c978407951d7eab08de5a73fdb07ead1ba65c229a292edfc"
+    "policy/server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": "c2281ed371463969e73c3cbc715deafe8e5979386f6db8901bd45ed6b6553da0",
+    "runtime.js": "506429d99d9a2701c978407951d7eab08de5a73fdb07ead1ba65c229a292edfc",
+    "compat/settlement.js": "1fc845bc6194bac8b6f1db6484a4d3c12e0b66b6cacc95ee1794801f534cdec4"
   },
   "sharedRuntime": {
     "api": 1,
@@ -571,15 +572,17 @@
     }
   },
   "portableFiles": {
-    "common/install.mjs": "445294ea83afb3f48a213b413af9108d7605391c38779205b47e08d0d1a1fd91",
-    "common/patches.mjs": "5a514e37d1111b873070cdfc6cdd2414e5c3fa4de672e915c9d27f83353b4877",
+    "common/install.mjs": "ec20f87d30bd3cd62cab5c2cf39e9e39b538d537abb1766210c2454fa02bb78b",
+    "common/patches.mjs": "42a08997cbae7746bc010184d17669ada4451e0ae70424ad526e2d3aec07e6ed",
     "common/extended-host.mjs": "3948d8fb64d6f8eeb89ced0ff7ccc1d0e6e5314fe8b5ac280748105a8dcbad0a",
     "common/legacy.mjs": "c3c8ee356a9ab84d7a6dcd428282654439e69e18a435150b116ca835d85f324d",
     "install.mjs": "ef562e1cc075dbbd13f147fa1283ada81ab1f5a41d7482d8ec05e8bd086bb61f",
-    "README.md": "5ff31e14d6f4d35cd0dae85a99c8974d66c6e6483533e17d71a384c8cf9e7850",
-    "CHANGELOG.md": "8c1f278100efdf4779115901d6f24520af09db3a88870b0b66068e0325f42065",
+    "README.md": "b828c77828074dfc2fa9bbc049cb1ce94495b84123a6768f7f343dae2784a257",
+    "CHANGELOG.md": "327df82a10749b15ae1d262b75f7d83e951a7715c878e51798d93a3ce7b14ea5",
     "安装插件.bat": "bcd85cd302033fea85dc312a7f4a0c3ecd54936728bb97864eac1a6747ea51be",
     "install-windows.ps1": "8f471dca97b9d0079ea534f4632259f491dc29b4017993d3c934b4d321551ea7",
     "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
-  }
+  },
+  "inheritsPolicyFrom": "zumama-v0.1.0",
+  "compatibilityFix": "issue-2-upstream-0.3.3"
 }

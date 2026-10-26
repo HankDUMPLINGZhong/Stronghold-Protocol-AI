@@ -5,28 +5,28 @@
       "name": "AI·阿尔图罗",
       "core": "lateranoShip",
       "status": "released",
-      "version": "0.2.4",
+      "version": "0.2.5",
       "addon": "addons/arturia",
       "sourceRoot": "releases/arturia-v0.2.4/source",
-      "manifest": "releases/arturia-v0.2.4.json"
+      "manifest": "releases/arturia-v0.2.5.json"
     },
     "lavinia": {
       "name": "AI·拉维妮娅",
       "core": "siracusaShip",
       "status": "released",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "addon": "addons/lavinia",
       "sourceRoot": "releases/lavinia-v0.2.0/source",
-      "manifest": "releases/lavinia-v0.2.0.json"
+      "manifest": "releases/lavinia-v0.2.1.json"
     },
     "zumama": {
       "name": "AI·祖玛玛",
       "core": "sargonShip",
       "status": "released",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "addon": "addons/zumama",
       "sourceRoot": "releases/zumama-v0.1.0/source",
-      "manifest": "releases/zumama-v0.1.0.json"
+      "manifest": "releases/zumama-v0.1.1.json"
     }
   }
 }

@@ -2,11 +2,23 @@
   "schema": 1,
   "checkedAt": "2026-10-26",
   "plugins": {
-    "arturia": "0.2.4",
-    "lavinia": "0.2.0",
-    "zumama": "0.1.0"
+    "arturia": "0.2.5",
+    "lavinia": "0.2.1",
+    "zumama": "0.1.1"
   },
   "hosts": [
+    {
+      "channel": "release",
+      "ref": "v0.3.3",
+      "commit": "f07b8965061bbc311ad7aa815879b09264a1e47d",
+      "packageVersion": "0.3.3",
+      "plugins": [
+        "arturia",
+        "lavinia",
+        "zumama"
+      ],
+      "scope": "Current patches: isolated installation, six installation orders, host settlement API identity, named-seat adapter dispatch, real combat through R14 and exact uninstall. Strategy win-rate baselines remain the retained development engine."
+    },
     {
       "channel": "release",
       "ref": "v0.3.1",
@@ -63,7 +75,7 @@
     "passed": 1,
     "observed": "Installing into a running unpatched service exposes the new UI but still returns ordinary bot names. A fresh process returns both named bots with their reserved bands."
   },
-  "limitations": "Compatibility checks are not win-rate measurements. Zumama strategy scores use the retained 0.2.4 development engine. Only Zumama execution is routed to common computation; existing persona policy files are preserved. Extension group tests cover draft order and pool views; a full 20-player strategy baseline is not claimed.",
+  "limitations": "Compatibility tests are not strategy win-rate measurements. Policy sources and historical benchmark rows are unchanged; named personas override only explicit botPersona seats, while ordinary seats retain the selected host adapter. Other official-version/content rooms are not enabled by this patch.",
   "previousChecks": [
     {
       "checkedAt": "2026-10-19",
@@ -372,12 +384,64 @@
           "scope": "Both plugins: conditional install, group-local priority/reservation and pools, rewind and disk identity recovery; real compatibility battles through R14; not extension win-rate measurements."
         }
       ]
+    },
+    {
+      "checkedAt": "2026-10-26",
+      "plugins": {
+        "arturia": "0.2.4",
+        "lavinia": "0.2.0",
+        "zumama": "0.1.0"
+      },
+      "hosts": [
+        {
+          "channel": "release",
+          "ref": "v0.3.1",
+          "commit": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+          "packageVersion": "0.3.1",
+          "scope": "Legacy Arturia/Lavinia remain frozen; Zumama shared manager, three-persona migration, priority/reservation, common computation, real combat, independent removal and exact restoration. Exact-commit release CI covers the declared upstream snapshots.",
+          "plugins": [
+            "arturia",
+            "lavinia",
+            "zumama"
+          ]
+        },
+        {
+          "channel": "retained-base",
+          "ref": "main-base",
+          "commit": "3e589285584828a20075893a0575a9e5660dcc10",
+          "packageVersion": "0.2.4",
+          "scope": "Legacy Arturia/Lavinia remain frozen; Zumama shared manager, three-persona migration, priority/reservation, common computation, real combat, independent removal and exact restoration. Exact-commit release CI covers the declared upstream snapshots.",
+          "plugins": [
+            "arturia",
+            "lavinia",
+            "zumama"
+          ]
+        },
+        {
+          "channel": "extended",
+          "repository": "zhewang448/Stronghold-Protocol",
+          "ref": "v0.3.1-extended.9",
+          "commit": "fddf41fe8f5b85e87951d85b53df2d800948a387",
+          "packageVersion": "0.3.1",
+          "plugins": [
+            "arturia",
+            "lavinia",
+            "zumama"
+          ],
+          "extendedChecks": {
+            "passed": 7,
+            "failed": 0
+          },
+          "scope": "Legacy Arturia/Lavinia remain frozen; Zumama shared manager, three-persona migration, priority/reservation, common computation, real combat, independent removal and exact restoration. Exact-commit release CI covers the declared upstream snapshots."
+        }
+      ]
     }
   ],
   "requiredReleaseCiHosts": [
     "6ab2468279e926d107788f63d7fe219b85f67b4a",
     "b3deebdae4a92642c007d217a1a4573e5d3612c5",
-    "c9d804f470b8d7422ae04eb66faf671cef21ad52"
+    "c9d804f470b8d7422ae04eb66faf671cef21ad52",
+    "f07b8965061bbc311ad7aa815879b09264a1e47d"
   ],
   "upstreamCheckedAt": "2026-10-21",
   "upstreamLatestRelease": "v0.3.1",
@@ -404,5 +468,14 @@
       "workerThread.js": "66e05460fb688c305dd6770dda3f428d3ba07e9535c16348a319d6da156160b2",
       "workers.js": "052f2bdebc48c40dcc24ea325771655185d12bf69875cfcd4371c23802752389"
     }
+  },
+  "installerManager": {
+    "plugins": {
+      "arturia": "0.2.5",
+      "lavinia": "0.2.1",
+      "zumama": "0.1.1"
+    },
+    "independentInstallUpgradeRemoval": true,
+    "legacyJournalsSupported": true
   }
 }

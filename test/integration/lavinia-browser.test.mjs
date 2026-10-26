@@ -4,8 +4,8 @@ import {mkdtempSync,mkdirSync,writeFileSync,symlinkSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
-import {build,UPSTREAM_REF} from '../../addons/lavinia/build.mjs';
-import {build as buildArturia} from '../../addons/arturia/build.mjs';
+import {build,UPSTREAM_REF} from '../../addons/lavinia/legacy-build.mjs';
+import {build as buildArturia} from '../../addons/arturia/legacy-build.mjs';
 
 test('elite dropdown offers both teammates and displays Penance E2 with correct draft order',{
   skip:process.env.LAVINIA_E2E!=='1',timeout:180000,

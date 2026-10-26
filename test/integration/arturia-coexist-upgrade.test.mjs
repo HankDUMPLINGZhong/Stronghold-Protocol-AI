@@ -5,8 +5,8 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { build, UPSTREAM_REF } from '../../addons/arturia/build.mjs';
-import { build as buildLavinia } from '../../addons/lavinia/build.mjs';
+import { build, UPSTREAM_REF } from '../../addons/arturia/legacy-build.mjs';
+import { build as buildLavinia } from '../../addons/lavinia/legacy-build.mjs';
 
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const stateNames = ['.arturia-addon/install.json', '.lavinia-addon/install.json'];

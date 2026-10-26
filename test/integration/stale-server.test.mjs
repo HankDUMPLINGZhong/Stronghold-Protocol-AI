@@ -5,8 +5,8 @@ import { mkdtempSync, mkdirSync, symlinkSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
-import { build as buildArturia } from '../../addons/arturia/build.mjs';
-import { build as buildLavinia } from '../../addons/lavinia/build.mjs';
+import { build as buildArturia } from '../../addons/arturia/legacy-build.mjs';
+import { build as buildLavinia } from '../../addons/lavinia/legacy-build.mjs';
 
 test('v0.3.1 running before installation keeps the original addBot handler until restart', { timeout: 120_000 }, async () => {
   const repository = process.env.SP_GAME_REPO;

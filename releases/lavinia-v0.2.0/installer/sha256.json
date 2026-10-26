@@ -1,0 +1,12 @@
+{
+  "originalZipSha256": "ad1d0142885cf88f9852dbeeaf316706bf017c74ff93e058614a4c4b392b69b7",
+  "files": {
+    "CHANGELOG.md": "c83dce73dac244e7831c691aa215aa1e051359bedd2d09c358c7c67e9ab95271",
+    "README.md": "2e10fd1e7fd448de0600d617e6bd654b85bdd18355eeef3ffe6b88b9bbf47d6c",
+    "extended-host.mjs": "728a7ec902473d5b053f78129e3d296f741490dcf9c259fceefb3ae3160e3dc8",
+    "install-windows.ps1": "04057d1e8cad999eea8cb5629f0ecd2d4b1737243d93c81e818be055d89f619e",
+    "install.mjs": "41c68585913d8f18430979858c2da91ce5fea094e1a651108da6b5b23597562f",
+    "patches.mjs": "6744f0c02df891faf444e33e8957e64a8574ae96967e809bc9a4fb401d3d99a1",
+    "安装插件.bat": "ff0e786adf6159abe0e3ed07760831d645c43e12a625ce86f2827771bb00132a"
+  }
+}

@@ -6,9 +6,9 @@
 
 | AI 队友 | 固定开局 | 当前版本 | 安装包与说明 |
 |---|---|---|---|
-| **祖玛玛（森蚺）** | 佩佩／萨尔贡 | **v0.1.0** | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/zumama-v0.1.0/AI-Zumama-v0.1.0.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/zumama-v0.1.0) |
-| 阿尔图罗（图图） | 潘格尼尼／拉特兰 | v0.2.4 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.4/AI-Arturia-v0.2.4.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.4) |
-| 拉维妮娅（斥罪） | 贾维／叙拉古 | v0.2.0 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.0/AI-Lavinia-v0.2.0.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.0) |
+| **祖玛玛（森蚺）** | 佩佩／萨尔贡 | **v0.1.1** | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/zumama-v0.1.1/AI-Zumama-v0.1.1.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/zumama-v0.1.1) |
+| 阿尔图罗（图图） | 潘格尼尼／拉特兰 | v0.2.5 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.5/AI-Arturia-v0.2.5.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.5) |
+| 拉维妮娅（斥罪） | 贾维／叙拉古 | v0.2.1 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.1/AI-Lavinia-v0.2.1.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.1) |
 
 [全部版本与分类下载](RELEASES.md) · [版本记录](CHANGELOG.md) · [宿主兼容记录](compatibility.json)
 
@@ -20,7 +20,7 @@
 
 只需房主安装，每房间每位精英各限一名。普通“添加 AI 队友”继续使用原版 AI；精英使用对应干员的精二头像。安装祖玛玛后，精英菜单最多显示两项，其余滚动，键盘也能选择全部项目。
 
-祖玛玛使用新的共用计算和安装管理器，能自动接入已安装的图图、拉维妮娅，并保留其策略源码与版本。三者可独立升级、卸载，共同入口由管理器维护。旧版安装记录会转换为 `.ai-addons/install.json`，请保留该恢复记录；不要混用其他游戏目录的安装器。
+三个新补丁版本均使用共用安装管理器，支持原上游 v0.3.3，并能接入已有旧版安装记录。祖玛玛沿用共用计算，图图和拉维妮娅保留其原计算实现。三者可独立升级、卸载，共同入口由管理器维护。旧版安装记录会转换为 `.ai-addons/install.json`，请保留该恢复记录；不要混用其他游戏目录的安装器。
 
 [安装、共存与卸载](docs/installation.md) · [扩展分支适配](docs/extended-host-compatibility.md)
 
@@ -31,7 +31,7 @@
 
 生效时队友名称应为 `AI·阿尔图罗`、`AI·拉维妮娅`或`AI·祖玛玛`，并选择表中对应策略。三者同场时图图先选、拉维妮娅次之、祖玛玛随后；扩展分支按卡池组分别排序和保留策略。
 
-支持险境、绝境、终极；图图不能用于静态禁用拉特兰的标准模拟。支持的原上游版本、master 快照和 zhewang448 扩展分支提交以[兼容记录](compatibility.json)为准。原上游成绩不作为扩展分支胜率。
+支持险境、绝境、终极；v0.3.3 适用于默认「第二期下半」，其他官方规则版本不开放精英入口。图图不能用于静态禁用拉特兰的标准模拟。支持的原上游版本、master 快照和 zhewang448 扩展分支提交以[兼容记录](compatibility.json)为准。原上游成绩不作为扩展分支胜率。
 
 这是源码扩展包，不能导入游戏插件工作台。更新游戏前先卸载插件，完成更新后重新安装；安装器会校验文件，遇到已手改或未知结构时拒绝覆盖。不要删除恢复记录强行安装。
 

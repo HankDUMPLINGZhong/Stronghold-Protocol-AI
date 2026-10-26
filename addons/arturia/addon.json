@@ -1,8 +1,8 @@
 {
   "id": "ai-arturia",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "unofficial": true,
-  "upstream": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+  "upstream": "f07b8965061bbc311ad7aa815879b09264a1e47d",
   "policy": "sha256:55a89166ff819b395cfaeb74caca3ba5b1b7639d406e14918c08396c8abf694d",
   "policyObject": "team28-vision-difficulty",
   "benchmark": {
@@ -264,8 +264,9 @@
     "policy/server/match/botStrategy.js": "787efc9b4ac3767b9d9cf0e264960ad3522322b525d56231e032c01aca07163e",
     "policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "policy/server/match/botStrategies/siracusaDraftSafety.js": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8",
-    "policy/server/match/botDevelopment.js": "7c0d4c9cdb602e6709cc9aadf02d906a4e4e969d1d7cd72a19e880f2fc0d9084",
-    "runtime.js": "bf806c159a166194ac51b704aaa7e1ba7434b4932a6105170a9fad22e13bee17"
+    "policy/server/match/botDevelopment.js": "29ce86805f9b360e1810d47664fa8bd242ff84f71571a4db1eb107e1d1dce54b",
+    "runtime.js": "bf806c159a166194ac51b704aaa7e1ba7434b4932a6105170a9fad22e13bee17",
+    "compat/settlement.js": "f45eddcda33d446b504fb5d2bb71d01c4af62e80664c7c07ac81d550eb4276b1"
   },
   "sourceRoot": "releases/arturia-v0.2.4/source",
   "policySource": "Immutable verified source snapshot; per-file SHA-256, not a Git commit claim",
@@ -285,5 +286,55 @@
     "frozenCorpusSha256": "c2783d182e3287bdc952bd2b1c9ccf7535c16ba04ac64ed78189cccacaf35fda",
     "multiplayerCorpusSha256": "b825f76735b4a48c4acdf76b42324f992a0c5e560a66b2466717c2a9d8c468ad"
   },
-  "coopPolicyObject": "coop-twenty-one-incantation-branches"
+  "coopPolicyObject": "coop-twenty-one-incantation-branches",
+  "hostApi": 1,
+  "bridgeMount": "server/match/arturia",
+  "persona": {
+    "id": "arturia",
+    "name": "阿尔图罗",
+    "band": "band_paganini",
+    "core": "lateranoShip",
+    "avatar": "char_245_cello",
+    "priority": 0,
+    "translations": {
+      "en": "Arturia",
+      "ja": "アルトリア",
+      "ko": "아르투리아",
+      "zh-TW": "阿爾圖羅"
+    },
+    "e2": true,
+    "difficulties": [
+      "NORMAL",
+      "HARD",
+      "ABYSS"
+    ]
+  },
+  "sharedRuntime": {
+    "api": 1,
+    "version": "1.0.0",
+    "files": {
+      "cache.js": "3f74451cf5f986154cd7ac1a594f7ba4852d1f634ac3773a71d7bbec7f903b4a",
+      "forecast.js": "ba87a7d9b2a29eb43f481a770a00541a3c3ec29618c39d704adc5d21cfa161be",
+      "identity.js": "bcf0c139810af617f663f2bb133ab62546896e90d6b90ab77cfc1b4b03b968a7",
+      "index.js": "8587dd8f46d2b15c0e3b1728736c5e0cb6ce2b1f66f07ec1abc68a9bfd5ed397",
+      "ordered.js": "09ba03993262156650c2d3d1e65b0c636061a349cc984f982a43cac37cb76923",
+      "scopes.js": "6c1534acc4e1d8258e6d4fbeab56f94c3748819b17275dfeffa8533767250ec3",
+      "workerThread.js": "66e05460fb688c305dd6770dda3f428d3ba07e9535c16348a319d6da156160b2",
+      "workers.js": "052f2bdebc48c40dcc24ea325771655185d12bf69875cfcd4371c23802752389"
+    }
+  },
+  "inheritsPolicyFrom": "arturia-v0.2.4",
+  "compatibilityFix": "issue-2-upstream-0.3.3",
+  "portableFiles": {
+    "common/install.mjs": "ec20f87d30bd3cd62cab5c2cf39e9e39b538d537abb1766210c2454fa02bb78b",
+    "common/patches.mjs": "42a08997cbae7746bc010184d17669ada4451e0ae70424ad526e2d3aec07e6ed",
+    "common/extended-host.mjs": "3948d8fb64d6f8eeb89ced0ff7ccc1d0e6e5314fe8b5ac280748105a8dcbad0a",
+    "common/legacy.mjs": "c3c8ee356a9ab84d7a6dcd428282654439e69e18a435150b116ca835d85f324d",
+    "install.mjs": "ef562e1cc075dbbd13f147fa1283ada81ab1f5a41d7482d8ec05e8bd086bb61f",
+    "README.md": "9f707760a3f76dd959e63f4cb09588dac248dc1ab598a48c99510bdea8e42d41",
+    "CHANGELOG.md": "955533f52bbaf3be014462f3004fc4ad9f635ca0fa83a818d273c9c3b5186d36",
+    "安装插件.bat": "fc13b6f9ac1eb5c143fa2d630a17439349aeda88fadf0909237881d4399f4623",
+    "install-windows.ps1": "2d056614489df31d16cf87d08296f1801c44178045b04ddbf51ab2c95ed65794",
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  }
 }

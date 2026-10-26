@@ -112,6 +112,17 @@ export function aiAddon(m, ps) {
   if (addon && !m[COMPUTATION_OWNER]) Object.defineProperty(m, COMPUTATION_OWNER, { value: m });
   return addon || null;
 }
+// Modern hosts may select adaptive/custom adapters. Named seats always own their hooks;
+// every ordinary seat retains the selected adapter and its exact arguments/RNG behavior.
+export function withAIAddons(base) {
+  return Object.freeze({ ...base,
+    pickBand:(m,ps,...args)=>aiAddon(m,ps)?.BAND ?? base.pickBand(m,ps,...args),
+    pickCard:(m,ps,...args)=>{const a=aiAddon(m,ps);return a?a.pickCard(m,ps,...args):base.pickCard(m,ps,...args);},
+    prepBegin:(m,ps,...args)=>{const a=aiAddon(m,ps);return a?a.prepBegin(m,ps,...args):base.prepBegin(m,ps,...args);},
+    prepEnd:(m,ps,...args)=>{const a=aiAddon(m,ps);return a?a.prepEnd(m,ps,...args):base.prepEnd(m,ps,...args);},
+    decide:(m,ps,...args)=>aiAddon(m,ps)?false:(base.decide?.(m,ps,...args) ?? false),
+  });
+}
 `;
   return { personas, source, shared: first?.shared };
 }
@@ -209,7 +220,7 @@ export async function install(mode, directory, bundle, { onWrite } = {}) {
     }
     for (const name of desired.keys()) {
       const value = await original(name);
-      if (!old?.files[name] && !legacyBytes && value && !PATCH_PATHS.includes(name) && name !== 'server/match/rewind.js' && !name.startsWith('public/i18n/')
+      if (!old?.files[name] && !legacyBytes && value && !PATCH_PATHS.includes(name) && !['server/match/rewind.js','server/match/Match.js'].includes(name) && !name.startsWith('public/i18n/')
         && !(name.startsWith('addons/') && sha(value) === sha(desired.get(name))))
         throw new Error(`Target already exists: ${name}`);
     }

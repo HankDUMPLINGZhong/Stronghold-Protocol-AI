@@ -11,9 +11,9 @@ test('Zumama freezes the adopted mode recipes and keeps shared computation separ
   t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   build(dir);
   const meta=JSON.parse(fs.readFileSync(resolve(dir,'addon.json')));
-  assert.deepEqual(meta,JSON.parse(fs.readFileSync(resolve(root,'releases/zumama-v0.1.0.json'))));
+  assert.deepEqual(meta,JSON.parse(fs.readFileSync(resolve(root,'releases/zumama-v0.1.1.json'))));
   assert.deepEqual(meta,JSON.parse(fs.readFileSync(resolve(root,'addons/zumama/addon.json'))));
-  assert.equal(meta.id,'ai-zumama');assert.equal(meta.version,'0.1.0');assert.equal(meta.hostApi,1);
+  assert.equal(meta.id,'ai-zumama');assert.equal(meta.version,'0.1.1');assert.equal(meta.hostApi,1);
   assert.equal(meta.persona.name,'祖玛玛');assert.equal(meta.persona.avatar,'char_416_zumama');assert.equal(meta.persona.e2,true);
   assert.equal(meta.persona.band,'band_pepe');assert.equal(meta.persona.prepareLast,true);
   assert.deepEqual(meta.benchmark,{hard:'28/28',abyss:'15/28',multiplayer:{difficulty:'ABYSS',two:'18/56',four:'13/56',report:'benchmarks/zumama-v0.1.0-multiplayer.json'}});

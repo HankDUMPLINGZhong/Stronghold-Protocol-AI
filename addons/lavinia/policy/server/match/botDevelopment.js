@@ -19,7 +19,7 @@ import { itemKey } from '../../../../gamedata.js';
 import { computeBonds, pieceBonds } from '../../../../bondsMeta.js';
 import { botSaleAllowed, botSell, freeSiracusaProtectedSlot } from './botSiracusaSales.js';
 import { withBounties, isFlyKey } from '../../../../waves.js';
-import { mitigate } from '../../../../../sim/damage.js';
+import { mitigate } from '../../../compat/settlement.js';
 import { HOVER_KEYS } from '../../../../../sim/content/enemies.js';
 import { attackRangeGrid, loadoutRecord, resolveRecordLoadout } from '../../../../../../shared/loadoutRecord.js';
 import { coreTarget, fixedBandCore, openingCore, selectRoute, growthValue, developmentBuy, refreshGrowth, layoutGrowth, promotionGrowth } from './botStrategy.js';

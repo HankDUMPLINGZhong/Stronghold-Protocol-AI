@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { build, UPSTREAM_REF } from '../../addons/arturia/build.mjs';
+import { build, UPSTREAM_REF } from '../../addons/arturia/legacy-build.mjs';
 
 const sha = b => createHash('sha256').update(b).digest('hex');
 let root, fresh, previous, install, oldInstall, temp, oldMeta;

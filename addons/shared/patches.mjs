@@ -1,6 +1,10 @@
 // One host integration for every AI persona. Rebuilt from journalled host originals on registry changes.
 import { isExtendedHost, patchExtendedHost } from './extended-host.mjs';
-export const extraPatchPaths = files => isExtendedHost(files) ? ['server/match/rewind.js'] : [];
+const modernHost = files => files.get('server/match/bot.js')?.includes('export function* botPrepBeginSteps(m, ps, options = {}) {');
+export const extraPatchPaths = files => [
+  ...(isExtendedHost(files) ? ['server/match/rewind.js'] : []),
+  'server/match/Match.js',
+];
 function replace(source, before, after, file) {
   if (source.split(before).length !== 2) throw new Error(`Unsupported installation: ${file}: anchor must occur exactly once: ${before.slice(0, 75)}`);
   return source.replace(before, after);
@@ -15,7 +19,7 @@ const elitePicker = [
   '}',
   'function EliteRecruit({ room, busy, onAdd }) {',
   '  const [open, setOpen] = useState(false), root = useRef(null);',
-  '  const unavailable = option => room.seats.some(s => s?.botPersona === option.id) || !option.difficulties.includes(room.difficulty) || room.content?.vanilla === false;',
+  '  const unavailable = option => room.seats.some(s => s?.botPersona === option.id) || !option.difficulties.includes(room.difficulty) || room.content?.vanilla === false || (room.version && room.version !== "act2autochess") || (room.versionVote?.version && room.versionVote.version !== "act2autochess");',
   '  const disabled = !!busy || ELITE_RECRUITS.every(unavailable);',
   '  useEffect(() => { if (disabled) setOpen(false); }, [disabled]);',
   '  useEffect(() => {',
@@ -59,7 +63,9 @@ export function patchFiles(files, personas, normalized = false) {
   const room = 'public/js/screens/room.js';
   // Explicit compatibility branch for the retained 0.2.4 main (before content plugins existed).
   const legacy = !files.get(lobby).includes('room.content?.trusted');
-  out.set(room, "import { ELITE_RECRUITS } from '../../../shared/aiAddons.js';\nimport { avatarUrl } from '../assets.js';\nimport { data, useData } from '../data.js';\n" + out.get(room));
+  const dataImport = /import \{[^\n]*\bdata\b[^\n]*\buseData\b[^\n]*\} from '\.\.\/data\.js';/.test(out.get(room))
+    ? '' : "import { data, useData } from '../data.js';\n";
+  out.set(room, "import { ELITE_RECRUITS } from '../../../shared/aiAddons.js';\nimport { avatarUrl } from '../assets.js';\n" + dataImport + out.get(room));
   out.set('shared/protocol.js', "import { ELITE_RECRUITS } from './aiAddons.js';\n" + out.get('shared/protocol.js'));
   out.set(lobby, "import { ELITE_RECRUITS } from '../shared/aiAddons.js';\n" + out.get(lobby));
   edit('shared/protocol.js', "'room.addBot': {},", "'room.addBot': { persona: optional((v) => ELITE_RECRUITS.some(p => p.id === v)) },");
@@ -68,7 +74,7 @@ export function patchFiles(files, personas, normalized = false) {
   edit(lobby, "    const used = new Set(room.seats.filter((s) => s && s.isBot).map((s) => s.name));", `    const elite = ELITE_RECRUITS.find(p => p.id === persona);
     if (persona !== undefined && !elite) return fail(ERR.BAD_TARGET);
     if (elite && room.seats.some(s => s?.botPersona === persona || ELITE_RECRUITS.find(p => p.id === s?.botPersona)?.band === elite.band)) return fail(ERR.ALREADY);
-    if (elite && (!elite.difficulties.includes(room.difficulty) || room.modded)) return fail(ERR.BAD_TARGET);
+    if (elite && (!elite.difficulties.includes(room.difficulty) || room.modded || (room.version && room.version !== 'act2autochess') || (room.versionVote?.version && room.versionVote.version !== 'act2autochess'))) return fail(ERR.BAD_TARGET);
     const used = new Set(room.seats.filter((s) => s && s.isBot).map((s) => s.name));`);
   edit(lobby, "const name = BOT_NAMES.find((n) => !used.has(n)) || `AI·${idx + 1}`;",
     "const name = elite ? `AI·${elite.name}` : BOT_NAMES.find((n) => !used.has(n)) || `AI·${idx + 1}`; // i18n-ignore: player name");
@@ -83,15 +89,26 @@ export function patchFiles(files, personas, normalized = false) {
   edit(lobby, difficultyAnchor, `    if (room.seats.some(s => s?.botPersona && !ELITE_RECRUITS.find(p => p.id === s.botPersona)?.difficulties.includes(difficulty))) return fail(ERR.BAD_TARGET);\n` + difficultyAnchor);
   // Validate against the actual mode/content again before start, including changes made after adding the seat.
   const startAnchor = legacy ? '    const humans = room.activeHumans();\n    for (const s of humans) {' : '    const humans = room.activeHumans();\n    if (room.content?.trusted';
-  edit(lobby, startAnchor, `    if (room.seats.some(s => s?.botPersona && (!ELITE_RECRUITS.find(p => p.id === s.botPersona)?.difficulties.includes(room.difficulty) || room.modded))) return fail(ERR.BAD_TARGET);\n` + startAnchor);
+  edit(lobby, startAnchor, `    if (room.seats.some(s => s?.botPersona && (!ELITE_RECRUITS.find(p => p.id === s.botPersona)?.difficulties.includes(room.difficulty) || room.modded || (room.version && room.version !== 'act2autochess')))) return fail(ERR.BAD_TARGET);\n` + startAnchor);
+  if (modernHost(files)) edit(lobby, '    if (version === room.version) return fail(ERR.ALREADY);',
+    "    if (version !== DEFAULT_VERSION && room.seats.some(s => s?.botPersona && ELITE_RECRUITS.some(p => p.id === s.botPersona))) return fail(ERR.VERSION_UNSUPPORTED);\n    if (version === room.version) return fail(ERR.ALREADY);");
 
   out.set(bot, "import { aiAddon } from './aiAddons/index.js';\n" + out.get(bot));
   edit(bot, 'export function botPickBand(m, ps) {', 'export function botPickBand(m, ps) {\n  const addon = aiAddon(m, ps); if (addon) return addon.BAND;');
   edit(bot, 'export function botPickCard(m, ps, cards, available) {', 'export function botPickCard(m, ps, cards, available) {\n  const addon = aiAddon(m, ps); if (addon) return addon.pickCard(m, ps, cards, available);');
-  const prepAnchor = legacy ? 'export function* botPrepBeginSteps(m, ps) {' : 'export function* botPrepBeginSteps(m, ps, { delegate = false } = {}) {';
+  const prepAnchor = legacy ? 'export function* botPrepBeginSteps(m, ps) {'
+    : modernHost(files) ? 'export function* botPrepBeginSteps(m, ps, options = {}) {'
+    : 'export function* botPrepBeginSteps(m, ps, { delegate = false } = {}) {';
   edit(bot, prepAnchor, prepAnchor + '\n  const addon = aiAddon(m, ps); if (addon) return yield* addon.prepBegin(m, ps);');
   edit(bot, 'export function* botPrepEndSteps(m, ps, job = null) {',
     'export function* botPrepEndSteps(m, ps, job = null) {\n  const addon = aiAddon(m, ps); if (addon) return yield* addon.prepEnd(m, ps, job);');
+
+  if (out.get('server/match/Match.js').includes('this.bot = getBotStrategy(')) {
+    const match = 'server/match/Match.js';
+    out.set(match, "import { withAIAddons } from './aiAddons/index.js';\n" + out.get(match));
+    edit(match, "this.bot = getBotStrategy(opts.botStrategy ?? env('SP_BOT_STRATEGY'));",
+      "this.bot = withAIAddons(getBotStrategy(opts.botStrategy ?? env('SP_BOT_STRATEGY')));");
+  }
 
   out.set(phases, "import { aiAddon } from '../aiAddons/index.js';\n" + out.get(phases));
   edit(phases, '    order = this.humansFirst(order);', `    order = this.humansFirst(order);
@@ -103,14 +120,21 @@ export function patchFiles(files, personas, normalized = false) {
   edit(phases, '  defaultBand(playerId) {', `  defaultBand(playerId) {
     const addon = aiAddon(this, this.players.get(playerId)); if (addon) return addon.BAND;`);
 
-  edit(room, 'function SeatCard({ seat, index, room, facts, myId, busy, onAddBot, onRemoveBot, onKick }) {',
-    elitePicker + '\nfunction SeatCard({ seat, index, room, facts, myId, busy, onAddBot, onAddElite, onRemoveBot, onKick }) {');
-  edit(room, '? html`<${Button} variant="secondary" size="sm" icon="robot" block=${true} loading=${busy === `add`} onClick=${onAddBot}>${t(\'添加 AI 队友\')}<//>`',
-    '? html`<div style="display:flex;flex-direction:column;gap:.08rem;width:100%"><${Button} variant="secondary" size="sm" icon="robot" block=${true} loading=${busy === `add`} onClick=${onAddBot}>${t(\'添加 AI 队友\')}<//>\n            <${EliteRecruit} room=${room} busy=${busy} onAdd=${onAddElite} /></div>`');
+  edit(room, 'function SeatCard({ seat, index, room, facts, myId, busy, onAddBot,',
+    elitePicker + '\nfunction SeatCard({ seat, index, room, facts, myId, busy, onAddBot, onAddElite,');
+  if (modernHost(files)) {
+    edit(room, '<${Button} variant="secondary" size="sm" icon="robot" class="rseat__add" loading=${busy === \'add\'} onClick=${onAddBot}>${t(\'添加 AI 队友\')}<//>',
+      '<div class="rseat__add" style="display:flex;flex-direction:column;gap:.08rem;width:calc(100% - .12rem);padding:0"><${Button} variant="secondary" size="sm" icon="robot" block=${true} loading=${busy === \'add\'} onClick=${onAddBot}>${t(\'添加 AI 队友\')}<//><${EliteRecruit} room=${room} busy=${busy} onAdd=${onAddElite} /></div>');
+  } else {
+    edit(room, '? html`<${Button} variant="secondary" size="sm" icon="robot" block=${true} loading=${busy === `add`} onClick=${onAddBot}>${t(\'添加 AI 队友\')}<//>`',
+      '? html`<div style="display:flex;flex-direction:column;gap:.08rem;width:100%"><${Button} variant="secondary" size="sm" icon="robot" block=${true} loading=${busy === `add`} onClick=${onAddBot}>${t(\'添加 AI 队友\')}<//>\n            <${EliteRecruit} room=${room} busy=${busy} onAdd=${onAddElite} /></div>`');
+  }
   edit(room, "  const addBot = () => run('add', () => net.request('room.addBot', {}));", "  const addBot = () => run('add', () => net.request('room.addBot', {}));\n  const addElite = persona => run('add', () => net.request('room.addBot', { persona }));");
   edit(room, 'onAddBot=${addBot} onRemoveBot=', 'onAddBot=${addBot} onAddElite=${addElite} onRemoveBot=');
   edit(room, '<${AvatarFrame} size="xl" name=${seat.name} seat=${index}',
     '<${seat.isBot && ELITE_RECRUITS.some(p => p.id === seat.botPersona) ? EliteAvatar : AvatarFrame} persona=${seat.botPersona} size="xl" name=${seat.name} seat=${index}');
+  if (modernHost(files)) edit(room, '<${AvatarFrame} size="sm" name=${seat.name} seat=${index}',
+    '<${seat.isBot && ELITE_RECRUITS.some(p => p.id === seat.botPersona) ? EliteAvatar : AvatarFrame} persona=${seat.botPersona} size="sm" name=${seat.name} seat=${index}');
   for (const file of files.keys()) if (file.startsWith('public/i18n/')) {
     const pack = JSON.parse(files.get(file));
     // UI packs are flat maps in upstream; preserve the pack's metadata and existing strings.

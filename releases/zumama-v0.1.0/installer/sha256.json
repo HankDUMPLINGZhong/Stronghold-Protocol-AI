@@ -1,0 +1,14 @@
+{
+  "originalZipSha256": "9f84e447ec281713847a60e0d9fc774731dd88e3b05deb00a3e2aedfa1426404",
+  "files": {
+    "CHANGELOG.md": "8c1f278100efdf4779115901d6f24520af09db3a88870b0b66068e0325f42065",
+    "README.md": "5ff31e14d6f4d35cd0dae85a99c8974d66c6e6483533e17d71a384c8cf9e7850",
+    "common/extended-host.mjs": "3948d8fb64d6f8eeb89ced0ff7ccc1d0e6e5314fe8b5ac280748105a8dcbad0a",
+    "common/install.mjs": "445294ea83afb3f48a213b413af9108d7605391c38779205b47e08d0d1a1fd91",
+    "common/legacy.mjs": "c3c8ee356a9ab84d7a6dcd428282654439e69e18a435150b116ca835d85f324d",
+    "common/patches.mjs": "5a514e37d1111b873070cdfc6cdd2414e5c3fa4de672e915c9d27f83353b4877",
+    "install-windows.ps1": "8f471dca97b9d0079ea534f4632259f491dc29b4017993d3c934b4d321551ea7",
+    "install.mjs": "ef562e1cc075dbbd13f147fa1283ada81ab1f5a41d7482d8ec05e8bd086bb61f",
+    "安装插件.bat": "bcd85cd302033fea85dc312a7f4a0c3ecd54936728bb97864eac1a6747ea51be"
+  }
+}

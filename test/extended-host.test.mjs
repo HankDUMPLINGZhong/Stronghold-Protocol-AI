@@ -5,8 +5,8 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { deserialize } from 'node:v8';
-import { build as buildArturia } from '../addons/arturia/build.mjs';
-import { build as buildLavinia } from '../addons/lavinia/build.mjs';
+import { build as buildArturia } from '../addons/arturia/legacy-build.mjs';
+import { build as buildLavinia } from '../addons/lavinia/legacy-build.mjs';
 import { patchFiles as patchArturia, PATCH_PATHS } from '../addons/arturia/patches.mjs';
 import { patchFiles as patchLavinia } from '../addons/lavinia/patches.mjs';
 

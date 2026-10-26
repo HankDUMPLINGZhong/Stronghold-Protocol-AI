@@ -4,7 +4,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, existsSync, symlin
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
-import { build, UPSTREAM_REF, POLICY_REF } from '../../addons/arturia/build.mjs';
+import { build, UPSTREAM_REF, POLICY_REF } from '../../addons/arturia/legacy-build.mjs';
 
 const gameRepository = process.env.SP_GAME_REPO;
 if (!gameRepository) throw new Error('Set SP_GAME_REPO to an upstream game Git checkout (see CONTRIBUTING.md)');

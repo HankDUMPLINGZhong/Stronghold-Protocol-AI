@@ -1,9 +1,9 @@
 {
   "id": "ai-lavinia",
   "name": "AI·拉维妮娅",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "unofficial": true,
-  "upstream": "b3deebdae4a92642c007d217a1a4573e5d3612c5",
+  "upstream": "f07b8965061bbc311ad7aa815879b09264a1e47d",
   "policy": "sha256:6e1831e5360a1b2aac972a930ce699262392b1e2283d8d46b4e4ad6883678625",
   "policyObject": "siracusa-solo-aroma-contact",
   "policySource": "Immutable 448-match verified source snapshot; per-file SHA-256, not a Git commit claim",
@@ -24,10 +24,23 @@
   },
   "persona": {
     "id": "lavinia",
+    "name": "拉维妮娅",
     "band": "band_chiave",
     "core": "siracusaShip",
-    "avatarChar": "char_4065_judge",
-    "avatarElite": 2
+    "avatar": "char_4065_judge",
+    "priority": 1,
+    "translations": {
+      "en": "Lavinia",
+      "ja": "ラヴィニア",
+      "ko": "라비니아",
+      "zh-TW": "拉維妮婭"
+    },
+    "e2": true,
+    "difficulties": [
+      "NORMAL",
+      "HARD",
+      "ABYSS"
+    ]
   },
   "sources": {
     "server/match/botDevelopment.js": "e6db69d31f2b1bf03d455a9c2da71c95ac2793d4dcddf61c3b25df39e3e8f68c",
@@ -311,8 +324,9 @@
     "policy/server/match/botStrategy.js": "787efc9b4ac3767b9d9cf0e264960ad3522322b525d56231e032c01aca07163e",
     "policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "policy/server/match/botStrategies/siracusaDraftSafety.js": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8",
-    "policy/server/match/botDevelopment.js": "abadd5d900dc47d09dc96a60586a31610f85909841c2482fafaf1bfeb1252dc2",
-    "runtime.js": "e35560a2e061aa4d80f87fa99f5012396d66c0f1cbfdbdef1797b74f7399ca65"
+    "policy/server/match/botDevelopment.js": "1c283b5d9d9c0fded4e9155624411d1708bce9097b1e1b12beff8381e2f7e4d0",
+    "runtime.js": "e35560a2e061aa4d80f87fa99f5012396d66c0f1cbfdbdef1797b74f7399ca65",
+    "compat/settlement.js": "f45eddcda33d446b504fb5d2bb71d01c4af62e80664c7c07ac81d550eb4276b1"
   },
   "sourceRoot": "releases/lavinia-v0.2.0/source",
   "validation": {
@@ -333,5 +347,35 @@
   "coopPolicies": {
     "two": "coop-two-r7-core-pair",
     "four": "coop-first-aroma-cash"
+  },
+  "hostApi": 1,
+  "bridgeMount": "server/match/lavinia",
+  "sharedRuntime": {
+    "api": 1,
+    "version": "1.0.0",
+    "files": {
+      "cache.js": "3f74451cf5f986154cd7ac1a594f7ba4852d1f634ac3773a71d7bbec7f903b4a",
+      "forecast.js": "ba87a7d9b2a29eb43f481a770a00541a3c3ec29618c39d704adc5d21cfa161be",
+      "identity.js": "bcf0c139810af617f663f2bb133ab62546896e90d6b90ab77cfc1b4b03b968a7",
+      "index.js": "8587dd8f46d2b15c0e3b1728736c5e0cb6ce2b1f66f07ec1abc68a9bfd5ed397",
+      "ordered.js": "09ba03993262156650c2d3d1e65b0c636061a349cc984f982a43cac37cb76923",
+      "scopes.js": "6c1534acc4e1d8258e6d4fbeab56f94c3748819b17275dfeffa8533767250ec3",
+      "workerThread.js": "66e05460fb688c305dd6770dda3f428d3ba07e9535c16348a319d6da156160b2",
+      "workers.js": "052f2bdebc48c40dcc24ea325771655185d12bf69875cfcd4371c23802752389"
+    }
+  },
+  "inheritsPolicyFrom": "lavinia-v0.2.0",
+  "compatibilityFix": "issue-2-upstream-0.3.3",
+  "portableFiles": {
+    "common/install.mjs": "ec20f87d30bd3cd62cab5c2cf39e9e39b538d537abb1766210c2454fa02bb78b",
+    "common/patches.mjs": "42a08997cbae7746bc010184d17669ada4451e0ae70424ad526e2d3aec07e6ed",
+    "common/extended-host.mjs": "3948d8fb64d6f8eeb89ced0ff7ccc1d0e6e5314fe8b5ac280748105a8dcbad0a",
+    "common/legacy.mjs": "c3c8ee356a9ab84d7a6dcd428282654439e69e18a435150b116ca835d85f324d",
+    "install.mjs": "ef562e1cc075dbbd13f147fa1283ada81ab1f5a41d7482d8ec05e8bd086bb61f",
+    "README.md": "1ea67a968551df973db6ba7ad981d3c6dff4e4e141614844183218cd03af8e96",
+    "CHANGELOG.md": "e98a90feeb051f832913ecaaaa28039287692fca43e570aa3ae92e8348f33a7d",
+    "安装插件.bat": "ff0e786adf6159abe0e3ed07760831d645c43e12a625ce86f2827771bb00132a",
+    "install-windows.ps1": "0c54303c1c0c11be60842be42cdaf7efe2e6ac1491caaa7e3b4a95d71af17c58",
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
   }
 }

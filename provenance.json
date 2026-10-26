@@ -39,7 +39,7 @@
     "server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "server/match/botForecast.js": "cb15749c374b06a4de81331ca882035134016e5e74c836d11f1765775393e694"
   },
-  "scope": "Released Arturia v0.2.4, Lavinia v0.2.0 and Zumama v0.1.0; immutable policies and separately hashed shared host engineering.",
+  "scope": "Released Arturia v0.2.5, Lavinia v0.2.1 and Zumama v0.1.1: unchanged adopted policies with issue #2 host compatibility and installer fixes.",
   "installerFeatures": {
     "automaticUpgrade": true,
     "rollbackOnFailure": true,
@@ -47,11 +47,11 @@
   },
   "strategies": {
     "lavinia": {
-      "version": "0.2.0",
+      "version": "0.2.1",
       "policy": "sha256:6e1831e5360a1b2aac972a930ce699262392b1e2283d8d46b4e4ad6883678625",
       "policySource": "Immutable verified source snapshot; per-file SHA-256, not a Git commit claim",
       "developmentHead": "fd1e4d362b33133d01ee8f13acc5429c609db1b3",
-      "manifest": "releases/lavinia-v0.2.0.json",
+      "manifest": "releases/lavinia-v0.2.1.json",
       "sourceFiles": {
         "server/match/botDevelopment.js": "e6db69d31f2b1bf03d455a9c2da71c95ac2793d4dcddf61c3b25df39e3e8f68c",
         "server/match/botStrategies/siracusaLargeBodyCoverage.js": "4516d9c410edeb5961f3a86984a7d1641a33cacf52087d3815c93a9dfa92d48b",
@@ -204,13 +204,14 @@
       "avatarSource": "https://prts.wiki/w/文件:立绘_斥罪_2.png",
       "avatarHostAsset": "char_4065_judge_2",
       "artworkIncluded": false,
-      "changes": "Frozen solo HARD late-key-value and ABYSS Aroma cash/contact; two-/four-player conditional opening policies; conditional extended.9 host installation."
+      "changes": "Frozen solo HARD late-key-value and ABYSS Aroma cash/contact; two-/four-player conditional opening policies; conditional extended.9 host installation.",
+      "compatibilityFix": "issue #2; v0.3.3 public prep/settlement interfaces, central installer and named-seat routing; scoring and sources unchanged"
     },
     "arturia": {
-      "version": "0.2.4",
+      "version": "0.2.5",
       "policy": "sha256:55a89166ff819b395cfaeb74caca3ba5b1b7639d406e14918c08396c8abf694d",
       "policySource": "Immutable verified source snapshot; per-file SHA-256, not a Git commit claim",
-      "manifest": "releases/arturia-v0.2.4.json",
+      "manifest": "releases/arturia-v0.2.5.json",
       "sourceFiles": {
         "server/match/botDevelopment.js": "c409361f61ff94677300a7606634c39b57b8755dc3341253fcb84e54570d09f1",
         "server/match/botStrategies/siracusaLargeBodyCoverage.js": "a327e13468d6da2cb00288d7345452e905c142da9d8dd3b481ff5b0b09d5be42",
@@ -336,12 +337,13 @@
       },
       "changes": "Shared two22/four18 incantation-branch baseline; cooperative growth, recovery and boss selection; conditional extended-host installation, group-local pools/draft priority and rewind identity.",
       "policyObject": "team28-vision-difficulty",
-      "coopPolicyObject": "coop-twenty-one-incantation-branches"
+      "coopPolicyObject": "coop-twenty-one-incantation-branches",
+      "compatibilityFix": "issue #2; v0.3.3 public prep/settlement interfaces, central installer and named-seat routing; scoring and sources unchanged"
     },
     "zumama": {
-      "version": "0.1.0",
+      "version": "0.1.1",
       "policy": "sha256:9b7027843e05be7d98b3809cca7dccaa3f8eac8803bcfd275aa0aa6c3dbbdd21",
-      "manifest": "releases/zumama-v0.1.0.json",
+      "manifest": "releases/zumama-v0.1.1.json",
       "sourceFiles": {
         "server/match/sargon/solo-c-policy/server/match/botDevelopment.js": "d83efa7d14e1ed3bae9acf4ff99ec54d56dfcdaea7f90b44b69ac898bcccdb85",
         "server/match/sargon/solo-c-policy/server/match/botStrategy.js": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043",
@@ -547,7 +549,8 @@
         "server/match/sargon/coop-four-review-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
         "server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
       },
-      "changes": "User-adopted solo28/15 and co-op18/13 recipes; execution-only bridge to common computation; new generic installer preserves legacy persona policies."
+      "changes": "User-adopted solo28/15 and co-op18/13 recipes; execution-only bridge to common computation; new generic installer preserves legacy persona policies.",
+      "compatibilityFix": "issue #2; v0.3.3 public prep/settlement interfaces, central installer and named-seat routing; scoring and sources unchanged"
     }
   }
 }

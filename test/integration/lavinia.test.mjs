@@ -4,8 +4,8 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, existsSync, symlin
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
-import { build, UPSTREAM_REF } from '../../addons/lavinia/build.mjs';
-import { build as buildArturia } from '../../addons/arturia/build.mjs';
+import { build, UPSTREAM_REF } from '../../addons/lavinia/legacy-build.mjs';
+import { build as buildArturia } from '../../addons/arturia/legacy-build.mjs';
 
 const repository = process.env.SP_GAME_REPO;
 if (!repository) throw new Error('Set SP_GAME_REPO to a game Git checkout');
