@@ -552,5 +552,11 @@
       "changes": "User-adopted solo28/15 and co-op18/13 recipes; execution-only bridge to common computation; new generic installer preserves legacy persona policies.",
       "compatibilityFix": "issue #2; v0.3.3 public prep/settlement interfaces, central installer and named-seat routing; scoring and sources unchanged"
     }
+  },
+  "latestReleaseBaselines": {
+    "date": "2026-10-27",
+    "arturia": "releases/arturia-v0.2.6.json",
+    "zumama": "releases/zumama-v0.1.2.json",
+    "verification": "benchmarks/release-20261027-source-verification.json"
   }
 }

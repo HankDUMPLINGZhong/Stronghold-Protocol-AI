@@ -1,3 +1,4 @@
+import {createResearchPolicy} from './sargonResearchRound1.js';
 import {sargonPlanning} from '../botCoopForecast.js';
 // [ASSUMED] Independent ablations on tempo 19/4. No gameplay effects, future shops or actual battle seeds.
 import { sargonPepe as baseline, ids } from './sargonPepe.js';
@@ -432,7 +433,7 @@ export const SARGON_FACTORS=Object.freeze({reserve,hangers,
   'coop102-third-four':createCoopOutputs99(coopFour99,{shadow:rosterShadow,transition:rosterTransition},{growth:true,third:true,nativeSwiftThird:true}),
   'coop-swift-lp-two':createCoopOutputs99(coopTwo99,{shadow:rosterShadow,transition:rosterTransition},{growth:true,third:true,nativeSwiftThird:true}),
   'coop-swift-budget-two':createCoopOutputs99(coopTwo99,{shadow:rosterShadow,transition:rosterTransition},{growth:true,third:true,nativeSwiftThird:true}),
-  'coop-swift-budget-pair-two':createFirelinePolicy(createEarlySteadPolicy(createCoopOutputs99(coopTwo99,{shadow:rosterShadow,transition:rosterTransition},{growth:true,third:true,nativeSwiftThird:true}))),
+  'coop-swift-budget-pair-two':createResearchPolicy(createFirelinePolicy(createEarlySteadPolicy(createCoopOutputs99(coopTwo99,{shadow:rosterShadow,transition:rosterTransition},{growth:true,third:true,nativeSwiftThird:true}))),'A',{shadow:rosterShadow,transition:rosterTransition,rosters:packageRosters}),
   'coop37-branches':createCoopBranchesPolicy(selected2814),
   'roster-low-reserve-two-gavial':Object.freeze({...createGavialPairPolicy(selected2814),name:'28/14 plus IV Gavial pair growth'}),
   'roster-low-reserve-four':createEarlyReservePolicy(selected2813,'four'),

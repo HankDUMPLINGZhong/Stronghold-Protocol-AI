@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-27",
+  "checks": [
+    {
+      "plugin": "arturia",
+      "mode": "two",
+      "sourceFingerprint": "92f84c69739c3101d859af207de622f0f1522c3c32f8824a49c0d837f2f4c7bf",
+      "verifiedFiles": 591
+    },
+    {
+      "plugin": "arturia",
+      "mode": "four",
+      "sourceFingerprint": "88e93512634ee27e18383d8771ba4de64f763f100d4094ef7cc53a922fcc6790",
+      "verifiedFiles": 592
+    },
+    {
+      "plugin": "zumama",
+      "players": 2,
+      "verifiedFiles": 709,
+      "baseline": "sargon-pepe-coop-19-14-emergency-lp"
+    },
+    {
+      "plugin": "zumama",
+      "players": 4,
+      "verifiedFiles": 764,
+      "baseline": "sargon-pepe-coop-19-14-emergency-lp"
+    },
+    {
+      "plugin": "arturia",
+      "version": "0.2.6",
+      "verifiedOrigins": 380,
+      "policy": "sha256:1b865dd02b7ba12e0da33e0c193afc507a2d3fd57997f9a6bca1129523d5755f"
+    },
+    {
+      "plugin": "zumama",
+      "version": "0.1.2",
+      "verifiedOrigins": 207,
+      "policy": "sha256:b979414e134cd06fbc60312bace74046d2f3100b9152699d4c85156f4d5ead85"
+    }
+  ],
+  "gameplayEngineModified": false,
+  "pausedPrototypesIncluded": false
+}

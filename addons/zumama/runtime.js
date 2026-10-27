@@ -1,3 +1,4 @@
+import { forecastCacheSteps } from '../../aiCompute/sampleCache.js';
 // Named Sargon policy. The host owns game rules, card pools and all legal actions.
 import * as soloHard from './policy/server/match/sargon/solo-c-policy/server/match/botDevelopment.js';
 import * as soloAbyss from './policy/server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js';
@@ -41,5 +42,7 @@ export function policyView(m, ps) {
   return players.get(ps);
 }
 export const pickCard = (m, ps, cards, available) => selection(m).driver.botPickCard(policyView(m, ps), ps, cards, available);
-export const prepBegin = (m, ps) => selection(m).driver.botPrepBeginSteps(policyView(m, ps), ps);
-export const prepEnd = (m, ps, job) => selection(m).driver.botPrepEndSteps(policyView(m, ps), ps, job);
+const cached = (m, ps, gen, keepOpen = false) => forecastCacheSteps(m, ps, { namespace: 'zumama',
+  enabled: m.mode === 'coop' && !m.isSolo && !m.wave && m.round === m.gd.bossRound }, gen, { keepOpen });
+export const prepBegin = (m, ps) => { const view = policyView(m, ps); return cached(view, ps, selection(m).driver.botPrepBeginSteps(view, ps), true); };
+export const prepEnd = (m, ps, job) => { const view = policyView(m, ps); return cached(view, ps, selection(m).driver.botPrepEndSteps(view, ps, job)); };

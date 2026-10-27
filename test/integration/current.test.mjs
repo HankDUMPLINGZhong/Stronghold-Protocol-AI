@@ -54,7 +54,16 @@ function fixture(t) {
 }
 const hostNames=['shared/protocol.js','server/lobby.js','server/match/bot.js','server/match/Match.js','server/match/match/phases.js','server/match/match/prep.js','server/match/match/platform.js','server/match/rewind.js','public/js/screens/room.js'];
 const snapshot=(root,names=hostNames)=>Object.fromEntries(names.map(n=>[n,fs.existsSync(path.join(root,n))?sha(fs.readFileSync(path.join(root,n))):null]));
-const install=async(id,mode,root)=>(await load(path.join(bundles[id],'install.mjs'))).install(mode,root);
+// Older immutable bundles can be managed by the installed manager's public bundle-path API.
+const install=async(id,mode,root)=>{
+  const installed=path.join(root,'server/match/aiAddons/manage.mjs');
+  if(fs.existsSync(installed)){
+    // Each CLI invocation starts fresh; mirror that when the test replaces a manager at one path.
+    const manager=await import(pathToFileURL(installed).href+'?sha='+sha(fs.readFileSync(installed)));
+    if(manager.MANAGER_API>=2)return manager.install(mode,root,bundles[id]);
+  }
+  return(await load(path.join(bundles[id],'install.mjs'))).install(mode,root);
+};
 const seats=names=>names.map((id,seat)=>({seat,playerId:id,name:id,isBot:true,connected:true,...(ids.includes(id)?{botPersona:id}:{})}));
 
 for(const id of ids)test(`current ${id} installs alone, uses host settlement and runs real combat through R14`,{timeout:600000},async t=>{
@@ -155,7 +164,7 @@ test('released three-persona installations upgrade independently without changin
   assert.equal((await install('arturia','install',root)).upgradedFrom,'0.2.4');
   assert.equal((await install('lavinia','install',root)).upgradedFrom,'0.2.0');
   state=json(path.join(root,'.ai-addons/install.json'));
-  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.2.5','0.2.1','0.1.1']);
+  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.2.6','0.2.1','0.1.2']);
   const manage=(await load(path.join(bundles.zumama,'common/install.mjs'))).install;
   const bytes=fs.readFileSync(path.join(root,'.ai-addons/install.json'));
   await assert.rejects(manage('check',root,old.zumama),/newer/);

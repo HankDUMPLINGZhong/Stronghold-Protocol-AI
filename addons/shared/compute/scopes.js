@@ -1,4 +1,5 @@
 // Reusable execution scope: eligibility, candidate generation and scores belong to callers.
+import { cancelForecastSampleCaches } from './sampleCache.js';
 import { forecastPool } from './workers.js';
 import { computationOwner } from './identity.js';
 
@@ -8,6 +9,9 @@ export const forecastWorkerState = ps => {
   return state && !state.closed && state.m.phase === 'PREP' && state.m.round === state.round ? state : null;
 };
 export function cancelForecastScopes(m, ps) {
+  cancelForecastSampleCaches(m, ps); cancelWorkerScopes(m, ps);
+}
+function cancelWorkerScopes(m, ps) {
   for (const state of [...(matches.get(computationOwner(m)) || [])]) if (!ps || state.ps === ps) {
     try { state.cancel(); }
     catch (error) { try { m.log?.warn?.(`AI forecast cleanup failed: ${error.message || error}`); } catch {} }
@@ -18,7 +22,7 @@ export function withForecastWorkers(parent, { poolFactory = forecastPool, eligib
     if (!eligible(m, ps)) {
       if (parent.finalBoardSteps) yield* parent.finalBoardSteps(m, ps, h); return;
     }
-    cancelForecastScopes(m, ps);
+    cancelWorkerScopes(m, ps);
     const pool = poolFactory(m);
     if (!pool) { if (parent.finalBoardSteps) yield* parent.finalBoardSteps(m, ps, h); return; }
     const started = performance.now(), owner = {}, gen = parent.finalBoardSteps?.(m, ps, h);

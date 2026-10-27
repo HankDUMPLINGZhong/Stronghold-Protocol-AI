@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-27",
+  "scope": "Packaging and compatibility verification; existing adopted win-rate corpora are reused, not newly benchmarked on v0.3.3.",
+  "sourceReport": "benchmarks/release-20261027-source-verification.json",
+  "unitTests": {
+    "tests": 32,
+    "pass": 32,
+    "fail": 0
+  },
+  "localIntegration": {
+    "host033": "f07b8965061bbc311ad7aa815879b09264a1e47d",
+    "realR14Cases": 8,
+    "passed": 8,
+    "cases": [
+      "terminal ABYSS Arturia solo",
+      "terminal ABYSS Lavinia solo",
+      "terminal ABYSS Zumama solo",
+      "terminal ABYSS Zumama plus bot",
+      "terminal ABYSS all three elites plus bot",
+      "Arturia standalone HARD through R14",
+      "Zumama standalone HARD through R14",
+      "ordinary custom-adapter dispatch preserved"
+    ]
+  },
+  "host024": {
+    "sixInstallOrdersAndExactRestoration": true,
+    "independentLegacyUpgradesAndPeerBytes": true,
+    "transactionRollbackAndVersionRejection": true
+  },
+  "unchangedRelease": "lavinia-v0.2.1",
+  "sharedRuntime": {
+    "api": 1,
+    "version": "1.1.0",
+    "compatibleFrom": "1.0.0"
+  },
+  "mainInstallationModified": false,
+  "pausedPerformanceExperimentsResumed": false
+}

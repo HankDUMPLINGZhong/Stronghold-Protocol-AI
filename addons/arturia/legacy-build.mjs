@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 
 const here=dirname(fileURLToPath(import.meta.url)),repo=resolve(here,'../..');
-const released={version:'0.2.4',manifest:'releases/arturia-v0.2.4.json',sourceRoot:'releases/arturia-v0.2.4/source'};
+const released={version:'0.2.4',manifest:'releases/arturia-v0.2.4.json',sourceRoot:'releases/arturia-v0.2.4/source',runtime:'releases/arturia-v0.2.4/installer/runtime.js'};
 const frozen=JSON.parse(readFileSync(resolve(repo,released.manifest),'utf8'));
 export const POLICY_REF=frozen.policy;
 export const UPSTREAM_REF=frozen.upstream;

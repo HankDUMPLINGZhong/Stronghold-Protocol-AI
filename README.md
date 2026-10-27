@@ -6,8 +6,8 @@
 
 | AI 队友 | 固定开局 | 当前版本 | 安装包与说明 |
 |---|---|---|---|
-| **祖玛玛（森蚺）** | 佩佩／萨尔贡 | **v0.1.1** | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/zumama-v0.1.1/AI-Zumama-v0.1.1.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/zumama-v0.1.1) |
-| 阿尔图罗（图图） | 潘格尼尼／拉特兰 | v0.2.5 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.5/AI-Arturia-v0.2.5.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.5) |
+| **祖玛玛（森蚺）** | 佩佩／萨尔贡 | **v0.1.2** | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/zumama-v0.1.2/AI-Zumama-v0.1.2.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/zumama-v0.1.2) |
+| 阿尔图罗（图图） | 潘格尼尼／拉特兰 | v0.2.6 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.6/AI-Arturia-v0.2.6.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.6) |
 | 拉维妮娅（斥罪） | 贾维／叙拉古 | v0.2.1 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.1/AI-Lavinia-v0.2.1.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.1) |
 
 [全部版本与分类下载](RELEASES.md) · [版本记录](CHANGELOG.md) · [宿主兼容记录](compatibility.json)
@@ -20,7 +20,7 @@
 
 只需房主安装，每房间每位精英各限一名。普通“添加 AI 队友”继续使用原版 AI；精英使用对应干员的精二头像。安装祖玛玛后，精英菜单最多显示两项，其余滚动，键盘也能选择全部项目。
 
-三个新补丁版本均使用共用安装管理器，支持原上游 v0.3.3，并能接入已有旧版安装记录。祖玛玛沿用共用计算，图图和拉维妮娅保留其原计算实现。三者可独立升级、卸载，共同入口由管理器维护。旧版安装记录会转换为 `.ai-addons/install.json`，请保留该恢复记录；不要混用其他游戏目录的安装器。
+图图 v0.2.6 与祖玛玛 v0.1.2 更新至最新策略基线，接入安全计算层并优化阵容计算时间。升级保留现有拉维妮娅；共用模块自动安装、复用兼容版本并防止降级。请保留 `.ai-addons/install.json` 恢复记录。
 
 [安装、共存与卸载](docs/installation.md) · [扩展分支适配](docs/extended-host-compatibility.md)
 
@@ -51,8 +51,8 @@ node .\install.mjs uninstall 'D:\Games\Stronghold-Protocol'
 
 | AI | 单人绝境 | 单人终极 | 二人终极 | 四人终极 | 策略与详细指标 |
 |---|---:|---:|---:|---:|---|
-| 祖玛玛／萨尔贡 | **28/28** | **15/28** | **18/56** | **13/56** | [策略说明](docs/strategies/sargon.md) |
-| 阿尔图罗／拉特兰 | 28/28 | 20/28 | 22/56 | 18/56 | [策略说明](docs/strategies/laterano.md) |
+| 祖玛玛／萨尔贡 | **28/28** | **15/28** | **19/56** | **14/56** | [策略说明](docs/strategies/sargon.md) |
+| 阿尔图罗／拉特兰 | 28/28 | 20/28 | 21/56 | 19/56 | [策略说明](docs/strategies/laterano.md) |
 | 拉维妮娅／叙拉古 | 28/28 | 12/28 | 9/56 | 11/56 | [策略说明](docs/strategies/siracusa.md) |
 
 单人与多人使用各自冻结的诊断集；二人为一位对应 AI＋原版 bot，四人为一位对应 AI＋3 位原版 bot。胜场均指 R14 领袖过关。测试关闭随机盟约禁用，先按敌人环境选种，不读取 AI 胜负；这些结果不是自然随机开局胜率。各策略的具体配置、队友调度与基线来源分别记录，不混算或合并人数。

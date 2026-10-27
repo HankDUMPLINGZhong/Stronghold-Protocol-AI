@@ -28,7 +28,8 @@ export function buildPersona(id, output, release, { record = false } = {}) {
     const destination = `${mount}/policy/${p}`;
     let text = original.replace(/(\b(?:from|import)\s+['"])(\.[^'"]+)(['"])/g, (_, prefix, spec, suffix) => {
       const dependency = posix.normalize(posix.join(posix.dirname(p), spec));
-      const local = id === 'zumama' ? dependency.startsWith('server/match/sargon/') : dependency.startsWith('server/match/bot');
+      const local = frozen.origins ? Object.hasOwn(frozen.sources, dependency)
+        : id === 'zumama' ? dependency.startsWith('server/match/sargon/') : dependency.startsWith('server/match/bot');
       if (local) policy(dependency);
       const target = local ? `${mount}/policy/${dependency}`
         : dependency === 'server/sim/damage.js' ? `${mount}/compat/settlement.js` : dependency;
@@ -57,16 +58,19 @@ export function buildPersona(id, output, release, { record = false } = {}) {
   put('compat/settlement.js', settlement); files['compat/settlement.js'] = sha(settlement);
   if (!record && JSON.stringify(files) !== JSON.stringify(frozen.files)) throw new Error('Frozen output hashes differ');
   const portableFiles = {}, shared = {};
+  const portableSnapshot = resolve(repo, `releases/${id}-v${release.version}/portable`);
+  const historical = fs.existsSync(portableSnapshot);
   for (const name of ['install.mjs', 'patches.mjs', 'extended-host.mjs', 'legacy.mjs']) {
-    const bytes = fs.readFileSync(resolve(repo, 'addons/shared', name));
+    const bytes = fs.readFileSync(historical ? resolve(portableSnapshot, 'common', name) : resolve(repo, 'addons/shared', name));
     put('common/' + name, bytes); portableFiles['common/' + name] = sha(bytes);
   }
   for (const name of ['install.mjs', 'README.md', 'CHANGELOG.md', '安装插件.bat', 'install-windows.ps1']) {
-    const bytes = fs.readFileSync(resolve(here, name)); put(name, bytes); portableFiles[name] = sha(bytes);
+    const bytes = fs.readFileSync(historical ? resolve(portableSnapshot, name) : resolve(here, name)); put(name, bytes); portableFiles[name] = sha(bytes);
   }
   const license = fs.readFileSync(resolve(repo, 'LICENSE')); put('LICENSE', license); portableFiles.LICENSE = sha(license);
   for (const [name, expected] of Object.entries(frozen.sharedRuntime.files)) {
-    const bytes = fs.readFileSync(resolve(repo, 'addons/shared/compute', name));
+    const computeRoot = frozen.sharedRuntime.version === '1.0.0' ? 'releases/shared-runtime-v1.0.0/compute' : 'addons/shared/compute';
+    const bytes = fs.readFileSync(resolve(repo, computeRoot, name));
     if (sha(bytes) !== expected) throw new Error('Shared computation changed: ' + name);
     put('compute/' + name, bytes); shared[name] = sha(bytes);
   }

@@ -28,7 +28,7 @@ export function build(output = resolve(repo, 'dist/AI-Zumama-v0.1.0')) {
     put('policy/' + p, text); files['policy/' + p] = sha(text);
   }
   for (const p of Object.values(frozen.entries)) policy(p);
-  const runtime = fs.readFileSync(resolve(here, 'runtime.js'), 'utf8'); put('runtime.js', runtime); files['runtime.js'] = sha(runtime);
+  const runtime = fs.readFileSync(resolve(repo, 'releases/zumama-v0.1.0/installer/runtime.js'), 'utf8'); put('runtime.js', runtime); files['runtime.js'] = sha(runtime);
   if (JSON.stringify(files) !== JSON.stringify(frozen.files)) throw new Error('Frozen output hashes differ');
   const portableFiles = {}, shared = {};
   for (const name of ['install.mjs', 'patches.mjs', 'extended-host.mjs', 'legacy.mjs']) {
@@ -39,7 +39,7 @@ export function build(output = resolve(repo, 'dist/AI-Zumama-v0.1.0')) {
   }
   const license = fs.readFileSync(resolve(repo, 'LICENSE')); put('LICENSE', license); portableFiles.LICENSE = sha(license);
   for (const name of Object.keys(frozen.sharedRuntime.files)) {
-    const bytes = fs.readFileSync(resolve(here, '../shared/compute', name));
+    const bytes = fs.readFileSync(resolve(repo, 'releases/shared-runtime-v1.0.0/compute', name));
     if (sha(bytes) !== frozen.sharedRuntime.files[name]) throw new Error('Shared computation runtime changed: ' + name);
     put('compute/' + name, bytes); shared[name] = sha(bytes);
   }

@@ -1,5 +1,3 @@
-import { largeBodyCoveragePlan } from './botStrategies/siracusaLargeBodyCoverage.js';
-import { lucienRightPlan } from './botStrategies/siracusaLucienRight.js';
 // server/match/botDevelopment.js — opt-in growth AI (DESIGN §6.6, META §1.6).
 // The original bot.js remains the independently selectable legacy implementation.
 // Growth commits to a viable core, selects a seeded damage sub-route, and keeps a shared economy objective.
@@ -16,11 +14,11 @@ import { rotateOffset, normDir, mirrorDir, oppositeDir } from '../../../../../si
 import { itemKey } from '../../../../gamedata.js';
 import { computeBonds, pieceBonds } from '../../../../bondsMeta.js';
 import { withBounties, isFlyKey } from '../../../../waves.js';
-import { mitigate } from '../../../compat/settlement.js';
+import { mitigate } from '../../../../../sim/damage.js';
 import { HOVER_KEYS } from '../../../../../sim/content/enemies.js';
 import { attackRangeGrid, loadoutRecord, resolveRecordLoadout } from '../../../../../../shared/loadoutRecord.js';
 import { coreTarget, fixedBandCore, openingCore, selectRoute, growthValue, developmentBuy, refreshGrowth, layoutGrowth, promotionGrowth } from './botStrategy.js';
-import { coreStrategy, readsTeammateRoster } from './botCoreStrategies.js';
+import { coreStrategy } from './botCoreStrategies.js';
 import { economyItemBonus, economyChessBonus, useEconomyItems } from './botEconomy.js';
 import { isLineCaster, linePlacementGate, engagementFronts, frontlineCoverage, isFormationAnchor, formationValue, healingTiles, acceptsHealing } from './botPositioning.js';
 import { bodyKeys } from '../../../../../sim/body.js';
@@ -297,12 +295,11 @@ function mainCoreBond(m, p) {
  * across rounds.
  */
 export function bondPlan(m, ps, owned = ownedBonds(m, ps)) {
-  const publicMates = readsTeammateRoster(m, ps) ? m.alivePlayers() : [];
-  const key = `${ps.bandId}|${m.round}|${ps.shop.level}|${[...owned.counts.entries()].map(([k, v]) => k + v).join()}|${Object.values(ps.layers).join()}|${publicMates.map((p) => mainCoreBond(m, p)).join()}`;
+  const key = `${ps.bandId}|${m.round}|${ps.shop.level}|${[...owned.counts.entries()].map(([k, v]) => k + v).join()}|${Object.values(ps.layers).join()}|${m.alivePlayers().map((p) => mainCoreBond(m, p)).join()}`;
   if (ps._botFocus && ps._botFocus.key === key) return ps._botFocus;
   const prev = ps._botFocusId ?? null;
   const mates = new Set();
-  for (const p of publicMates) {
+  for (const p of m.alivePlayers()) {
     if (p === ps) continue;
     const b = mainCoreBond(m, p);
     if (b) mates.add(b);
@@ -463,6 +460,9 @@ function lineupScore(m, ps, set, ctx) {
   // Owner strategy constraints precede soft unit/support scores, including every hill-climb swap.
   const required = ctx.strategy?.requiredCoreMembers?.(m, ps) || 0;
   if (required && (bonds[ctx.focus]?.count || 0) < required) return -Infinity;
+  // [ASSUMED] Optional owner-policy resident roles, including every hill-climb swap.
+  const residents = ctx.strategy?.requiredLineupBases?.(m, ps) || [];
+  if (residents.some(id => !set.some(p => gd.baseIdOf(p.id) === id))) return -Infinity;
   let v = 0;
   for (const p of set) v += unitBase(m, p, ctx);
   for (const [id, b] of Object.entries(bonds)) {
@@ -493,10 +493,20 @@ function lineupScore(m, ps, set, ctx) {
 
 /** Best deployable set of at most `cap` owned chess: greedy seed + swap hill-climbing on lineupScore. */
 function chooseLineup(m, ps, ctx) {
+  // [ASSUMED] Resident experiment: first reuse the inherited selection verbatim when it already fields the healer.
+  // This only removes unnecessary reseeding from the existing opt-in rule; it adds no new forced core candidates.
+  const requiredBases = ctx.strategy?.requiredLineupBases?.(m, ps) || [];
+  if (requiredBases.length) {
+    const inherited = chooseLineup(m, ps, { ...ctx, strategy: { ...ctx.strategy, requiredLineupBases: undefined } });
+    if (requiredBases.every(id => inherited.set.some(p => (ps.gd || m.gd).baseIdOf(p.id) === id))) return inherited;
+  }
   const all = ps.allChess();
   const cap = Math.min(ps.deployCap, all.length);
   const value = new Map(all.map((p) => [p.uid, pieceValue(m, ps, p, ctx)]));
-  const seed = all.slice().sort((a, b) => value.get(b.uid) - value.get(a.uid) || a.uid - b.uid);
+  const ranked = all.slice().sort((a, b) => value.get(b.uid) - value.get(a.uid) || a.uid - b.uid);
+  const residents = new Set((ctx.strategy?.requiredLineupBases?.(m, ps) || [])
+    .map(id => ranked.find(p => (ps.gd || m.gd).baseIdOf(p.id) === id)?.uid));
+  const seed = ranked.slice().sort((a, b) => Number(residents.has(b.uid)) - Number(residents.has(a.uid)));
   let set = seed.slice(0, cap);
   let bench = seed.slice(cap);
   let score = lineupScore(m, ps, set, ctx);
@@ -559,6 +569,11 @@ export function lineupScoreOf(m, ps, pieces) {
   return lineupScore(m, ps, pieces, context(m, ps));
 }
 
+/** Read-only caller-owned shadow selection for opt-in economic forecasts. Never places or acquires pieces. */
+export function previewLineupOf(m, ps) {
+  return chooseLineup(m, ps, context(m, ps)).set;
+}
+
 /** Shop / reward score of acquiring one copy of chess `id` (0 = not worth it). */
 function buyScore(m, ps, id, ctx, reward = false) {
   const gd = ps?.gd || m.gd;
@@ -596,7 +611,7 @@ function buyScore(m, ps, id, ctx, reward = false) {
   // [ASSUMED] A soft 18-point cooperation weight (PR #407), not an official rule or a reserved card.
   // Leave high-tier shared chess to living teammates whose opening strategy needs its faction.
   // Humans and bots count equally; a single soft penalty still allows valuable own merges.
-  if (readsTeammateRoster(m, ps) && c.tier >= 5 && !c.isGolden && !c.diyFor && m.pool.has(base) && m.alivePlayers().some((mate) =>
+  if (c.tier >= 5 && !c.isGolden && !c.diyFor && m.pool.has(base) && m.alivePlayers().some((mate) =>
     mate !== ps && gd.bandBondIds(mate.bandId).some((b) => !gd.modeInactiveBonds.has(b) && c.bonds.includes(b)))) s -= 18;
   return s;
 }
@@ -836,7 +851,8 @@ function dpsVs(rec, def, res) {
 export function rangeRec(ps, rec) {
   if (!rec || !rec.chessId || typeof ps.loadoutFor !== 'function') return rec;
   const lo = ps.loadoutFor(rec);
-  const guardianHealing = !!(ps.m?.opts?.botHumanLessons || ps.m && lateranoHealing(ps.m, ps));
+  const guardianHealing = !!(ps.m?.opts?.botHumanLessons || ps.m && (lateranoHealing(ps.m, ps)
+    || coreStrategy(ps.m, ps._botFocusId)?.healingFormation === true));
   const key = `${rec.chessId}|${lo ? `${lo.skill ?? ''}:${lo.module ?? ''}` : ''}|${guardianHealing}`;
   const cache = ps._botRangeRecs || (ps._botRangeRecs = new Map());
   if (cache.has(key)) return cache.get(key);
@@ -1008,7 +1024,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
   // The optional phase-aware recipe needs the current player; do not mutate the cached core-selection plan.
   const plan = developmentPhase ? { ...corePlan, ps, developmentPhase }
     : bossFocus ? { ...corePlan, ps, bossFocus, pieces: new Map(pieces.map((p) => [p.uid, p])) }
-    : m.opts.botLateranoLessons && corePlan.focus === 'lateranoShip' ? { ...corePlan, ps } : corePlan;
+    : m.opts.botLateranoLessons && corePlan.focus === 'lateranoShip' || corePlan.strategy?.layoutPlayerContext ? { ...corePlan, ps } : corePlan;
   const placementContext=placementVariant ? {...plan,placementVariant} : plan;
   const placement = plan.strategy?.placementPlan?.(pgd, pieces, placementContext, { model, map, occupied, recOf: rec });
   if (placement) occupied = new Set([...occupied, ...placement.reserved]);
@@ -1021,7 +1037,7 @@ export function* planLayoutSteps(m, ps, pieces, params = LAYOUT_PARAMS, { occupi
     return dir ? [[p.uid, dir]] : [];
   }));
   layout.formationRoles = formationRoles;
-  layout.humanLessons = m.opts.botHumanLessons || lateranoHealing(m, ps);
+  layout.humanLessons = m.opts.botHumanLessons || lateranoHealing(m, ps) || plan.strategy?.healingFormation === true;
   layout.fireControl = fireControl;
   const rank = (p) => {
     const r = rec(p);
@@ -1747,8 +1763,6 @@ export function* botPrepBeginSteps(m, ps) {
   //    merges completed while buying queue reward offers that expire at prep end — take them right away
   sellJunk(m, ps);
   yield;
-  const economySteps = coreStrategy(m, ps._botFocusId)?.beforeEconomySteps;
-  if (economySteps) yield* economySteps(m, ps, { LayoutPlan });
   if (coreStrategy(m, ps._botFocusId)?.priorityLevel(m, ps)) levelUp(m, ps);
   yield* buyLoopSteps(m, ps, { fillOnly: true, maxRefreshes: 0 });
   takeOffers(m, ps);
@@ -1798,19 +1812,9 @@ export function* botPrepEndSteps(m, ps, job = null) {
   // what the next prep's bench shed may judge by value: what is owned now (later gains wait for a placement step)
   rememberOwned(ps);
   m.autoPickPersonalChoice(ps, 'bot');
-  const rightPlan = lucienRightPlan(m, ps, { rangeRec, rangeTiles });
-  if (rightPlan) yield* applyPlanSteps(m, ps, [...ps.board.values()].filter((p) => p.kind === 'chess'), rightPlan);
-  const bodyPlan = largeBodyCoveragePlan(m, ps, { fieldModel, rangeRec, rangeTiles, isHealer, effDps });
-  if (bodyPlan) yield* applyPlanSteps(m, ps, [...ps.board.values()].filter((p) => p.kind === 'chess'), bodyPlan);
   const finalBoardSteps = coreStrategy(m, ps._botFocusId)?.finalBoardSteps;
   if (finalBoardSteps) yield* finalBoardSteps(m, ps, { LayoutPlan, rangeRec, rangeTiles, fieldModel, bossInputSteps, applyPlanSteps,
-    *recoverEconomySteps() {
-      // Explicit opt-in emergency hook: visible cards/rewards only, no extra upgrades or refreshes.
-      takeOffers(m, ps); useEconomyItems(m, ps); coreStrategy(m, ps._botFocusId)?.useEconomy(m, ps);
-      yield* buyLoopSteps(m, ps, { spendAll: true, maxRefreshes: 0 });
-      takeOffers(m, ps); yield* arrangeSteps(m, ps); equipItems(m, ps); yield;
-    },
-    planLayoutSteps: (owner, pieces, options) => planLayoutSteps(m, owner, pieces, LAYOUT_PARAMS, options) });
+    planLayoutSteps: (shadow, pieces, options = {}) => planLayoutSteps(m, shadow, pieces, LAYOUT_PARAMS, options) });
   tryDo(() => ps.setReady(true));
 }
 
@@ -1829,6 +1833,8 @@ function* finishAssetsSteps(m, ps) {
       if (coreStrategy(m, ps._botFocusId)?.shoppingRepair) {
         yield* buyLoopSteps(m, ps, { spendAll:true, maxRefreshes:64 });
       } else for (let n = 0; n < 64 && m.gd.refreshPrice > 0 && ps.funds >= m.gd.refreshPrice; n++) {
+          if (coreStrategy(m,ps._botFocusId)?.beforeShopRefresh?.(m,ps,{freePurchaseSlot:()=>freeShoppingSlot(m,ps)
+            ||sellWeakestHand(m,ps,{handOnly:true,keepFresh:true})})===false) break;
           if (!tryDo(() => spendAction(m, ps, () => ps.refresh()))) break;
           yield;
         }
@@ -1932,9 +1938,13 @@ export function diyOpensAt(ps, lv) {
 export function levelUp(m, ps, { spare = false } = {}) {
   const gd = ps?.gd || m.gd;
   for (let guard = 0; guard < 6; guard++) {
+    coreStrategy(m, ps._botFocusId)?.preparePurchases?.(m,ps,{freePurchaseSlot:()=>freeShoppingSlot(m,ps)
+      ||sellWeakestHand(m,ps,{handOnly:true,keepFresh:true})});
     if (ps.shop.level >= gd.maxShopLevel) return;
     const price = Math.max(0, ps.shop.upgradePrice);
-    if (ps.funds < price) return;
+    const audit = (reason, extra = {}) => m._sargonUpgradeAudit?.({ round: m.round, level: ps.shop.level,
+      funds: ps.funds, price, spare, reason, ...extra });
+    if (ps.funds < price) { audit('cash'); return; }
     const r = m.round;
     const recipe = coreStrategy(m, ps._botFocusId);
     // [ASSUMED] The optional late-level gate inspects the same proposed roster used by arrangement.
@@ -1942,15 +1952,9 @@ export function levelUp(m, ps, { spare = false } = {}) {
     const fielded = recipe?.lateUpgradeLineup && r >= gd.bossRound && ps.shop.level === 5
       ? chooseLineup(m, ps, context(m, ps)).set : null;
     const recipeTarget = recipe?.levelTarget(m, ps, { spare, fielded });
-    if (recipeTarget != null && ps.shop.level >= recipeTarget) return;
-    let rewardContext;
-    const order = recipe?.upgradeMergeOrder?.(m, ps, { scoreReward: id => buyScore(m, ps, id, rewardContext ||= context(m, ps), true) });
-    if (order && !order.upgradeFirst) {
-      (ps._botMergeOrder ||= []).push({ round: r, level: ps.shop.level, funds: ps.funds, first: 'merge', current: order.current, next: order.next });
-      return;
-    }
-    if (recipeTarget != null && !recipe.beforeUpgrade(m, order?.gatePlayer || ps, fielded ? { ...bondPlan(m, ps), fielded } : bondPlan(m, ps))) return;
-    if (recipeTarget != null && price > 0 && ps.funds < price + recipe.upgradeReserve(m, ps)) return;
+    if (recipeTarget != null && ps.shop.level >= recipeTarget) { audit('target', { target: recipeTarget }); return; }
+    if (recipeTarget != null && !recipe.beforeUpgrade(m, ps, fielded ? { ...bondPlan(m, ps), fielded } : bondPlan(m, ps))) { audit('readiness-or-card', { target: recipeTarget }); return; }
+    if (recipeTarget != null && price > 0 && ps.funds < price + recipe.upgradeReserve(m, ps)) { audit('reserve', { target: recipeTarget, reserve: recipe.upgradeReserve(m, ps) }); return; }
     const target = recipeTarget ?? LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r)];
     const nextTarget = LEVEL_TARGET[Math.min(LEVEL_TARGET.length - 1, r + 1)];
     // early levels only once the board is full (units first); later a 6-unit core is enough
@@ -1963,26 +1967,12 @@ export function levelUp(m, ps, { spare = false } = {}) {
     if (!want && ps.shop.level < nextTarget && price <= 2 && boardReady) want = true;
     if (!want && spare && ps.funds >= price + 1 + fundsReserve(m, ps) && ps.shop.level < nextTarget + 1 && boardReady) want = true;
     if (!want && ps.funds >= price + 14) want = true;
-    if (!want || !tryDo(() => spendAction(m, ps, () => ps.levelUp()))) return;
+    if (!want) { audit('curve'); return; }
+    audit('upgrade', { target: recipeTarget, reserve: recipe?.upgradeReserve(m, ps) });
+    if (!tryDo(() => spendAction(m, ps, () => ps.levelUp()))) return;
     if (recipe && ps.shop.level === 4) ps._botFourAt = m.round;
-    if (order) {
-      const audit = { round: r, level: order.level, funds: ps.funds + price, first: 'upgrade', current: order.current, next: order.next, purchases: [] };
-      (ps._botMergeOrder ||= []).push(audit);
-      // Upgrade retains visible cards. Complete the reserved merges immediately, before another upgrade or refresh.
-      for (const slot of order.slots) {
-        const index = ps.shop.slots.indexOf(slot);
-        if (index < 0 || slot.sold || !ps.completesChessMerge(slot.id)) continue;
-        if (freeSlot(ps.hand) < 0 && !(recipe.shoppingRepair && freeShoppingSlot(m, ps))) break;
-        const before = recipe.afterPurchase ? new Set(ps.allChess().map(p => p.uid)) : null;
-        if (!tryDo(() => spendAction(m, ps, () => ps.buy(index)))) break;
-        if (before) recipe.afterPurchase(m, ps, slot, before);
-        audit.purchases.push(slot.id);
-        useEconomyItems(m, ps); recipe.useEconomy?.(m, ps); takeOffers(m, ps);
-      }
-      if (order.pendingSlots?.some(s => !s.sold && ps.completesChessMerge(s.id)
-        && ps.priceOf(s) > ps.funds) && !ps.shop.frozen) ps.freeze();
-      return;
-    }
+    recipe?.onLevelUp?.(m, ps, { freePurchaseSlot: () => freeShoppingSlot(m, ps)
+      || sellWeakestHand(m, ps, { handOnly: true, keepFresh: true }) });
   }
 }
 
@@ -2011,7 +2001,21 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
   for (let guard = 0; guard < 40; guard++) {
     if (guard > 0) yield;
     coreStrategy(m, ps._botFocusId)?.liquidity?.(m, ps);
-    const ctx = context(m, ps);
+    coreStrategy(m, ps._botFocusId)?.preparePurchases?.(m,ps,{freePurchaseSlot:()=>freeShoppingSlot(m,ps)
+      ||sellWeakestHand(m,ps,{handOnly:true,keepFresh:true})});
+    let ctx = context(m, ps);
+    if(ctx.strategy?.shoppingSteps){
+      yield* ctx.strategy.shoppingSteps(m,ps,{equipItems:()=>equipItems(m,ps),lineup:()=>chooseLineup(m,ps,context(m,ps)).set,
+        planLayoutSteps:(lineup,variant=0)=>planLayoutSteps(m,ps,lineup,LAYOUT_PARAMS,{formationRoles:true,fireControl:variant>0,
+          rng:createRng(deriveSeed(m.seed,`sargon-shopping-risk:${m.round}:${ps.seat}`+(variant?`:${variant}`:'')))}),
+        *bossRiskSteps(lineup,plans){
+          for(const plan of plans)plan.lineup=lineup;
+          const job=yield* createForecastSteps(m,ps,lineup,plans,plan=>bossInputSteps(m,ps,lineup,plan,{keepWithdrawn:true}),{});
+          if(job)while(!job.run(4))yield;return job;
+        },
+        inputSteps:(lineup,plan)=>bossInputSteps(m,ps,lineup,plan,{keepWithdrawn:true})});
+      ctx=context(m,ps);
+    }
     if (ctx.strategy?.focusedDraftSafety && m.wave && m.round > 1 && ps.shop.level === 2) {
       const key = draftSafetyKey(m, ps);
       if (ps._botDraftSafety?.key !== key) {
@@ -2024,10 +2028,7 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
     }
     const reserve = Math.max(bankReserve, spendAll ? 0 : ctx.strategy?.spendReserve(m, ps) || 0);
     const purchaseReserve = Math.max(reserve, spendAll ? 0 : ctx.strategy?.purchaseReserve?.(m, ps) || 0);
-    if (ctx.strategy?.trade(m, ps, ctx, {
-      lineupFor: view => chooseLineup(m, view, context(m, view)),
-      lineupScore: (view, pieces) => lineupScore(m, view, pieces, context(m, view)),
-    })) { takeOffers(m, ps); continue; }
+    if (ctx.strategy?.trade(m, ps, ctx)) { takeOffers(m, ps); continue; }
     // Refresh layers require an active core. Put three owned core members on the board before refreshing.
     if (ctx.strategy && !ps.bonds[ctx.focus]?.active && (ctx.owned.counts.get(ctx.focus) || 0) >= 3) yield* arrangeSteps(m, ps);
     const ownedN = ps.allChess().length;
@@ -2136,10 +2137,9 @@ function* buyLoopSteps(m, ps, { fillOnly = false, maxRefreshes = 0, spendAll = f
       continue;
     }
     if (canRefresh) {
+      if (ctx.strategy?.beforeShopRefresh?.(m,ps,{freePurchaseSlot:()=>freeShoppingSlot(m,ps)
+        ||sellWeakestHand(m,ps,{handOnly:true,keepFresh:true})})===false) return;
       if (holdCriticalShop(m, ps)) return;
-      if (ctx.strategy?.beforeRefreshSteps && (yield* ctx.strategy.beforeRefreshSteps(m,ps,{
-        LayoutPlan,takeOffers:()=>takeOffers(m,ps),
-      }))) continue;
       if ((ctx.strategy?.shoppingRepair || ctx.strategy?.holdShop) && ps.shop.frozen) tryDo(()=>ps.freeze());
       if (!tryDo(() => spendAction(m, ps, () => ps.refresh()))) return;
       refreshes++;
@@ -2168,18 +2168,6 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
   // withdraw board chess that are not chosen (to free cap) when the hand has space
   for (const [, p] of [...ps.board]) {
     if (p.kind !== 'chess' || chosenSet.has(p.uid)) continue;
-    if (freeSlot(ps.hand) < 0 && ctx.strategy?.beforeWithdrawal?.(m, ps, p, { chosen, freeShoppingSlot }) === true) continue;
-    if(freeSlot(ps.hand)<0&&ctx.strategy?.withdrawalPriority?.(m,ps,p)>0){
-      const priority=ctx.strategy.withdrawalPriority(m,ps,p);
-      freeShoppingSlot(m,ps);
-      if(freeSlot(ps.hand)<0){
-        const reserve=ps.hand.filter(q=>q?.kind==='chess'&&!chosenSet.has(q.uid)&&!(q.items?.length)
-          &&!preserveChess(m,ps,q)&&!ctx.strategy.keep(m,ps,chessRec(m,q.id,ps),ctx)
-          &&(ctx.strategy.withdrawalPriority(m,ps,q)||0)<priority)
-          .sort((a,b)=>pieceValue(m,ps,a,ctx)-pieceValue(m,ps,b,ctx)||a.uid-b.uid)[0];
-        if(reserve&&sellChess(m,ps,reserve)) (ps._botCoopUnusedHistory||=[]).push({kind:'withdrawal-reserve',round:m.round,kept:p.id,sold:reserve.id});
-      }else (ps._botCoopUnusedHistory||=[]).push({kind:'withdrawal-item-space',round:m.round,kept:p.id});
-    }
     if (freeSlot(ps.hand) < 0 && preserveChess(m, ps, p)) {
       const safe = ctx.strategy?.safeWithdrawals;
       if (typeof safe === 'function' ? safe(m, ps, p) : safe === true) freeShoppingSlot(m, ps);
@@ -2245,7 +2233,7 @@ export function* arrangeSteps(m, ps, { final = false, defer = false } = {}) {
     }
     // Extra proposals use their own deterministic stream: merely offering a formation must not reroll later drafts.
     // Never replace m.rngBots across a yield, since other players may be planning between slices.
-    if (m.opts.botFormationRoles === true) plans.splice(3, 0, yield* planLayoutSteps(m, ps, chosen, LAYOUT_PARAMS,
+    if (m.opts.botFormationRoles === true) plans.splice(ctx.strategy?.formationTrialIndex ?? 3, 0, yield* planLayoutSteps(m, ps, chosen, LAYOUT_PARAMS,
       { rng: createRng(deriveSeed(m.seed, `formation:${m.round}:${ps.seat}`)) }));
     const training = [];
     const extraRng = () => m.opts.botHumanLessons || ps._botFocusId === 'lateranoShip' && lateranoLesson(m, 'formation')
@@ -2599,7 +2587,10 @@ function equipItems(m, ps) {
     const ctx = context(m, ps);
     const rec = gd.item(item.id);
     if (rec && rec.itemType === 'MAGIC') { useArt(m, ps, item, ctx); continue; }
-    const target = itemTarget(m, ps, item, ctx);
+    const inheritedTarget = itemTarget(m, ps, item, ctx);
+    const target = ctx.strategy?.compareItemTargets
+      ? ctx.strategy.compareItemTargets(m,ps,item,inheritedTarget,{targetFor:(shadow,p)=>itemTarget(m,shadow,p,context(m,shadow))})
+      : inheritedTarget;
     if (!target) continue;
     const replace = ctx.strategy?.itemReplacement?.(m, ps, rec, target) ?? null;
     if (replace === false) continue; // A recipe may protect a locked equipment pair, including from consumables.

@@ -9,7 +9,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test test/package.test.mjs test/lavinia-package.test.mjs test/release-multiplayer.test.mjs test/zumama-package.test.mjs test/host-compat-package.test.mjs",
+    "test": "node --test test/forecast-sample-cache.test.mjs test/shared-runtime-version.test.mjs test/package.test.mjs test/lavinia-package.test.mjs test/release-multiplayer.test.mjs test/zumama-package.test.mjs test/host-compat-package.test.mjs",
     "build": "node addons/arturia/build.mjs && node addons/lavinia/build.mjs && node addons/zumama/build.mjs",
     "test:integration": "node --test test/integration/arturia.test.mjs test/integration/arturia-upgrade.test.mjs test/integration/arturia-coexist-upgrade.test.mjs test/integration/lavinia.test.mjs test/integration/lavinia-upgrade.test.mjs",
     "test:restart": "node --test test/integration/stale-server.test.mjs",

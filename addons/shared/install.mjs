@@ -4,6 +4,7 @@ import { resolve, dirname, relative, isAbsolute } from 'node:path';
 import { createHash } from 'node:crypto';
 import { patchFiles, PATCH_PATHS, extraPatchPaths } from './patches.mjs';
 import { legacyBundle, migrateLegacy } from './legacy.mjs';
+import { fileURLToPath } from 'node:url';
 
 const STATE = '.ai-addons/install.json', PENDING = '.ai-addons/transaction.json', LOCK = '.ai-addons/install.lock';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -15,6 +16,7 @@ async function safe(root, name) {
     if (await exists(at) && (await lstat(at)).isSymbolicLink()) throw new Error(`Refusing symlink: ${at}`);
   return path;
 }
+
 async function bytes(root, name) { const path = await safe(root, name); return await exists(path) ? readFile(path) : null; }
 async function put(root, name, value) {
   const path = await safe(root, name);
@@ -73,17 +75,27 @@ async function loadBundle(bundle, current) {
   return { meta, payload, portable, shared, ...(Object.keys(manager).length ? { manager } : {}) };
 }
 
-function registry(plugins) {
+export const MANAGER_API = 2;
+// New API-1 runtimes explicitly declare the earliest version they preserve. Keep the newest
+// validated runtime even when its supplying plugin is removed; the final uninstall restores the host.
+export function selectRuntime(plugins, retained) {
+  const candidates = [...Object.values(plugins).map(p => ({ meta: p.meta.sharedRuntime, shared: p.shared })), ...(retained ? [retained] : [])];
+  if (!candidates.length) return null;
+  const selected = candidates.reduce((a, b) => version(a.meta.version, b.meta.version) >= 0 ? a : b);
+  for (const candidate of candidates) {
+    const a = candidate.meta, b = selected.meta;
+    if (a.api !== b.api || a.version.split('.')[0] !== b.version.split('.')[0] || (a.version === b.version
+      ? Object.keys(a.files).length !== Object.keys(b.files).length || Object.entries(a.files).some(([n,h]) => b.files[n] !== h)
+      : !b.compatibleFrom || version(a.version, b.compatibleFrom) < 0))
+      throw new Error('Shared computation runtime differs; use compatible bundles before changing the shared runtime.');
+  }
+  return selected;
+}
+function registry(plugins, retained) {
   const list = Object.values(plugins).sort((a, b) => a.meta.id.localeCompare(b.meta.id));
   const personas = list.map(p => p.meta.persona);
   if (new Set(personas.map(p => p.id)).size !== personas.length) throw new Error('Duplicate AI persona ID');
-  const first = list[0];
-  for (const p of list) {
-    const a = p.meta.sharedRuntime, b = first.meta.sharedRuntime;
-    if (a.api !== b.api || a.version !== b.version || Object.keys(a.files).length !== Object.keys(b.files).length
-      || Object.entries(a.files).some(([name, hash]) => b.files[name] !== hash))
-      throw new Error('Shared computation runtime differs; use compatible bundles before changing the shared runtime.');
-  }
+  const runtime = selectRuntime(plugins, retained);
   const imports = list.map((p, i) => `import * as addon${i} from '${p.meta.bridgeMount ? '../' + p.meta.persona.id : './' + p.meta.persona.id}/index.js';`).join('\n');
   const entries = list.map((p, i) => `[${JSON.stringify(p.meta.persona.id)}, Object.freeze({...addon${i}, PRIORITY:${p.meta.persona.priority ?? 99}, PREPARE_LAST:${p.meta.persona.prepareLast === true},
     pickCard:(m,ps,...args)=>addon${i}.pickCard(policyMatch(m,ps),ps,...args),
@@ -124,7 +136,7 @@ export function withAIAddons(base) {
   });
 }
 `;
-  return { personas, source, shared: first?.shared };
+  return { personas, source, shared: runtime?.shared, runtime };
 }
 
 async function recover(root) {
@@ -180,14 +192,16 @@ export async function install(mode, directory, bundle, { onWrite } = {}) {
     }
     const base = { ...(old?.base || migrated?.base) };
     const legacyBytes = migrated;
-    const manager = incoming.manager || old?.manager;
+    const managerVersion = Math.max(incoming.meta.managerVersion || 1, old?.managerVersion || 1);
+    const manager = old?.manager && (old.managerVersion || 1) > (incoming.meta.managerVersion || 1)
+      ? old.manager : incoming.manager || old?.manager;
     const original = async name => {
       if (!Object.hasOwn(base, name)) base[name] = encode(await bytes(root, name));
       return decode(base[name]);
     };
     const desired = new Map(), list = Object.values(plugins);
     if (list.length) {
-      const { personas, source, shared } = registry(plugins), host = new Map();
+      const { personas, source, shared } = registry(plugins, old?.runtime), host = new Map();
       for (const name of PATCH_PATHS) {
         const value = await original(name); if (!value) throw new Error(`Missing host file: ${name}`);
         host.set(name, value.toString('utf8').replaceAll('\r\n', '\n'));
@@ -226,7 +240,7 @@ export async function install(mode, directory, bundle, { onWrite } = {}) {
     }
     const writes = new Map();
     for (const [name, value] of Object.entries(base)) writes.set(name, desired.has(name) ? desired.get(name) : decode(value));
-    const state = { api: 1, plugins, base, files: {}, manager };
+    const state = { api: 1, plugins, base, files: {}, manager, managerVersion, runtime: list.length ? selectRuntime(plugins, old?.runtime) : null };
     for (const [name, value] of writes) state.files[name] = { after: value == null ? null : sha(value) };
     writes.set(STATE, list.length ? Buffer.from(JSON.stringify(state, null, 2) + '\n') : null);
     if (mode === 'check') return { compatible: true, plugins: list.map(p => p.meta.id), sharedRuntime: 1 };
@@ -246,4 +260,10 @@ export async function install(mode, directory, bundle, { onWrite } = {}) {
   } finally {
     if (lock) { await lock.close(); await put(root, LOCK, null); }
   }
+}
+
+// Lets an unchanged older bundle use the installed, newer manager without repacking that release.
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try { console.log(JSON.stringify(await install(process.argv[2], process.argv[3] || '.', process.argv[4]), null, 2)); }
+  catch (error) { console.error(error.message); process.exitCode = 1; }
 }
