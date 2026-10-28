@@ -14,10 +14,10 @@
       "name": "AI·拉维妮娅",
       "core": "siracusaShip",
       "status": "released",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "addon": "addons/lavinia",
-      "sourceRoot": "releases/lavinia-v0.2.0/source",
-      "manifest": "releases/lavinia-v0.2.1.json"
+      "sourceRoot": "releases/lavinia-v0.2.2/source",
+      "manifest": "releases/lavinia-v0.2.2.json"
     },
     "zumama": {
       "name": "AI·祖玛玛",

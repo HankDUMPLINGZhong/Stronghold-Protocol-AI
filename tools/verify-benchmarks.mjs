@@ -2,6 +2,7 @@ import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
+import {laviniaRows} from './release-lavinia-report.mjs';
 const root=resolve(import.meta.dirname,'..');
 const load=f=>JSON.parse(readFileSync(resolve(root,'benchmarks',f),'utf8'));
 const suite=load('enemy-diversity-v1.json'),results=load('results.json'),policies=load('policies.json');
@@ -58,3 +59,15 @@ assert.equal(zvalidation.complete,true);assert.equal(zvalidation.allFieldsExact,
 assert.equal(zvalidation.matches.length,168);assert.ok(zvalidation.matches.every(g=>g.exact&&g.different.length===0));
 assert.equal(zsolo.policy,zvalidation.policy);assert.equal(zcoop.policy,zvalidation.policy);
 console.log('Verified: Zumama 168 exact common-runtime replays, solo28/15, co-op18/13, same-Pepe controls2/0; complete frozen seed sets.');
+
+const lcoop=load('lavinia-v0.2.2-multiplayer.json'),lsolo=load('lavinia-v0.2.2-solo.json');
+for(const scenario of ['siracusa2','siracusa4']){
+  const games=lcoop.matches.filter(g=>g.scenario===scenario);
+  assert.equal(games.length,56);assert.equal(games.filter(g=>g.victory).length,13);
+  assert.deepEqual(games.map(g=>g.seed).sort((a,b)=>a-b),coopSuite.cases.map(g=>g.seed).sort((a,b)=>a-b));
+  for(const g of games)assert.equal(g.uniteEvidence.reduce((n,r)=>n+r.creditedToLavinia,0),g.lavinia.uniteKills);
+}
+assert.deepEqual(laviniaRows(lcoop.matches),lcoop.rows);
+assert.equal(lsolo.matches.length,28);assert.equal(lsolo.matches.filter(g=>g.victory).length,12);
+assert.deepEqual(lsolo.matches.map(g=>g.seed).sort((a,b)=>a-b),suite.cases.filter(c=>c.config==='solo:ABYSS').map(c=>c.seed).sort((a,b)=>a-b));
+console.log('Verified: Lavinia solo12/28 and both co-op13/56; complete fixed seed sets and personal attributed metrics.');

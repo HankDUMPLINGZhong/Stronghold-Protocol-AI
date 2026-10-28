@@ -40,7 +40,8 @@
 
 | 版本 | 下载 | 说明与校验 |
 |---|---|---|
-| **v0.2.1 · 当前版** | [AI-Lavinia-v0.2.1.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.1/AI-Lavinia-v0.2.1.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.1) |
+| **v0.2.2 · 当前版** | [AI-Lavinia-v0.2.2.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.2/AI-Lavinia-v0.2.2.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.2) |
+| v0.2.1 | [AI-Lavinia-v0.2.1.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.1/AI-Lavinia-v0.2.1.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.1) |
 | v0.2.0 | [AI-Lavinia-v0.2.0.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.0/AI-Lavinia-v0.2.0.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.0) |
 | v0.1.2 | [AI-Lavinia-v0.1.2.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.1.2/AI-Lavinia-v0.1.2.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.1.2) |
 | v0.1.1 | [AI-Lavinia-v0.1.1.zip](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.1.1/AI-Lavinia-v0.1.1.zip) | [发行说明](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.1.1) |

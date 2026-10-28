@@ -4,7 +4,7 @@ import { resolve, dirname, posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 const here = dirname(fileURLToPath(import.meta.url)), repo = resolve(here, '../..');
-const released = {version:'0.2.0',manifest:'releases/lavinia-v0.2.0.json',sourceRoot:'releases/lavinia-v0.2.0/source'};
+const released = {version:'0.2.0',manifest:'releases/lavinia-v0.2.0.json',sourceRoot:'releases/lavinia-v0.2.0/source',runtime:'releases/lavinia-v0.2.0/installer/runtime.js'};
 const frozen = JSON.parse(readFileSync(resolve(repo, released.manifest)));
 export const POLICY_REF = frozen.policy;
 export const UPSTREAM_REF = frozen.upstream;

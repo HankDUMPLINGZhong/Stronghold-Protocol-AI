@@ -35,13 +35,13 @@ test('published multiplayer rows reproduce the complete named-teammate samples a
 });
 
 test('Lavinia release retains both complete corpora, personal metrics and reproducible public rows', () => {
-  const report = JSON.parse(readFileSync(new URL('../benchmarks/lavinia-v0.2.0-multiplayer.json', import.meta.url)));
+  const report = JSON.parse(readFileSync(new URL('../benchmarks/lavinia-v0.2.2-multiplayer.json', import.meta.url)));
   assert.equal(report.matches.length, 112);
   assert.deepEqual(laviniaRows(report.matches), report.rows);
-  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['siracusa2', 9, 56], ['siracusa4', 11, 56]]);
+  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['siracusa2', 13, 56], ['siracusa4', 13, 56]]);
   assert.ok(report.matches.some(r => r.lavinia.eliminatedRound < r.reachedRound), 'early eliminations remain included');
   const table = laviniaTable(report.rows);
-  for (const p of ['docs/strategies/siracusa.md', 'benchmarks/lavinia-v0.2.0-multiplayer.md'])
+  for (const p of ['docs/strategies/siracusa.md', 'benchmarks/lavinia-v0.2.2-multiplayer.md'])
     assert.ok(readFileSync(new URL('../' + p, import.meta.url), 'utf8').includes(table), p);
 });
 

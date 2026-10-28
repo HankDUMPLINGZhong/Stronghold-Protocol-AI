@@ -29,7 +29,10 @@ before(() => {
 
 for(const [label,mode,names] of [
   ['Arturia solo','solo',['arturia']],['Lavinia solo','solo',['lavinia']],['Zumama solo','solo',['zumama']],
-  ['Zumama two-player','coop',['zumama','ordinary']],['all three elites four-player','coop',[...ids,'ordinary']],
+  ['Zumama two-player','coop',['zumama','ordinary']],
+  ['Lavinia two-player','coop',['lavinia','ordinary']],
+  ['Lavinia four-player','coop',['lavinia','ordinary','ordinary2','ordinary3']],
+  ['all three elites four-player','coop',[...ids,'ordinary']],
 ])test(`terminal ABYSS recipes on 0.3.3: ${label}`,{timeout:1200000},async t=>{
   if(!modernHost)return t.skip('new upstream settlement/prep API regression');
   const {root}=fixture(t);
@@ -164,7 +167,7 @@ test('released three-persona installations upgrade independently without changin
   assert.equal((await install('arturia','install',root)).upgradedFrom,'0.2.4');
   assert.equal((await install('lavinia','install',root)).upgradedFrom,'0.2.0');
   state=json(path.join(root,'.ai-addons/install.json'));
-  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.2.6','0.2.1','0.1.2']);
+  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.2.6','0.2.2','0.1.2']);
   const manage=(await load(path.join(bundles.zumama,'common/install.mjs'))).install;
   const bytes=fs.readFileSync(path.join(root,'.ai-addons/install.json'));
   await assert.rejects(manage('check',root,old.zumama),/newer/);

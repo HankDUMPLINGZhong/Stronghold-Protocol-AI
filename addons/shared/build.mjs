@@ -45,7 +45,8 @@ export function buildPersona(id, output, release, { record = false } = {}) {
     put('policy/' + p, text); files['policy/' + p] = sha(text);
   }
   for (const p of Object.values(frozen.entries || { main: 'server/match/botDevelopment.js' })) policy(p);
-  const runtime = fs.readFileSync(resolve(here, 'runtime.js'));
+  const runtimeSnapshot = resolve(repo, `releases/${id}-v${release.version}/runtime.js`);
+  const runtime = fs.readFileSync(fs.existsSync(runtimeSnapshot) ? runtimeSnapshot : resolve(here, 'runtime.js'));
   put('runtime.js', runtime); files['runtime.js'] = sha(runtime);
   const attack = relative(`${mount}/compat/settlement.js`, 'server/sim/attack.js');
   const damage = relative(`${mount}/compat/settlement.js`, 'server/sim/damage.js');

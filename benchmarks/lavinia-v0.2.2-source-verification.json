@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-28",
+  "verified": [
+    {
+      "mode": "two",
+      "files": 559,
+      "manifestSha256": "9ee7dc84a5fa418ea12e7c60196dff54aa47ac7b4ce31cf67e02e4a03c96538d"
+    },
+    {
+      "mode": "solo",
+      "files": 541,
+      "manifestSha256": "2f4a4cdb48b612be37bab146dd327a6639184e0ec3a4202998f175e418860e2c"
+    },
+    {
+      "mode": "four",
+      "files": 546,
+      "manifestSha256": "0099d3229d3cfe0f9a1f935a9a8df619fe949e0679528dc917492cd8553a6476"
+    }
+  ],
+  "verifiedOrigins": 600,
+  "evidence": [
+    {
+      "scenario": "siracusa2",
+      "sourceSha256": "e1687dec2c074d4ef6ffd4099dc2323ad8904399f0f894b5f0c583ebf92fab5c",
+      "cases": 56,
+      "wins": 13
+    },
+    {
+      "scenario": "siracusa4",
+      "sourceSha256": "642bbfa605b7e7b69f67091e6b9b71122517235545ade87c2c4d7f3121cbd639",
+      "cases": 56,
+      "wins": 13
+    }
+  ],
+  "solo": {
+    "cases": 28,
+    "wins": 12,
+    "sourceSha256": "c3a1374b5e0b5176d7e85dedd0f00d096c365a7ebaabd197b6a6eccfaefe2a59"
+  },
+  "engineModified": false,
+  "unadoptedTrialsEnabled": false
+}

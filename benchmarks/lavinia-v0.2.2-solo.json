@@ -1,0 +1,289 @@
+{
+  "schema": 1,
+  "plugin": "lavinia",
+  "version": "0.2.2",
+  "difficulty": "ABYSS",
+  "sourceSha256": "c3a1374b5e0b5176d7e85dedd0f00d096c365a7ebaabd197b6a6eccfaefe2a59",
+  "matches": [
+    {
+      "seed": 20906,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_1",
+      "sourceRecordSha256": "e77cb5c98f108f0d926fa64ad1af4bef73286dd8e394eb500937895b9c21de1f"
+    },
+    {
+      "seed": 20923,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 7,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "sourceRecordSha256": "c6ba9875beb6ba284c27a66513747ef4306aa00e078e0e22733c904f3a53866d"
+    },
+    {
+      "seed": 20929,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_1",
+      "sourceRecordSha256": "3718c24add865d61b7d325b798d8b47f867a54d93c2e6947531e41823e8a854b"
+    },
+    {
+      "seed": 22388,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "sourceRecordSha256": "b471a7db4bc3916f3d72fb67cdc37c53f53ab7685d42735003f43ac0240388af"
+    },
+    {
+      "seed": 22459,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 6,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "sourceRecordSha256": "7090b195e9000922dd77896450e59f9a9755863d89bf313d83fb374bdd318fb3"
+    },
+    {
+      "seed": 22769,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "sourceRecordSha256": "21094bc1d4227604cddb36155ecc1d3ee0ef4ecdb94aa111324364fcb1ee2a29"
+    },
+    {
+      "seed": 22788,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 8,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "sourceRecordSha256": "beb6cf4320b383d3cd7e301dcd777ea1cc3d309930e1df88c1fce0667cc420b0"
+    },
+    {
+      "seed": 22790,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "sourceRecordSha256": "06cdd721c0a9577e9d4701164a87e08a4f518074847d05d38fa195af9dd9c18f"
+    },
+    {
+      "seed": 22837,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "sourceRecordSha256": "22dfe95b124e414391e072211c9807e7d68129c6f641d0c73b92518199f5d640"
+    },
+    {
+      "seed": 22922,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_5",
+      "sourceRecordSha256": "ec39c833501666267d3d9de0a8ee9f6c697c50cad566d353bd30a91c7d0f7f99"
+    },
+    {
+      "seed": 23873,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 9,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "sourceRecordSha256": "0d563261fb11f4fdd03d30381952ab3515ac06e517eacb3e45140adf7fba278c"
+    },
+    {
+      "seed": 23881,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "sourceRecordSha256": "c4d2d929c396bd8f043fc9c0733dadb7ed0330f2165f8f12e95dba0710bff0a3"
+    },
+    {
+      "seed": 24808,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "sourceRecordSha256": "8eb8d798f06ee9241453698d81a7366709a05432560a6ff31a05ae8fbd41b847"
+    },
+    {
+      "seed": 24924,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "sourceRecordSha256": "ef596acde8b938ad56f842b415f971434390a0c2d9240801c34115522ac47d42"
+    },
+    {
+      "seed": 25864,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_2",
+      "sourceRecordSha256": "ce91a261ae67369ddd2c6dc09d669bbcefde94ed0fe98e262c1694b17f090703"
+    },
+    {
+      "seed": 25894,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 15,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "sourceRecordSha256": "8bc0d9d47029432a60c27712061f1097fc888481e3773c5165d65507c7ae5050"
+    },
+    {
+      "seed": 26203,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 6,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "sourceRecordSha256": "c1024e070336ed6735977bbaf94ed430dc583aee2d30d2e819ade8d036e09b91"
+    },
+    {
+      "seed": 26473,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 15,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "sourceRecordSha256": "70202c71b44709f8e34fe11641f9dee207a5e1420846a62928c409999d297fbc"
+    },
+    {
+      "seed": 26745,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_2",
+      "sourceRecordSha256": "1b97804ac60a982933dc2489f62d4631f92b32e64b8e52784d94fbf2505e17fb"
+    },
+    {
+      "seed": 26760,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 11,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "sourceRecordSha256": "44be22774c55871142ef13ce53f875d9f34f00753d6c591411bcdfea71d6cac5"
+    },
+    {
+      "seed": 26832,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_5",
+      "sourceRecordSha256": "ad53d01fbdb479c5913df0120eaa045d7ada90c865d45540dc7fa08d0b355d05"
+    },
+    {
+      "seed": 26865,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "sourceRecordSha256": "a745f36823b8cc26ff9d41d4ec4b19aaa547a6c801d160e563b38888884cd90d"
+    },
+    {
+      "seed": 26871,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "sourceRecordSha256": "1b33bcd9099b7db009d2b71824ac4d0f28f2eac55120494172e9f749be1788cf"
+    },
+    {
+      "seed": 26915,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "sourceRecordSha256": "db562145f7654e08efdc825d969847bdb03b296a435f2ea14030b8ca488f7fee"
+    },
+    {
+      "seed": 27884,
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 13,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "sourceRecordSha256": "f4f00d241a9402019d59596519ae2102708d9788f387d6360f1d43e2616e20ed"
+    },
+    {
+      "seed": 27915,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 15,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "sourceRecordSha256": "d1e7a2f33fb57ce601f62c8dcd0c59548a4d1bb9c48ec8e1a0d31363c6037a8c"
+    },
+    {
+      "seed": 28882,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "sourceRecordSha256": "f3fe5d55da91cc00c39b702df2e15e770482c3c91eb8b9ed6b18cc28d3dc2479"
+    },
+    {
+      "seed": 29861,
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "roundsPassed": 14,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_3",
+      "sourceRecordSha256": "0125dadeb5535ff3caa82d7f4e3e3f12f647c5f1324419b9ee4eeb0e1e484e75"
+    }
+  ]
+}

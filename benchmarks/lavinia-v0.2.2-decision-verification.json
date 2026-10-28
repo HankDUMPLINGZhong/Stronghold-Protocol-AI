@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-28",
+  "checks": [
+    {
+      "mode": "two",
+      "seed": 83727,
+      "exact": true,
+      "digest": "e6a25dbbf0c57ee079bc376fd84eafebac53a0a2222ee3553b4a96a23caa3b04",
+      "victory": true
+    },
+    {
+      "mode": "two",
+      "seed": 84734,
+      "exact": true,
+      "digest": "a3f1c16e0730cc136bfca04d84017dc0319e8031060641b8e69e86bd76613d7c",
+      "victory": true
+    },
+    {
+      "mode": "four",
+      "seed": 96708,
+      "exact": true,
+      "digest": "922e4545c70fed8c2273abf9ec208c27df15431d0442d4d10d3664c18e062b67",
+      "victory": true
+    }
+  ],
+  "modeSelectionPassed": true,
+  "excludesOnly": "diagnostic ms",
+  "scope": "Three fixed adopted cases, not a new full win-rate measurement."
+}
