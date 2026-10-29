@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-29",
+  "registrySha256": "cd55a4e6998ddadd061477fd36c228ef2af2afd6e9b0f551f71275949b70c176",
+  "soloInheritedFrom": "arturia-v0.2.6",
+  "soloUnchanged": true,
+  "engineModified": false,
+  "snapshots": [
+    {
+      "mode": "two",
+      "recipe": "coop-prep-fin-helm-separate",
+      "sourceFingerprint": "7d344d21becb7b2cd5d25de9ccef042b9d198af62cbb80e3fec5009ebaec28e9",
+      "manifestSha256": "5bd1fdf48630542ec3a40483615237587288e50548ae3ca38ac92ecd6146f9b7",
+      "adoptionSha256": "ce641b25adafe90790a9ec8ebc725b2defe12c12507da96fd831985f1b9040c2",
+      "resultSha256": "82f9222675f54735d9e9b193eba9366f6042aacd39b53ec9cb73fabea0c71457",
+      "verifiedSourceFiles": 598,
+      "publishedPolicyFiles": 136,
+      "cases": 56,
+      "wins": 22
+    },
+    {
+      "mode": "four",
+      "recipe": "coop-prep-fin-helm-separate",
+      "sourceFingerprint": "c3d6be36ed5bed51b1a79edb2347481931b6e58ca122ec836c56dc5c69878f7a",
+      "manifestSha256": "83cf2ca97d8553509cff44ae408976fe55552f6005bf6685f7e5cc8850cd97f4",
+      "adoptionSha256": "766680ecc70d0faaa49094202bcc9d0404f58aac67c455e7d1c547e79f32bcda",
+      "resultSha256": "663606653d3da44adff193275b6a089fedaee481b04f006ea085480f335dbfeb",
+      "verifiedSourceFiles": 598,
+      "publishedPolicyFiles": 136,
+      "cases": 56,
+      "wins": 24
+    }
+  ]
+}

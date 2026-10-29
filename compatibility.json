@@ -2,7 +2,7 @@
   "schema": 1,
   "checkedAt": "2026-10-29",
   "plugins": {
-    "arturia": "0.2.6",
+    "arturia": "0.3.0",
     "lavinia": "0.3.0",
     "zumama": "0.2.0"
   },
@@ -478,5 +478,5 @@
     "independentInstallUpgradeRemoval": true,
     "legacyJournalsSupported": true
   },
-  "latestReleaseValidation": "benchmarks/release-20261029-validation.json"
+  "latestReleaseValidation": "benchmarks/arturia-v0.3.0-validation.json"
 }

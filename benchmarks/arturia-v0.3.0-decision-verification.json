@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-29",
+  "checks": [
+    {
+      "plugin": "arturia",
+      "mode": "two",
+      "seed": 82750,
+      "exact": true,
+      "digest": "ddf20ef22e731907cfad9613b1f26613f3f51452dd408bc1f6cf0289b0df906a",
+      "victory": false
+    },
+    {
+      "plugin": "arturia",
+      "mode": "two",
+      "seed": 85726,
+      "exact": true,
+      "digest": "56d91256711df28820f31bcf36d3886c6df9d3e8d7f75ed5b52c3da00a6495cd",
+      "victory": true
+    },
+    {
+      "plugin": "arturia",
+      "mode": "four",
+      "seed": 82750,
+      "exact": true,
+      "digest": "51a6303639ec734172b691a8495e142a0aa07d1f79a90c2dac91dd8f64431473",
+      "victory": true
+    },
+    {
+      "plugin": "arturia",
+      "mode": "four",
+      "seed": 85726,
+      "exact": true,
+      "digest": "94f02eb9f200c4e295472ed0878937780f86de6f6113e69d2569bdd28b5dde7f",
+      "victory": true
+    }
+  ],
+  "packagedFilesVerified": true,
+  "scope": "Four representative adopted cases, including four-player gains. Complete game records excluding timings and optional observer diagnostics. Complete win-rate corpora are verified adopted evidence, not a new measurement."
+}

@@ -555,11 +555,12 @@
   },
   "latestReleaseBaselines": {
     "date": "2026-10-29",
-    "arturia": "releases/arturia-v0.2.6.json",
+    "arturia": "releases/arturia-v0.3.0.json",
     "zumama": "releases/zumama-v0.2.0.json",
     "verification": "benchmarks/release-20261027-source-verification.json",
     "lavinia": "releases/lavinia-v0.3.0.json",
     "laviniaVerification": "benchmarks/lavinia-v0.2.2-source-verification.json",
-    "sourceVerification": "benchmarks/release-20261029-source-verification.json"
+    "sourceVerification": "benchmarks/release-20261029-source-verification.json",
+    "arturiaSourceVerification": "benchmarks/arturia-v0.3.0-source-verification.json"
   }
 }

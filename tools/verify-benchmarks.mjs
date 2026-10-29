@@ -80,3 +80,12 @@ for(const [report,wins] of [[latestL,[20,16]],[latestZ,[20,20]]])for(const [i,ro
 assert.equal(latestSolo.matches.length,28);assert.equal(latestSolo.matches.filter(g=>g.victory).length,18);
 assert.deepEqual(latestSolo.matches.map(g=>g.seed).sort((a,b)=>a-b),suite.cases.filter(c=>c.config==='solo:ABYSS').map(c=>c.seed).sort((a,b)=>a-b));
 console.log('Verified: latest adopted Lavinia18/20/16 and Zumama15/20/20 fixed baselines.');
+
+const latestA=load('arturia-v0.3.0-multiplayer.json');
+assert.equal(latestA.suiteSha256,createHash('sha256').update(JSON.stringify(coopSuite)).digest('hex'));
+for(const [i,row]of latestA.rows.entries()){
+ const games=latestA.matches.filter(g=>g.scenario===row.scenario);assert.equal(games.length,56);assert.equal(games.filter(g=>g.victory).length,[22,24][i]);
+ assert.deepEqual(games.map(g=>g.seed).sort((a,b)=>a-b),coopSuite.cases.map(c=>c.seed).sort((a,b)=>a-b));
+ for(const g of games)assert.equal(g.uniteEvidence.reduce((s,u)=>s+u.creditedToArturia,0),g.arturia.uniteKills);
+}
+console.log('Verified: Arturia unchanged solo28/20, latest adopted co-op22/24, full seed sets and personal attributed metrics.');

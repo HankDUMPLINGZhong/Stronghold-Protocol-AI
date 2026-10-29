@@ -29,6 +29,8 @@ before(() => {
 
 for(const [label,mode,names] of [
   ['Arturia solo','solo',['arturia']],['Lavinia solo','solo',['lavinia']],['Zumama solo','solo',['zumama']],
+  ['Arturia two-player','coop',['arturia','ordinary']],
+  ['Arturia four-player','coop',['arturia','ordinary','ordinary2','ordinary3']],
   ['Zumama two-player','coop',['zumama','ordinary']],
   ['Lavinia two-player','coop',['lavinia','ordinary']],
   ['Lavinia four-player','coop',['lavinia','ordinary','ordinary2','ordinary3']],
@@ -167,7 +169,7 @@ test('released three-persona installations upgrade independently without changin
   assert.equal((await install('arturia','install',root)).upgradedFrom,'0.2.4');
   assert.equal((await install('lavinia','install',root)).upgradedFrom,'0.2.0');
   state=json(path.join(root,'.ai-addons/install.json'));
-  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.2.6','0.3.0','0.2.0']);
+  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.3.0','0.3.0','0.2.0']);
   const manage=(await load(path.join(bundles.zumama,'common/install.mjs'))).install;
   const bytes=fs.readFileSync(path.join(root,'.ai-addons/install.json'));
   await assert.rejects(manage('check',root,old.zumama),/newer/);
@@ -194,10 +196,39 @@ test('latest prior Lavinia and Zumama releases upgrade directly while preserving
   assert.equal((await install('lavinia','install',root)).upgradedFrom,'0.2.2');
   state=json(path.join(root,'.ai-addons/install.json'));
   assert.deepEqual(peerSnapshot('arturia'),arturiaBefore);assert.deepEqual(peerSnapshot('zumama'),zumamaBefore);
-  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.2.6','0.3.0','0.2.0']);
+  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.3.0','0.3.0','0.2.0']);
   const journal=fs.readFileSync(path.join(root,'.ai-addons/install.json'));
   for(const id of ['lavinia','zumama'])await assert.rejects((await load(path.join(bundles[id],'common/install.mjs'))).install('check',root,old[id]),/newer/);
   assert.deepEqual(fs.readFileSync(path.join(root,'.ai-addons/install.json')),journal);
   for(const id of ['lavinia','zumama','arturia'])await install(id,'uninstall',root);
+  assert.deepEqual(snapshot(root),original);
+});
+
+test('Arturia v0.2.6 upgrades directly preserving current peers and inherited mode options',{timeout:600000},async t=>{
+  const {root,temp}=fixture(t),original=snapshot(root);
+  const old=path.join(temp,'previous-arturia');
+  arturia(old,{version:'0.2.6',manifest:'releases/arturia-v0.2.6.json'});
+  await(await load(path.join(old,'install.mjs'))).install('install',root);
+  for(const id of ['lavinia','zumama'])await install(id,'install',root);
+  let state=json(path.join(root,'.ai-addons/install.json'));
+  const peerPaths=Object.keys(state.files).filter(p=>['lavinia','zumama'].some(id=>p.startsWith(state.plugins['ai-'+id].meta.bridgeMount||'server/match/aiAddons/'+id)));
+  const peerBefore=snapshot(root,peerPaths);
+  assert.equal((await install('arturia','install',root)).upgradedFrom,'0.2.6');
+  assert.deepEqual(snapshot(root,peerPaths),peerBefore);
+  state=json(path.join(root,'.ai-addons/install.json'));
+  assert.deepEqual(ids.map(id=>state.plugins['ai-'+id].meta.version),['0.3.0','0.3.0','0.2.0']);
+  const adapter=await load(path.join(root,'server/match/arturia/index.js'));
+  for(const [mode,difficulty,n,expected]of [
+    ['solo','ABYSS',1,'team28-vision-difficulty'],['coop','HARD',2,'team28-vision-difficulty'],
+    ['coop','ABYSS',3,'team28-vision-difficulty'],['coop','ABYSS',2,'coop-prep-fin-helm-separate'],
+    ['coop','ABYSS',4,'coop-prep-fin-helm-separate']]){
+    const m={mode,isSolo:mode==='solo',difficulty,opts:{seats:Array.from({length:n},()=>({}))}};
+    const before={...m.opts};assert.equal(adapter.policyView(m).opts.botLateranoExperiment,expected);
+    assert.deepEqual(m.opts,before);
+  }
+  const journal=fs.readFileSync(path.join(root,'.ai-addons/install.json'));
+  await assert.rejects((await load(path.join(bundles.arturia,'common/install.mjs'))).install('check',root,old),/newer/);
+  assert.deepEqual(fs.readFileSync(path.join(root,'.ai-addons/install.json')),journal);
+  for(const id of ['arturia','zumama','lavinia'])await install(id,'uninstall',root);
   assert.deepEqual(snapshot(root),original);
 });

@@ -25,6 +25,21 @@ test('released source snapshot retains its original provenance',()=>{
   for(const [name,expected]of Object.entries(frozen.sources))assert.equal(hash(readFileSync(resolve(root,released.sourceRoot,name))),expected,name);
 });
 
+test('v0.3.0 freezes adopted mode-specific policies while inheriting the solo closure exactly',()=>{
+  assert.equal(frozen.version,'0.3.0');
+  assert.equal(frozen.policy,'sha256:'+hash(JSON.stringify(frozen.sources)));
+  assert.deepEqual(Object.keys(frozen.origins).sort(),Object.keys(frozen.sources).sort());
+  const old=JSON.parse(readFileSync(resolve(root,'releases/arturia-v0.2.6.json')));
+  for(const [p,h]of Object.entries(old.sources).filter(([p])=>p.includes('/solo-policy/')))
+    assert.equal(frozen.sources[p],h,p);
+  assert.equal(frozen.entries.retainedTwo,old.entries.two);
+  assert.equal(frozen.entries.retainedFour,old.entries.four);
+  for(const mode of ['two','four'])assert.ok(frozen.entries[mode].includes('/release-'+mode+'/'));
+  assert.deepEqual(frozen.sharedRuntime,old.sharedRuntime);
+  assert.equal(frozen.benchmark.multiplayer.two,'22/56');
+  assert.equal(frozen.benchmark.multiplayer.four,'24/56');
+});
+
 test('every previous release keeps its complete immutable source snapshot',()=>{
   for(const file of readdirSync(resolve(root,'releases')).filter(f=>/^arturia-v.*\.json$/.test(f))){
     const manifest=JSON.parse(readFileSync(resolve(root,'releases',file)));

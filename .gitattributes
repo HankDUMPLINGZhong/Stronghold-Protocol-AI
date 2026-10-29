@@ -31,3 +31,5 @@ addons/lavinia/policy/** whitespace=cr-at-eol,-blank-at-eof
 
 releases/lavinia-v0.3.0/source/** whitespace=cr-at-eol,-blank-at-eof
 releases/zumama-v0.2.0/source/** whitespace=cr-at-eol,-blank-at-eof
+
+releases/arturia-v0.3.0/source/** whitespace=cr-at-eol,-blank-at-eof

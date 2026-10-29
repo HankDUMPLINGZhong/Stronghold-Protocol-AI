@@ -1,0 +1,5222 @@
+{
+  "schema": 1,
+  "plugin": "arturia",
+  "version": "0.3.0",
+  "suiteId": "coop-abyss-diversity-v1",
+  "suiteSha256": "b825f76735b4a48c4acdf76b42324f992a0c5e560a66b2466717c2a9d8c468ad",
+  "difficulty": "ABYSS",
+  "randomBans": false,
+  "rows": [
+    {
+      "scenario": "arturia2",
+      "label": "二人：图图＋bot",
+      "wins": 22,
+      "total": 56,
+      "reachedRound": 12.839285714285714,
+      "lateranoLayers": 199.82142857142858,
+      "leaks": 27,
+      "uniteKills": 24.696428571428573
+    },
+    {
+      "scenario": "arturia4",
+      "label": "四人：图图＋3bot",
+      "wins": 24,
+      "total": 56,
+      "reachedRound": 13.107142857142858,
+      "lateranoLayers": 210.71428571428572,
+      "leaks": 24.142857142857142,
+      "uniteKills": 64.58928571428571
+    }
+  ],
+  "matches": [
+    {
+      "scenario": "arturia2",
+      "seed": 80740,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 509,
+        "leaks": 9,
+        "uniteKills": 61
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 7,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 8,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 9,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 10,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 12,
+          "countedKilled": 16,
+          "creditedToArturia": 16
+        }
+      ],
+      "sourceRecordSha256": "4f067a50cf3db13ebb14cf7298b9c382b1f8f7b8402b77ab6fd8da3809169182"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 80756,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 272,
+        "leaks": 25,
+        "uniteKills": 19
+      },
+      "uniteEvidence": [
+        {
+          "round": 7,
+          "countedKilled": 19,
+          "creditedToArturia": 19
+        },
+        {
+          "round": 10,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "abba1427512e4ba08fb32284e2fde94f9599b1c9dd411542686656e923473077"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 81753,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 304,
+        "leaks": 2,
+        "uniteKills": 42
+      },
+      "uniteEvidence": [
+        {
+          "round": 8,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 10,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 11,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 12,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 13,
+          "countedKilled": 30,
+          "creditedToArturia": 30
+        }
+      ],
+      "sourceRecordSha256": "fb77d5bf60c4363c54b1c4bbe0da088393de6557b3c863db971fac1eb850960b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 82385,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 204,
+        "leaks": 21,
+        "uniteKills": 8
+      },
+      "uniteEvidence": [
+        {
+          "round": 12,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        }
+      ],
+      "sourceRecordSha256": "5ee4b8fa86cea79e079ff6e75157106623ca063e1472b5356fd14b407f72bc1c"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 82731,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 151,
+        "leaks": 16,
+        "uniteKills": 24
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 10,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 11,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        }
+      ],
+      "sourceRecordSha256": "7dc45eae56072831e2eb94046c9e7e4a0087ad7df402026370dcba6d93caecfb"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 82750,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "lateranoLayers": 61,
+        "leaks": 37,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "ac57b90b4f33fc46d9ed8d9445a29bed741bdbd1063885e111fc3dfee63a77c0"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 83660,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 320,
+        "leaks": 23,
+        "uniteKills": 27
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 3,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 9,
+          "countedKilled": 16,
+          "creditedToArturia": 16
+        }
+      ],
+      "sourceRecordSha256": "a74c6ac3688adcbf2b4cded210b746a3dd632ea8fdd6c2ead4707b7459acb7c0"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 83715,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 162,
+        "leaks": 15,
+        "uniteKills": 46
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 12,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 13,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        }
+      ],
+      "sourceRecordSha256": "f0d8cc6bab444574512428f8de5781207395e83df1eedfec162c7eb84d187c9b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 83727,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "arturia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "lateranoLayers": 947,
+        "leaks": 3,
+        "uniteKills": 50
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 9,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 10,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 11,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 12,
+          "countedKilled": 22,
+          "creditedToArturia": 22
+        }
+      ],
+      "sourceRecordSha256": "5e8bfb8f7e51695edd460601b95babeeb1b89a43338be2d0c09eb1c2f513bff1"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 83742,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 61,
+        "leaks": 37,
+        "uniteKills": 77
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 7,
+          "countedKilled": 50,
+          "creditedToArturia": 49
+        },
+        {
+          "round": 9,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        },
+        {
+          "round": 11,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 13,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        }
+      ],
+      "sourceRecordSha256": "6a80a865ae134ba44fc837fc8bde60c5693dfd52e093eb29fdfabe5c477ec74b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 84259,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 229,
+        "leaks": 16,
+        "uniteKills": 45
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 12,
+          "countedKilled": 31,
+          "creditedToArturia": 31
+        }
+      ],
+      "sourceRecordSha256": "3e8c8c04717e3f42d2e93ef20db621fe7fc4835e7dbf76e5dcb8bb0947e99a1c"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 84730,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 88,
+        "leaks": 6,
+        "uniteKills": 104
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 7,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 10,
+          "countedKilled": 20,
+          "creditedToArturia": 20
+        },
+        {
+          "round": 11,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 13,
+          "countedKilled": 39,
+          "creditedToArturia": 39
+        }
+      ],
+      "sourceRecordSha256": "8a7d28d5be6a622d0c0954092f9d5ae18cc9e1adf11afd23aec18a76c70cbe38"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 84734,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 47,
+        "leaks": 28,
+        "uniteKills": 15
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        }
+      ],
+      "sourceRecordSha256": "065532f5a9b832d6c90747c4dac557e3509ef42a6ccffe2f199b23271a979ad6"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 84735,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "arturia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "lateranoLayers": 735,
+        "leaks": 17,
+        "uniteKills": 9
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 12,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 13,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        }
+      ],
+      "sourceRecordSha256": "27f1fad69d38863a186d21a59e733438f9d7ba0856be3074585f32ac45c99cc0"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 84739,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 210,
+        "leaks": 22,
+        "uniteKills": 5
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        }
+      ],
+      "sourceRecordSha256": "9338d2e51e5f3234feac6041637b688bdb1876d8a331137e6abf10a50c7ea1ca"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 84744,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "lateranoLayers": 201,
+        "leaks": 41,
+        "uniteKills": 20
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 10,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 11,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        }
+      ],
+      "sourceRecordSha256": "c6e1f9f9466da400bf3ab3f04f336b76131445a2fcf7f29ebe3b1b52ac3f19a6"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 85726,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 145,
+        "leaks": 27,
+        "uniteKills": 8
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 5,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 12,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        }
+      ],
+      "sourceRecordSha256": "7ce8eb059be3e3103aff73496514f6b2b6c9a1486d552d702d10cbba5415ded7"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 85737,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 166,
+        "leaks": 17,
+        "uniteKills": 21
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 5,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 7,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 9,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        }
+      ],
+      "sourceRecordSha256": "e0ff9e53d2484570d01bce45134c82b8bbfb0be3cb3d7343ecda0df154eef4b7"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 85741,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 100,
+        "leaks": 36,
+        "uniteKills": 30
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 12,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 13,
+          "countedKilled": 19,
+          "creditedToArturia": 19
+        }
+      ],
+      "sourceRecordSha256": "be2c21b5e4ff77ff1d250f1f3ebb6ccf5574f50057e1a62c95f98b4442a9fc51"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 86734,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "lateranoLayers": 56,
+        "leaks": 48,
+        "uniteKills": 5
+      },
+      "uniteEvidence": [
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        }
+      ],
+      "sourceRecordSha256": "91c694f5a3024e60db35b745fce4bf038e6d21589845711c26be5d9f746187ef"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 87429,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "lateranoLayers": 48,
+        "leaks": 43,
+        "uniteKills": 6
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 7,
+          "countedKilled": 11,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "5e1e8b12a8a67c3b03111af2e03a80a8d2b7a780731d05db233a20072a43f68b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 87699,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 379,
+        "leaks": 27,
+        "uniteKills": 13
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "6fd8e76418b48f62bbce5953981fc9f8035df9a4fc85f5382eaf9f7cdeece46d"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 87716,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 87,
+        "leaks": 57,
+        "uniteKills": 64
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 6,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 7,
+          "countedKilled": 42,
+          "creditedToArturia": 35
+        },
+        {
+          "round": 11,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "34a60f4b607b3f7ff96772bede6dbcb02cfc4bedc25b375f59b7f7dd6fe47d54"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 87724,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 550,
+        "leaks": 16,
+        "uniteKills": 18
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 10,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        }
+      ],
+      "sourceRecordSha256": "69bff04a4da75b116979ffb45d7220d3915cbb03fdd4d9c4153566931a6d91d8"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 87734,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "arturia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "lateranoLayers": 102,
+        "leaks": 25,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "7375539df4b71d539b2f1336ae715df9756f3d808569c9f69d6e093d05c2d1e2"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 87735,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 7,
+      "arturia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "lateranoLayers": 3,
+        "leaks": 30,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "c515febf9d7b1d42af7764319872c38d8b2d9ba7cc87d951299b9822e00258a0"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 88729,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "arturia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "lateranoLayers": 110,
+        "leaks": 35,
+        "uniteKills": 4
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        }
+      ],
+      "sourceRecordSha256": "02e7b030b3c64a5be2f6c9f90ad2329448ed19f88619f75fff9b1660e44787a2"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 88730,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 183,
+        "leaks": 30,
+        "uniteKills": 31
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 7,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 8,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 9,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 10,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "5bf95bf52fecd07f57a25948ca11da2a7a9cbf3fbf35fe442ae18e9c9d4df3b3"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 88732,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "arturia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "lateranoLayers": 74,
+        "leaks": 36,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "5e61ab71582ea6d64d03290a11f4d3b8ddfc90058655dae35c962a93220c8817"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 89691,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 234,
+        "leaks": 20,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        }
+      ],
+      "sourceRecordSha256": "51bbf8a095ece864682eb1b2936a526b8a0c984b15fd63c43119393a61b1c4fd"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 89708,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 7,
+      "arturia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "lateranoLayers": 0,
+        "leaks": 35,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "4860c5b1c61c381ad2b379c3bbf318db3225b073345c640451fa4dc8e7532677"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 89819,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 129,
+        "leaks": 81,
+        "uniteKills": 12
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        },
+        {
+          "round": 8,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 13,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "5eb0e999365046cb59b437aea100a0aeb1704b69feab8a5b3f9b58be5e157e16"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 90504,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 49,
+        "leaks": 42,
+        "uniteKills": 17
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        }
+      ],
+      "sourceRecordSha256": "6003a0a0255a6a3abe214a2a0851838f458e91ea404693c7baeb7863b1cd3c0c"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 90720,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 52,
+        "leaks": 35,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "c2f449f90e3ed3fc94b3b727b2edf8ce79a6907e5d187787dc27e87a15d92c85"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 90726,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 362,
+        "leaks": 58,
+        "uniteKills": 35
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 8,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        }
+      ],
+      "sourceRecordSha256": "de2822a4ab1a0a00b485f3099acc799f6b4cdf3516aff371b0e2477483b9d63b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 90878,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 317,
+        "leaks": 28,
+        "uniteKills": 8
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 3,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        }
+      ],
+      "sourceRecordSha256": "19c3bbf23d795e89b2e84538e5fa9ee37b6054ebe2dae3c31093b1e3552ee185"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 91583,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 333,
+        "leaks": 12,
+        "uniteKills": 82
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 8,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 11,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        },
+        {
+          "round": 13,
+          "countedKilled": 36,
+          "creditedToArturia": 36
+        }
+      ],
+      "sourceRecordSha256": "a646063bea984f0f2ecab6f02e33e34ffb2fe2ab7b742a989e0018a4c045d38a"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 91721,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 455,
+        "leaks": 23,
+        "uniteKills": 5
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        }
+      ],
+      "sourceRecordSha256": "0c908669d2e1fc4c9a62bec92082548fa61e02f2fa1596c1e22dc39b19a98e49"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 91722,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 8,
+      "arturia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "lateranoLayers": 3,
+        "leaks": 36,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [],
+      "sourceRecordSha256": "d61ef70067c2c40c02c495bb13bd33b80456e4f8c214f1d54f97edec1f8067c4"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 91723,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 186,
+        "leaks": 12,
+        "uniteKills": 46
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 9,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 10,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 13,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "3dfdb21fefae53e2379a847ac1f4a330ea0eea48dd4ce9544db0bb271084ef6a"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 92720,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 136,
+        "leaks": 21,
+        "uniteKills": 7
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        }
+      ],
+      "sourceRecordSha256": "a58c3c05b1a86748173082cf4d8aedb21f7db11888ac2d0b73ac9f8b84199a9b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 93622,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 204,
+        "leaks": 21,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "1e09e3aac2b21dcba5c613de5f87de7538f3454541bd8fa0d988b98dc558a303"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 94675,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 128,
+        "leaks": 24,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        }
+      ],
+      "sourceRecordSha256": "a45920689e1b8dd8400370ad2c16efd245fc4b1b80aba23c72bf44689cb319aa"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 94714,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 90,
+        "leaks": 29,
+        "uniteKills": 22
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 9,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 10,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        }
+      ],
+      "sourceRecordSha256": "d275d796e4dc106585551732ece41ef6bda3c500dd0bd26c51ca71ab2d194cb8"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 95700,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 158,
+        "leaks": 6,
+        "uniteKills": 40
+      },
+      "uniteEvidence": [
+        {
+          "round": 8,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 11,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 12,
+          "countedKilled": 28,
+          "creditedToArturia": 28
+        }
+      ],
+      "sourceRecordSha256": "1a280eac447720bba2147ec3a05786b39bd94d3c3f75737ca50cd9ffb5ab26bb"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 95703,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 156,
+        "leaks": 15,
+        "uniteKills": 39
+      },
+      "uniteEvidence": [
+        {
+          "round": 7,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 10,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 11,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 12,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "f00b3b01a31059ac7e35ad39b259d454355b5d9bb9aa342cf3e07d6c47a513ac"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 95709,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "arturia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "lateranoLayers": 707,
+        "leaks": 27,
+        "uniteKills": 77
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 18,
+          "creditedToArturia": 18
+        },
+        {
+          "round": 12,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        },
+        {
+          "round": 13,
+          "countedKilled": 29,
+          "creditedToArturia": 29
+        }
+      ],
+      "sourceRecordSha256": "c627ebfca73726c402614a748af7c285cda464ec976e0d67a94fae0e9cd0a858"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 95711,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 31,
+        "leaks": 37,
+        "uniteKills": 13
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        }
+      ],
+      "sourceRecordSha256": "8b44edb0960aa32075f3ddce053fef02ab9b08fbe0cc97eda2965c9c4ba4ed00"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 96708,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 108,
+        "leaks": 22,
+        "uniteKills": 39
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 9,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        },
+        {
+          "round": 11,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 12,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        }
+      ],
+      "sourceRecordSha256": "a797ac05ce021660305715611f3a7ab5a535b4357d4cc87b6984f4612caeed9a"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 97589,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 94,
+        "leaks": 26,
+        "uniteKills": 23
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        }
+      ],
+      "sourceRecordSha256": "2c7d7e2e317887571bcc02dd53894ec00c1614843e87cc107885a437cc7cf3a9"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 97704,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 56,
+        "leaks": 15,
+        "uniteKills": 18
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 9,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 11,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 12,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        }
+      ],
+      "sourceRecordSha256": "f0eebbceea45cc5ac69d388cabff57d86b9cbb4742987de28e6792cb3196708e"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 97705,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 90,
+        "leaks": 29,
+        "uniteKills": 51
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 9,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 10,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        }
+      ],
+      "sourceRecordSha256": "1c9e8619aa28141695b6b451eeca1663c72f55087fad26d56effce96c6fd565b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 98687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 443,
+        "leaks": 17,
+        "uniteKills": 62
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 7,
+          "countedKilled": 34,
+          "creditedToArturia": 34
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 11,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "0ae7324033f1a32b149c7f2ee743add954524a9937d49126aa8bc98007bb1ade"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 98700,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "lateranoLayers": 41,
+        "leaks": 28,
+        "uniteKills": 6
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        }
+      ],
+      "sourceRecordSha256": "e35056d9782b6595cb7d507738a4341551f26729a03346c5622abf6c9fbf11f8"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 99455,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 39,
+        "leaks": 36,
+        "uniteKills": 11
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 8,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "c63afcd58b085c61b5c9d72ade4fc50335c4db16e4ada59da595573b2cec155b"
+    },
+    {
+      "scenario": "arturia2",
+      "seed": 99687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 85,
+        "leaks": 32,
+        "uniteKills": 12
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        }
+      ],
+      "sourceRecordSha256": "032ee9faa5f9beb038f0f51133875f71871821c25b0590f3b9f86461df460fd6"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 80740,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 129,
+        "leaks": 15,
+        "uniteKills": 43
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 7,
+          "countedKilled": 18,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 9,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 10,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        }
+      ],
+      "sourceRecordSha256": "4be248f8e8578c21ebb78f053c73e3a8b563eb2d11ce39ba4400d9edfd837c5b"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 80756,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 98,
+        "leaks": 9,
+        "uniteKills": 156
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 23,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 8,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 23,
+          "creditedToArturia": 23
+        },
+        {
+          "round": 11,
+          "countedKilled": 17,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 12,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 13,
+          "countedKilled": 76,
+          "creditedToArturia": 74
+        }
+      ],
+      "sourceRecordSha256": "f05a78ee7a3a23e62f5afe8663a11fbf2eec42b2a0ba1e86011bd3cad6ddfac0"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 81753,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 494,
+        "leaks": 35,
+        "uniteKills": 74
+      },
+      "uniteEvidence": [
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 7,
+          "countedKilled": 21,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 18,
+          "creditedToArturia": 18
+        },
+        {
+          "round": 10,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 11,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 13,
+          "countedKilled": 30,
+          "creditedToArturia": 30
+        }
+      ],
+      "sourceRecordSha256": "675945cdc9a7090300fdeb125810d168fb03ae3e41c8dd0b12d77cf4a4d4e193"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 82385,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 149,
+        "leaks": 20,
+        "uniteKills": 40
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 7,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 9,
+          "countedKilled": 16,
+          "creditedToArturia": 16
+        },
+        {
+          "round": 11,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        }
+      ],
+      "sourceRecordSha256": "bd60829524036386ebdff12da1c11b7ed8b2e0862b2ea1a9b69062e8c44737f6"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 82731,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 330,
+        "leaks": 5,
+        "uniteKills": 90
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 16,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 8,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 9,
+          "countedKilled": 15,
+          "creditedToArturia": 8
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 12,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 13,
+          "countedKilled": 30,
+          "creditedToArturia": 27
+        }
+      ],
+      "sourceRecordSha256": "4a624c49c5d181de8df00a09112a1f3f5887ea7c7df499c600f9f40558104afd"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 82750,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 181,
+        "leaks": 20,
+        "uniteKills": 67
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 12,
+          "countedKilled": 23,
+          "creditedToArturia": 23
+        },
+        {
+          "round": 13,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        }
+      ],
+      "sourceRecordSha256": "52c0a42874071221a3814f70279b9830b50dee4f448121ec84ac8b8f06477589"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 83660,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "lateranoLayers": 75,
+        "leaks": 45,
+        "uniteKills": 15
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 26,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToArturia": 8
+        },
+        {
+          "round": 11,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        }
+      ],
+      "sourceRecordSha256": "0a58971a09c024a107066924d7a528947157c181d0fa4c61fc9470fc4126ee77"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 83715,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 332,
+        "leaks": 26,
+        "uniteKills": 49
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 8,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 6,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 12,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        },
+        {
+          "round": 13,
+          "countedKilled": 22,
+          "creditedToArturia": 22
+        }
+      ],
+      "sourceRecordSha256": "667fe3f5f79bb071c2c2240c778eaed947c4afb821cc46205c5cf14b4efaef75"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 83727,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "arturia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "lateranoLayers": 614,
+        "leaks": 20,
+        "uniteKills": 62
+      },
+      "uniteEvidence": [
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 5,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 9,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 27,
+          "creditedToArturia": 23
+        },
+        {
+          "round": 10,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 11,
+          "countedKilled": 17,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 12,
+          "countedKilled": 19,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 13,
+          "countedKilled": 25,
+          "creditedToArturia": 25
+        }
+      ],
+      "sourceRecordSha256": "dcf2954f14dfada39f16f6ee5094bb3a2ea9ce01b2c6c52f81de0efbc94d8fc9"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 83742,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 488,
+        "leaks": 21,
+        "uniteKills": 11
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 5,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "0154da954ca6c26191933db4246e0de840e48bd8d9033ea617a38cb2b7ea8aac"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 84259,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 70,
+        "leaks": 31,
+        "uniteKills": 49
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 11,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        }
+      ],
+      "sourceRecordSha256": "0e1060f01417707e45d8b4ff38c6bb8adf2fd138ed59840b6d5c0817b3a226af"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 84730,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 50,
+        "leaks": 25,
+        "uniteKills": 63
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 5,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 25,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 7,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 8,
+          "countedKilled": 16,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 11,
+          "countedKilled": 13,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 12,
+          "countedKilled": 34,
+          "creditedToArturia": 34
+        }
+      ],
+      "sourceRecordSha256": "71c7eec358808e979f27b7f2bbc435b836bfbf787c9d25cc0f76ce3f2a867382"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 84734,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 308,
+        "leaks": 27,
+        "uniteKills": 89
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 5,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 14,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 6,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 7,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 9,
+          "countedKilled": 21,
+          "creditedToArturia": 21
+        },
+        {
+          "round": 10,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 11,
+          "countedKilled": 18,
+          "creditedToArturia": 18
+        }
+      ],
+      "sourceRecordSha256": "343174f46576f5fd07d91fcd429e021150a528e6ecb65e16169558236a4b2f5e"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 84735,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 492,
+        "leaks": 4,
+        "uniteKills": 154
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 16,
+          "creditedToArturia": 16
+        },
+        {
+          "round": 9,
+          "countedKilled": 29,
+          "creditedToArturia": 29
+        },
+        {
+          "round": 10,
+          "countedKilled": 15,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 12,
+          "countedKilled": 56,
+          "creditedToArturia": 56
+        },
+        {
+          "round": 13,
+          "countedKilled": 43,
+          "creditedToArturia": 43
+        }
+      ],
+      "sourceRecordSha256": "39fca939258ac62c77e4d14d70d90f92ecb170ab06cba0d5c1925642a7fba24a"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 84739,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 73,
+        "leaks": 33,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 8,
+          "countedKilled": 18,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "36ab3fc74b30f6b7ef359215ea71ea02b588a803d79a7c91ccf3f3d8e3a89a27"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 84744,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 643,
+        "leaks": 12,
+        "uniteKills": 76
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 6,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 8,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 9,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 11,
+          "countedKilled": 19,
+          "creditedToArturia": 19
+        },
+        {
+          "round": 12,
+          "countedKilled": 22,
+          "creditedToArturia": 22
+        }
+      ],
+      "sourceRecordSha256": "f90fb447d418a023e95ba4b343bc1d4ba33bf6c1381b11508585221d781a2181"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 85726,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 163,
+        "leaks": 6,
+        "uniteKills": 204
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 28,
+          "creditedToArturia": 28
+        },
+        {
+          "round": 9,
+          "countedKilled": 16,
+          "creditedToArturia": 16
+        },
+        {
+          "round": 10,
+          "countedKilled": 28,
+          "creditedToArturia": 28
+        },
+        {
+          "round": 11,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        },
+        {
+          "round": 12,
+          "countedKilled": 59,
+          "creditedToArturia": 59
+        },
+        {
+          "round": 13,
+          "countedKilled": 61,
+          "creditedToArturia": 61
+        }
+      ],
+      "sourceRecordSha256": "ab07f12588fc96c2478bdd2182874068c70884dc4b456f0de1a738e55dea4421"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 85737,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "lateranoLayers": 86,
+        "leaks": 28,
+        "uniteKills": 15
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 14,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 6,
+          "countedKilled": 18,
+          "creditedToArturia": 4
+        }
+      ],
+      "sourceRecordSha256": "eaf3a02afaba80c4dc058d41963e5256aecde7474630464a75998617673e859a"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 85741,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 233,
+        "leaks": 25,
+        "uniteKills": 106
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 10,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 11,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        },
+        {
+          "round": 12,
+          "countedKilled": 45,
+          "creditedToArturia": 45
+        },
+        {
+          "round": 13,
+          "countedKilled": 35,
+          "creditedToArturia": 35
+        }
+      ],
+      "sourceRecordSha256": "78f108b91cf71f7e2317b83fcac19c31f6c5f410b4f7ca2252ad80adf19f01cb"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 86734,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "arturia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "lateranoLayers": 453,
+        "leaks": 24,
+        "uniteKills": 38
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 13,
+          "countedKilled": 31,
+          "creditedToArturia": 31
+        }
+      ],
+      "sourceRecordSha256": "4b7f512e224350026d1c938eac9c253f9968a574d5aa9db833999b2a8ae317ee"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 87429,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 189,
+        "leaks": 0,
+        "uniteKills": 296
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 22,
+          "creditedToArturia": 18
+        },
+        {
+          "round": 7,
+          "countedKilled": 35,
+          "creditedToArturia": 34
+        },
+        {
+          "round": 8,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        },
+        {
+          "round": 9,
+          "countedKilled": 31,
+          "creditedToArturia": 31
+        },
+        {
+          "round": 10,
+          "countedKilled": 37,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 37,
+          "creditedToArturia": 37
+        },
+        {
+          "round": 12,
+          "countedKilled": 60,
+          "creditedToArturia": 60
+        },
+        {
+          "round": 13,
+          "countedKilled": 89,
+          "creditedToArturia": 89
+        }
+      ],
+      "sourceRecordSha256": "456b3fecc523703796d5514f40dccd245dc714f0fa416a25643ca4f0c2e7bb6e"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 87699,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 147,
+        "leaks": 25,
+        "uniteKills": 22
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 19,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 11,
+          "countedKilled": 19,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "eeea32df839a2a31cdcf532bf979a4988b0b1fdca9319f2bd0b3ec5d8e459355"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 87716,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 374,
+        "leaks": 36,
+        "uniteKills": 80
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 53,
+          "creditedToArturia": 48
+        },
+        {
+          "round": 10,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 11,
+          "countedKilled": 2,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 12,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        }
+      ],
+      "sourceRecordSha256": "2e0f142808b0be676cb29bfc02a3ce0b3032b73546766f8bb1e130d8015363c6"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 87724,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 476,
+        "leaks": 19,
+        "uniteKills": 26
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 14,
+          "creditedToArturia": 10
+        },
+        {
+          "round": 11,
+          "countedKilled": 7,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 13,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "ba8605fa17e46997a1f205e1155faa7d4c3f990db6f23fa4770e82d22a2c1041"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 87734,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 189,
+        "leaks": 21,
+        "uniteKills": 45
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 18,
+          "creditedToArturia": 18
+        },
+        {
+          "round": 8,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 15,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 13,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        }
+      ],
+      "sourceRecordSha256": "913a7e6f48aa85d885bceade895444bccc80eb05ced51dae0ea86bf939dc6c88"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 87735,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "lateranoLayers": 52,
+        "leaks": 30,
+        "uniteKills": 6
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 6,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        }
+      ],
+      "sourceRecordSha256": "a891b7543cea88b2ec58cdf7f9d6fccc6bee7865baf51f4509925c8789653914"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 88729,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "arturia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "lateranoLayers": 9,
+        "leaks": 27,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "42efb034774029e4190c3729d4490f753494ec49fa6da0dcb29134d56cb1b488"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 88730,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 248,
+        "leaks": 1,
+        "uniteKills": 170
+      },
+      "uniteEvidence": [
+        {
+          "round": 7,
+          "countedKilled": 66,
+          "creditedToArturia": 66
+        },
+        {
+          "round": 8,
+          "countedKilled": 20,
+          "creditedToArturia": 20
+        },
+        {
+          "round": 9,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToArturia": 12
+        },
+        {
+          "round": 11,
+          "countedKilled": 44,
+          "creditedToArturia": 44
+        },
+        {
+          "round": 12,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 13,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        }
+      ],
+      "sourceRecordSha256": "75b0ab02ad900a64166f700292fcf06fcd0bc2292cfceeabd0e54e757c1d2824"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 88732,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 94,
+        "leaks": 8,
+        "uniteKills": 111
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 20,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        },
+        {
+          "round": 9,
+          "countedKilled": 16,
+          "creditedToArturia": 16
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 37,
+          "creditedToArturia": 37
+        },
+        {
+          "round": 12,
+          "countedKilled": 19,
+          "creditedToArturia": 19
+        },
+        {
+          "round": 13,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        }
+      ],
+      "sourceRecordSha256": "ad396db4e87f8add61c85be663267a34721eb917dccbea6aa0a19e27098b534b"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 89691,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "arturia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "lateranoLayers": 6,
+        "leaks": 34,
+        "uniteKills": 7
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 9,
+          "creditedToArturia": 7
+        }
+      ],
+      "sourceRecordSha256": "955f8e83057472f178e3871a38954ca171abb1b0514742ac0dc2753d3d73638d"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 89708,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 53,
+        "leaks": 45,
+        "uniteKills": 21
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 12,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 13,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        }
+      ],
+      "sourceRecordSha256": "fd160d9fb58e52d6780f765c4952c6466fecffba19fecda92bb849333a9fb51b"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 89819,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "arturia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "lateranoLayers": 6,
+        "leaks": 30,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "5adc3baac84a45181d863022ca124b4a24321f2691b861e03974ffe79f090026"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 90504,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 167,
+        "leaks": 24,
+        "uniteKills": 144
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 31,
+          "creditedToArturia": 31
+        },
+        {
+          "round": 10,
+          "countedKilled": 20,
+          "creditedToArturia": 20
+        },
+        {
+          "round": 11,
+          "countedKilled": 33,
+          "creditedToArturia": 33
+        },
+        {
+          "round": 12,
+          "countedKilled": 34,
+          "creditedToArturia": 34
+        },
+        {
+          "round": 13,
+          "countedKilled": 24,
+          "creditedToArturia": 24
+        }
+      ],
+      "sourceRecordSha256": "84bbca8cc91ac2e44f06a7107ab5dc31965eed1f95d028c772a333a622a7d965"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 90720,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 400,
+        "leaks": 19,
+        "uniteKills": 36
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 19,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 12,
+          "countedKilled": 21,
+          "creditedToArturia": 21
+        },
+        {
+          "round": 13,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        }
+      ],
+      "sourceRecordSha256": "0ef25d964be30ccf47381d74faf666ac4295596ea3bbb8844236fa2e541d3a3e"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 90726,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 177,
+        "leaks": 55,
+        "uniteKills": 9
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 15,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 8,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 9,
+          "countedKilled": 14,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "8991100872d93e14bf9b5070e186e0888bb431726eaa4aefe7eec2342c43bfc4"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 90878,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 93,
+        "leaks": 37,
+        "uniteKills": 12
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 12,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 64,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 13,
+          "creditedToArturia": 12
+        }
+      ],
+      "sourceRecordSha256": "46b80a52cb9f87ef4135dd587427aa040b3e7187b2939f461231baf4d332bd1e"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 91583,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "lateranoLayers": 6,
+        "leaks": 38,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 5,
+          "countedKilled": 8,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "84895834bacabb9443434d18a1aefcdae3939348a7300bac94b55263ac898207"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 91721,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 143,
+        "leaks": 21,
+        "uniteKills": 3
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        }
+      ],
+      "sourceRecordSha256": "9ba9ad11471d414bc3b3027a56d9ba497ee5b058869f56118ff95c7cbd0fdd0d"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 91722,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "lateranoLayers": 10,
+        "leaks": 38,
+        "uniteKills": 13
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 9,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToArturia": 12
+        }
+      ],
+      "sourceRecordSha256": "fc46d780697605b69d65c8cc4c7c8e13af85754997059b5686cea2c4bbfa1b6c"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 91723,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "lateranoLayers": 122,
+        "leaks": 57,
+        "uniteKills": 13
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 14,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        },
+        {
+          "round": 11,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        }
+      ],
+      "sourceRecordSha256": "05a8dbdaa38c0054eacc45fbb7a0f4b4a6891553304043d20393373a7fb0f95c"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 92720,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "arturia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "lateranoLayers": 53,
+        "leaks": 24,
+        "uniteKills": 9
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 6,
+          "countedKilled": 10,
+          "creditedToArturia": 7
+        }
+      ],
+      "sourceRecordSha256": "3992a5287b2cf1d69a1ce8a156fd38c31cea9503d51ee226e1cbd1ee307c28e6"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 93622,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 103,
+        "leaks": 22,
+        "uniteKills": 37
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 5,
+          "countedKilled": 11,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 9,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 9,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 7,
+          "creditedToArturia": 7
+        }
+      ],
+      "sourceRecordSha256": "aa6166818199727feeb092a669cb6d1173696be79b5b43f0e0054465d31d1ae2"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 94675,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 135,
+        "leaks": 9,
+        "uniteKills": 102
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 2,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 14,
+          "creditedToArturia": 14
+        },
+        {
+          "round": 12,
+          "countedKilled": 76,
+          "creditedToArturia": 76
+        },
+        {
+          "round": 13,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        }
+      ],
+      "sourceRecordSha256": "c633bac2e860801ae2af6808b2eb4e99ec360ad6d4100a22ab2fe84c0165e141"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 94714,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "lateranoLayers": 79,
+        "leaks": 43,
+        "uniteKills": 22
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 13,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 18,
+          "creditedToArturia": 7
+        },
+        {
+          "round": 12,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "a3681696e1cf78c64a51b2b97e386c51cecf83656ce379eebc3fc3cfce7d75de"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 95700,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 158,
+        "leaks": 1,
+        "uniteKills": 187
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 10,
+          "countedKilled": 9,
+          "creditedToArturia": 9
+        },
+        {
+          "round": 11,
+          "countedKilled": 82,
+          "creditedToArturia": 57
+        },
+        {
+          "round": 12,
+          "countedKilled": 52,
+          "creditedToArturia": 51
+        },
+        {
+          "round": 13,
+          "countedKilled": 67,
+          "creditedToArturia": 67
+        }
+      ],
+      "sourceRecordSha256": "222525071bd4366128c19e6ceefd886ad0867a004a5302711ee23687bfc909a6"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 95703,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 590,
+        "leaks": 28,
+        "uniteKills": 104
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 6,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 26,
+          "creditedToArturia": 26
+        },
+        {
+          "round": 12,
+          "countedKilled": 42,
+          "creditedToArturia": 42
+        },
+        {
+          "round": 13,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        }
+      ],
+      "sourceRecordSha256": "3293f2de8b163c22609caccfc32dbba7ea35efd395e572facd349e8dc03ea4f1"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 95709,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "arturia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "lateranoLayers": 738,
+        "leaks": 4,
+        "uniteKills": 113
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 9,
+          "countedKilled": 24,
+          "creditedToArturia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 25,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 11,
+          "countedKilled": 25,
+          "creditedToArturia": 25
+        },
+        {
+          "round": 12,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        },
+        {
+          "round": 13,
+          "countedKilled": 29,
+          "creditedToArturia": 29
+        }
+      ],
+      "sourceRecordSha256": "c1f0a9356d0c444cfa64a37d398f6088324ad8129889bde8e8e0d4ab3c562b66"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 95711,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 30,
+        "leaks": 26,
+        "uniteKills": 3
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "2b36f7a6e6a32727aa1232f452d76e0e407a4b0989a694e959cf8ebd4f8f745a"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 96708,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 143,
+        "leaks": 5,
+        "uniteKills": 278
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToArturia": 2
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 9,
+          "countedKilled": 47,
+          "creditedToArturia": 47
+        },
+        {
+          "round": 10,
+          "countedKilled": 23,
+          "creditedToArturia": 23
+        },
+        {
+          "round": 11,
+          "countedKilled": 47,
+          "creditedToArturia": 47
+        },
+        {
+          "round": 12,
+          "countedKilled": 78,
+          "creditedToArturia": 78
+        },
+        {
+          "round": 13,
+          "countedKilled": 65,
+          "creditedToArturia": 65
+        }
+      ],
+      "sourceRecordSha256": "5a646ca636795f469e58b3076099f098e7eda4b55ffb51140c4ab73ebe8d56ed"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 97589,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 170,
+        "leaks": 20,
+        "uniteKills": 50
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 16,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 12,
+          "countedKilled": 26,
+          "creditedToArturia": 26
+        }
+      ],
+      "sourceRecordSha256": "108635d391465c148b065e782c078092fe2680794f4fb38aa178572656c47dc2"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 97704,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 457,
+        "leaks": 11,
+        "uniteKills": 139
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 3,
+          "creditedToArturia": 3
+        },
+        {
+          "round": 7,
+          "countedKilled": 37,
+          "creditedToArturia": 37
+        },
+        {
+          "round": 8,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        },
+        {
+          "round": 9,
+          "countedKilled": 26,
+          "creditedToArturia": 26
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToArturia": 4
+        },
+        {
+          "round": 12,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 13,
+          "countedKilled": 37,
+          "creditedToArturia": 37
+        }
+      ],
+      "sourceRecordSha256": "a5c01161d1aae8be01f909f93554d61574b17d3e8ac8066de6f4e8f79d5e7d95"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 97705,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "arturia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "lateranoLayers": 3,
+        "leaks": 36,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "69a1ac564ebb2a55fc2564c46181a3a711d6e7d1da38b9ea30cae77171083317"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 98687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 82,
+        "leaks": 21,
+        "uniteKills": 37
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 5,
+          "creditedToArturia": 5
+        },
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToArturia": 6
+        },
+        {
+          "round": 4,
+          "countedKilled": 7,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 3,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToArturia": 8
+        },
+        {
+          "round": 13,
+          "countedKilled": 18,
+          "creditedToArturia": 18
+        }
+      ],
+      "sourceRecordSha256": "d8fbbd5cfe9b25dcd73f32d6bc061d6ad35c0c29acbea972bb8acc3834c21b5d"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 98700,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "arturia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "lateranoLayers": 543,
+        "leaks": 29,
+        "uniteKills": 101
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 31,
+          "creditedToArturia": 31
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToArturia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 17,
+          "creditedToArturia": 17
+        },
+        {
+          "round": 12,
+          "countedKilled": 27,
+          "creditedToArturia": 27
+        },
+        {
+          "round": 13,
+          "countedKilled": 15,
+          "creditedToArturia": 15
+        }
+      ],
+      "sourceRecordSha256": "a55b6fa81580a20f4741522218f5b0e2e9d5f8e2ace064b72a64746142474bc6"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 99455,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 76,
+        "leaks": 35,
+        "uniteKills": 18
+      },
+      "uniteEvidence": [
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 1
+        },
+        {
+          "round": 8,
+          "countedKilled": 28,
+          "creditedToArturia": 17
+        }
+      ],
+      "sourceRecordSha256": "3e767d7d3f7dbbc01f0f641b6154d31b89323b40cf35f71c0932e1a3824c7060"
+    },
+    {
+      "scenario": "arturia4",
+      "seed": 99687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "arturia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "lateranoLayers": 18,
+        "leaks": 42,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToArturia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToArturia": 0
+        }
+      ],
+      "sourceRecordSha256": "ad721aa31f404543f8e8a72da37a48adf5fbea274e6c6f54097211fde22ebc9b"
+    }
+  ]
+}

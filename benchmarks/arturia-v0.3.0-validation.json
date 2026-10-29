@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-29",
+  "localVerificationPassed": true,
+  "unit": {
+    "passed": 33,
+    "failed": 0
+  },
+  "modernHostR14": {
+    "passed": 3,
+    "failed": 0,
+    "host": "f07b8965061bbc311ad7aa815879b09264a1e47d",
+    "scope": "Arturia solo, two-player and four-player ABYSS. Remaining current-host scenarios are required by full CI."
+  },
+  "frozenDecisionCases": {
+    "passed": 4,
+    "failed": 0,
+    "report": "benchmarks/arturia-v0.3.0-decision-verification.json"
+  },
+  "directPreviousReleaseUpgrade": {
+    "passed": 1,
+    "failed": 0,
+    "from": "0.2.6",
+    "peerVersions": {
+      "lavinia": "0.3.0",
+      "zumama": "0.2.0"
+    },
+    "peerFilesUnchanged": true,
+    "exactHostRestoration": true,
+    "downgradeRejected": true
+  },
+  "retainedModes": "Solo and unmeasured modes preserve v0.2.6 policy; unchanged solo source hashes verified.",
+  "sharedComputation": "API1/runtime1.1.0 unchanged; paused prototypes excluded.",
+  "requiredCI": "Five-host Verify strategy release must succeed before publication, including all current R14 scenarios, six installation orders, independent upgrades, extended-host groups and restart.",
+  "fullWinRateCorpora": "Verified latest adopted frozen development baselines, not a new win-rate measurement on current upstream.",
+  "mainModified": false
+}
