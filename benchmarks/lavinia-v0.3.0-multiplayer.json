@@ -1,0 +1,5348 @@
+{
+  "schema": 1,
+  "plugin": "lavinia",
+  "version": "0.3.0",
+  "suiteId": "coop-abyss-diversity-v1",
+  "difficulty": "ABYSS",
+  "randomBans": false,
+  "rows": [
+    {
+      "scenario": "siracusa2",
+      "label": "二人：拉维妮娅＋bot",
+      "wins": 20,
+      "total": 56,
+      "reachedRound": 12.178571428571429,
+      "siracusaLayers": 228.96428571428572,
+      "leaks": 34.892857142857146,
+      "uniteKills": 20.375
+    },
+    {
+      "scenario": "siracusa4",
+      "label": "四人：拉维妮娅＋3bot",
+      "wins": 16,
+      "total": 56,
+      "reachedRound": 12.589285714285714,
+      "siracusaLayers": 234.17857142857142,
+      "leaks": 34.982142857142854,
+      "uniteKills": 57.660714285714285
+    }
+  ],
+  "matches": [
+    {
+      "scenario": "siracusa2",
+      "seed": 80740,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 336,
+        "leaks": 16,
+        "uniteKills": 52
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        },
+        {
+          "round": 11,
+          "countedKilled": 14,
+          "creditedToLavinia": 14
+        },
+        {
+          "round": 12,
+          "countedKilled": 22,
+          "creditedToLavinia": 22
+        },
+        {
+          "round": 13,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        }
+      ],
+      "sourceRecordSha256": "9ea359e86443eb83848a3c2e674fb016b9dc3c0042efacc9a0c88dc19a2d1b92"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 80756,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 384,
+        "leaks": 29,
+        "uniteKills": 40
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 12,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        }
+      ],
+      "sourceRecordSha256": "bc9eadca235332c1517e731c500dfff4d84306d53036d1f8dffb69f90de006ba"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 81753,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 334,
+        "leaks": 21,
+        "uniteKills": 25
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 14,
+          "creditedToLavinia": 14
+        }
+      ],
+      "sourceRecordSha256": "e9e123e779c63194c904ff3db3a310947e204f5474a1f616f78276f0af8d1828"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 82385,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 58,
+        "leaks": 50,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 17,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "630d7935cd74d106f785fad62cc21e94596fe9d078b0ee3621a8de596e2eebcc"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 82731,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 224,
+        "leaks": 33,
+        "uniteKills": 24
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        }
+      ],
+      "sourceRecordSha256": "6c12fe37b2bf48d96cf1724875b896c6f1ae5f6435dedb0dda297e1d1f386c1c"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 82750,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 110,
+        "leaks": 44,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "6a22fae7497b29f2e03cae397b4cc8b0fb3574e43d1e5bbb7cda7b806a10d1db"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83660,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 176,
+        "leaks": 36,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "750c3f2c5d509e5af092d08d54dc576ba65da17bb1586e02760358320b378487"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83715,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 390,
+        "leaks": 27,
+        "uniteKills": 5
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        },
+        {
+          "round": 3,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        }
+      ],
+      "sourceRecordSha256": "a640308509ce98d86b86851a51098a315120979128a5b5d544316883df181116"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83727,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 330,
+        "leaks": 13,
+        "uniteKills": 53
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToLavinia": 7
+        },
+        {
+          "round": 7,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 9,
+          "countedKilled": 23,
+          "creditedToLavinia": 22
+        },
+        {
+          "round": 11,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        }
+      ],
+      "sourceRecordSha256": "3dbd214c5bec85ea3b79db9b13331d30361072babc18b33dc7632713a6e99f6e"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 83742,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 268,
+        "leaks": 34,
+        "uniteKills": 119
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 13,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 6,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 7,
+          "countedKilled": 75,
+          "creditedToLavinia": 66
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 17,
+          "creditedToLavinia": 17
+        },
+        {
+          "round": 13,
+          "countedKilled": 8,
+          "creditedToLavinia": 8
+        }
+      ],
+      "sourceRecordSha256": "621def2540013e3588fff58cf7149a6f72af9b0e2cefb737a76835093ebcdbcd"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84259,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 20,
+        "leaks": 47,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "ca3ac1bd2f7f7c511233b77246308598a3db5fa04901fa0b108518a7042204ad"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84730,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 266,
+        "leaks": 31,
+        "uniteKills": 46
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 16,
+          "creditedToLavinia": 16
+        },
+        {
+          "round": 12,
+          "countedKilled": 30,
+          "creditedToLavinia": 30
+        }
+      ],
+      "sourceRecordSha256": "7d10f502787e0d050d3edb9b5ba81d8f38527dc3f3376d42dc0966fc527dd945"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84734,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 258,
+        "leaks": 53,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 12,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        }
+      ],
+      "sourceRecordSha256": "f8a4cba8e26309a057128edae224cdc6a6dfbbad1780a9d1e09dcc2f41764a88"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84735,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 410,
+        "leaks": 33,
+        "uniteKills": 6
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        }
+      ],
+      "sourceRecordSha256": "72a9e2a258ce291b04300d502982ec987691108e8acd7eaa70a70540bd581f00"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84739,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 326,
+        "leaks": 26,
+        "uniteKills": 97
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 8,
+          "creditedToLavinia": 8
+        },
+        {
+          "round": 12,
+          "countedKilled": 43,
+          "creditedToLavinia": 43
+        },
+        {
+          "round": 13,
+          "countedKilled": 35,
+          "creditedToLavinia": 35
+        }
+      ],
+      "sourceRecordSha256": "c78fe80bb8559b3ebc9d4b6498f3c84a236bd4a20d011c993a72a1019488cd27"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 84744,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 66,
+        "leaks": 35,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "187371f9884ff38d33be0d51c7fb23eb823e98b9cc7f47ae7d4ab35a8b3aa6ba"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 85726,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 130,
+        "leaks": 44,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "9cda1b696de9fc52ac72e8363ebd55ec8c0664a25d0e1435e1784593ad6a223e"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 85737,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 44,
+        "leaks": 36,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "6db7714176a3ba3cd174562f48ba231caba7976a8d349719b75de13676fd557d"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 85741,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 272,
+        "leaks": 44,
+        "uniteKills": 8
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 10,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 11,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        }
+      ],
+      "sourceRecordSha256": "914d9517c492690aac5246883e62fb302d0beb9d23f883244f500eab33df74e2"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 86734,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 270,
+        "leaks": 34,
+        "uniteKills": 11
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 9,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 11,
+          "countedKilled": 8,
+          "creditedToLavinia": 8
+        }
+      ],
+      "sourceRecordSha256": "703153166a60a172f3e96d44e779833039b8b4622cd77a20f5e1fb0bc7a4f54c"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87429,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 348,
+        "leaks": 22,
+        "uniteKills": 49
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 14,
+          "creditedToLavinia": 14
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 13,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 11,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        }
+      ],
+      "sourceRecordSha256": "43fd4275e4827e3819025fd22363a772f57e47bee0f2d40e09b607999dbb2505"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87699,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 300,
+        "leaks": 31,
+        "uniteKills": 18
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        }
+      ],
+      "sourceRecordSha256": "2ce666fc460d33d8739bb1f20ae10ae227224476f25c346d73ef0c67dcbd8c67"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87716,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 179,
+        "leaks": 30,
+        "uniteKills": 5
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        }
+      ],
+      "sourceRecordSha256": "67b0ca55df5f468d5ded17de6b47808844155a2ada5b26e1ad2883a7d360b331"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87724,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 360,
+        "leaks": 29,
+        "uniteKills": 64
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 42,
+          "creditedToLavinia": 42
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        }
+      ],
+      "sourceRecordSha256": "2be14153fab6a030e35538ceb81cce89558d7d985f5c997146a42b0f77acf6c2"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87734,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 306,
+        "leaks": 29,
+        "uniteKills": 10
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        }
+      ],
+      "sourceRecordSha256": "ff5deb20d9c9832eaf055d7441d22b4fbd93f661885391797ba254c8a12bce4a"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 87735,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 8,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 34,
+        "leaks": 36,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "f3183f959b7a96292165360a846d8cbe8ed5bb491fe70f4866f26df5b96c9db9"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 88729,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 8,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 52,
+        "leaks": 38,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "b24504c7ae7d10196541a0ff0afb762f3b8cd5d92b5e064f252de90759a83100"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 88730,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 442,
+        "leaks": 28,
+        "uniteKills": 13
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        }
+      ],
+      "sourceRecordSha256": "d2d9650b51ef4d4a07aa499a592ab087fc4abd13673e49bf802644500c1960cb"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 88732,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 8,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 40,
+        "leaks": 57,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 19,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "a1adddc3283cdea2357e4c5dadebb48b60f7ba6d6eea4f2ed8ad656eb987b412"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 89691,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 38,
+        "leaks": 48,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "7bea3453f82671f6480e63ec643f4e9b52b4a3d3f33886b7a4c7547d2800aa40"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 89708,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 7,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 66,
+        "leaks": 24,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "f154956c79cd9dbea15d1ea3a26fc687365ef59ec5beb1cf4d0e4d5a7a867ac3"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 89819,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 162,
+        "leaks": 55,
+        "uniteKills": 10
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 11,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        }
+      ],
+      "sourceRecordSha256": "9f054a37162f1f1fe55b2c5037ba4f875ebdc8b905ed2af102bcc795337097f2"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90504,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 224,
+        "leaks": 35,
+        "uniteKills": 16
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 11,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        }
+      ],
+      "sourceRecordSha256": "a545473c94a3befa40e7d36b5513fd37fd930fc2cf8ca31d1f355348870b4147"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90720,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 246,
+        "leaks": 49,
+        "uniteKills": 16
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        },
+        {
+          "round": 10,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        }
+      ],
+      "sourceRecordSha256": "2d761795786eccd7cef9a640276b452089ca2164e9f77de568b09b7592071f95"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90726,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 56,
+        "leaks": 31,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "e8d9bf805dcb4f84979a8b2e9e8e52a8569ad154dd9180315b5f355a610dc9db"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 90878,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 84,
+        "leaks": 27,
+        "uniteKills": 17
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 7,
+          "countedKilled": 16,
+          "creditedToLavinia": 16
+        }
+      ],
+      "sourceRecordSha256": "38add2a35677bfbe7cb1f974ba130692d794da42a4979b54799ad9327b7940dc"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91583,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 44,
+        "leaks": 45,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "308b0ed299665090e30b9260598136c7b1990306814051980ecaa606e7748cd5"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91721,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 470,
+        "leaks": 28,
+        "uniteKills": 107
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 30,
+          "creditedToLavinia": 30
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        },
+        {
+          "round": 11,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 12,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 13,
+          "countedKilled": 46,
+          "creditedToLavinia": 46
+        }
+      ],
+      "sourceRecordSha256": "1d0c67a547ac8f0223534c8c81f85c0a63d2a9df0bcbb0ccad12f3dc4ff2d80d"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91722,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 284,
+        "leaks": 61,
+        "uniteKills": 3
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        }
+      ],
+      "sourceRecordSha256": "c054409300f095ccebecb49ac04094b5fbdee7c7beb9f4b82b90d5d309061c0f"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 91723,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 384,
+        "leaks": 25,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        }
+      ],
+      "sourceRecordSha256": "977fe76e8676505751115906771f34689bd5079f4abf02ceb1238f5427034460"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 92720,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 60,
+        "leaks": 58,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 15,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "178052180159d2e9e5c5522a6ee5f4e953247de61ed6a7f47a88a9b09abda467"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 93622,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 8,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 48,
+        "leaks": 36,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 13,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "35a3644b86d2d5d212af5b4027661dd5e2b7f6e84405632debd2a2b2b7eaa877"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 94675,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 7,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 24,
+        "leaks": 41,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 2,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "6067e5e029a21a1b54b68e75e8fe296f4d33e5a571ce9ac4940d354866cfc8d6"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 94714,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 112,
+        "leaks": 56,
+        "uniteKills": 3
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 13,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        }
+      ],
+      "sourceRecordSha256": "9fb2cff8982cc64c3a10208fe680a4d4c13f69d3ab343062dbd645e0f8c3ff26"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95700,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 352,
+        "leaks": 8,
+        "uniteKills": 50
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        },
+        {
+          "round": 11,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 12,
+          "countedKilled": 37,
+          "creditedToLavinia": 37
+        }
+      ],
+      "sourceRecordSha256": "f7a05d5ca05bd966b60c933642fe6e9043fed0d56eda0d3626dfc5501b57a12b"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95703,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 376,
+        "leaks": 14,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "3e7a95d6e5e5298e9a76e38fd4b1b3f732cba992192adcbf94a23a1b1f876e38"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95709,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 10,
+        "eliminatedRound": 10,
+        "siracusaLayers": 106,
+        "leaks": 43,
+        "uniteKills": 11
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 9,
+          "countedKilled": 7,
+          "creditedToLavinia": 7
+        }
+      ],
+      "sourceRecordSha256": "145d800ea5f9ebb941289dd041d408a65c54878758583d94217f0646a2f3fad2"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 95711,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 88,
+        "leaks": 27,
+        "uniteKills": 7
+      },
+      "uniteEvidence": [
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 7,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        }
+      ],
+      "sourceRecordSha256": "d19aafe3c0c4358f48d2acdad83d684522f7df0e49ba5b0d16855f166e007e1a"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 96708,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 521,
+        "leaks": 25,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "a9d2ff86c2e5fdffb2f3159aa5ffb1a0e3778ffeef638cdb9f6e90e34ade44da"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 97589,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 334,
+        "leaks": 40,
+        "uniteKills": 54
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 12,
+          "countedKilled": 22,
+          "creditedToLavinia": 22
+        },
+        {
+          "round": 13,
+          "countedKilled": 22,
+          "creditedToLavinia": 22
+        }
+      ],
+      "sourceRecordSha256": "47199f019e4994fc908908fe7f31dc0ed3618d4421c168c0fe69ca3efe09f33e"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 97704,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 446,
+        "leaks": 22,
+        "uniteKills": 57
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 13,
+          "countedKilled": 31,
+          "creditedToLavinia": 31
+        }
+      ],
+      "sourceRecordSha256": "af31ee3a62131bbeb2db71e73dc5eb390189f5c2b41ce6b7ae05905a09823b84"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 97705,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 8,
+      "lavinia": {
+        "reachedRound": 6,
+        "eliminatedRound": 6,
+        "siracusaLayers": 16,
+        "leaks": 44,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "42322f713a7d28e47490108336520eb0db8ce697b1b01219ba1ae6fdebaa3f0b"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 98687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 394,
+        "leaks": 27,
+        "uniteKills": 15
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        },
+        {
+          "round": 9,
+          "countedKilled": 7,
+          "creditedToLavinia": 7
+        },
+        {
+          "round": 10,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        }
+      ],
+      "sourceRecordSha256": "66b47f1e69bf21e2f569e1c6b98719293a2a8da63b2d39d507801e24887457a2"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 98700,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 382,
+        "leaks": 30,
+        "uniteKills": 87
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToLavinia": 8
+        },
+        {
+          "round": 12,
+          "countedKilled": 31,
+          "creditedToLavinia": 31
+        },
+        {
+          "round": 13,
+          "countedKilled": 43,
+          "creditedToLavinia": 43
+        }
+      ],
+      "sourceRecordSha256": "ce232d70a52c4d5cb663ff34d830fbec88acf45ee1472891de919465b431cc54"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 99455,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 440,
+        "leaks": 44,
+        "uniteKills": 3
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        }
+      ],
+      "sourceRecordSha256": "14cb1f11bc72a65e54f87fb1b4d6a20b506f8982b8111e29c795fc2c05bf789b"
+    },
+    {
+      "scenario": "siracusa2",
+      "seed": 99687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 332,
+        "leaks": 25,
+        "uniteKills": 34
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 20,
+          "creditedToLavinia": 20
+        },
+        {
+          "round": 10,
+          "countedKilled": 14,
+          "creditedToLavinia": 14
+        }
+      ],
+      "sourceRecordSha256": "27ac663d3863e57a8c35c6eef5f3ac68cc089c16eebdae03ea5c65803cf045e1"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 80740,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "lavinia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "siracusaLayers": 470,
+        "leaks": 29,
+        "uniteKills": 130
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 11,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 19,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 16,
+          "creditedToLavinia": 16
+        },
+        {
+          "round": 12,
+          "countedKilled": 43,
+          "creditedToLavinia": 43
+        },
+        {
+          "round": 13,
+          "countedKilled": 67,
+          "creditedToLavinia": 67
+        }
+      ],
+      "sourceRecordSha256": "677cee550768a98f5886928726959d5f8a95903fd4a245d34ee5b998a18c2e71"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 80756,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 104,
+        "leaks": 38,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 12,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "d1f5d584ac47d309916ddd8f06ebbe9f588c026b73a17271ce14da222c4554ff"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 81753,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 312,
+        "leaks": 28,
+        "uniteKills": 91
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 16,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 18,
+          "creditedToLavinia": 16
+        },
+        {
+          "round": 7,
+          "countedKilled": 19,
+          "creditedToLavinia": 16
+        },
+        {
+          "round": 10,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 12,
+          "countedKilled": 24,
+          "creditedToLavinia": 24
+        },
+        {
+          "round": 13,
+          "countedKilled": 26,
+          "creditedToLavinia": 26
+        }
+      ],
+      "sourceRecordSha256": "459391e14f5045a358926a9579afd8d67766aa963e98ee4eea8223a72110fc56"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 82385,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 64,
+        "leaks": 46,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 24,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "94456145b4cf238bbd3534eff0b2d05ae1c9f5f9be4f44bc92264a0565f75bc6"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 82731,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 432,
+        "leaks": 11,
+        "uniteKills": 158
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 8,
+          "countedKilled": 14,
+          "creditedToLavinia": 8
+        },
+        {
+          "round": 9,
+          "countedKilled": 23,
+          "creditedToLavinia": 23
+        },
+        {
+          "round": 10,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 11,
+          "countedKilled": 28,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 12,
+          "countedKilled": 33,
+          "creditedToLavinia": 33
+        },
+        {
+          "round": 13,
+          "countedKilled": 83,
+          "creditedToLavinia": 68
+        }
+      ],
+      "sourceRecordSha256": "611877f6537c9a11b0777bd237732ddf522f8c809b269c45e6fae2ef2515eece"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 82750,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 80,
+        "leaks": 41,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "b803a30d1c0b74d80c938df8ddfc8634f25aa4cd28bf09adc6fa75dd43d7094e"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83660,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 68,
+        "leaks": 34,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 28,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "61e2e2bddef3adc6a356c864687a59a6ca0bfed318518416d8db23b6ce20e664"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83715,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 414,
+        "leaks": 18,
+        "uniteKills": 188
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToLavinia": 5
+        },
+        {
+          "round": 9,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 10,
+          "countedKilled": 7,
+          "creditedToLavinia": 7
+        },
+        {
+          "round": 11,
+          "countedKilled": 68,
+          "creditedToLavinia": 68
+        },
+        {
+          "round": 12,
+          "countedKilled": 58,
+          "creditedToLavinia": 58
+        },
+        {
+          "round": 13,
+          "countedKilled": 35,
+          "creditedToLavinia": 35
+        }
+      ],
+      "sourceRecordSha256": "d06930b5cb365aa32bf2409f2f562c4251e7a3743c08de55a528211ad6eda420"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83727,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 296,
+        "leaks": 13,
+        "uniteKills": 63
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 12,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 10,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 11,
+          "countedKilled": 17,
+          "creditedToLavinia": 17
+        },
+        {
+          "round": 13,
+          "countedKilled": 32,
+          "creditedToLavinia": 27
+        }
+      ],
+      "sourceRecordSha256": "7464ad1ae91b556bda829eb47e2a16ada7944342c52e71408dbed685857edb0d"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 83742,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 80,
+        "leaks": 28,
+        "uniteKills": 7
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        }
+      ],
+      "sourceRecordSha256": "e807d88b89ed3e6fdfda02b11e4178218944798976d5529d945cec4462e4d130"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84259,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 340,
+        "leaks": 40,
+        "uniteKills": 27
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 7,
+          "creditedToLavinia": 7
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 11,
+          "countedKilled": 7,
+          "creditedToLavinia": 7
+        },
+        {
+          "round": 13,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        }
+      ],
+      "sourceRecordSha256": "43bde88630f76ddf384cd8c2cb115b34539a49504d7a5a872bc3b036661111b4"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84730,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 316,
+        "leaks": 30,
+        "uniteKills": 71
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 8,
+          "creditedToLavinia": 7
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 14,
+          "creditedToLavinia": 14
+        },
+        {
+          "round": 12,
+          "countedKilled": 39,
+          "creditedToLavinia": 39
+        }
+      ],
+      "sourceRecordSha256": "4eb69d7d34ef9c284da5bc8ae4986a05d20f38fbcda4fa5ed9b4a1132f04a3fb"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84734,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 15,
+      "lavinia": {
+        "reachedRound": 15,
+        "eliminatedRound": null,
+        "siracusaLayers": 624,
+        "leaks": 42,
+        "uniteKills": 278
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 17,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 11,
+          "countedKilled": 36,
+          "creditedToLavinia": 36
+        },
+        {
+          "round": 12,
+          "countedKilled": 61,
+          "creditedToLavinia": 61
+        },
+        {
+          "round": 13,
+          "countedKilled": 169,
+          "creditedToLavinia": 169
+        }
+      ],
+      "sourceRecordSha256": "0600021d2c51cba1e4a30573abbbd190fbf825c4b6b32086f4baae60a2285d1b"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84735,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 435,
+        "leaks": 31,
+        "uniteKills": 53
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        },
+        {
+          "round": 10,
+          "countedKilled": 4,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 11,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 12,
+          "countedKilled": 31,
+          "creditedToLavinia": 31
+        }
+      ],
+      "sourceRecordSha256": "f4e1d61600fa88c78f3d7652b7d9825f8b46a01612fdad3076a58fe4b52457e5"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84739,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 406,
+        "leaks": 25,
+        "uniteKills": 95
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 17,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 17,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 34,
+          "creditedToLavinia": 34
+        },
+        {
+          "round": 12,
+          "countedKilled": 32,
+          "creditedToLavinia": 32
+        },
+        {
+          "round": 13,
+          "countedKilled": 29,
+          "creditedToLavinia": 29
+        }
+      ],
+      "sourceRecordSha256": "96f9d4c513583bd130458c057479afd4c38f72a161e48c9ad4a101126a41c727"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 84744,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 58,
+        "leaks": 46,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "006aa1aef6501c2cd198a9de8c4f03bf4cc92f959319f0891585920ee31b1bd6"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 85726,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 120,
+        "leaks": 57,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 21,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "71975a584112d43c606c6f210bb45e99b0402174f250455ba229b1848ce5b264"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 85737,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 23,
+        "leaks": 35,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "6a75ef0f0053edb6718a13a171cdf161f2fea5f91fbbaa4a8ab24f098331095f"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 85741,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 190,
+        "leaks": 70,
+        "uniteKills": 28
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 24,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 17,
+          "creditedToLavinia": 17
+        }
+      ],
+      "sourceRecordSha256": "b3e5c51ea09ac478c22b372db96a49bc1f73515ad732865eacaa1d8ab4725a79"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 86734,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 342,
+        "leaks": 24,
+        "uniteKills": 108
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 17,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 26,
+          "creditedToLavinia": 26
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 11,
+          "countedKilled": 73,
+          "creditedToLavinia": 70
+        }
+      ],
+      "sourceRecordSha256": "efa9680279aa4d3f34d059ee7f545f80c497ce94265486461a3f22976cbecd9b"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87429,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 300,
+        "leaks": 22,
+        "uniteKills": 197
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 20,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 23,
+          "creditedToLavinia": 17
+        },
+        {
+          "round": 11,
+          "countedKilled": 69,
+          "creditedToLavinia": 45
+        },
+        {
+          "round": 12,
+          "countedKilled": 69,
+          "creditedToLavinia": 69
+        },
+        {
+          "round": 13,
+          "countedKilled": 65,
+          "creditedToLavinia": 65
+        }
+      ],
+      "sourceRecordSha256": "023e56b87e666991e2537a9aaeab20f9ab2506257919fd6d30d1d15b47388397"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87699,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 328,
+        "leaks": 16,
+        "uniteKills": 52
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 10,
+          "creditedToLavinia": 6
+        },
+        {
+          "round": 7,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 10,
+          "countedKilled": 23,
+          "creditedToLavinia": 23
+        }
+      ],
+      "sourceRecordSha256": "d1d89d20de48e18c0a27b5fa4a3563ab10b69683d2bd20d90ca8dec31c1f56f1"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87716,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 98,
+        "leaks": 45,
+        "uniteKills": 51
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 68,
+          "creditedToLavinia": 51
+        }
+      ],
+      "sourceRecordSha256": "06c397a89657f47882b82ccad86f35be6b66dbf1f06adaaf65abdc2589219bad"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87724,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 100,
+        "leaks": 34,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "8af6c8d3eca649ea6d0fd3ebfbc9e915f4affbe0ebf9f2b1d91f0202ea647725"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87734,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 236,
+        "leaks": 57,
+        "uniteKills": 45
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 14,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 11,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 21,
+          "creditedToLavinia": 21
+        },
+        {
+          "round": 11,
+          "countedKilled": 24,
+          "creditedToLavinia": 24
+        }
+      ],
+      "sourceRecordSha256": "02393e5405cad41e88cd4e209961b9c1bfce5c5a695b564e684a0aa005039e68"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 87735,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 32,
+        "leaks": 40,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "82634be3c77260b9e1cbc3ea3eb9e8b6182302b60088b5a7f07b85be198d16a6"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 88729,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 32,
+        "leaks": 35,
+        "uniteKills": 1
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "a5957dec3fe26e67b49fd9081505086ecbcf0adbc41103180b90b4fdfc7ea271"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 88730,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 312,
+        "leaks": 14,
+        "uniteKills": 75
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 7,
+          "countedKilled": 38,
+          "creditedToLavinia": 38
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 12,
+          "countedKilled": 20,
+          "creditedToLavinia": 20
+        }
+      ],
+      "sourceRecordSha256": "7148eeff5a6e3b4bfb3588ac191132eedfaf6ce8eedbda3e901cf90c55c35845"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 88732,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 64,
+        "leaks": 35,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 14,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 14,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 13,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 20,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "36a8b75103dfa9977b2de759429b42eabd0257ffb039e8af9f33368842a2c9b3"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 89691,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 61,
+        "leaks": 46,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "ccecaa376dafc6ad95611939e796569f963e3d3fbdd747cb9268385229524791"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 89708,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 7,
+        "eliminatedRound": 7,
+        "siracusaLayers": 56,
+        "leaks": 41,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "8757c6cddba03e5568e2fa4a55277b80c2dc30009668858a6ebd737c2c5b71aa"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 89819,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 388,
+        "leaks": 30,
+        "uniteKills": 82
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 2,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 16,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 53,
+          "creditedToLavinia": 53
+        },
+        {
+          "round": 8,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 28,
+          "creditedToLavinia": 28
+        }
+      ],
+      "sourceRecordSha256": "9ab5b329f1cc1d52844b1131852b339fc54520cf7994085c926dd8c28cc64ac7"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90504,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 320,
+        "leaks": 33,
+        "uniteKills": 164
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 14,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 11,
+          "countedKilled": 38,
+          "creditedToLavinia": 38
+        },
+        {
+          "round": 12,
+          "countedKilled": 52,
+          "creditedToLavinia": 52
+        },
+        {
+          "round": 13,
+          "countedKilled": 52,
+          "creditedToLavinia": 52
+        }
+      ],
+      "sourceRecordSha256": "d7a9932abb1191f58e6bdd19307bfaff0689a378b2aabdbf88adc21be2ec39c3"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90720,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 82,
+        "leaks": 39,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 13,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "0432ce22aee3405edb9c5556245c30a09ce8374119dfd556f4757b2919a0ba67"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90726,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 282,
+        "leaks": 24,
+        "uniteKills": 146
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        },
+        {
+          "round": 10,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 11,
+          "countedKilled": 28,
+          "creditedToLavinia": 28
+        },
+        {
+          "round": 12,
+          "countedKilled": 76,
+          "creditedToLavinia": 76
+        },
+        {
+          "round": 13,
+          "countedKilled": 27,
+          "creditedToLavinia": 27
+        }
+      ],
+      "sourceRecordSha256": "0bad65c40b8a77b8e27a9b3aa1baa1e55fff19e4772953cb09ae054c909a2297"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 90878,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 82,
+        "leaks": 43,
+        "uniteKills": 1
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 17,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "70a2b09401c9a42823a97b2fbad5b088afc03217dc3c4d38f805f4f34b9d7d8e"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91583,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 462,
+        "leaks": 48,
+        "uniteKills": 130
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 16,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 17,
+          "creditedToLavinia": 17
+        },
+        {
+          "round": 11,
+          "countedKilled": 18,
+          "creditedToLavinia": 18
+        },
+        {
+          "round": 12,
+          "countedKilled": 33,
+          "creditedToLavinia": 33
+        },
+        {
+          "round": 13,
+          "countedKilled": 62,
+          "creditedToLavinia": 62
+        }
+      ],
+      "sourceRecordSha256": "80e3ddb43b787824e9bc169631ad9eb053f6ecf1df94d016d1589ddc51f59660"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91721,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 318,
+        "leaks": 27,
+        "uniteKills": 154
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 8,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 8,
+          "countedKilled": 17,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 10,
+          "countedKilled": 29,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 12,
+          "countedKilled": 71,
+          "creditedToLavinia": 71
+        },
+        {
+          "round": 13,
+          "countedKilled": 64,
+          "creditedToLavinia": 64
+        }
+      ],
+      "sourceRecordSha256": "f448cb39dd87a5c1a728d0a41a1dd3ddf02c50850d1d4867540684d0b199408d"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91722,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_4",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 8,
+        "eliminatedRound": 8,
+        "siracusaLayers": 88,
+        "leaks": 47,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "1b8f9aecb2cd11e1396813fe772af67dc463ac1c45ec897bf90def28178b105a"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 91723,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 11,
+        "eliminatedRound": 11,
+        "siracusaLayers": 152,
+        "leaks": 44,
+        "uniteKills": 4
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 7,
+          "countedKilled": 14,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "191f24de657bec7146f0abe3dc5e34ebdcf9268e8396332880e22c56d020ecfa"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 92720,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_1",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 9,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 58,
+        "leaks": 27,
+        "uniteKills": 2
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        }
+      ],
+      "sourceRecordSha256": "8f5c90d1b21d7b26cdde9d19f4f51700437d21e60530b535ac44740bff82a9aa"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 93622,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 198,
+        "leaks": 33,
+        "uniteKills": 28
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 10,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        }
+      ],
+      "sourceRecordSha256": "b6b779ab4a8afc7c2e31ca62aa966246b585345e507d4936ee81de15ee7244b2"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 94675,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_7",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 390,
+        "leaks": 32,
+        "uniteKills": 82
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 52,
+          "creditedToLavinia": 52
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 13,
+          "countedKilled": 21,
+          "creditedToLavinia": 21
+        }
+      ],
+      "sourceRecordSha256": "a0b55247df34a5ca6c7e6b19a4534749cbec17ee242453eaced5cefaacf06de2"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 94714,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_3",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 431,
+        "leaks": 7,
+        "uniteKills": 89
+      },
+      "uniteEvidence": [
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        },
+        {
+          "round": 7,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        },
+        {
+          "round": 8,
+          "countedKilled": 15,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 10,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 12,
+          "countedKilled": 20,
+          "creditedToLavinia": 20
+        },
+        {
+          "round": 13,
+          "countedKilled": 29,
+          "creditedToLavinia": 29
+        }
+      ],
+      "sourceRecordSha256": "35044edcfdddada5fc59ac2cbfc34a65c5ad81f0095d9c520921ebe7d40d3b66"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95700,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 338,
+        "leaks": 24,
+        "uniteKills": 137
+      },
+      "uniteEvidence": [
+        {
+          "round": 3,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 15,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 21,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 10,
+          "creditedToLavinia": 4
+        },
+        {
+          "round": 10,
+          "countedKilled": 29,
+          "creditedToLavinia": 29
+        },
+        {
+          "round": 11,
+          "countedKilled": 73,
+          "creditedToLavinia": 66
+        },
+        {
+          "round": 12,
+          "countedKilled": 38,
+          "creditedToLavinia": 38
+        }
+      ],
+      "sourceRecordSha256": "8b0c97204bff0fd91b694f29b70287bfa2e025178259b3f62d14fc5b3c96fe86"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95703,
+      "stageId": "act2autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 13,
+      "lavinia": {
+        "reachedRound": 13,
+        "eliminatedRound": 13,
+        "siracusaLayers": 230,
+        "leaks": 39,
+        "uniteKills": 31
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        },
+        {
+          "round": 11,
+          "countedKilled": 8,
+          "creditedToLavinia": 8
+        },
+        {
+          "round": 12,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        }
+      ],
+      "sourceRecordSha256": "6e74fdf90b2cf6f016141d57274d8a987d8a16ff164b73661acc63b379646046"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95709,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 68,
+        "leaks": 57,
+        "uniteKills": 0
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 14,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "85d85b8910795f03ee975f1d30ff8ac34918f81d59361b6601303f2a05971111"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 95711,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_2",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 292,
+        "leaks": 30,
+        "uniteKills": 55
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 3
+        },
+        {
+          "round": 2,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 14,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 13,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 13,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 8,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 13,
+          "countedKilled": 37,
+          "creditedToLavinia": 37
+        }
+      ],
+      "sourceRecordSha256": "c5f9e1a36e7e47791a0d857d88adcaddd4c0158f098bcc08915f37cad6abec55"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 96708,
+      "stageId": "act1autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 347,
+        "leaks": 38,
+        "uniteKills": 58
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 9,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToLavinia": 8
+        },
+        {
+          "round": 11,
+          "countedKilled": 8,
+          "creditedToLavinia": 8
+        },
+        {
+          "round": 12,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        },
+        {
+          "round": 13,
+          "countedKilled": 24,
+          "creditedToLavinia": 24
+        }
+      ],
+      "sourceRecordSha256": "0062e0b06cbce98d1ee74a59e6c36af0f0594792f18440e9af628b2a1b76548c"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 97589,
+      "stageId": "act2autochess_m02",
+      "bossId": "boss_6",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 290,
+        "leaks": 35,
+        "uniteKills": 94
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 2,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        },
+        {
+          "round": 7,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 9,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 10,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 7,
+          "creditedToLavinia": 7
+        },
+        {
+          "round": 12,
+          "countedKilled": 22,
+          "creditedToLavinia": 22
+        },
+        {
+          "round": 13,
+          "countedKilled": 36,
+          "creditedToLavinia": 36
+        }
+      ],
+      "sourceRecordSha256": "b6b09c540d8255c08631c7ee4110180df677070bb20bc36e2f7a9286b577d555"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 97704,
+      "stageId": "act2autochess_m01",
+      "bossId": "boss_1",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 396,
+        "leaks": 18,
+        "uniteKills": 89
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 7,
+          "countedKilled": 16,
+          "creditedToLavinia": 16
+        },
+        {
+          "round": 8,
+          "countedKilled": 3,
+          "creditedToLavinia": 3
+        },
+        {
+          "round": 9,
+          "countedKilled": 27,
+          "creditedToLavinia": 27
+        },
+        {
+          "round": 10,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 31,
+          "creditedToLavinia": 31
+        },
+        {
+          "round": 12,
+          "countedKilled": 2,
+          "creditedToLavinia": 2
+        },
+        {
+          "round": 13,
+          "countedKilled": 10,
+          "creditedToLavinia": 10
+        }
+      ],
+      "sourceRecordSha256": "f8a8bafa02cb34971eaffcd43f2c3176883037c8256404f44e5e45c7bf6a1de4"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 97705,
+      "stageId": "act1autochess_m04",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 10,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 130,
+        "leaks": 34,
+        "uniteKills": 5
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 1,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        }
+      ],
+      "sourceRecordSha256": "1648727d83d3ca2964b2a2dfd8ebbd4e84598d867117c8b229dbf97420d53ba5"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 98687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_3",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 12,
+      "lavinia": {
+        "reachedRound": 12,
+        "eliminatedRound": 12,
+        "siracusaLayers": 208,
+        "leaks": 37,
+        "uniteKills": 58
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 5,
+          "creditedToLavinia": 5
+        },
+        {
+          "round": 2,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 15,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 3,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 40,
+          "creditedToLavinia": 40
+        },
+        {
+          "round": 10,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 11,
+          "countedKilled": 13,
+          "creditedToLavinia": 13
+        }
+      ],
+      "sourceRecordSha256": "b7c27ecc55414ee868477722d623fc7ddad51efc0a9745e45a2b3f213b7498a9"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 98700,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_6",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 388,
+        "leaks": 42,
+        "uniteKills": 83
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 10,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 11,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 6,
+          "countedKilled": 4,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 9,
+          "countedKilled": 15,
+          "creditedToLavinia": 15
+        },
+        {
+          "round": 10,
+          "countedKilled": 11,
+          "creditedToLavinia": 11
+        },
+        {
+          "round": 11,
+          "countedKilled": 9,
+          "creditedToLavinia": 9
+        },
+        {
+          "round": 12,
+          "countedKilled": 18,
+          "creditedToLavinia": 18
+        },
+        {
+          "round": 13,
+          "countedKilled": 30,
+          "creditedToLavinia": 30
+        }
+      ],
+      "sourceRecordSha256": "f4b7bf0d1338aa7cf78b8ffa4ca42098bc0e0b908a4dadbe1160c7374d0d05d4"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 99455,
+      "stageId": "act2autochess_m03",
+      "bossId": "boss_5",
+      "victory": false,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 11,
+      "lavinia": {
+        "reachedRound": 9,
+        "eliminatedRound": 9,
+        "siracusaLayers": 87,
+        "leaks": 62,
+        "uniteKills": 1
+      },
+      "uniteEvidence": [
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 5,
+          "countedKilled": 5,
+          "creditedToLavinia": 1
+        },
+        {
+          "round": 10,
+          "countedKilled": 8,
+          "creditedToLavinia": 0
+        }
+      ],
+      "sourceRecordSha256": "d04c02fa29e97b3fee1ef08054da59a499ec8b375a75132eece5d9298ba936a4"
+    },
+    {
+      "scenario": "siracusa4",
+      "seed": 99687,
+      "stageId": "act1autochess_m02",
+      "bossId": "boss_4",
+      "victory": true,
+      "completed": true,
+      "errors": 0,
+      "reachedRound": 14,
+      "lavinia": {
+        "reachedRound": 14,
+        "eliminatedRound": null,
+        "siracusaLayers": 296,
+        "leaks": 38,
+        "uniteKills": 18
+      },
+      "uniteEvidence": [
+        {
+          "round": 1,
+          "countedKilled": 5,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 2,
+          "countedKilled": 7,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 3,
+          "countedKilled": 6,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 4,
+          "countedKilled": 0,
+          "creditedToLavinia": 0
+        },
+        {
+          "round": 10,
+          "countedKilled": 12,
+          "creditedToLavinia": 12
+        },
+        {
+          "round": 11,
+          "countedKilled": 6,
+          "creditedToLavinia": 6
+        }
+      ],
+      "sourceRecordSha256": "61026b0da7ed694b5378575e59c60e43ed5a683c7aba9bbf1d2fb7b89905a724"
+    }
+  ],
+  "suiteSha256": "b825f76735b4a48c4acdf76b42324f992a0c5e560a66b2466717c2a9d8c468ad"
+}

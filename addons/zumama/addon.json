@@ -1,17 +1,19 @@
 {
   "id": "ai-zumama",
   "name": "AI·祖玛玛",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "hostApi": 1,
   "unofficial": true,
   "upstream": "f07b8965061bbc311ad7aa815879b09264a1e47d",
-  "policy": "sha256:b979414e134cd06fbc60312bace74046d2f3100b9152699d4c85156f4d5ead85",
-  "sourceRoot": "releases/zumama-v0.1.2/source",
+  "policy": "sha256:cd0058ec14c9af5be6cd8d0895a491ba322ff359160c06ca5ea6c0f199871614",
+  "sourceRoot": "releases/zumama-v0.2.0/source",
   "entries": {
     "soloHard": "server/match/sargon/solo-c-policy/server/match/botDevelopment.js",
     "soloAbyss": "server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js",
-    "two": "server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js",
-    "four": "server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js"
+    "retainedTwo": "server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js",
+    "retainedFour": "server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js",
+    "two": "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js",
+    "four": "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js"
   },
   "persona": {
     "id": "zumama",
@@ -40,8 +42,8 @@
       "ABYSS": "solo-budget-lp"
     },
     "coop": {
-      "two": "coop-swift-budget-pair-two+fireline-combined+emergency-A+LP-headroom",
-      "four": "coop-swift-budget-pair-four+four-margin+swift-guard-B+emergency-A+LP-headroom"
+      "two": "zumama-own-communicator-reward-20-20",
+      "four": "zumama-own-communicator-reward-20-20"
     }
   },
   "benchmark": {
@@ -49,12 +51,12 @@
     "abyss": "15/28",
     "multiplayer": {
       "difficulty": "ABYSS",
-      "two": "19/56",
-      "four": "14/56",
-      "report": "benchmarks/zumama-v0.1.2-multiplayer.json"
+      "two": "20/56",
+      "four": "20/56",
+      "report": "benchmarks/zumama-v0.2.0-multiplayer.json"
     }
   },
-  "policySource": "Immutable adopted mode-specific baselines dated 2026-10-27; original source and relocated release source have separate per-file hashes in origins/sources. No Git commit claim for uncommitted strategy development.",
+  "policySource": "Latest user-adopted mode-specific frozen sources. Complete original manifest hashes verified; per-file origin and relocated hashes recorded separately. Experimental work excluded.",
   "sources": {
     "server/match/sargon/solo-c-policy/server/match/botDevelopment.js": "d83efa7d14e1ed3bae9acf4ff99ec54d56dfcdaea7f90b44b69ac898bcccdb85",
     "server/match/sargon/solo-c-policy/server/match/botStrategy.js": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043",
@@ -262,7 +264,140 @@
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4",
     "server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js": "685c10319bca078b3690f28afea9d6d7f5ab282a97c5e966635303bfbd955e4a",
     "server/match/sargon/coop-four-review-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js": "e88f3a0ad7430923defb23fae5c6541839cf81d433378ee05e6db65de0bc3033",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCommunicatorRewards.js": "3102451827b5036769ef6a542a05a9a5ca5a9c6f09cbc6ff2721dce0b309ad88",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js": "ba527d62915ad46d4b403eb0b1f7b6056ca4b1ef84e9b95267c2c57207751dbd",
+    "server/match/zumama/release-two/server/match/sargon/ownBossForecast.js": "2892b7df2564d1f4fff374222c79f8f22e67652c49544e548159b29070e924e2",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js": "2ee57562b6d6859a936edb7b6b628f4141003366cd9c81460ba006d39e39f282",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js": "39f81090c1459c544a36bf37a332eddc4820c39a44f7012aec7d355ac80f5de0",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonExpandedOutputResearch.js": "5e042c809f89108f91b7f4160f1474eb7f888d0fc3fda5f3f4b9f792bf5023de",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js": "3a8df7ad05d5fa72548fda5405a40addf41a0fadaf6b931ca7a90ce50f307d94",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop37.js": "278a11d1195714677251a41a8d6e07b2edb948776550baea1035bece6ee9d322",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js": "1c5a2d810cdbef923892488c2097d6dd71c98dfa4ce38bd33d9c8b56f663538c",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js": "bafd37461c4a5ceb2a9396a7447ce8973a0bcb0dade52a84e0a084346637b412",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botPositioning.js": "52283b27b6a7680c35bf4f8ebedc8a9a8b5dc5d6e70bc442ec6a117ad5778fe4",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botSavings.js": "4e99a75c12299e93ba8de578bb8cc76f613635583d84ed03036d8d0756aa53cb",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftLpTrade.js": "17b7b8230c89d7fd4077db7ea3cb25024ebb6d7e11a1846656d565f741474173",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js": "2bd61ce599102bb9af79e755a25840e9f6861a1ff61ac9ae9514960898e16a7e",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js": "d5377e53ebbcd5a13e47c1b7fe2b03779d6cc60540ea7ced969e92e7bcbbb290",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRosterFactors.js": "e2a11fe3a6668975176b276d8a61f4ebc469394836cf71ec132b9b75e229c2d1",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLucienWindowGeometry.js": "99a999a46ce674c871ac5f486a2c9f19bc62c488ff55851a1fd579461b76884d",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js": "6251e2143b422f55a93cf09218dd41ac2c7d51bfa4456cb110a2a54e8cb8203b",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPrecision33.js": "36001d4912773c14fc768dc4c27f9982a3caeb40bdcf80ac31501e442910265e",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairCompletionResearch.js": "7d54d0c986d89cf546a36efedfa627d288559f56cdf3b363f432b5946f383ce4",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairFieldSafetyResearch.js": "a548b28ff1d44f1ec9789ac40d392da869d345bc439baa19c564dea65883fde7",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound22.js": "27808119bf0970851c8b00ce7c0929ea4b9de03de81192c7a4649209073d3a25",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js": "6c7945ac421ec491c33bae54d772ba741a38ab33993ce0aaacc8ba86080c56f2",
+    "server/match/zumama/release-two/server/match/sargon/residencePrepProjection.js": "016642239ab873674ec163724de2bc4e8abddde3c31f1d48e562139521fb5026",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRescueResearch.js": "9d6bc250b9f4ec4ea1c10d65695974ebc7af30303e11ea4aad54164bacd9248f",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLionCoverage.js": "2ff612ea4413aa29eff8cbc658c3760d8946394f33c9f743b6ea6aebe523e9bc",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound17.js": "8f2d11f59c7549b317c2b7fb8d4890d5b0bc7279966a77d079f9ccef1074b056",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js": "348fced0935b3ade241fc55e32cb2f2de41bc8aea9e88ce20b46a13d4cb8e525",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchFourGates.js": "6005acd623e391043771802aa8f082d253b6c426303d251e1b6f386f70bbf4c4",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonDynamicUpgrade.js": "8b16fc50516090d9be1e0e3a1bba0b2ab15536578e18d51c1adaac595a4d6636",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSixSearch.js": "586b375d1cdd859a35286d3e52467e6558d75892c4d99dc1447b04e827ecb5bf",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftAblations.js": "c223eee9bc84d73e2931fa832c30226a24b3b2e7381042ae008e7602bf2fb491",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift24Baseline.js": "a4bfe25c83f1858b62751adc41caeb103d02a19529d2b1d410b6289cb8972923",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound6.js": "f9b7bed02f6df782a8003ded9baf0a0171fb9f43f52e9e70a504f54eb4ba49eb",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonTargetShops.js": "3bb533545e14bffe170125296c32ab71ddf1a8fd3d1998b7608945d8fa7f0c0b",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimic.js": "357a64d850add2e294b6d25c699e7ab031ce9fed685c9b04f38b091e693b34df",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimicRefinements.js": "cd217532d349abe28ac56da1d4402cd09d0e095e5e66c49e557a8b07256d091b",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonVideoFactors.js": "5c9a6220bbde071e7ed92e51ae797ce1e57a4577c233ea89961fd2ba3b8360aa",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound14.js": "c5fd7c60a57e2b9432c269075ccc054b3c6aa77336a03183cc03d36aba81ec5a",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound15.js": "c61625dc9eab5584a8c142efc605b1ac9333cc4e7c95adf033ac2121453e4d99",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound16.js": "96e6b4bbeab1043c94966fdb4edad750b6c68abd2a18540a1c645d8c77e73276",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound18.js": "2ae2b82163a5aeb41f7664d6b2c03a714b35f4586b0a3356e75766af444ec4e2",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound19.js": "4533fa555ec796d6530bca6004bd2e6863d6ee380957a9078587f825b507210e",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound21.js": "0d64334afd4871bcf548e9dcf7ef767c85e616f0519da8ba8734c8253d3648e8",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonBridgeLifecycle.js": "b53327d2ec35e89f88308d1c8e61b8aa662cc27cc6643b682b049edd472a470d",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound24.js": "b45ae753ea7ad6bcd0536e75355ff4f20cb62024976718de8eae643512dfd312",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairWait.js": "512bb20e969896245d6203300d1e91686d2925eb3c98dd8f88446fc8b8a2e736",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonAbyssWindow.js": "163483d6e87acdb271c2acbb13c9cba807aaf2f7205dd4fd5e42051a95f67ded",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFiveBalance.js": "f9b41ac84606a87c554c5d27ed83dc623cf558e6017a33bdb11732ccd6b9a893",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLeanSix.js": "b089ce05c5de6d1b64a6507442976402f62ad7e38d3698312987e431aad7ad8a",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFormation30.js": "51abfa0eaca30256433d51f889152f9f60c79fc3856e8aa2a68f3d1a7d4249c0",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonManual32.js": "e9e71cd0645f12a850999cdce50e630d7f6da502f3580bc388b855c0575157d2",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop99.js": "42b2054737192af919b32767983b12b79957bbdd599ab76da496ce4c8d9acde1",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyStead.js": "0bf628fae21c58e6d8d7fad48c11c4976f5a67685832b9684ba952b563241ebc",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFireline.js": "e8a4455654d5f8c91abe035fca4f74d4348cc0eb255dbd0a163486508dbe913f",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botEconomy.js": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/lateranoTactics.js": "f6a09d23ad52c5dde9c6b64cf4ea719cc373f42fac4ac4d5247da42e1ec2ba4d",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js": "1f4389ea22a2008d8cd2e54fbcd71e9bfc3c534234bb0f95f6e228f3c7a31168",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botBossRehearsal.js": "1a77824ce7f65eea225ebdd963e076e1db3451fc7941d0c3d7178a449d615931",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/siracusaDraftSafety.js": "b3402ef08a5d22004bf440b8abbf8da32e1efaed8f71e88fd1185ef0efdeee5e",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": "e88f3a0ad7430923defb23fae5c6541839cf81d433378ee05e6db65de0bc3033",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCommunicatorRewards.js": "3102451827b5036769ef6a542a05a9a5ca5a9c6f09cbc6ff2721dce0b309ad88",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js": "ba527d62915ad46d4b403eb0b1f7b6056ca4b1ef84e9b95267c2c57207751dbd",
+    "server/match/zumama/release-four/server/match/sargon/ownBossForecast.js": "19c439751aa2bdc0073d12c3e0867bc872c68354f55f5dc55ffe789145cfbde4",
+    "server/match/zumama/release-four/server/match/sargon/bossRepairSelection.js": "bd00254e1b1bd8f04130707faf9d720b76572f1c67ef35bc543ff171df90e469",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategy.js": "2ee57562b6d6859a936edb7b6b628f4141003366cd9c81460ba006d39e39f282",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js": "bb4633bcd8fd8ed95a7a5cb7f12cd17e6b4048aad98769d6c95118ada0d2481b",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonExpandedOutputResearch.js": "5e042c809f89108f91b7f4160f1474eb7f888d0fc3fda5f3f4b9f792bf5023de",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botForecast.js": "3a8df7ad05d5fa72548fda5405a40addf41a0fadaf6b931ca7a90ce50f307d94",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop37.js": "ee50d6e203b88ae11eee7c65e35fac62f7cf2ea8bce2e14b68ef55b3cdf7f5d2",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js": "1c5a2d810cdbef923892488c2097d6dd71c98dfa4ce38bd33d9c8b56f663538c",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js": "bafd37461c4a5ceb2a9396a7447ce8973a0bcb0dade52a84e0a084346637b412",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botPositioning.js": "52283b27b6a7680c35bf4f8ebedc8a9a8b5dc5d6e70bc442ec6a117ad5778fe4",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botSavings.js": "4e99a75c12299e93ba8de578bb8cc76f613635583d84ed03036d8d0756aa53cb",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftLpTrade.js": "0dbf5a4747d95f2879a9eb642bf9c5744a7d250b81ea861a21f50b07c6794a80",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js": "2bd61ce599102bb9af79e755a25840e9f6861a1ff61ac9ae9514960898e16a7e",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js": "d5377e53ebbcd5a13e47c1b7fe2b03779d6cc60540ea7ced969e92e7bcbbb290",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRosterFactors.js": "5c784d30d5d3d533baab1ada9ac092fa2ea8f1297b4a1e1b87b265a5d48a36a4",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js": "e7fc4112d9ccd10ee9013b216b75580509b9042ba249c89612dab49d39a1bdbc",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLucienWindowGeometry.js": "99a999a46ce674c871ac5f486a2c9f19bc62c488ff55851a1fd579461b76884d",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js": "6251e2143b422f55a93cf09218dd41ac2c7d51bfa4456cb110a2a54e8cb8203b",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPrecision33.js": "36001d4912773c14fc768dc4c27f9982a3caeb40bdcf80ac31501e442910265e",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairCompletionResearch.js": "84a3579f0b70c70a84a28e9e712061f48cb68ed65bd42c4fdc301800aa6018e8",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound22.js": "27808119bf0970851c8b00ce7c0929ea4b9de03de81192c7a4649209073d3a25",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js": "6c7945ac421ec491c33bae54d772ba741a38ab33993ce0aaacc8ba86080c56f2",
+    "server/match/zumama/release-four/server/match/sargon/residencePrepProjection.js": "016642239ab873674ec163724de2bc4e8abddde3c31f1d48e562139521fb5026",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRescueResearch.js": "9d6bc250b9f4ec4ea1c10d65695974ebc7af30303e11ea4aad54164bacd9248f",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLionCoverage.js": "2ff612ea4413aa29eff8cbc658c3760d8946394f33c9f743b6ea6aebe523e9bc",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound17.js": "8f2d11f59c7549b317c2b7fb8d4890d5b0bc7279966a77d079f9ccef1074b056",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js": "3067e6e666df78c780d736b7573411ef430fa93dcfbca6a714be29001c0a5c16",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchFourGates.js": "6005acd623e391043771802aa8f082d253b6c426303d251e1b6f386f70bbf4c4",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonDynamicUpgrade.js": "8b16fc50516090d9be1e0e3a1bba0b2ab15536578e18d51c1adaac595a4d6636",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSixSearch.js": "586b375d1cdd859a35286d3e52467e6558d75892c4d99dc1447b04e827ecb5bf",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftAblations.js": "c223eee9bc84d73e2931fa832c30226a24b3b2e7381042ae008e7602bf2fb491",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift24Baseline.js": "a4bfe25c83f1858b62751adc41caeb103d02a19529d2b1d410b6289cb8972923",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound6.js": "f9b7bed02f6df782a8003ded9baf0a0171fb9f43f52e9e70a504f54eb4ba49eb",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonTargetShops.js": "3bb533545e14bffe170125296c32ab71ddf1a8fd3d1998b7608945d8fa7f0c0b",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimic.js": "357a64d850add2e294b6d25c699e7ab031ce9fed685c9b04f38b091e693b34df",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimicRefinements.js": "cd217532d349abe28ac56da1d4402cd09d0e095e5e66c49e557a8b07256d091b",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonVideoFactors.js": "5c9a6220bbde071e7ed92e51ae797ce1e57a4577c233ea89961fd2ba3b8360aa",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound14.js": "c5fd7c60a57e2b9432c269075ccc054b3c6aa77336a03183cc03d36aba81ec5a",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound15.js": "c61625dc9eab5584a8c142efc605b1ac9333cc4e7c95adf033ac2121453e4d99",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound16.js": "96e6b4bbeab1043c94966fdb4edad750b6c68abd2a18540a1c645d8c77e73276",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound18.js": "2ae2b82163a5aeb41f7664d6b2c03a714b35f4586b0a3356e75766af444ec4e2",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound19.js": "23114f3d9874466e752d6555d8f084b46ef5a8b81f9c83b697c1034b034b7659",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonProtectedHealing.js": "a67a9962e5571ab7298235c4c204d48f0cc16cb9303c9bf390af282b1b8692ab",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound21.js": "81d9f165cc9dfc1daf87f686395c773c5e8ee8e1d2159f1d39e3bbda9624764d",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonBridgeLifecycle.js": "b53327d2ec35e89f88308d1c8e61b8aa662cc27cc6643b682b049edd472a470d",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound24.js": "b45ae753ea7ad6bcd0536e75355ff4f20cb62024976718de8eae643512dfd312",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairWait.js": "512bb20e969896245d6203300d1e91686d2925eb3c98dd8f88446fc8b8a2e736",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonAbyssWindow.js": "163483d6e87acdb271c2acbb13c9cba807aaf2f7205dd4fd5e42051a95f67ded",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFiveBalance.js": "f9b41ac84606a87c554c5d27ed83dc623cf558e6017a33bdb11732ccd6b9a893",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLeanSix.js": "b089ce05c5de6d1b64a6507442976402f62ad7e38d3698312987e431aad7ad8a",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFormation30.js": "51abfa0eaca30256433d51f889152f9f60c79fc3856e8aa2a68f3d1a7d4249c0",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonManual32.js": "e9e71cd0645f12a850999cdce50e630d7f6da502f3580bc388b855c0575157d2",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop99.js": "6120845967af367d3a6a52a4b7df95b8655fcdf8763065992e5924e3c0865949",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyStead.js": "175abf6c07860c5c1357c14347fd87b0f2fd9b53eef63ea57f9d6f09109e2239",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFireline.js": "e342f49eb589cdf13873e1b4541a60e42805f4fad854355c12abb790453b7599",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourContribution.js": "6e7b338e04c49a0e8425f9ab1e2c635bc106356d68d31c562e23a5a1767df192",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botEconomy.js": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/lateranoTactics.js": "f6a09d23ad52c5dde9c6b64cf4ea719cc373f42fac4ac4d5247da42e1ec2ba4d",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js": "1f4389ea22a2008d8cd2e54fbcd71e9bfc3c534234bb0f95f6e228f3c7a31168",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js": "1a77824ce7f65eea225ebdd963e076e1db3451fc7941d0c3d7178a449d615931",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": "b3402ef08a5d22004bf440b8abbf8da32e1efaed8f71e88fd1185ef0efdeee5e"
   },
   "files": {
     "policy/server/match/sargon/solo-c-policy/server/match/botPositioning.js": "b6caa64a2d371239ab2c999325b9106a3587948785e86064fa5249106c9f7310",
@@ -472,7 +607,140 @@
     "policy/server/match/sargon/coop-four-review-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
     "policy/server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": "b85dbd4c6b4e8164bcc5e93faf12c8566ac7b6c1126dfe002544175e0ca1ae56",
     "policy/server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": "c2281ed371463969e73c3cbc715deafe8e5979386f6db8901bd45ed6b6553da0",
-    "runtime.js": "778e122270944dee2dff6a8a591ee1170434fc3bd7a66655f35127b7473a6346",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCommunicatorRewards.js": "3102451827b5036769ef6a542a05a9a5ca5a9c6f09cbc6ff2721dce0b309ad88",
+    "policy/server/match/zumama/release-two/server/match/sargon/ownBossForecast.js": "a2d3247806db109a2330324a57e618953f0fe717bf5dc3beb4f67c3e69b138dd",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js": "ba527d62915ad46d4b403eb0b1f7b6056ca4b1ef84e9b95267c2c57207751dbd",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botPositioning.js": "d271a5e1f910e49417399c13b0988f0abc75b82c15acd5406c5a418f4184dd7b",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botSavings.js": "4e99a75c12299e93ba8de578bb8cc76f613635583d84ed03036d8d0756aa53cb",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js": "e476df91827af45410a9624919b2089d6f1a6e67bc5453f775157b0822d64366",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftLpTrade.js": "17b7b8230c89d7fd4077db7ea3cb25024ebb6d7e11a1846656d565f741474173",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js": "2a106fca1788cd0d3ddf3416920a50562687aa225df88e99e6c07f73ed13bacb",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js": "f93705ebf9c7fa334009bb0c762fc9ebd122d8861aa714dbb671555b91fef9dc",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRosterFactors.js": "7b36796aca71d9e568550bac424757660e436861ecf96d94213361113b3b1516",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js": "d5377e53ebbcd5a13e47c1b7fe2b03779d6cc60540ea7ced969e92e7bcbbb290",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop37.js": "a9213efec1d65682de10736171c9c2834e18637b4a95c6ccfdf385b961b401d6",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js": "49878548d763ce269844abbe0ef20a496197d88d2fe441871cb7521cf350b98f",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonExpandedOutputResearch.js": "c92fceb2585451f53e4870da13f39759e76c3405c8a5d85739a9bfcb78c4e827",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLucienWindowGeometry.js": "99a999a46ce674c871ac5f486a2c9f19bc62c488ff55851a1fd579461b76884d",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPrecision33.js": "36001d4912773c14fc768dc4c27f9982a3caeb40bdcf80ac31501e442910265e",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js": "6251e2143b422f55a93cf09218dd41ac2c7d51bfa4456cb110a2a54e8cb8203b",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairFieldSafetyResearch.js": "308d54a053cb06b86ed78c22625566d410ffc1cb40357aab62c1047eccdf0b4b",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound22.js": "27808119bf0970851c8b00ce7c0929ea4b9de03de81192c7a4649209073d3a25",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairCompletionResearch.js": "278af0df342cc77d316536aa86b585b7d8d4280f189684aec8a18e6eb8c450c0",
+    "policy/server/match/zumama/release-two/server/match/sargon/residencePrepProjection.js": "a5b122d699e556b54e3cdd99fa082d3463e209799dfc52cde91f7c1999ee91de",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js": "ecd2cbc0a32e128db34635eba6cb8d56bb0a9a1d565c09418f9b9600ab2f24b2",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLionCoverage.js": "63a8b79f2b382c71ff6b02b960d532e40505b0dec5708eca3e7b91491805ed08",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound17.js": "86453e4f2ee34d7b5c6650b92b980c9c7b9e4a8c3eb3c57d1dc24d1f1956f748",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRescueResearch.js": "9d6bc250b9f4ec4ea1c10d65695974ebc7af30303e11ea4aad54164bacd9248f",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchFourGates.js": "fbd44a9339830fb85c4dda5e4be524eb0bd4730532a818f4159857abdb914a9b",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js": "b72537eedb21270d3b0d7b7790de74ea94aa35bf311c085e773ffe50483b11eb",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonDynamicUpgrade.js": "8b16fc50516090d9be1e0e3a1bba0b2ab15536578e18d51c1adaac595a4d6636",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSixSearch.js": "586b375d1cdd859a35286d3e52467e6558d75892c4d99dc1447b04e827ecb5bf",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftAblations.js": "de0abf3c6d2a5406749e1422212f30fbe50aa9e226b44d863756b471ca1d11ae",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift24Baseline.js": "3f50fc759c89d5246f43ce206f8e38daeee6dcb7db01814f05ff32e953e572e8",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound6.js": "f724c0fd79bcd8bb98acdfe21babed26bc8a613e604588fa494bffaf99d8d7d9",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonTargetShops.js": "d964ab6346cb6b01d31f7e2cf02879d9cba6e3b795d5f5f70ee7562f600145c0",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimic.js": "946c37dfdb3551e0afb789d774665677ab12cbf0470d9379377800785df02b28",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimicRefinements.js": "08c6ccebd58fb38317e5ac24daa082256d14aa5ad6579e9569d0d80af85a144c",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonVideoFactors.js": "9739dad2cce54a7305e2341685b4a6b74b08bc3a4e88f749b1db868838ca4ad7",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound14.js": "f65ba211099a82fcee7526ca28e1548d9b12cdd9bb6b74010cf92027fe7a208a",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound15.js": "b4699a9655a3ed8db9dcd13adbb3e29575f6c3cbae3b2917a431b35c00a217b2",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound16.js": "252f916e8948fa6828db03efdf63c806a5e7a2b2ff96bb3774e5efefc931679d",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound18.js": "d315eb578aa0de636bdb882a6def46701014638788395ef4bdcd77338698f87c",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound19.js": "f11c3eb3dee22517e9ba190feb9520fb918ed15d80ae9106f53958c741e2f45f",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound21.js": "455cf0cc03807b3ff64a0c6b13035e99f4dbd4a659b4004f68ff39bdb145d8d2",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonBridgeLifecycle.js": "184e263fb1825c0f911c40c63658b2c244810f323ecdcc4fca0ea652d01bee72",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound24.js": "b45ae753ea7ad6bcd0536e75355ff4f20cb62024976718de8eae643512dfd312",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairWait.js": "512bb20e969896245d6203300d1e91686d2925eb3c98dd8f88446fc8b8a2e736",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonAbyssWindow.js": "163483d6e87acdb271c2acbb13c9cba807aaf2f7205dd4fd5e42051a95f67ded",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFiveBalance.js": "f9b41ac84606a87c554c5d27ed83dc623cf558e6017a33bdb11732ccd6b9a893",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLeanSix.js": "b089ce05c5de6d1b64a6507442976402f62ad7e38d3698312987e431aad7ad8a",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFormation30.js": "7cc9ab390065af3e6e4ed3ec86689a2ebdce1086324f618e106e487daea6aa98",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonManual32.js": "42d7cf305d1c1c9347ed61b7961db6051762a00b58076ade565c4dfbc7a48f00",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop99.js": "370980c97a43c69dbada2876cbfd1b65d10b65c40619990893b2dde073d25a3a",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyStead.js": "f41d25782bc052b966fd62fb6d5caa01f69cb551b18a94f77e91f11d992a0621",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFireline.js": "c9428774fc3f90c864aa69c4abc6fcbcec0642d81c2cc181c6464712c26ca147",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js": "5d4bf29d1d5eaab6c5b59127aa2c7fd7297386b498908db2d17159caec095c20",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js": "9c32fe2dad09eda0bf17cec28fc3c86d308d8e8097396e0bb17e7e260ede80b4",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botEconomy.js": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js": "e99cc5bb0821cc3d8f40b7d5345a9b15b8cf362312d5cb03b8f7534b7656ea41",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/lateranoTactics.js": "4eb1e8ee835be50acedfde69cffac61290bb3dbc45da39040ce45164c2fafdb1",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botBossRehearsal.js": "6418b908e90cd7309537f18c4b0d21705fb007f8efdf8095617234fa1b6187fb",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/siracusaDraftSafety.js": "cd8f797f9a4f1ed371f3e22079fb9d697717e17acd8c514c44a8c1f5a7b055b8",
+    "policy/server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js": "339b4636d7360ed103d09d003374fc1ddd77219052e5042781d9cd745d3bdf8e",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCommunicatorRewards.js": "3102451827b5036769ef6a542a05a9a5ca5a9c6f09cbc6ff2721dce0b309ad88",
+    "policy/server/match/zumama/release-four/server/match/sargon/bossRepairSelection.js": "bd00254e1b1bd8f04130707faf9d720b76572f1c67ef35bc543ff171df90e469",
+    "policy/server/match/zumama/release-four/server/match/sargon/ownBossForecast.js": "bf9b25bea75f58c71a80b199b59e64dc786a48866d5c607a7efd22d93b12baf5",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js": "ba527d62915ad46d4b403eb0b1f7b6056ca4b1ef84e9b95267c2c57207751dbd",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botPositioning.js": "d271a5e1f910e49417399c13b0988f0abc75b82c15acd5406c5a418f4184dd7b",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botSavings.js": "4e99a75c12299e93ba8de578bb8cc76f613635583d84ed03036d8d0756aa53cb",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js": "e476df91827af45410a9624919b2089d6f1a6e67bc5453f775157b0822d64366",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftLpTrade.js": "0dbf5a4747d95f2879a9eb642bf9c5744a7d250b81ea861a21f50b07c6794a80",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js": "2a106fca1788cd0d3ddf3416920a50562687aa225df88e99e6c07f73ed13bacb",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js": "f93705ebf9c7fa334009bb0c762fc9ebd122d8861aa714dbb671555b91fef9dc",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRosterFactors.js": "e7e877bc3119253c5235d0f3385faaf0f87271ec9e3dc4911182d7956a04a9d7",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js": "d5377e53ebbcd5a13e47c1b7fe2b03779d6cc60540ea7ced969e92e7bcbbb290",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js": "e7fc4112d9ccd10ee9013b216b75580509b9042ba249c89612dab49d39a1bdbc",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop37.js": "ed1af843a974ac139bb185ec955ec35d6761af5a15ce530647401944a049a3cd",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botForecast.js": "49878548d763ce269844abbe0ef20a496197d88d2fe441871cb7521cf350b98f",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonExpandedOutputResearch.js": "c92fceb2585451f53e4870da13f39759e76c3405c8a5d85739a9bfcb78c4e827",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLucienWindowGeometry.js": "99a999a46ce674c871ac5f486a2c9f19bc62c488ff55851a1fd579461b76884d",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPrecision33.js": "36001d4912773c14fc768dc4c27f9982a3caeb40bdcf80ac31501e442910265e",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js": "6251e2143b422f55a93cf09218dd41ac2c7d51bfa4456cb110a2a54e8cb8203b",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound22.js": "27808119bf0970851c8b00ce7c0929ea4b9de03de81192c7a4649209073d3a25",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairCompletionResearch.js": "d1c19f0095d0428c1b62fc20fca301c7772cc4fab5bdf1aaba8626d1de00c7dd",
+    "policy/server/match/zumama/release-four/server/match/sargon/residencePrepProjection.js": "a5b122d699e556b54e3cdd99fa082d3463e209799dfc52cde91f7c1999ee91de",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js": "ecd2cbc0a32e128db34635eba6cb8d56bb0a9a1d565c09418f9b9600ab2f24b2",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLionCoverage.js": "63a8b79f2b382c71ff6b02b960d532e40505b0dec5708eca3e7b91491805ed08",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound17.js": "86453e4f2ee34d7b5c6650b92b980c9c7b9e4a8c3eb3c57d1dc24d1f1956f748",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRescueResearch.js": "9d6bc250b9f4ec4ea1c10d65695974ebc7af30303e11ea4aad54164bacd9248f",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchFourGates.js": "fbd44a9339830fb85c4dda5e4be524eb0bd4730532a818f4159857abdb914a9b",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js": "e8f478ad84a571157290000be9af519293b82599efb879eeae2f844851365a88",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonDynamicUpgrade.js": "8b16fc50516090d9be1e0e3a1bba0b2ab15536578e18d51c1adaac595a4d6636",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSixSearch.js": "586b375d1cdd859a35286d3e52467e6558d75892c4d99dc1447b04e827ecb5bf",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftAblations.js": "de0abf3c6d2a5406749e1422212f30fbe50aa9e226b44d863756b471ca1d11ae",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift24Baseline.js": "3f50fc759c89d5246f43ce206f8e38daeee6dcb7db01814f05ff32e953e572e8",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound6.js": "f724c0fd79bcd8bb98acdfe21babed26bc8a613e604588fa494bffaf99d8d7d9",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonTargetShops.js": "d964ab6346cb6b01d31f7e2cf02879d9cba6e3b795d5f5f70ee7562f600145c0",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimic.js": "946c37dfdb3551e0afb789d774665677ab12cbf0470d9379377800785df02b28",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimicRefinements.js": "08c6ccebd58fb38317e5ac24daa082256d14aa5ad6579e9569d0d80af85a144c",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonVideoFactors.js": "9739dad2cce54a7305e2341685b4a6b74b08bc3a4e88f749b1db868838ca4ad7",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound14.js": "f65ba211099a82fcee7526ca28e1548d9b12cdd9bb6b74010cf92027fe7a208a",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound15.js": "b4699a9655a3ed8db9dcd13adbb3e29575f6c3cbae3b2917a431b35c00a217b2",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound16.js": "252f916e8948fa6828db03efdf63c806a5e7a2b2ff96bb3774e5efefc931679d",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound18.js": "d315eb578aa0de636bdb882a6def46701014638788395ef4bdcd77338698f87c",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonProtectedHealing.js": "a67a9962e5571ab7298235c4c204d48f0cc16cb9303c9bf390af282b1b8692ab",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound19.js": "42867b4bb1c132a81416734d848a8c2dcaa868011fa3f9bf207bf7897fa70cf5",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound21.js": "21fc00e6b4c7147baa9488890c25ecb09ed3ee70b1a8444d013409e797f9fdfe",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonBridgeLifecycle.js": "184e263fb1825c0f911c40c63658b2c244810f323ecdcc4fca0ea652d01bee72",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound24.js": "b45ae753ea7ad6bcd0536e75355ff4f20cb62024976718de8eae643512dfd312",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairWait.js": "512bb20e969896245d6203300d1e91686d2925eb3c98dd8f88446fc8b8a2e736",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonAbyssWindow.js": "163483d6e87acdb271c2acbb13c9cba807aaf2f7205dd4fd5e42051a95f67ded",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFiveBalance.js": "f9b41ac84606a87c554c5d27ed83dc623cf558e6017a33bdb11732ccd6b9a893",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLeanSix.js": "b089ce05c5de6d1b64a6507442976402f62ad7e38d3698312987e431aad7ad8a",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFormation30.js": "7cc9ab390065af3e6e4ed3ec86689a2ebdce1086324f618e106e487daea6aa98",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonManual32.js": "42d7cf305d1c1c9347ed61b7961db6051762a00b58076ade565c4dfbc7a48f00",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop99.js": "6c6faf1681a5078d93df9be0c5ea21da8b2abfe7e5a1e01c5b0414fbce82fd39",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyStead.js": "1a774a9ad141197139544b1d14f41374ee0e1612b17c4e965f1d1040866627d7",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFireline.js": "2275110b3d1f5f36b7a73d85434a137a69f5a49fe06f914541f69de4efa19c9a",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourContribution.js": "0e2884f84357368ac75e62f9e04910c56a6673c938976d22290a20c04117f1c0",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js": "447ca0b9c2f4f0736f670e9641f4bd0f388d5481ff71263ce7d19323a06acdb3",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategy.js": "9c32fe2dad09eda0bf17cec28fc3c86d308d8e8097396e0bb17e7e260ede80b4",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botEconomy.js": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js": "e99cc5bb0821cc3d8f40b7d5345a9b15b8cf362312d5cb03b8f7534b7656ea41",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/lateranoTactics.js": "4eb1e8ee835be50acedfde69cffac61290bb3dbc45da39040ce45164c2fafdb1",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js": "6418b908e90cd7309537f18c4b0d21705fb007f8efdf8095617234fa1b6187fb",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botFireControl.js": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": "cd8f797f9a4f1ed371f3e22079fb9d697717e17acd8c514c44a8c1f5a7b055b8",
+    "policy/server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": "339b4636d7360ed103d09d003374fc1ddd77219052e5042781d9cd745d3bdf8e",
+    "runtime.js": "e62f5fa34b90fac727fc3d0f5fa27bfebdb17647f81be81e7df8b06854e323e7",
     "compat/settlement.js": "1fc845bc6194bac8b6f1db6484a4d3c12e0b66b6cacc95ee1794801f534cdec4"
   },
   "sharedRuntime": {
@@ -498,14 +766,34 @@
     "common/extended-host.mjs": "3948d8fb64d6f8eeb89ced0ff7ccc1d0e6e5314fe8b5ac280748105a8dcbad0a",
     "common/legacy.mjs": "c3c8ee356a9ab84d7a6dcd428282654439e69e18a435150b116ca835d85f324d",
     "install.mjs": "8c9c42a0cd10ee279029320c6e531d267dee614c26bdd154d81891c9bc960ba2",
-    "README.md": "95bfbd983c5d264cf56162bee8ed93c3fa695014c660840b20969de79dc586fb",
-    "CHANGELOG.md": "dfd95a90e713bd5cd1dd6e2c0721114b911b1dee33a3d6076e65ce93f7bfedce",
+    "README.md": "ae3ad312b478d6efed203a262ff110bdeb9771b46af03e12430967de26547f7f",
+    "CHANGELOG.md": "f9fcef8e587a2c2d4ebd0ac1505f7891622c1795c3b158e5d377e6c54b14aa4b",
     "安装插件.bat": "bcd85cd302033fea85dc312a7f4a0c3ecd54936728bb97864eac1a6747ea51be",
     "install-windows.ps1": "8f471dca97b9d0079ea534f4632259f491dc29b4017993d3c934b4d321551ea7",
     "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
   },
   "compatibilityFix": "issue-2-upstream-0.3.3",
   "origins": {
+    "server/match/sargon/solo-c-policy/server/match/botDevelopment.js": {
+      "path": "server/match/sargon/solo-c-policy/server/match/botDevelopment.js",
+      "sha256": "d83efa7d14e1ed3bae9acf4ff99ec54d56dfcdaea7f90b44b69ac898bcccdb85"
+    },
+    "server/match/sargon/solo-c-policy/server/match/botStrategy.js": {
+      "path": "server/match/sargon/solo-c-policy/server/match/botStrategy.js",
+      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
+    },
+    "server/match/sargon/solo-c-policy/server/match/botCoreStrategies.js": {
+      "path": "server/match/sargon/solo-c-policy/server/match/botCoreStrategies.js",
+      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
+    },
+    "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonFactors.js": {
+      "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonFactors.js",
+      "sha256": "a2bbc9e2926166caa1fa73eb51ade74ab39e27b3f1d4bf40aa8ba8f63bccf9d0"
+    },
+    "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonPepe.js": {
+      "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonPepe.js",
+      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
+    },
     "server/match/sargon/solo-c-policy/server/match/botPositioning.js": {
       "path": "server/match/sargon/solo-c-policy/server/match/botPositioning.js",
       "sha256": "15811e2bc66fb201558df740cf6c8c16e65a4642b6cc8fe7547efc5d89fffa53"
@@ -513,10 +801,6 @@
     "server/match/sargon/solo-c-policy/server/match/botSavings.js": {
       "path": "server/match/sargon/solo-c-policy/server/match/botSavings.js",
       "sha256": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0"
-    },
-    "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonPepe.js": {
-      "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonPepe.js",
-      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
     },
     "server/match/sargon/solo-c-policy/server/match/botForecast.js": {
       "path": "server/match/sargon/solo-c-policy/server/match/botForecast.js",
@@ -650,29 +934,17 @@
       "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonCTransfer.js",
       "sha256": "f19b661c4b6e1b4fb42ce1e8b516379b9231a977487795fad5074b422643eaac"
     },
-    "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonFactors.js": {
-      "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/sargonFactors.js",
-      "sha256": "a2bbc9e2926166caa1fa73eb51ade74ab39e27b3f1d4bf40aa8ba8f63bccf9d0"
-    },
-    "server/match/sargon/solo-c-policy/server/match/botCoreStrategies.js": {
-      "path": "server/match/sargon/solo-c-policy/server/match/botCoreStrategies.js",
-      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
-    },
-    "server/match/sargon/solo-c-policy/server/match/botStrategy.js": {
-      "path": "server/match/sargon/solo-c-policy/server/match/botStrategy.js",
-      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
-    },
     "server/match/sargon/solo-c-policy/server/match/botEconomy.js": {
       "path": "server/match/sargon/solo-c-policy/server/match/botEconomy.js",
       "sha256": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53"
     },
-    "server/match/sargon/solo-c-policy/server/match/botStrategies/laterano.js": {
-      "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/laterano.js",
-      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
-    },
     "server/match/sargon/solo-c-policy/server/match/botStrategies/lateranoTactics.js": {
       "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/lateranoTactics.js",
       "sha256": "a01c0426965c24a345c77b10b70d2b82a409a8efe4cddb4e792bcfe641140d2b"
+    },
+    "server/match/sargon/solo-c-policy/server/match/botStrategies/laterano.js": {
+      "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/laterano.js",
+      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
     },
     "server/match/sargon/solo-c-policy/server/match/botBossRehearsal.js": {
       "path": "server/match/sargon/solo-c-policy/server/match/botBossRehearsal.js",
@@ -686,13 +958,33 @@
       "path": "server/match/sargon/solo-c-policy/server/match/botStrategies/siracusaDraftSafety.js",
       "sha256": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
     },
-    "server/match/sargon/solo-c-policy/server/match/botDevelopment.js": {
-      "path": "server/match/sargon/solo-c-policy/server/match/botDevelopment.js",
+    "server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js",
       "sha256": "d83efa7d14e1ed3bae9acf4ff99ec54d56dfcdaea7f90b44b69ac898bcccdb85"
+    },
+    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategy.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategy.js",
+      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
+    },
+    "server/match/sargon/solo-budget-lp-policy/server/match/botCoreStrategies.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botCoreStrategies.js",
+      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
+    },
+    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFactors.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFactors.js",
+      "sha256": "1ba255a298b06dca0fea5088807ffd3e523e523f9ff935384c754802f36f4b17"
     },
     "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonTransferConfig.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonTransferConfig.js",
       "sha256": "eea323a0050f8b274a09b19dc4e633667e453b5bb67b38a128530dbfbebea969"
+    },
+    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonEarlyStead.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonEarlyStead.js",
+      "sha256": "233d3a444a3e440a72fa6541fd1e7194a6ed40027293004cf87fee5e6fce6a8b"
+    },
+    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonPepe.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonPepe.js",
+      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
     },
     "server/match/sargon/solo-budget-lp-policy/server/match/botPositioning.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botPositioning.js",
@@ -702,33 +994,25 @@
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botSavings.js",
       "sha256": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0"
     },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonPepe.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonPepe.js",
-      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
-    },
     "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonCompanionBudget.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonCompanionBudget.js",
       "sha256": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da"
     },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonEarlyStead.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonEarlyStead.js",
-      "sha256": "233d3a444a3e440a72fa6541fd1e7194a6ed40027293004cf87fee5e6fce6a8b"
+    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFireline.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFireline.js",
+      "sha256": "c394fe497984dd25704ed6381b1f5406dcbf0ba5f43dbc955edf18064460fdab"
     },
     "server/match/sargon/solo-budget-lp-policy/server/match/botForecast.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botForecast.js",
       "sha256": "241557dbb84b16dfd510fe7200f1c3a53d246cf2a8f07d349a52e64888c16d0f"
     },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonSwiftLpTrade.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonSwiftLpTrade.js",
-      "sha256": "5aebf8891932f9b1cfe304594b949d9a0ba57dd42bb647d62381d64bd2305e16"
-    },
     "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonSwift.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonSwift.js",
       "sha256": "be32d804175c1354d5db692597abeef7b109af4ec1bd3715e45f83a38a58a58a"
     },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFireline.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFireline.js",
-      "sha256": "c394fe497984dd25704ed6381b1f5406dcbf0ba5f43dbc955edf18064460fdab"
+    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonSwiftLpTrade.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonSwiftLpTrade.js",
+      "sha256": "5aebf8891932f9b1cfe304594b949d9a0ba57dd42bb647d62381d64bd2305e16"
     },
     "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonDynamicUpgrade.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonDynamicUpgrade.js",
@@ -854,29 +1138,17 @@
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonCTransfer.js",
       "sha256": "f19b661c4b6e1b4fb42ce1e8b516379b9231a977487795fad5074b422643eaac"
     },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFactors.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/sargonFactors.js",
-      "sha256": "1ba255a298b06dca0fea5088807ffd3e523e523f9ff935384c754802f36f4b17"
-    },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botCoreStrategies.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botCoreStrategies.js",
-      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
-    },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategy.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategy.js",
-      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
-    },
     "server/match/sargon/solo-budget-lp-policy/server/match/botEconomy.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botEconomy.js",
       "sha256": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53"
     },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/laterano.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/laterano.js",
-      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
-    },
     "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/lateranoTactics.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/lateranoTactics.js",
       "sha256": "a01c0426965c24a345c77b10b70d2b82a409a8efe4cddb4e792bcfe641140d2b"
+    },
+    "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/laterano.js": {
+      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/laterano.js",
+      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
     },
     "server/match/sargon/solo-budget-lp-policy/server/match/botBossRehearsal.js": {
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botBossRehearsal.js",
@@ -890,9 +1162,21 @@
       "path": "server/match/sargon/solo-budget-lp-policy/server/match/botStrategies/siracusaDraftSafety.js",
       "sha256": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
     },
-    "server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js": {
-      "path": "server/match/sargon/solo-budget-lp-policy/server/match/botDevelopment.js",
-      "sha256": "d83efa7d14e1ed3bae9acf4ff99ec54d56dfcdaea7f90b44b69ac898bcccdb85"
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js",
+      "sha256": "e9177b23fd53f71c7d9ced6a787913b6b30e36df834e6f53eabda0b9d4d58edc"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js",
+      "sha256": "3cd86860782e11f1244fe5b93fdc62a978520f9cf1948a3cff60598731249f40"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js",
+      "sha256": "be32d804175c1354d5db692597abeef7b109af4ec1bd3715e45f83a38a58a58a"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js",
+      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
     },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botPositioning.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botPositioning.js",
@@ -902,49 +1186,49 @@
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botSavings.js",
       "sha256": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js",
-      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
-    },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftLpTrade.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftLpTrade.js",
       "sha256": "17b7b8230c89d7fd4077db7ea3cb25024ebb6d7e11a1846656d565f741474173"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js",
-      "sha256": "be32d804175c1354d5db692597abeef7b109af4ec1bd3715e45f83a38a58a58a"
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js",
+      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js",
-      "sha256": "3cd86860782e11f1244fe5b93fdc62a978520f9cf1948a3cff60598731249f40"
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js",
+      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js",
+      "sha256": "fd336b523e858307fa058b30b0e1378043832eca4ce8b25d753e00a11d6c63ee"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js",
+      "sha256": "e224fa694057fc371cec0fcfc5a22a3ff7da7683343fcb3729718b907cf1805c"
     },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchFourGates.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchFourGates.js",
       "sha256": "f70e7673b94d3d144a31dbf5cfa939d4f6d0eab45296064b1be44adb4ba1e030"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js",
-      "sha256": "1a2ff50d99c96e048954be62dc535b32c2d62b2feead40142eae2ab131aaae47"
-    },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js",
-      "sha256": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453"
-    },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js",
-      "sha256": "fe3dee72d9ca9e86736e2d628de1775fa795c39ba980c2ad1cb2c0e65d409c9a"
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js",
+      "sha256": "4b47334f5c33f9f47715a8dfd90a12b9faaaf1af61c80695d69774d069da29bf"
     },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop37.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop37.js",
       "sha256": "3873de1085f777af0ab1a471b606bd464b3df1bff1756e983c7e499d0807be07"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js",
-      "sha256": "4b47334f5c33f9f47715a8dfd90a12b9faaaf1af61c80695d69774d069da29bf"
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js",
+      "sha256": "1a2ff50d99c96e048954be62dc535b32c2d62b2feead40142eae2ab131aaae47"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js",
-      "sha256": "e224fa694057fc371cec0fcfc5a22a3ff7da7683343fcb3729718b907cf1805c"
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js",
+      "sha256": "fe3dee72d9ca9e86736e2d628de1775fa795c39ba980c2ad1cb2c0e65d409c9a"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js",
+      "sha256": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453"
     },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonDynamicUpgrade.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonDynamicUpgrade.js",
@@ -1006,13 +1290,13 @@
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound19.js",
       "sha256": "b36ce3334b797443d881fc923254607488f1068d9f3e94c3b20f22fcf606f8f0"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js",
-      "sha256": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da"
-    },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound21.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound21.js",
       "sha256": "d29061cdd2f12992aeda3ca8b35e94a866dbaa17a8c10f8a902eb36ccfae40a6"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js",
+      "sha256": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da"
     },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound22.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound22.js",
@@ -1070,29 +1354,17 @@
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFireline.js",
       "sha256": "b6c997e97ae010e03c83c792301157c41612755ea75835c6266d5a02cb8e75a5"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js",
-      "sha256": "fd336b523e858307fa058b30b0e1378043832eca4ce8b25d753e00a11d6c63ee"
-    },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js",
-      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
-    },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js",
-      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
-    },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botEconomy.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botEconomy.js",
       "sha256": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js",
-      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
-    },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/lateranoTactics.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/lateranoTactics.js",
       "sha256": "a01c0426965c24a345c77b10b70d2b82a409a8efe4cddb4e792bcfe641140d2b"
+    },
+    "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js": {
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js",
+      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
     },
     "server/match/sargon/coop-fireline-stack-policy/server/match/botBossRehearsal.js": {
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botBossRehearsal.js",
@@ -1106,9 +1378,21 @@
       "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/siracusaDraftSafety.js",
       "sha256": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
     },
-    "server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js": {
-      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js",
+    "server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js",
       "sha256": "e9177b23fd53f71c7d9ced6a787913b6b30e36df834e6f53eabda0b9d4d58edc"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js",
+      "sha256": "3cd86860782e11f1244fe5b93fdc62a978520f9cf1948a3cff60598731249f40"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js",
+      "sha256": "be32d804175c1354d5db692597abeef7b109af4ec1bd3715e45f83a38a58a58a"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js",
+      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
     },
     "server/match/sargon/coop-four-review-policy/server/match/botPositioning.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botPositioning.js",
@@ -1118,53 +1402,53 @@
       "path": "server/match/sargon/coop-four-review-policy/server/match/botSavings.js",
       "sha256": "ecd3eb64e2391474d92609df10f349763d678a629dbd1bc4490eb2ed6064a0e0"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js",
-      "sha256": "81f7fbe4eb3f4e53af57a64a7f44f384ea93c004fa74bf7a993cf933feb5f298"
-    },
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftLpTrade.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftLpTrade.js",
       "sha256": "0dbf5a4747d95f2879a9eb642bf9c5744a7d250b81ea861a21f50b07c6794a80"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js",
-      "sha256": "be32d804175c1354d5db692597abeef7b109af4ec1bd3715e45f83a38a58a58a"
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategy.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategy.js",
+      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js",
-      "sha256": "3cd86860782e11f1244fe5b93fdc62a978520f9cf1948a3cff60598731249f40"
+    "server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js",
+      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js",
+      "sha256": "2aaa2317c2f71df9ca9f2108a68f1a1d1b72e6046e251b2d0871aa98a91923a1"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js",
+      "sha256": "7a75e1d3bd2cfa0bbcb67f7a5315e04f953e7a18df8a24e8d5f61689ac7e71f3"
     },
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchFourGates.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchFourGates.js",
       "sha256": "f70e7673b94d3d144a31dbf5cfa939d4f6d0eab45296064b1be44adb4ba1e030"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js",
-      "sha256": "1a2ff50d99c96e048954be62dc535b32c2d62b2feead40142eae2ab131aaae47"
-    },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js",
-      "sha256": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453"
-    },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js",
-      "sha256": "fe3dee72d9ca9e86736e2d628de1775fa795c39ba980c2ad1cb2c0e65d409c9a"
-    },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js",
-      "sha256": "e7fc4112d9ccd10ee9013b216b75580509b9042ba249c89612dab49d39a1bdbc"
+    "server/match/sargon/coop-four-review-policy/server/match/botForecast.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botForecast.js",
+      "sha256": "4b47334f5c33f9f47715a8dfd90a12b9faaaf1af61c80695d69774d069da29bf"
     },
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop37.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop37.js",
       "sha256": "0f67e70f0487479c4653032b9a2db8cb28b506774c2af620539d11f18411de51"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botForecast.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botForecast.js",
-      "sha256": "4b47334f5c33f9f47715a8dfd90a12b9faaaf1af61c80695d69774d069da29bf"
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js",
+      "sha256": "1a2ff50d99c96e048954be62dc535b32c2d62b2feead40142eae2ab131aaae47"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js",
-      "sha256": "7a75e1d3bd2cfa0bbcb67f7a5315e04f953e7a18df8a24e8d5f61689ac7e71f3"
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js",
+      "sha256": "fe3dee72d9ca9e86736e2d628de1775fa795c39ba980c2ad1cb2c0e65d409c9a"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js",
+      "sha256": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js",
+      "sha256": "e7fc4112d9ccd10ee9013b216b75580509b9042ba249c89612dab49d39a1bdbc"
     },
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonDynamicUpgrade.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonDynamicUpgrade.js",
@@ -1226,13 +1510,13 @@
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound19.js",
       "sha256": "b36ce3334b797443d881fc923254607488f1068d9f3e94c3b20f22fcf606f8f0"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js",
-      "sha256": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da"
-    },
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound21.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound21.js",
       "sha256": "c84639c8bd70ac017dd8f50109e33a7f6789a5da3de2c946ab4fd8af85fc482b"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js",
+      "sha256": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da"
     },
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound22.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound22.js",
@@ -1294,29 +1578,17 @@
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourContribution.js",
       "sha256": "45b136694ef95ca214929922b07bbc391cebc2a56ccd25c5bdbdc29a6c360958"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js",
-      "sha256": "2aaa2317c2f71df9ca9f2108a68f1a1d1b72e6046e251b2d0871aa98a91923a1"
-    },
-    "server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js",
-      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
-    },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategy.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategy.js",
-      "sha256": "77e7cea3cb0c899d81da671cf10ac597db75ba7bb1a8453e598cfc0e79f29043"
-    },
     "server/match/sargon/coop-four-review-policy/server/match/botEconomy.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botEconomy.js",
       "sha256": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js": {
-      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js",
-      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
-    },
     "server/match/sargon/coop-four-review-policy/server/match/botStrategies/lateranoTactics.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/lateranoTactics.js",
       "sha256": "a01c0426965c24a345c77b10b70d2b82a409a8efe4cddb4e792bcfe641140d2b"
+    },
+    "server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js": {
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js",
+      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
     },
     "server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js": {
       "path": "server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js",
@@ -1330,21 +1602,684 @@
       "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js",
       "sha256": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
     },
-    "server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": {
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botDevelopment.js",
+      "sha256": "ddace4781c3e949e025856b15b693ee579b0055dec10ec9907448c93523f0a6b"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCommunicatorRewards.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botCommunicatorRewards.js",
+      "sha256": "3102451827b5036769ef6a542a05a9a5ca5a9c6f09cbc6ff2721dce0b309ad88"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botCoopForecast.js",
+      "sha256": "ba527d62915ad46d4b403eb0b1f7b6056ca4b1ef84e9b95267c2c57207751dbd"
+    },
+    "server/match/zumama/release-two/server/match/sargon/ownBossForecast.js": {
+      "mode": "two",
+      "path": "server/match/sargon/ownBossForecast.js",
+      "sha256": "28e9526cd19397a11ccfa74ac5626a96c9dc77834b0433edb7bbce53939c5107"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategy.js",
+      "sha256": "5797c2cfc2df3e82b021872f10513cffafd83c4a637b677cc1257406e809dea8"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botCoreStrategies.js",
+      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFactors.js",
+      "sha256": "f48b3d7a31a341eada65c8f4e836d2ca9bab5a19d9524af5e31b7d377011ec04"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonExpandedOutputResearch.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonExpandedOutputResearch.js",
+      "sha256": "702c173c789730f1040d86b2b071ccc0f98c14e5d7e36c70e2f12b5e56339943"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botForecast.js",
+      "sha256": "4b47334f5c33f9f47715a8dfd90a12b9faaaf1af61c80695d69774d069da29bf"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop37.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop37.js",
+      "sha256": "bca3a89b5be8a99ad8f99c45b86eaaae1d832ee7da049a2f0718d3848ea950ad"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift.js",
+      "sha256": "be32d804175c1354d5db692597abeef7b109af4ec1bd3715e45f83a38a58a58a"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPepe.js",
+      "sha256": "d608f33c95ce6ecc1916e7e80afc6f568d1c0a3c84d5b49365deb29850890687"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botPositioning.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botPositioning.js",
+      "sha256": "15811e2bc66fb201558df740cf6c8c16e65a4642b6cc8fe7547efc5d89fffa53"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botSavings.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botSavings.js",
+      "sha256": "4e99a75c12299e93ba8de578bb8cc76f613635583d84ed03036d8d0756aa53cb"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftLpTrade.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftLpTrade.js",
+      "sha256": "17b7b8230c89d7fd4077db7ea3cb25024ebb6d7e11a1846656d565f741474173"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEconomy34.js",
+      "sha256": "1a2ff50d99c96e048954be62dc535b32c2d62b2feead40142eae2ab131aaae47"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound13.js",
+      "sha256": "d5377e53ebbcd5a13e47c1b7fe2b03779d6cc60540ea7ced969e92e7bcbbb290"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRosterFactors.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRosterFactors.js",
+      "sha256": "15574f512a78c23cf69ef00f21b4e33753e288a443ca83b937c12adefc78bc12"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound12.js",
+      "sha256": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLucienWindowGeometry.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLucienWindowGeometry.js",
+      "sha256": "99a999a46ce674c871ac5f486a2c9f19bc62c488ff55851a1fd579461b76884d"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js",
+      "sha256": "6251e2143b422f55a93cf09218dd41ac2c7d51bfa4456cb110a2a54e8cb8203b"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCompanionBudget.js",
+      "sha256": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPrecision33.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPrecision33.js",
+      "sha256": "36001d4912773c14fc768dc4c27f9982a3caeb40bdcf80ac31501e442910265e"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairCompletionResearch.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairCompletionResearch.js",
+      "sha256": "30dfe4f7f5c46157dfedceafdd4628c84c4be346328ce4bad12772f15177f625"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairFieldSafetyResearch.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairFieldSafetyResearch.js",
+      "sha256": "7004826dcdc39387d906079e0b0e6c47b09d09d00cd546904cce7aac3c539dbb"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound22.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound22.js",
+      "sha256": "27808119bf0970851c8b00ce7c0929ea4b9de03de81192c7a4649209073d3a25"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js",
+      "sha256": "f3000a833a7d6c7ced73f4efa19d89c4ab091298c1650cfb3ee6398c9f2c49aa"
+    },
+    "server/match/zumama/release-two/server/match/sargon/residencePrepProjection.js": {
+      "mode": "two",
+      "path": "server/match/sargon/residencePrepProjection.js",
+      "sha256": "52736ab73f87cc39b1ffc7386494d961e91d9fe67baccb1c366e4b193ffa9127"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRescueResearch.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRescueResearch.js",
+      "sha256": "9d6bc250b9f4ec4ea1c10d65695974ebc7af30303e11ea4aad54164bacd9248f"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLionCoverage.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLionCoverage.js",
+      "sha256": "85f3364e8c3cb1b0a86339dc1e72a14d37029c05de9a47ac816b807ed32e0208"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound17.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound17.js",
+      "sha256": "e5807ffd12489972557fd253a610fb252a96812298fea5d8f7bea878ec528578"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchRound1.js",
+      "sha256": "e224fa694057fc371cec0fcfc5a22a3ff7da7683343fcb3729718b907cf1805c"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchFourGates.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonResearchFourGates.js",
+      "sha256": "f70e7673b94d3d144a31dbf5cfa939d4f6d0eab45296064b1be44adb4ba1e030"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonDynamicUpgrade.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonDynamicUpgrade.js",
+      "sha256": "8b16fc50516090d9be1e0e3a1bba0b2ab15536578e18d51c1adaac595a4d6636"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSixSearch.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSixSearch.js",
+      "sha256": "586b375d1cdd859a35286d3e52467e6558d75892c4d99dc1447b04e827ecb5bf"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftAblations.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwiftAblations.js",
+      "sha256": "36c5d54804e929230d09d972e0f7255ce2e40b3a62c5aca8d101cf88fc1a2e58"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift24Baseline.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonSwift24Baseline.js",
+      "sha256": "ea7a183f6ad348ec8dce759e4d0497dfde49f6e0002d08a3b443f0fba02ef898"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound6.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound6.js",
+      "sha256": "450d1e97c6498d5ebd61ddb4d2a50dbd3d94058a123e89577e9de669c7a0633d"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonTargetShops.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonTargetShops.js",
+      "sha256": "a2bbbdb223c9590039e4e898f5feecec4d4088dfd39cfb07befc2289f296f281"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimic.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimic.js",
+      "sha256": "801031f4a0650682325dd7802576d8f2afe01ca42ad28e9b100fab097f5bf3c5"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimicRefinements.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonMimicRefinements.js",
+      "sha256": "252a8052b58cb3a7e685b2d0e6be122561e604c3b466fc93a238f1f0c8ba0c79"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonVideoFactors.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonVideoFactors.js",
+      "sha256": "8c8b25b11c3f457fb39010a368f77573df0d40a29d43d7a3df94bd4be6f22bf6"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound14.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound14.js",
+      "sha256": "0b4e91c3c6917a97ddb1493771b071f87983f55e2876bf29883b3428c0b3d932"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound15.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound15.js",
+      "sha256": "d996a435b1acc2817d222d55b5dd697f4beb622f655dc208b09b2821cfbd1228"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound16.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound16.js",
+      "sha256": "aa1020b7deff361b03fcb430e836334b44527e787394e02d4486a3da2f1fe8fa"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound18.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound18.js",
+      "sha256": "ce79c9267642007701a840cca03248affc21844fd7263f5131694886fd0bebd4"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound19.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound19.js",
+      "sha256": "620f623ecdb43a8c492010b1ba2d39e3686a51f35eb67b5ee3ede5497765a895"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound21.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound21.js",
+      "sha256": "d29061cdd2f12992aeda3ca8b35e94a866dbaa17a8c10f8a902eb36ccfae40a6"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonBridgeLifecycle.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonBridgeLifecycle.js",
+      "sha256": "0918628ecd5b6d9bd2540352a630a562e04a754b656d0cbcc0dbac43c75d79ed"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound24.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonRound24.js",
+      "sha256": "b45ae753ea7ad6bcd0536e75355ff4f20cb62024976718de8eae643512dfd312"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairWait.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonPairWait.js",
+      "sha256": "512bb20e969896245d6203300d1e91686d2925eb3c98dd8f88446fc8b8a2e736"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonAbyssWindow.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonAbyssWindow.js",
+      "sha256": "163483d6e87acdb271c2acbb13c9cba807aaf2f7205dd4fd5e42051a95f67ded"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFiveBalance.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFiveBalance.js",
+      "sha256": "f9b41ac84606a87c554c5d27ed83dc623cf558e6017a33bdb11732ccd6b9a893"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLeanSix.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonLeanSix.js",
+      "sha256": "b089ce05c5de6d1b64a6507442976402f62ad7e38d3698312987e431aad7ad8a"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFormation30.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFormation30.js",
+      "sha256": "b8d30f8bcbba0bb8af7ab6128c147feaaedb6e4e181d6492d1a8df78745a5f59"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonManual32.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonManual32.js",
+      "sha256": "bf5afd32fbd623f0f387d72a30f3a44d0c4a340937260c8785e17ba15f913b3a"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop99.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonCoop99.js",
+      "sha256": "fe4eea06c8d3653de814c4d7b996bc41d31a35b4697da4a8174af981caf1a252"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyStead.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonEarlyStead.js",
+      "sha256": "ba0ac3b9609a7a640b779516fe332586544e100337c9074a67f0b3eca736f845"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFireline.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/sargonFireline.js",
+      "sha256": "b6c997e97ae010e03c83c792301157c41612755ea75835c6266d5a02cb8e75a5"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botEconomy.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botEconomy.js",
+      "sha256": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/lateranoTactics.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/lateranoTactics.js",
+      "sha256": "a01c0426965c24a345c77b10b70d2b82a409a8efe4cddb4e792bcfe641140d2b"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/laterano.js",
+      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botBossRehearsal.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botBossRehearsal.js",
+      "sha256": "685c10319bca078b3690f28afea9d6d7f5ab282a97c5e966635303bfbd955e4a"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botFireControl.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botFireControl.js",
+      "sha256": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490"
+    },
+    "server/match/zumama/release-two/server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/siracusaDraftSafety.js": {
+      "mode": "two",
+      "path": "server/match/sargon/coop-fireline-stack-policy/server/match/botStrategies/siracusaDraftSafety.js",
+      "sha256": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js": {
+      "mode": "four",
       "path": "server/match/sargon/coop-four-review-policy/server/match/botDevelopment.js",
-      "sha256": "e9177b23fd53f71c7d9ced6a787913b6b30e36df834e6f53eabda0b9d4d58edc"
+      "sha256": "ddace4781c3e949e025856b15b693ee579b0055dec10ec9907448c93523f0a6b"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCommunicatorRewards.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botCommunicatorRewards.js",
+      "sha256": "3102451827b5036769ef6a542a05a9a5ca5a9c6f09cbc6ff2721dce0b309ad88"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botCoopForecast.js",
+      "sha256": "ba527d62915ad46d4b403eb0b1f7b6056ca4b1ef84e9b95267c2c57207751dbd"
+    },
+    "server/match/zumama/release-four/server/match/sargon/ownBossForecast.js": {
+      "mode": "four",
+      "path": "server/match/sargon/ownBossForecast.js",
+      "sha256": "53027bb4a6e239513d474543e0a5193d6c326b6d1bb3c13e1e0674023f2775e9"
+    },
+    "server/match/zumama/release-four/server/match/sargon/bossRepairSelection.js": {
+      "mode": "four",
+      "path": "server/match/sargon/bossRepairSelection.js",
+      "sha256": "bd00254e1b1bd8f04130707faf9d720b76572f1c67ef35bc543ff171df90e469"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategy.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategy.js",
+      "sha256": "5797c2cfc2df3e82b021872f10513cffafd83c4a637b677cc1257406e809dea8"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botCoreStrategies.js",
+      "sha256": "9787b32ee422d308c7790e52440fedfcb65629bca22b4530713abbf162074fe4"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFactors.js",
+      "sha256": "4b472972ead4208bcb73170555616c04b5a310bdc7864f80b681a033c2de1743"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonExpandedOutputResearch.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonExpandedOutputResearch.js",
+      "sha256": "702c173c789730f1040d86b2b071ccc0f98c14e5d7e36c70e2f12b5e56339943"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botForecast.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botForecast.js",
+      "sha256": "4b47334f5c33f9f47715a8dfd90a12b9faaaf1af61c80695d69774d069da29bf"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop37.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop37.js",
+      "sha256": "4bbbabe64bd526c1bcc71e09a68c1efa5515a404b09ab108fc8692f0a228afab"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift.js",
+      "sha256": "be32d804175c1354d5db692597abeef7b109af4ec1bd3715e45f83a38a58a58a"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPepe.js",
+      "sha256": "d608f33c95ce6ecc1916e7e80afc6f568d1c0a3c84d5b49365deb29850890687"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botPositioning.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botPositioning.js",
+      "sha256": "15811e2bc66fb201558df740cf6c8c16e65a4642b6cc8fe7547efc5d89fffa53"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botSavings.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botSavings.js",
+      "sha256": "4e99a75c12299e93ba8de578bb8cc76f613635583d84ed03036d8d0756aa53cb"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftLpTrade.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftLpTrade.js",
+      "sha256": "0dbf5a4747d95f2879a9eb642bf9c5744a7d250b81ea861a21f50b07c6794a80"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEconomy34.js",
+      "sha256": "1a2ff50d99c96e048954be62dc535b32c2d62b2feead40142eae2ab131aaae47"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound13.js",
+      "sha256": "d5377e53ebbcd5a13e47c1b7fe2b03779d6cc60540ea7ced969e92e7bcbbb290"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRosterFactors.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRosterFactors.js",
+      "sha256": "0aa7d1f398e68435bac89f75ac2fddd1311476d46d59ecd0428872ea36c45100"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound12.js",
+      "sha256": "a28560f8df97e3a42dd301694c4cb85d776e08aa1d14300a82f48d9005ce0453"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourReviewGates.js",
+      "sha256": "e7fc4112d9ccd10ee9013b216b75580509b9042ba249c89612dab49d39a1bdbc"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLucienWindowGeometry.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLucienWindowGeometry.js",
+      "sha256": "99a999a46ce674c871ac5f486a2c9f19bc62c488ff55851a1fd579461b76884d"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyPairWindowResearch.js",
+      "sha256": "6251e2143b422f55a93cf09218dd41ac2c7d51bfa4456cb110a2a54e8cb8203b"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCompanionBudget.js",
+      "sha256": "b796d1d3368675feaf7f32f36b43a5c6ee226c5830232ee23226778e840060da"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPrecision33.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPrecision33.js",
+      "sha256": "36001d4912773c14fc768dc4c27f9982a3caeb40bdcf80ac31501e442910265e"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairCompletionResearch.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairCompletionResearch.js",
+      "sha256": "545c2ff2725191452f9a483a3097fb6746cfa41d5aeea21bc374ce6e8e0ced3e"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound22.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound22.js",
+      "sha256": "27808119bf0970851c8b00ce7c0929ea4b9de03de81192c7a4649209073d3a25"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftResidenceResearch.js",
+      "sha256": "f3000a833a7d6c7ced73f4efa19d89c4ab091298c1650cfb3ee6398c9f2c49aa"
+    },
+    "server/match/zumama/release-four/server/match/sargon/residencePrepProjection.js": {
+      "mode": "four",
+      "path": "server/match/sargon/residencePrepProjection.js",
+      "sha256": "52736ab73f87cc39b1ffc7386494d961e91d9fe67baccb1c366e4b193ffa9127"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRescueResearch.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRescueResearch.js",
+      "sha256": "9d6bc250b9f4ec4ea1c10d65695974ebc7af30303e11ea4aad54164bacd9248f"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLionCoverage.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLionCoverage.js",
+      "sha256": "85f3364e8c3cb1b0a86339dc1e72a14d37029c05de9a47ac816b807ed32e0208"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound17.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound17.js",
+      "sha256": "e5807ffd12489972557fd253a610fb252a96812298fea5d8f7bea878ec528578"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchRound1.js",
+      "sha256": "7a75e1d3bd2cfa0bbcb67f7a5315e04f953e7a18df8a24e8d5f61689ac7e71f3"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchFourGates.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonResearchFourGates.js",
+      "sha256": "f70e7673b94d3d144a31dbf5cfa939d4f6d0eab45296064b1be44adb4ba1e030"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonDynamicUpgrade.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonDynamicUpgrade.js",
+      "sha256": "8b16fc50516090d9be1e0e3a1bba0b2ab15536578e18d51c1adaac595a4d6636"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSixSearch.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSixSearch.js",
+      "sha256": "586b375d1cdd859a35286d3e52467e6558d75892c4d99dc1447b04e827ecb5bf"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftAblations.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwiftAblations.js",
+      "sha256": "36c5d54804e929230d09d972e0f7255ce2e40b3a62c5aca8d101cf88fc1a2e58"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift24Baseline.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonSwift24Baseline.js",
+      "sha256": "ea7a183f6ad348ec8dce759e4d0497dfde49f6e0002d08a3b443f0fba02ef898"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound6.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound6.js",
+      "sha256": "450d1e97c6498d5ebd61ddb4d2a50dbd3d94058a123e89577e9de669c7a0633d"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonTargetShops.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonTargetShops.js",
+      "sha256": "a2bbbdb223c9590039e4e898f5feecec4d4088dfd39cfb07befc2289f296f281"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimic.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimic.js",
+      "sha256": "801031f4a0650682325dd7802576d8f2afe01ca42ad28e9b100fab097f5bf3c5"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimicRefinements.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonMimicRefinements.js",
+      "sha256": "252a8052b58cb3a7e685b2d0e6be122561e604c3b466fc93a238f1f0c8ba0c79"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonVideoFactors.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonVideoFactors.js",
+      "sha256": "8c8b25b11c3f457fb39010a368f77573df0d40a29d43d7a3df94bd4be6f22bf6"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound14.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound14.js",
+      "sha256": "0b4e91c3c6917a97ddb1493771b071f87983f55e2876bf29883b3428c0b3d932"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound15.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound15.js",
+      "sha256": "d996a435b1acc2817d222d55b5dd697f4beb622f655dc208b09b2821cfbd1228"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound16.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound16.js",
+      "sha256": "aa1020b7deff361b03fcb430e836334b44527e787394e02d4486a3da2f1fe8fa"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound18.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound18.js",
+      "sha256": "ce79c9267642007701a840cca03248affc21844fd7263f5131694886fd0bebd4"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound19.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound19.js",
+      "sha256": "9f50820b02a69c7764b58edf43f9498ab4a04596f8fcea9dc13539ff4e46fabd"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonProtectedHealing.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonProtectedHealing.js",
+      "sha256": "a67a9962e5571ab7298235c4c204d48f0cc16cb9303c9bf390af282b1b8692ab"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound21.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound21.js",
+      "sha256": "c84639c8bd70ac017dd8f50109e33a7f6789a5da3de2c946ab4fd8af85fc482b"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonBridgeLifecycle.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonBridgeLifecycle.js",
+      "sha256": "0918628ecd5b6d9bd2540352a630a562e04a754b656d0cbcc0dbac43c75d79ed"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound24.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonRound24.js",
+      "sha256": "b45ae753ea7ad6bcd0536e75355ff4f20cb62024976718de8eae643512dfd312"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairWait.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonPairWait.js",
+      "sha256": "512bb20e969896245d6203300d1e91686d2925eb3c98dd8f88446fc8b8a2e736"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonAbyssWindow.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonAbyssWindow.js",
+      "sha256": "163483d6e87acdb271c2acbb13c9cba807aaf2f7205dd4fd5e42051a95f67ded"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFiveBalance.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFiveBalance.js",
+      "sha256": "f9b41ac84606a87c554c5d27ed83dc623cf558e6017a33bdb11732ccd6b9a893"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLeanSix.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonLeanSix.js",
+      "sha256": "b089ce05c5de6d1b64a6507442976402f62ad7e38d3698312987e431aad7ad8a"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFormation30.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFormation30.js",
+      "sha256": "b8d30f8bcbba0bb8af7ab6128c147feaaedb6e4e181d6492d1a8df78745a5f59"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonManual32.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonManual32.js",
+      "sha256": "bf5afd32fbd623f0f387d72a30f3a44d0c4a340937260c8785e17ba15f913b3a"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop99.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonCoop99.js",
+      "sha256": "2d4955d2857195736995e8cf94a04f2c57a816dc8783a171ffb522833470c925"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyStead.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonEarlyStead.js",
+      "sha256": "5e217fed249d96cbf2421ef6457cda6a540ad8820f0c49c88b37791e99a5854e"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFireline.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFireline.js",
+      "sha256": "b7fbb0763d631cf757c8da6939236c5101a5eb85a952b516997b053180f31470"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourContribution.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/sargonFourContribution.js",
+      "sha256": "45b136694ef95ca214929922b07bbc391cebc2a56ccd25c5bdbdc29a6c360958"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botEconomy.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botEconomy.js",
+      "sha256": "1d2afee5e38808738047551358eeb419e73c0818a40ca07648e2eb8f69938a53"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/lateranoTactics.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/lateranoTactics.js",
+      "sha256": "a01c0426965c24a345c77b10b70d2b82a409a8efe4cddb4e792bcfe641140d2b"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/laterano.js",
+      "sha256": "55aecf553f7f52a43be33e3ae736fc317b72287e18d609375662688738883bb4"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botBossRehearsal.js",
+      "sha256": "685c10319bca078b3690f28afea9d6d7f5ab282a97c5e966635303bfbd955e4a"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botFireControl.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botFireControl.js",
+      "sha256": "b51947b95aec1d0386371670fef072f7df1d02f29ff44997ffe167159998d490"
+    },
+    "server/match/zumama/release-four/server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js": {
+      "mode": "four",
+      "path": "server/match/sargon/coop-four-review-policy/server/match/botStrategies/siracusaDraftSafety.js",
+      "sha256": "c8667bdbdaa3f4cd7e0ec1e71fc1560b30fd778959e1ce0ff1653d6aa56ecdd8"
     }
   },
   "policyObject": "difficulty-split",
-  "coopPolicyObject": "emergency-lp-headroom",
-  "baselineDate": "2026-10-27",
+  "coopPolicyObject": "own-communicator-reward-20-20",
+  "baselineDate": "2026-10-29",
   "computationNote": "Validated shared execution API 1; complete-context cache; paused prototypes excluded.",
   "managerVersion": 2,
   "validation": {
-    "releaseReport": "benchmarks/release-20261027-validation.json",
-    "sourceReport": "benchmarks/release-20261027-source-verification.json",
-    "publishedMultiplayerMatches": 112,
-    "soloInheritedFrom": "zumama-v0.1.0",
-    "oldValidationIsHistorical": true
+    "sourceReport": "benchmarks/release-20261029-source-verification.json",
+    "releaseReport": "benchmarks/release-20261029-validation.json"
+  },
+  "adoptedBaselineIds": {
+    "solo": "sargon-pepe-split-budget-lp-28-15",
+    "two": "zumama-own-communicator-reward-20-20",
+    "four": "zumama-own-communicator-reward-20-20"
   }
 }

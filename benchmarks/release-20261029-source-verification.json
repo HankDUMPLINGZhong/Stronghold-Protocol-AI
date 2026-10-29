@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-29",
+  "snapshots": [
+    {
+      "label": "lavinia-solo",
+      "files": 583,
+      "manifestSha256": "17fdf51287090403cc4655a1296ee458fc40849ed4330de80bcef14b67fe558c"
+    },
+    {
+      "label": "lavinia-two",
+      "files": 585,
+      "manifestSha256": "bcf9d893dfd8f74af90fe6d75fb92ba1e300918b300eb4ee3450b6a08b634394"
+    },
+    {
+      "label": "lavinia-four",
+      "files": 584,
+      "manifestSha256": "b3eff98ca4df62798e119c27d1dbc2df19e740059a6b0f0572a3c7f75131ce72"
+    },
+    {
+      "label": "zumama-2",
+      "files": 720,
+      "manifestSha256": "2e09e23eb54228b768817769847f75b745dca6df02ea529f2116fa0d176bbc1e"
+    },
+    {
+      "label": "zumama-4",
+      "files": 776,
+      "manifestSha256": "d82c289f25ca8dbf9062c0bae52f49d0468b4f752faec00cc1567ca98867572c"
+    }
+  ],
+  "packages": {
+    "lavinia": {
+      "sourceFiles": 666,
+      "originalFilesVerified": 665
+    },
+    "zumama": {
+      "sourceFiles": 340,
+      "originalFilesVerified": 340
+    }
+  },
+  "engineModified": false,
+  "zumamaRegistrySha256": "2e7e544e2118a8dc2d9165a3576addef0f0088f695542da450f25c0122be2c21",
+  "laviniaBaselines": {
+    "solo": {
+      "sha256": "c09c6b5c3e81bf1eb6218603b25d3b030b7a492f54cc7906271c1d9b776043d9",
+      "n": 28,
+      "wins": 18,
+      "hiddenCleared": 10
+    },
+    "two": {
+      "sha256": "b252ccc3ab22d2f0f5a7a505cefc5766d3ee5038e2bb8f8bfe8799cd6cba0980",
+      "n": 56,
+      "wins": 20
+    },
+    "four": {
+      "sha256": "fedde922c05f99b700d4f83b3a6cb4512db7503a92b87afc4c58aadc1c55b35f",
+      "n": 56,
+      "wins": 16
+    }
+  }
+}

@@ -35,24 +35,24 @@ test('published multiplayer rows reproduce the complete named-teammate samples a
 });
 
 test('Lavinia release retains both complete corpora, personal metrics and reproducible public rows', () => {
-  const report = JSON.parse(readFileSync(new URL('../benchmarks/lavinia-v0.2.2-multiplayer.json', import.meta.url)));
+  const report = JSON.parse(readFileSync(new URL('../benchmarks/lavinia-v0.3.0-multiplayer.json', import.meta.url)));
   assert.equal(report.matches.length, 112);
   assert.deepEqual(laviniaRows(report.matches), report.rows);
-  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['siracusa2', 13, 56], ['siracusa4', 13, 56]]);
+  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['siracusa2', 20, 56], ['siracusa4', 16, 56]]);
   assert.ok(report.matches.some(r => r.lavinia.eliminatedRound < r.reachedRound), 'early eliminations remain included');
   const table = laviniaTable(report.rows);
-  for (const p of ['docs/strategies/siracusa.md', 'benchmarks/lavinia-v0.2.2-multiplayer.md'])
+  for (const p of ['docs/strategies/siracusa.md', 'benchmarks/lavinia-v0.3.0-multiplayer.md'])
     assert.ok(readFileSync(new URL('../' + p, import.meta.url), 'utf8').includes(table), p);
 });
 
 test('Zumama release reproduces both full corpora and attributed Unite metrics', () => {
-  const report = JSON.parse(readFileSync(new URL('../benchmarks/zumama-v0.1.2-multiplayer.json', import.meta.url)));
+  const report = JSON.parse(readFileSync(new URL('../benchmarks/zumama-v0.2.0-multiplayer.json', import.meta.url)));
   assert.equal(report.matches.length, 112);
   assert.deepEqual(zumamaRows(report.matches), report.rows);
-  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['zumama2', 19, 56], ['zumama4', 14, 56]]);
+  assert.deepEqual(report.rows.map(r => [r.scenario, r.wins, r.total]), [['zumama2', 20, 56], ['zumama4', 20, 56]]);
 
-  assert.equal(report.matches.reduce((n, r) => n + r.uniteEvidence.length, 0), 501);
+  assert.equal(report.matches.reduce((n, r) => n + r.uniteEvidence.length, 0), 551);
   const table = zumamaTable(report.rows);
-  for (const p of ['docs/strategies/sargon.md', 'benchmarks/zumama-v0.1.2-multiplayer.md'])
+  for (const p of ['docs/strategies/sargon.md', 'benchmarks/zumama-v0.2.0-multiplayer.md'])
     assert.ok(readFileSync(new URL('../' + p, import.meta.url), 'utf8').includes(table), p);
 });

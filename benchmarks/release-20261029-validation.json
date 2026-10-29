@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-29",
+  "localVerificationPassed": true,
+  "unit": {
+    "passed": 32,
+    "failed": 0
+  },
+  "modernHostR14": {
+    "passed": 7,
+    "failed": 0,
+    "host": "f07b8965061bbc311ad7aa815879b09264a1e47d",
+    "scope": "Lavinia solo/two/four and Zumama solo/two ABYSS; both standalone HARD through R14."
+  },
+  "frozenDecisionCases": {
+    "passed": 4,
+    "failed": 0,
+    "report": "benchmarks/release-20261029-decision-verification.json"
+  },
+  "requiredCI": "Five-host Verify strategy release must succeed before publication, including all six install orders, previous-release independent upgrades, real R14 combat, extended-host groups and service restart.",
+  "retainedArturia": "0.2.6; sources, adapter and portable files unchanged.",
+  "sharedComputation": "API1/runtime1.1.0 unchanged; paused experiments excluded.",
+  "fullWinRateCorpora": "Latest verified adopted frozen development baselines reused; not a fresh win-rate measurement on current upstream.",
+  "mainModified": false,
+  "directPreviousReleaseUpgrade": {
+    "passed": 1,
+    "failed": 0,
+    "from": {
+      "lavinia": "0.2.2",
+      "zumama": "0.1.2"
+    },
+    "peerFilesUnchanged": true,
+    "exactHostRestoration": true
+  }
+}

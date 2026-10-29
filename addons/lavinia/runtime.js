@@ -1,8 +1,9 @@
+import { adoptedOptions } from './policy/server/match/lavinia/release-options.js';
 // Named Siracusa adapter. Rules, data, legal actions and ordinary AI belong to the host.
 import * as retained from './policy/server/match/lavinia/retained-policy/server/match/botDevelopment.js';
-import * as solo from './policy/server/match/lavinia/solo-policy/server/match/botDevelopment.js';
-import * as two from './policy/server/match/lavinia/two-policy/server/match/botDevelopment.js';
-import * as four from './policy/server/match/lavinia/four-policy/server/match/botDevelopment.js';
+import * as solo from './policy/server/match/lavinia/release-solo/server/match/botDevelopment.js';
+import * as two from './policy/server/match/lavinia/release-two/server/match/botDevelopment.js';
+import * as four from './policy/server/match/lavinia/release-four/server/match/botDevelopment.js';
 import { COMPUTATION_OWNER, computationOwner } from '../aiCompute/identity.js';
 export const LAVINIA = 'lavinia', BAND = 'band_chiave', CORE = 'siracusaShip';
 export const isLavinia = (m, ps) => ps?.isBot === true && m.opts?.seats?.some(s => s.playerId === ps.playerId && s.isBot && s.botPersona === LAVINIA) === true;
@@ -19,7 +20,7 @@ const drivers = { retained, solo, two, four }, views = new WeakMap();
 export function policyView(m) {
   if (!views.has(m)) {
     const mode = select(m), multiplayer = mode === 'two' || mode === 'four';
-    const opts = Object.freeze({ ...m.opts, botStrategy: 'growth', botCoreStrategies: true, botRehearsal: 3,
+    const retainedOptions = Object.freeze({ ...m.opts, botStrategy: 'growth', botCoreStrategies: true, botRehearsal: 3,
       botFrontlineRepair: false, botFormationRoles: true, botHumanLessons: true,
       botSiracusaEngines: Object.freeze(['promotion', 'hybrid', 'boss']), botLateranoLessons: false,
       botLateranoExperiment: false, botLateranoCoopExperiment: false, botSiracusaSoloExperiment: false,
@@ -32,6 +33,8 @@ export function policyView(m) {
       botSiracusaHumanFollowup: false, botSiracusaArcaneDraftTrial: false,
       botSiracusaHumanTrial: false, botSiracusaStableRaidTrial: false, botSiracusaRaidDeploymentTrial: false,
       botSiracusaArcaneWeight: 0.65, botSiracusaAdjustments: Object.freeze([]), botSiracusaInvestorDeadline: 9 });
+    const clean = Object.fromEntries(Object.entries(m.opts).filter(([k]) => !k.startsWith('botSiracusa') && !k.startsWith('botLaterano')));
+    const opts = mode === 'retained' ? retainedOptions : Object.freeze({ ...clean, ...adoptedOptions[mode] });
     views.set(m, new Proxy(m, {
       get(target, key) {
         if (key === 'opts') return opts;

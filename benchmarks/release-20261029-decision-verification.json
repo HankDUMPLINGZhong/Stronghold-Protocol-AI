@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-29",
+  "checks": [
+    {
+      "plugin": "lavinia",
+      "mode": "two",
+      "seed": 98700,
+      "exact": true,
+      "digest": "8b433fb6962acd48c7c456d8335b72af3b459f47ce80dc4b8d045d74cfd0f2a7",
+      "victory": true
+    },
+    {
+      "plugin": "lavinia",
+      "mode": "four",
+      "seed": 91583,
+      "exact": true,
+      "digest": "b4845379a6d89c66043a3c57a13a89a0594c004f401148810beb79ef42b9d8ce",
+      "victory": true
+    },
+    {
+      "plugin": "zumama",
+      "players": 2,
+      "seed": 94675,
+      "exact": true,
+      "digest": "95e30d3db6a4e501069f4d3d6e575e697824f13853cacecd4d0bb2a66d11f111",
+      "victory": true
+    },
+    {
+      "plugin": "zumama",
+      "players": 4,
+      "seed": 82731,
+      "exact": true,
+      "digest": "289949f8ba0415a6f46e6bf70369286d3b02c55c2ddfced123d2996377c6b2ad",
+      "victory": true
+    }
+  ],
+  "scope": "Four representative adopted cases. Complete Siracusa game records excluding timings and optional observer-only diagnostics; complete Sargon decisions, actual battles and budget history excluding timings. Full fixed win-rate corpora are verified adopted evidence, not new measurements.",
+  "packages": {
+    "lavinia": {
+      "policy": "sha256:90234e512c05e712e021738e9723ae5313e8d39501196b1279d31ddb63acbb9c",
+      "verifiedInstalledFiles": 668
+    },
+    "zumama": {
+      "policy": "sha256:cd0058ec14c9af5be6cd8d0895a491ba322ff359160c06ca5ea6c0f199871614",
+      "verifiedInstalledFiles": 342
+    }
+  }
+}

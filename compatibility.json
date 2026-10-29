@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-28",
+  "checkedAt": "2026-10-29",
   "plugins": {
     "arturia": "0.2.6",
-    "lavinia": "0.2.2",
-    "zumama": "0.1.2"
+    "lavinia": "0.3.0",
+    "zumama": "0.2.0"
   },
   "hosts": [
     {
@@ -478,5 +478,5 @@
     "independentInstallUpgradeRemoval": true,
     "legacyJournalsSupported": true
   },
-  "latestReleaseValidation": "benchmarks/lavinia-v0.2.2-validation.json"
+  "latestReleaseValidation": "benchmarks/release-20261029-validation.json"
 }

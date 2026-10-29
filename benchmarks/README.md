@@ -37,3 +37,8 @@ node tools/verify-benchmarks.mjs
 
 
 拉维妮娅v0.2.2：单人终极[12/28逐局结果](lavinia-v0.2.2-solo.json)，多人二人／四人各13/56，见[最新指标表](lavinia-v0.2.2-multiplayer.md)。使用既有固定测试集，未按胜负选种；旧发行记录保留。
+
+
+## 2026-10-29 当前发行
+
+祖玛玛v0.2.0：[多人20/56、20/56](zumama-v0.2.0-multiplayer.md)，单人继承15/28。拉维妮娅v0.3.0：[单人18/28](lavinia-v0.3.0-solo.json)、[多人20/56、16/56](lavinia-v0.3.0-multiplayer.md)。均从最新用户采用快照与完整固定语料核验；旧发行数据保持不可变。

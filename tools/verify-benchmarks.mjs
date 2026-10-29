@@ -71,3 +71,12 @@ assert.deepEqual(laviniaRows(lcoop.matches),lcoop.rows);
 assert.equal(lsolo.matches.length,28);assert.equal(lsolo.matches.filter(g=>g.victory).length,12);
 assert.deepEqual(lsolo.matches.map(g=>g.seed).sort((a,b)=>a-b),suite.cases.filter(c=>c.config==='solo:ABYSS').map(c=>c.seed).sort((a,b)=>a-b));
 console.log('Verified: Lavinia solo12/28 and both co-op13/56; complete fixed seed sets and personal attributed metrics.');
+
+const latestL=load('lavinia-v0.3.0-multiplayer.json'), latestZ=load('zumama-v0.2.0-multiplayer.json'),latestSolo=load('lavinia-v0.3.0-solo.json');
+for(const [report,wins] of [[latestL,[20,16]],[latestZ,[20,20]]])for(const [i,row]of report.rows.entries()){
+ const games=report.matches.filter(g=>g.scenario===row.scenario);assert.equal(games.length,56);assert.equal(games.filter(g=>g.victory).length,wins[i]);
+ assert.deepEqual(games.map(g=>g.seed).sort((a,b)=>a-b),coopSuite.cases.map(g=>g.seed).sort((a,b)=>a-b));
+}
+assert.equal(latestSolo.matches.length,28);assert.equal(latestSolo.matches.filter(g=>g.victory).length,18);
+assert.deepEqual(latestSolo.matches.map(g=>g.seed).sort((a,b)=>a-b),suite.cases.filter(c=>c.config==='solo:ABYSS').map(c=>c.seed).sort((a,b)=>a-b));
+console.log('Verified: latest adopted Lavinia18/20/16 and Zumama15/20/20 fixed baselines.');

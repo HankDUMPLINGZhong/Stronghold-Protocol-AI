@@ -12,21 +12,23 @@ test('Lavinia standalone build preserves its immutable policy and independent id
   const frozen=JSON.parse(readFileSync(resolve(root,catalog.manifest)));
   assert.deepEqual(JSON.parse(readFileSync(resolve(output,'addon.json'))),frozen);
   assert.deepEqual(JSON.parse(readFileSync(resolve(root,'addons/lavinia/addon.json'))),frozen);
-  assert.equal(frozen.id,'ai-lavinia');assert.equal(frozen.version,'0.2.2');
+  assert.equal(frozen.id,'ai-lavinia');assert.equal(frozen.version,'0.3.0');
+  assert.equal(frozen.policy,'sha256:'+hash(JSON.stringify(frozen.sources)));
+  assert.deepEqual(Object.keys(frozen.origins),Object.keys(frozen.sources));
   assert.equal(frozen.name,'AI·拉维妮娅');
   const previous=JSON.parse(readFileSync(resolve(root,'releases/lavinia-v0.1.2.json')));
   assert.notDeepEqual(frozen.sources,previous.sources);
   assert.notEqual(frozen.policy,previous.policy);
   assert.ok(Object.keys(frozen.sources).some(p=>p.endsWith('/siracusaLucienRight.js')));
   assert.notEqual(frozen.files['runtime.js'],previous.files['runtime.js'],'the adapter selects the new co-op policy');
-  assert.equal(frozen.coopPolicies.two, 'core-pair+contact-inputs-rollback+boss-four-samples+wind-elite');
-  assert.equal(frozen.coopPolicies.four, 'deputy-vigil+contact-safe-no-micro+boss-four-samples');
+  assert.equal(frozen.coopPolicies.two, 'restricted-compatible-pairs+boss-bench-phase-bonds+withdrawal-pairs+end-rewards');
+  assert.equal(frozen.coopPolicies.four, 'opening-pairs+joint-contact+boss-bench-phase');
   assert.ok(Object.keys(frozen.sources).some(p=>p.endsWith('/siracusaSoloTransfer.js')));
   assert.equal(frozen.sharedRuntime.version,'1.1.0');
-  assert.deepEqual(Object.keys(frozen.entries),['retained','solo','two','four']);
+  assert.deepEqual(Object.keys(frozen.entries),['retained','solo','two','four','options']);
   for(const f of ['install.mjs','common/patches.mjs','common/extended-host.mjs'])assert.ok(readFileSync(resolve(output,f)).length);
   assert.deepEqual(frozen.benchmark.hard,'28/28');
-  assert.deepEqual(frozen.benchmark.abyss,'12/28');
+  assert.deepEqual(frozen.benchmark.abyss,'18/28');
   for(const [name,expected]of Object.entries(frozen.files)){
     assert.equal(hash(readFileSync(resolve(output,name))),expected,name);
     assert.equal(hash(readFileSync(resolve(root,'addons/lavinia',name))),expected,name);
