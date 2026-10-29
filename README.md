@@ -6,7 +6,7 @@
 
 | AI 队友 | 固定开局 | 当前版本 | 安装包与说明 |
 |---|---|---|---|
-| **祖玛玛（森蚺）** | 佩佩／萨尔贡 | **v0.1.2** | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/zumama-v0.1.2/AI-Zumama-v0.1.2.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/zumama-v0.1.2) |
+| 祖玛玛（森蚺） | 佩佩／萨尔贡 | v0.1.2 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/zumama-v0.1.2/AI-Zumama-v0.1.2.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/zumama-v0.1.2) |
 | 阿尔图罗（图图） | 潘格尼尼／拉特兰 | v0.2.6 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/arturia-v0.2.6/AI-Arturia-v0.2.6.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/arturia-v0.2.6) |
 | 拉维妮娅（斥罪） | 贾维／叙拉古 | v0.2.2 | [下载 ZIP](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/download/lavinia-v0.2.2/AI-Lavinia-v0.2.2.zip) · [发行说明与校验](https://github.com/HankDUMPLINGZhong/Stronghold-Protocol-AI/releases/tag/lavinia-v0.2.2) |
 
@@ -51,7 +51,7 @@ node .\install.mjs uninstall 'D:\Games\Stronghold-Protocol'
 
 | AI | 单人绝境 | 单人终极 | 二人终极 | 四人终极 | 策略与详细指标 |
 |---|---:|---:|---:|---:|---|
-| 祖玛玛／萨尔贡 | **28/28** | **15/28** | **19/56** | **14/56** | [策略说明](docs/strategies/sargon.md) |
+| 祖玛玛／萨尔贡 | 28/28 | 15/28 | 19/56 | 14/56 | [策略说明](docs/strategies/sargon.md) |
 | 阿尔图罗／拉特兰 | 28/28 | 20/28 | 21/56 | 19/56 | [策略说明](docs/strategies/laterano.md) |
 | 拉维妮娅／叙拉古 | 28/28 | 12/28 | 13/56 | 13/56 | [策略说明](docs/strategies/siracusa.md) |
 
